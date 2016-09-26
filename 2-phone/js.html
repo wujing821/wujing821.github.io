@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input{
+				border: none;
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 289px;
+				height: 594px;
+				background: url(img/bg.jpg) no-repeat;
+				margin: 0 auto;
+				position: relative;
+			}
+			#dialog{
+				width: 237px;
+				height: 36px;
+				border-bottom: 1px solid #bdcec6;
+				border-top: 1px solid #bdcec6;
+				position: absolute;
+				bottom: 87px;
+				left: 26px;
+				padding: 7px 0 5px 0;
+				
+			}
+			#expression{
+				width: 30px;
+				height: 34px;
+				border: 1px solid #ded6e7;
+				border-radius: 5px;
+				margin: 0 5px 0 4px;
+				float: left;
+				background: url(icon1.jpg) no-repeat;
+			}
+			#text{
+				width: 136px;
+				height: 34px;
+				border: 1px solid #ded6e7;
+				border-radius: 5px;
+				float: left;
+				margin-right: 3px;
+				padding-left: 3px;
+			}
+			#send{
+				width: 50px;
+				height: 34px;
+				font: 20px/34px "微软雅黑";
+				text-align: center;
+				float: left;
+			}
+			#dialog_box{
+				width: 237px;
+				height: 358px;
+				position: absolute;
+				top: 98px;
+				left: 26px;
+				overflow: auto;
+			}
+			p{
+				padding: 0;
+				margin: 0;
+				clear: both;
+				margin-bottom: 5px;
+				padding-left: 3px;
+			}
+			p:after{
+				display: block;
+				content: "";
+				clear: both;
+			}
+			p span{
+				max-width: 150px;
+				color: #000;
+				background: #ded6e7;
+				font: 14px/25px "微软雅黑";
+				padding: 0 5px;
+				margin-left: 5px;
+				margin-right: 5px;
+				border-radius: 2px;
+			}
+			p img,p span{
+				float: left;
+			}
+			.right{
+				float: right;
+				padding-right: 3px;
+			}
+			.right img{
+				float: right;
+			}
+			.right span{
+				background: #21c618;
+				color: #fff;
+			}
+			#img1{
+				display: block;
+			}
+			#img2{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<form id="dialog">
+				<div id="expression">
+					<img src="img/icon1.jpg" id="img1"/>
+					<img src="img/icon2.jpg" id="img2"/>
+				</div>
+				<input type="text" id="text" />
+				<input type="button" id="send" value="发送"/>
+			</form>
+			<div id="dialog_box"></div>
+		</div>
+		<script type="text/javascript">
+			var expression=document.getElementById('expression');
+			var changeimg=document.getElementById('changeimg');	
+			var img1=document.getElementById('img1');
+			var img2 = document.getElementById('img2');
+			var send=document.getElementById('send');
+			var text=document.getElementById('text');
+			var dialog_box=document.getElementById('dialog_box');
+			changeimg=true;
+			//设置按钮点击时切换图片
+			expression.onclick=function(){
+				if(changeimg){
+					img1.style.display='none';
+					img2.style.display='block';
+					changeimg=false;
+					
+				}else{
+					img1.style.display='block';
+					img2.style.display='none';
+					changeimg=true;
+				}
+			};
+			//设置发送按钮 
+			send.onclick=function(){
+				if(changeimg){
+				dialog_box.innerHTML='<p><img src="img/icon1.jpg"><span>'+text.value+'</span></p>'+dialog_box.innerHTML;
+				text.value = "";
+				}else{
+				dialog_box.innerHTML='<p class="right"><span>'+text.value+'</span><img src="img/icon2.jpg"></p>'+dialog_box.innerHTML;
+				text.value = "";
+				}
+			};
+		</script>
+	</body>
+</html>
