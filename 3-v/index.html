@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#btn{
+				padding: 0;
+				margin: 0;
+				width: 50px;
+				height: 20px;
+				border: none;
+				border: 1px solid #000;
+				background: #DED6E7;
+				font: 12px/20px arial;
+			}
+			#btn:hover{
+				background: #5A94EF;
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				background: red;
+				color: #fff;
+				font: 16px/50px arial;
+				text-align: center;
+				position: absolute;
+			}
+			.box{
+				background: #fff;
+				width: 100%;
+				height: 100%;
+				position: relative;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<input type="button" value="按钮" id="btn"/>
+		</form>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			var num = 0;
+			var str = '';
+			var i = 0;
+			var len = 7;
+			var j = (len)/2;
+			//点击按钮时依次出现不同方向的v字
+			btn.onclick = function(){
+				num++;
+				if(num==1){
+					str='';
+					for(var i=0;i<len;i++){
+						if(i<len/2){
+							 j--;
+						}else if(i>len/2){
+							j++;
+						}
+					str += '<div style="left:'+(i*60+50)+'px;top:'+(j*50+50)+'px">'+i+'</div>';
+					}
+					box.innerHTML = str;	
+				}else if(num==2){
+					str='';
+					for(var i=0;i<len;i++){
+						if(i<len/2){
+							 j--;
+						}else if(i>len/2){
+							j++;
+						}
+					str += '<div style="left:'+(j*60+50)+'px;top:'+(i*50+50)+'px">'+i+'</div>';
+					box.innerHTML = str;
+					}	
+				}else if(num==3){
+					str='';
+					for(var i=0;i<len;i++){
+						if(i<len/2){
+							 j++;
+						}else if(i>len/2){
+							j--;
+						}
+					str += '<div style="left:'+(i*60+50)+'px;top:'+(j*50+50)+'px">'+i+'</div>';
+					box.innerHTML = str;
+					}
+				}else if(num==4){
+					str='';
+					for(var i=0;i<len;i++){
+						if(i<len/2){
+							 j++;
+						}else if(i>len/2){
+							j--;
+						}
+					str += '<div style="left:'+(j*60+50)+'px;top:'+(i*50+50)+'px">'+i+'</div>';
+					box.innerHTML = str;
+					num=0;
+					}
+				}
+			};
+		</script>
+	</body>
+</html>
