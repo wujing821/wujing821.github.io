@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+	#box{
+		width: 500px;
+		height: 500px;
+		margin: 0 auto;
+		position: relative;
+	}
+	#box img{
+		width: 100%;
+		height: 100%;
+	}
+	a{
+		text-decoration: none;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top:50%;
+		margin-top: -25px;
+		background-color: #ccc;
+		border-radius: 50%;
+		line-height: 50px;
+		text-align: center;
+		color:white;
+		font-size: 40px;
+	}
+	#prev{
+		left:20px;
+	}
+	#next{
+		right:20px;
+	}
+	#list{
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		bottom: 20px;
+		left:50%;
+		margin-left: -75px;
+		width: 150px;
+	}
+	#list li{
+		list-style: none;
+		background-color: yellow;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		float: left;
+		margin: 0 5px;
+		cursor:pointer;
+		position: relative;
+	}
+	#list li.active{
+		background-color: #ccc;
+	}
+	#list li img{
+		display: none;
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		margin-left: -50px;
+	}
+	#list li div{
+		border: 10px solid transparent;
+		border-top-color:#ccc;
+		position: absolute;
+		top:-10px; 
+		display: none;
+	}
+	#list li.active div,#list li.active img{
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+
+	<div id="box">
+		<img src="img/0.jpg" alt="" id="img">
+		<a href="javascript:;" id="prev"><</a>
+		<a href="javascript:;" id="next">></a>
+		<ul id ="list">
+		</ul>		
+	</div>
+
+	<p style="text-align: center;">缩略图</p>
+	<script>
+		var img = document.getElementById('img');
+		var as = document.getElementsByTagName('a');
+		var ul = document.getElementById('list');
+		var arr = ['0.jpg','3.jpg','1.jpg','2.jpg'];
+		var alis = ul.getElementsByTagName('li');
+		var str = '';
+		var num = 0;
+		//生成li
+		for(var i=0;i<arr.length;i++){
+			if(i == 0){
+				str += '<li style="background:red"></li>';
+			}else{
+				str += '<li></li>';
+			}
+		}
+		ul.innerHTML = str;
+		//点击下一张
+		as[1].onclick = function(){
+			num++;
+			if(num>arr.length-1){
+				num = 0;
+			}
+			for(var i=0;i<alis.length;i++){
+				alis[i].style.background = '';
+				
+			}
+			alis[num].style.background = 'red';
+			img.src = 'img/'+arr[num];
+			
+		}
+		//点击上一张
+		as[0].onclick = function(){
+			num--;
+			if(num<0){
+				num = arr.length-1;
+			}
+			for(var i=0;i<alis.length;i++){
+				alis[i].style.background = '';
+				
+			}
+			alis[num].style.background = 'red';
+			img.src = 'img/'+arr[num];
+			
+		}
+		//缩略图
+		for(var i=0;i<alis.length;i++){
+			alis[i].index = i;
+			//鼠标移入
+			alis[i].onmouseover = function(){
+				for(var i=0;i<alis.length;i++){
+					alis[i].innerHTML = '';
+					alis[i].className = '';
+				}
+				this.innerHTML = '<img src="img/'+arr[this.index]+'"/>';
+				this.className = 'active';
+			}
+			//鼠标移出
+			alis[i].onmouseout = function(){
+				for(var i=0;i<alis.length;i++){
+					alis[i].innerHTML = '';
+					alis[i].className = '';
+				}
+			}
+			//鼠标点击时li变红，并切换到对应的缩略图大图
+			alis[i].onclick = function(){
+				for(var i=0;i<alis.length;i++){
+					alis[i].style.background = '';
+					
+				}
+				this.style.background = 'red';
+				img.src = 'img/'+arr[this.index];
+			}
+		}
+		
+		
+	</script>
+	</body>
+</html>

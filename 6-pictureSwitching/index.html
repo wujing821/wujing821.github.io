@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+	#box{
+		width: 875px;
+		height: 553px;
+		background: url(img/bg.png) no-repeat;
+		margin: 0 auto;
+		position: relative;
+	}
+	img{
+		position: absolute;
+		top: 114px;
+		height: 245px;
+		cursor: pointer;
+	}
+	#box img:nth-of-type(1){
+		width:448px;
+		left: 49px;
+	}
+	#box img:nth-of-type(2){
+		width: 248px;
+		left:559px;
+	}
+	i{
+		position: absolute;
+		bottom: 143px;
+		font-weight: bold;
+	}
+	#box i:nth-of-type(1){
+		left: 49px;
+	}
+	#box i:nth-of-type(2){
+		right: 297px;
+	}
+	a{
+		position: absolute;
+		top:54px;
+		width: 60px;
+		height: 20px;
+	}
+	#box a:nth-of-type(1){
+		left:23px;
+	}
+	#box a:nth-of-type(2){
+		left: 100px;
+	}
+	p{
+		height: 20px;
+		width: 200px;
+		position: absolute;
+		bottom: 150px;
+		text-align: center;
+	}
+	#box p:nth-of-type(1){
+		left: 136px;
+	}	
+	#box p:nth-of-type(2){
+		width: 130px;
+		left: 634px;
+	}
+</style>
+	</head>
+	<body>
+		<div id="box">
+		<a href="javascript:;" class="left"></a>
+		<a href="javascript:;" class="right"></a>
+		<img src="" alt="" class="left"/>
+		<img src="" alt="" class="right"/>
+		<i class="left"></i>
+		<i class="right"></i>
+		<p class="left"></p>
+		<p class="right"></p>
+	</div>
+	<script>
+		var imgsrc = [
+		[['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg'],['第一张','第二张','第三张','第四张','第五张']],
+		[['1.jpg','2.jpg','3.jpg'],['第一张','第二张','第三张']]
+		];
+		var as = document.getElementsByTagName('a');
+		var imgs = document.getElementsByTagName('img');
+		var is = document.getElementsByTagName('i');
+		var ps = document.getElementsByTagName('p');
+		//设置默认图片和默认图片信息
+		for(var i=0;i<imgs.length;i++){
+			/*imgs[i].src = 'img/'+imgsrc[i][0][0];	
+			ps[i].innerHTML = imgsrc[i][1][0];
+			is[i].innerHTML = 1+'/'+imgsrc[i][0].length;*/
+			fn(i,0);
+		
+			imgs[i].cur = 0;
+			imgs[i].index = i;
+			imgs[i].onclick = function(){
+				this.cur++;
+				if(this.cur>imgsrc[this.index][0].length-1){
+					this.cur = 0;
+				}
+				//this.src = 'img/'+imgsrc[this.index][0][this.cur];
+				/*imgs[this.index].src = 'img/'+imgsrc[this.index][0][this.cur];
+				ps[this.index].innerHTML = imgsrc[this.index][1][this.cur];
+				is[this.index].innerHTML = this.cur+1+'/'+imgsrc[this.index][0].length;*/
+				fn(this.index,this.cur);
+				
+			};
+			
+			as[0].onclick = function(){
+			
+				for(var i=0;i<as.length;i++){
+					imgs[i].cur--;
+					if(imgs[i].cur<0){
+						imgs[i].cur = imgsrc[i][0].length-1;
+					}
+					fn(i,imgs[i].cur);//一定要绑定在for循环里
+				}
+			
+			};
+			as[1].onclick = function(){
+			
+				for(var i=0;i<as.length;i++){
+					imgs[i].cur++;
+					if(imgs[i].cur>imgsrc[i][0].length-1){
+						imgs[i].cur = 0;
+					}
+					fn(i,imgs[i].cur);//一定要绑定在for循环里
+				}
+			
+			};
+		}
+		
+		
+		
+		
+		function fn(a,b){
+			imgs[a].src = 'img/'+imgsrc[a][0][b];	
+			ps[a].innerHTML = imgsrc[a][1][b];
+			is[a].innerHTML = (b+1)+'/'+imgsrc[a][0].length;
+		}
+	</script>
+	</body>
+</html>

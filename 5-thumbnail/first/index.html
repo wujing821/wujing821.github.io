@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 850px;
+				height: 550px;
+				margin: 0 auto;
+			}
+			p{
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				font: 14px/25px arial;
+				margin-top: 10px;
+			}
+			input{
+				margin: 0;
+				padding: 0;
+				border: none;
+				border: 1px solid #7b6b63;
+				background: url(img/btn1.jpg) repeat-x;
+				border-radius: 3px;
+				width: 65px;
+				height: 20px;
+				margin-top: 10px;
+				float: left;
+			}
+			.but1{
+				margin-left: 350px;	
+				margin-right: 10px;
+			}
+			form{
+				overflow: hidden;
+				
+			}
+			.picbox{
+				width: 770px;
+				height: 470px;
+				border: 10px solid #c6c6c6;
+				box-sizing: border-box;
+				margin: 10px auto;
+				position: relative;
+				
+			}
+			.picbox a{
+				position: absolute;
+				top: 50%;
+				width: 30px;
+				height: 30px;
+				background: #decec6;
+				color: #313939;
+				font: 20px/30px "微软雅黑";
+				text-align: center;
+				text-decoration: none;
+			}
+			.prev{
+			
+				left: 5px;
+			}
+			.next{
+				
+				right: 5px;
+			}
+			.bg1{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				background: #000;
+				opacity: .5;
+				color: #fff;
+				text-align: center;
+				font: 16px/30px arial;
+			}
+			.bg2{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				background: #000;
+				opacity: .5;
+				color: #fff;
+				text-align: center;
+				font: 16px/30px arial;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 30px;
+				width: 100%;
+				height: 30px;
+				text-align: center;
+			}
+			ul li{
+				width: 20px;
+				height: 20px;
+				background: green;
+				border-radius: 50%;
+				list-style: none;
+				display: inline-block;
+				margin-right: 2px;
+				position: relative;
+				cursor: pointer;
+			}
+			.active{
+				background-color:#ccc;
+				
+			}
+			.picbox li img{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ccc;
+				position: absolute;
+				left: -40px;
+				bottom: 40px;
+				
+			}
+			ul li span{
+				width: 0px;
+				height: 0px;
+				border: 10px solid transparent;
+				border-top-color: black;
+				position: absolute;
+				top: -20px;
+				left: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<form>
+				<input type="button" id="but1" class="but1" value="循环切换"/>
+				<input type="button" id="but2" class="but2" value="顺序切换"/>
+			</form>
+			<p id="p">图片可从最后一张跳转到第一张循环切换</p>
+			<div class="picbox" id="picbox">
+				<div class="bg1" id="bg1">1/8</div>
+				<img src="img/1.jpg" alt="" id="img"/>
+				<a href="javascript:;" id="prev" class="prev"><</a>
+				<a href="javascript:;" id="next" class="next">></a>
+				<div class="bg2" id="bg2">冰箱五折啦</div>
+				<ul id="pic"></ul>
+			</div>
+		</div>
+	<script type="text/javascript">
+		var btns = document.getElementsByTagName('input');
+		var p = document.getElementById('p');
+		var img = document.getElementById('img');
+		var prev = document.getElementById('prev');
+		var next = document.getElementById('next');
+		var num = 0;
+		var arr = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
+		var onOff = '循环播放';
+		var divs = document.getElementById('picbox').getElementsByTagName('div');
+		var arr2 = ['冰箱五折啦','尖峰518','第二件五折','车品618','十一high购','空调制冷节','3c会场','满1000减100'];
+		var lis = document.getElementsByTagName('li');
+		var spans = document.getElementsByTagName('span');
+		var len = 8;
+		var str = '';
+		var ul = document.getElementById('pic');
+	
+		//循环播放按钮
+		btns[0].onclick = function(){
+			onOff = '循环播放';
+			p.innerHTML = '图片可从最后一张跳转到第一张循环切换';
+		};
+		//顺序播放按钮
+		btns[1].onclick = function(){
+			onOff = '顺序播放';
+			p.innerHTML = '图片只能到最后一张跳或者只能到到第一张顺序切换';
+		};
+		//用for循环给li加上鼠标移入事件
+		for(var i=0;i<arr.length;i++){
+			str += '<li style="left:'+i+'px"></li>';
+		}
+			ul.innerHTML = str;
+		for(var i=0;i<arr.length;i++){
+			//自定义li的index属性是i
+			lis[i].index = i;
+			//当鼠标移入的时候
+			lis[i].onmouseover = function(){
+			//清空li的classname和缩略图及小三角
+				for(var i=0;i<arr.length;i++){
+					lis[i].className = '';
+					lis[i].innerHTML = '';
+				}
+			//将this.index的值赋给num
+			num = this.index;
+		
+			//当鼠标移入li时改变背景色并且加上缩略图和小三角
+			this.className = 'active';
+			//当鼠标移入li时加上缩略图和小三角
+			this.innerHTML = '<img src="img/'+[this.index+1]+'.jpg" alt="" id="img" />'+'<span></span>';
+			//当鼠标移入li时切换到相应的信息
+			/*divs[0].innerHTML = num+1+'/'+arr.length;
+			divs[1].innerHTML = arr2[num];*/
+			};	
+			//当鼠标移出的时候
+			lis[i].onmouseout = function(){
+				//清空li的classname和缩略图及小三角
+				for(var i=0;i<arr.length;i++){
+					lis[i].className = '';
+					lis[i].innerHTML = '';
+				};
+			}
+			//点击li时切换到当前的li图片
+			lis[i].onclick = function(){
+				//清除所有的li背景色
+				for(var i=0;i<arr.length;i++){
+					lis[i].style = '';
+				}
+				//当点击li时切换到当前的li图片
+				img.src = 'img/'+arr[this.index];
+				//当点击li时改变li的背景色为红色
+				this.style.backgroundColor = 'red';
+				//当鼠标切换到li时同时切换到相应的信息
+				divs[0].innerHTML = num+1+'/'+arr.length;
+				divs[1].innerHTML = arr2[num];
+			}
+		};
+		
+		//向前按钮
+		next.onclick = function(){
+			num++;
+			if(onOff=='循环播放'){
+				if(num>arr.length-1){
+					num=0;
+				}
+			}else{
+				if(num>arr.length-1){
+					num=arr.length-1;
+					alert('最后一张啦')
+				}
+			}
+			fn();
+		};
+		//向后按钮
+		prev.onclick = function(){
+			num--;
+			if(onOff=='循环播放'){
+				if(num<0){
+					num=arr.length-1;
+				}
+				
+			}else{
+				if(num<0){
+					num=0;
+					alert('第一张啦')
+				}
+			}
+			fn();
+		};
+		//将很多地方需要复用的代码放进一个函数里，每次只用调用即可
+		function fn(){
+			img.src = 'img/'+arr[num];
+			divs[0].innerHTML = num+1+'/'+arr.length;
+			divs[1].innerHTML = arr2[num];
+			for(var i=0;i<arr.length;i++){
+				lis[i].className = '';
+				
+			}
+			lis[num].className = 'active';
+		}
+	</script>
+	</body>
+</html>

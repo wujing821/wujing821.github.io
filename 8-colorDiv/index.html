@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				position: absolute;
+				top:50px;
+			}
+			#box div{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				background-color: red;
+			}
+	</style>
+	</head>
+	<body>
+		<input type="color" name="">
+		<input type="button" value="生成">
+		<div id="box"></div>
+		<script>
+			var box = document.querySelector('#box');
+			var btn = document.querySelector('input[type=button]');
+			var color = document.querySelector('input[type=color]');
+			var num = 0;
+			var str = '';
+			btn.onclick = function(){
+				
+				fn(10,num*60,color.value);
+				num++;
+			}
+			function fn(a,b,c){
+				
+				for(var i=0;i<a;i++){
+					str += '<div style="left:'+i*60+'px;top:'+b+'px;background-color:'+c+'">'+i+'</div>';
+				}
+				box.innerHTML += str;
+			}
+			
+		</script>
+	</body>
+</html>
