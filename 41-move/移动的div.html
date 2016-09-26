@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box1{
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: absolute;
+			}
+			#box2{
+				width: 50px;
+				height: 50px;
+				border: 2px dashed #006699;
+				position: absolute;
+				display: none;
+			}
+			input{
+				width: 60px;
+				height: 20px;
+				position: absolute;
+				left: 80px;
+				top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<input type="button" value="返回"/>
+		<script>
+			var box1 = document.getElementById('box1');
+			var box2 = document.getElementById('box2');
+			var btn = document.getElementsByTagName('input')[0];
+			var x,y;
+			var arrX = [];
+			var arrY = [];
+			var num = 0;
+			var timer = null;
+			//点击div时，框出现，移动的是框
+			box1.onmousedown = function(eve){
+				box2.style.display = 'block';
+				var disx = eve.clientX - this.offsetLeft;
+				var disy = eve.clientY - this.offsetTop;
+				
+				document.onmousemove = function(eve){
+					x = eve.clientX - disx;
+					y = eve.clientY - disy;
+					box2.style.left = x +'px'; 
+					box2.style.top = y +'px';
+					//每次记录div运动的位置
+					arrX.unshift(x);
+					arrY.unshift(y);
+				}
+				document.onmouseup = function(){
+					
+					box1.style.left = x +'px'; 
+					box1.style.top = y +'px';
+					document.onmousemove = null;
+					document.onmouseup = null;
+					box2.style.display = 'none';
+					
+				}
+				
+			};
+			btn.onclick = function(){
+				clearInterval(timer);
+				
+				timer = setInterval(function(){
+					num++;
+//					num%=arrX.length;
+					
+					
+					if(num>arrX.length-1){
+						num = 0;
+						clearInterval(timer);
+						arrX.length = 0;
+						arrY.length = 0;
+					}
+					box1.style.left = arrX[num]+'px';
+					box1.style.top = arrY[num]+'px';
+				})
+			}
+		</script>
+	</body>
+</html>

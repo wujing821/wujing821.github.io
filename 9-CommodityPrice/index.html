@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box span{
+				margin: 0 5px;
+			}
+			#box i,#box em{
+				font-style: normal;
+				margin: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bigbox">
+			<ul id="box">
+				<!--<li id="list1">
+					<input type="button" value="-" />
+					<span></span>
+					<input type="button" value="+" />
+					<i>单价:</i>
+					<strong>12.5元</strong>
+					<em>小计:</em>
+					<b></b>
+				</li>
+				<li id="list2">
+					<input type="button" value="-" />
+					<span></span>
+					<input type="button" value="+" />
+					<i>单价:</i>
+					<strong>10.5元</strong>
+					<em>小计:</em>
+					<b></b>
+				</li>
+				<li id="list3">
+					<input type="button" value="-" />
+					<span></span>
+					<input type="button" value="+" />
+					<i>单价:</i>
+					<strong>8.5元</strong>
+					<em>小计:</em>
+					<b></b>
+				</li>
+				<li id="list4">
+					<input type="button" value="-" />
+					<span></span>
+					<input type="button" value="+" />
+					<i>单价:</i>
+					<strong>8元</strong>
+					<em>小计:</em>
+					<b></b>
+				</li>
+				<li id="list5">
+					<input type="button" value="-" />
+					<span></span>
+					<input type="button" value="+" />
+					<i>单价:</i>
+					<strong>14.5元</strong>
+					<em>小计:</em>
+					<b></b>
+				</li>-->
+			</ul>
+			<p>商品合计共：<span></span>件，共花费了：<strong></strong>元</p>
+			<p>其中最贵的商品单价是：<i></i>元</p>
+		</div>
+		<script>
+			var box = document.getElementById('box');
+			var lis = box.getElementsByTagName('li');
+			var bigbox = document.getElementById('bigbox');
+			var totalps1 = bigbox.getElementsByTagName('p')[0];
+			var totalps2 = bigbox.getElementsByTagName('p')[1];
+			var totalcount = totalps1.getElementsByTagName('span')[0];
+			var totalprice = totalps1.getElementsByTagName('strong')[0];
+			var expensive = totalps2.getElementsByTagName('i')[0];
+			var Count = box.getElementsByTagName('span');
+			var Price = box.getElementsByTagName('b');
+			var unitprice = box.getElementsByTagName('strong');
+			var str = '';
+			//自动生成li,添加到ul下
+			var arr = ['12.5元','10.5元','8.5元','8元','14.5元'];
+			for(var i=0;i<arr.length;i++){
+				str += '<li><input type="button" value="-" /><span></span><input type="button" value="+" /><i>单价:</i><strong>'+arr[i]+'</strong><em>小计:</em><b></b></li>';
+			}
+			box.innerHTML = str;
+			//实参
+			for(var i=0;i<lis.length;i++){
+				fn(lis[i]);
+			}
+			//obj是形参，代表lis[i]
+			function fn(obj){
+				var inps = obj.getElementsByTagName('input');
+				var span = obj.getElementsByTagName('span')[0];
+				var i = obj.getElementsByTagName('i')[0];
+				var strong = obj.getElementsByTagName('strong')[0];
+				var b = obj.getElementsByTagName('b')[0];
+				
+				//设置初始值
+				span.innerHTML = 0;
+				var count = 0;
+				totalcount.innerHTML = 0;
+				totalprice.innerHTML = 0;
+				expensive.innerHTML = 0;
+				b.innerHTML = 0 + '元';
+				//当点击加号时，span里数字增加
+				inps[1].onclick = function(){
+					count++;
+					fn1();
+				};
+				//当点击减号时，span里数字递减
+				inps[0].onclick = function(){
+					count--;
+					if(count<0){
+						count = 0;
+					}
+					fn1();
+				};
+				
+				function fn1(){
+					span.innerHTML = count;
+					b.innerHTML = count * parseFloat(strong.innerHTML) + '元';
+					//设置总件数初始值
+					var counts = 0;
+					var prices = 0;
+					var max = 0;
+					//获取ul下所有的件数值并且相加
+					//获取ul下所有的小计值并且相加
+					for(var i=0;i<Count.length;i++){
+						counts += Number(Count[i].innerHTML);
+						prices += parseFloat(Price[i].innerHTML);
+		//当件数大于零时，当前的单价是最大值，如果有单价大于最大值时，此时的单价是最大值
+						if(Count[i].innerHTML>0){
+							if(parseFloat(unitprice[i].innerHTML)>max){
+								max = parseFloat(unitprice[i].innerHTML);
+							}
+						}
+					}
+					totalcount.innerHTML = counts;
+					totalprice.innerHTML = prices;
+					expensive.innerHTML = max;
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

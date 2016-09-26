@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 100px;
+				height: 250px;
+				background: #DED6E7;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.show{
+				height: 20px;
+				font: 14px/20px "微软雅黑";
+				background: #336699;
+			}
+			li{
+				font: 12px/20px "微软雅黑";
+			}
+			.active{
+				background: #002952;
+				font: 16px/20px "微软雅黑";
+				color: #fff;
+			}
+			.active1{
+				background: #808080;
+				color: #940032;
+			}
+			.color{
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+		    <li class="show">这是首行</li>
+		    <li>111111</li>
+		    <li>222222</li>
+		    <li>333333</li>
+		    <li>444444</li>
+		    <li>555555</li>
+		    <li>666666</li>
+		    <li>111111</li>
+		    <li>222222</li>
+		    <li>333333</li>
+		    <li>444444</li>
+		    <li>555555</li>
+		    <li class="show">这是末行</li>
+	  </ul>
+	  <script type="text/javascript">
+	  	/*
+	  	 1.实现移入首行和末行字体颜色和背景色改变
+	  	 2.移入每一个li时，当前li的字体变大，字体颜色和背景色改变，同时上下级的li字体颜色和背景色也改变
+	  	 */
+	  	var box = document.getElementById('box');
+	  	var firstline = box.firstElementChild;
+	  	var lastline = box.lastElementChild;
+	  	var lis = box.getElementsByTagName('li');
+	  	
+	  	for(var i=1;i<lis.length-1;i++){
+	  		lis[i].onmouseover = function(){
+	  			this.className = 'active';
+	  			this.nextElementSibling.className  = 'active1';
+	  			this.previousElementSibling.className = 'active1';
+	  			firstline.className = lastline.className = 'show';
+//				console.log(firstline)
+	  		}
+	  		lis[i].onmouseout = function(){
+	  			this.className = '';
+	  			this.nextElementSibling.className  = '';
+	  			this.previousElementSibling.className = '';
+	  			firstline.className = lastline.className = 'show';
+	  		}
+	  		firstline.onmouseover = lastline.onmouseover = function(){
+	  			
+	  			this.className = 'color';
+	  		}
+	  		firstline.onmouseout= lastline.onmouseout = function(){
+	  			this.className = 'show';
+	  		}
+	  	}
+	  </script>
+	</body>
+</html>

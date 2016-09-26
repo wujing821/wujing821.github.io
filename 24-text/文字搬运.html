@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 350px;
+				height: 200px;
+				float: left;
+				border-radius: 10px;
+				position: relative;
+			}
+			#left{
+				border: 5px solid #940032;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#right{
+				border: 5px solid blue;
+			}
+			span{
+				
+				width: 70px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				display: block;
+				margin-top: 15px;
+				border-radius: 5px;
+				color: white;
+				background: #336699;
+				display: block;
+			}
+			.middle{
+				float: left;
+				width: 100px;
+				margin-left: 30px;
+			}
+			li{
+				float: left;
+				background: #21C618;
+				width: 10px;
+				height: 10px;
+				margin: 0 3px;
+				border-radius: 50%;
+			}
+			ul{
+				height: 20px;
+				width: 100px;
+				margin-top: 30px;
+			}
+			strong{
+				position: absolute;
+				width: 80px;
+				height: 30px;
+				left: 50%;
+				margin-left: -40px;
+				text-align: center;
+				line-height: 30px;
+				border-radius: 10px;
+				bottom: 5px;
+				color: #fff;
+			}
+			.left-st{
+				background-color: pink;	
+			}
+			.right-st{
+				background-color: #940032;
+			}
+			p{
+				margin: 0;
+				padding: 0;
+				margin: 20px 5px;
+				position: absolute;
+				left: 0;
+				width: 350px;
+				height: 110px;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			<p>拍碎双玉斗，慷慨一何多。满腔都是血泪，无处着悲歌。三百年来王气，满目山河依旧，人事竟如何？百户尚牛酒，四塞已干戈。千金剑，万言策，两蹉跎。醉中呵壁自语，醒后一滂沱。不恨年华去也，只恐少年心事，强半为销磨。愿替众生病，稽首礼维摩。</p>
+			<strong class="left-st">0/114</strong>
+		</div>
+		<div class="middle">
+			<span>→</span>
+			<span>←</span>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div id="right">
+			<p></p>
+			<strong class="right-st">0/114</strong>
+		</div>
+		
+		<script type="text/javascript">
+			function getId(id){
+				return document.getElementById(id);
+			}
+			function getTagName(tagname){
+				return document.getElementsByTagName(tagname);
+			}
+			var left = getId('left');
+			var right = getId('right');
+			var leftp = left.getElementsByTagName('p')[0];
+			var rightp = right.getElementsByTagName('p')[0];
+			var arr = leftp.innerHTML;
+			var onOff = true;
+			var span1 = getTagName('span')[0];
+			var span2 = getTagName('span')[1];
+			var num1 = 0;
+			var strongs = getTagName('strong');
+			var lis = getTagName('li');
+			var timer = null;
+			//点击向右箭头
+			span1.onclick = function(){
+				play();
+			};
+			//点击向左箭头
+			span2.onclick = function(){
+				play();
+			};
+			//封装函数
+			function play(){
+				//当onoff是false时按钮不可再次点击，直到运行结束才会返回true
+				if(!onOff){
+				return;
+				}
+				onOff = false;
+				var num = 0;
+				//设置定时器
+				timer = setInterval(function(){
+					num++;
+					fn();
+					//左边的文本框内容每次从num位置开始获取
+					leftp.innerHTML = arr.substring(num);
+					//右边的文本框每次 获取到num的位置
+					rightp.innerHTML = arr.substring(0,num);
+					strongs[0].innerHTML = (arr.length-num)+'/'+arr.length;
+					strongs[1].innerHTML = num +'/'+arr.length;
+					//当num等于数组长度时清除定时器并将num归零，onoff为true
+					if(num == arr.length){
+						num = 0;
+						clearInterval(timer);
+						onOff = true;
+					}
+				},30);
+			}
+			//滚动条运行函数
+			function fn(){
+				for(i=0;i<lis.length;i++){
+					lis[i].className = '';
+				}
+				num1++;
+				if(num1>lis.length-1){
+					num1= 0;
+				}
+				lis[num1].className = 'active';
+			
+			}
+		</script>
+	</body>
+</html>

@@ -86,9 +86,6 @@
 		var ps = document.getElementsByTagName('p');
 		//设置默认图片和默认图片信息
 		for(var i=0;i<imgs.length;i++){
-			/*imgs[i].src = 'img/'+imgsrc[i][0][0];	
-			ps[i].innerHTML = imgsrc[i][1][0];
-			is[i].innerHTML = 1+'/'+imgsrc[i][0].length;*/
 			fn(i,0);
 		
 			imgs[i].cur = 0;
@@ -98,10 +95,6 @@
 				if(this.cur>imgsrc[this.index][0].length-1){
 					this.cur = 0;
 				}
-				//this.src = 'img/'+imgsrc[this.index][0][this.cur];
-				/*imgs[this.index].src = 'img/'+imgsrc[this.index][0][this.cur];
-				ps[this.index].innerHTML = imgsrc[this.index][1][this.cur];
-				is[this.index].innerHTML = this.cur+1+'/'+imgsrc[this.index][0].length;*/
 				fn(this.index,this.cur);
 				
 			};
@@ -129,10 +122,7 @@
 			
 			};
 		}
-		
-		
-		
-		
+		//封装函数
 		function fn(a,b){
 			imgs[a].src = 'img/'+imgsrc[a][0][b];	
 			ps[a].innerHTML = imgsrc[a][1][b];

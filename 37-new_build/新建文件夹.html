@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#creat{
+				width: 80px;
+				height: 20px;
+				font: 12px/20px "微软雅黑";
+				text-align: center;
+				display: inline-block;
+			}
+			#creat>img{
+				width: 80px;
+				height: 20px;
+			}
+			#remove{
+				width: 80px;
+				text-align: center;
+				left: 100px;
+			}
+			img{
+				width: 50px;
+				height: 50px;
+				vertical-align: top;
+				border: none;
+			}
+			li{
+				list-style: none;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				float: left;
+				position: relative;
+				padding-top:20px;
+			}
+			p{
+				margin: 0;
+				margin-top: 10px;
+				height: 20px;
+				font: 12px/20px "微软雅黑";
+				
+			}
+			ul{
+				overflow: auto;
+				padding: 0;
+				margin: 0;
+				position: relative;
+				top: 40px;
+				left: 10px;
+			}
+			button{
+				padding: 0;
+				margin: 0;
+			}
+			input{
+				
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			a{
+				text-decoration: none;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="creat"><img src="img/2.jpg"/></div>
+		<button id="remove">删除</button>
+		<ul id="box"></ul>
+		<!--<li><img src="img/1.jpg"><p>新建文件夹</p></li>-->
+		<script>
+			var creat = document.getElementById('creat');
+			var box = document.getElementById('box');
+			var remove = document.getElementById('remove');
+			var arr = [];
+			var timer = null;
+			
+			creat.onclick = function(){
+				
+				var li = document.createElement('li');
+			
+				li.innerHTML = '<img src="img/1.jpg"><p>新建文件夹</p><input type="checkbox"/>';
+				var inps = li.getElementsByTagName('input')[0];
+				box.appendChild(li);
+				li.onmouseover = function(){
+					this.style.background = '#C6C6C6';
+					inps.style.display = 'block';
+				};
+				li.onmouseout = function(){
+					
+					if(!inps.checked){
+						this.style.background = '';
+						inps.style.display = '';
+						
+					}
+					
+				};
+				li.onclick = function(){
+					inps.checked = !inps.checked;
+					
+				};
+				inps.onchange = function(){
+					
+					this.checked = !this.checked;
+				}
+			};
+			
+			remove.onclick = function(){
+				for(var i=0;i<box.children.length;i++){
+				var ips = box.children[i].getElementsByTagName('input')[0];
+					if(ips.checked){
+						box.removeChild(ips.parentNode);
+						i--;
+					}
+				}
+			};
+		</script>
+	</body>
+</html>

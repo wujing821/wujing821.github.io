@@ -92,7 +92,7 @@
 		h2s[i].onOff = true;//关闭状态
 		h2s[i].onclick = function(){
 			if(this.onOff){
-					//清除所有
+				//清除所有
 				for(var i=0;i<h2s.length;i++){
 					h2s[i].className = '';
 					h2s[i].onOff = true;
@@ -111,26 +111,21 @@
 		prev = null;
 		for(var j=0;j<lis.length;j++){
 			lis[j].onOff = true;
-			
 			lis[j].onclick = function(){
-			
+				if(this.onOff){
+					this.className = 'active';
+					this.onOff = false;
+				}else{
+					this.className = '';
+					this.onOff = true;
+				}
 				
-				
-					if(this.onOff){
-					
-						this.className = 'active';
-						this.onOff = false;
-					}else{
-						this.className = '';
-						this.onOff = true;
+				if(prev){
+					if(prev!=this){
+						prev.className = '';
+						prev = true;
 					}
-					
-					if(prev){
-						if(prev!=this){
-							prev.className = '';
-							prev = true;
-						}
-					}
+				}
 				prev = this;
 			}
 		}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="mTween.js"></script>
+		<script type="text/javascript" src="tween.js"></script>
+		<style>
+			div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<script>
+			var divs = document.getElementsByTagName('div');
+			var str = '';
+			var timer = null;
+			var len = 20;
+			var onOff = true;
+			var num = 0;
+			var target = 400;
+			var n = 0;
+			for(var i=0;i<len;i++){
+				str += '<div style="left:'+i*60+'px"></div>'
+			}
+			document.body.innerHTML = str;
+			document.onclick = function(){
+				if(!onOff){
+						return;
+					}
+					onOff = false;//开关不能写在定时器外面
+				timer = setInterval(function(){
+					
+					mTween(divs[num],'top',target,300,'linear',function(){
+						n++;
+						if(n == len){
+							n = 0;
+							onOff = true;
+							if(target == 400){
+								target = 0;
+							}else{
+								target = 400;
+							}
+						}
+					});
+					num++;
+					if(num >= len){
+						num = 0;
+						clearInterval(timer);
+					}	
+				},100);
+			}
+		</script>
+	</body>
+</html>
