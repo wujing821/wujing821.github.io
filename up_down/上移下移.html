@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="mTween.js"></script>
+		<script src="tween.js"></script>
+		<style>
+			li{
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			<li>0<input type="button" value="上移"><input type="button" value="下移"></li>
+			<li>111<input type="button" value="上移"><input type="button" value="下移"></li>
+			<li>222<input type="button" value="上移"><input type="button" value="下移"></li>
+			<li>333<input type="button" value="上移"><input type="button" value="下移"></li>
+		</ul>
+		<script>
+			var lis = document.getElementsByTagName('li');
+			var ul = document.getElementById('box');
+			for(var i=0;i<lis.length;i++){
+				var inps = lis[i].getElementsByTagName('input');
+				inps[0].onclick = function(){
+					if(this.parentNode.previousElementSibling){
+						mTween(this.parentNode,'height',20,500,'linear')
+						ul.insertBefore(this.parentNode,this.parentNode.previousElementSibling);
+					}
+					
+				}
+				inps[1].onclick = function(){
+					if(this.parentNode.nextElementSibling){
+						ul.insertBefore(this.parentNode,this.parentNode.nextElementSibling.nextElementSibling);
+					}
+					
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>
