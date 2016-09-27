@@ -1,0 +1,6 @@
+.hobby_content_price,.hobby_content_info,.hobby_picture{
+	float: left;
+}
+.hobby_content li{
+	width: 198px;
+}
