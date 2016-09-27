@@ -88,7 +88,7 @@
 	<body>
 		<div id="left">
 			<p>拍碎双玉斗，慷慨一何多。满腔都是血泪，无处着悲歌。三百年来王气，满目山河依旧，人事竟如何？百户尚牛酒，四塞已干戈。千金剑，万言策，两蹉跎。醉中呵壁自语，醒后一滂沱。不恨年华去也，只恐少年心事，强半为销磨。愿替众生病，稽首礼维摩。</p>
-			<strong class="left-st">0/114</strong>
+			<strong class="left-st"></strong>
 		</div>
 		<div class="middle">
 			<span>→</span>
@@ -103,7 +103,7 @@
 		</div>
 		<div id="right">
 			<p></p>
-			<strong class="right-st">0/114</strong>
+			<strong class="right-st"></strong>
 		</div>
 		
 		<script type="text/javascript">
@@ -113,64 +113,61 @@
 			function getTagName(tagname){
 				return document.getElementsByTagName(tagname);
 			}
-			var left = getId('left');
-			var right = getId('right');
-			var leftp = left.getElementsByTagName('p')[0];
-			var rightp = right.getElementsByTagName('p')[0];
-			var arr = leftp.innerHTML;
-			var onOff = true;
-			var span1 = getTagName('span')[0];
-			var span2 = getTagName('span')[1];
-			var num1 = 0;
-			var strongs = getTagName('strong');
+			var spans = getTagName('span');
+			var leftp = getTagName('p')[0];
 			var lis = getTagName('li');
-			var timer = null;
-			//点击向右箭头
-			span1.onclick = function(){
-				play();
-			};
-			//点击向左箭头
-			span2.onclick = function(){
-				play();
-			};
-			//封装函数
-			function play(){
-				//当onoff是false时按钮不可再次点击，直到运行结束才会返回true
-				if(!onOff){
-				return;
-				}
-				onOff = false;
-				var num = 0;
-				//设置定时器
-				timer = setInterval(function(){
-					num++;
-					fn();
-					//左边的文本框内容每次从num位置开始获取
-					leftp.innerHTML = arr.substring(num);
-					//右边的文本框每次 获取到num的位置
-					rightp.innerHTML = arr.substring(0,num);
-					strongs[0].innerHTML = (arr.length-num)+'/'+arr.length;
-					strongs[1].innerHTML = num +'/'+arr.length;
-					//当num等于数组长度时清除定时器并将num归零，onoff为true
-					if(num == arr.length){
-						num = 0;
-						clearInterval(timer);
-						onOff = true;
-					}
-				},30);
-			}
-			//滚动条运行函数
-			function fn(){
-				for(i=0;i<lis.length;i++){
-					lis[i].className = '';
-				}
-				num1++;
-				if(num1>lis.length-1){
-					num1= 0;
-				}
-				lis[num1].className = 'active';
 			
-			}
+			var rightp = getTagName('p')[1];
+			var onOff = true;
+			var num = 0;
+			var timer = null;
+	 		var lefts = getTagName('strong')[0];
+	 		var rights = getTagName('strong')[1];
+	 		
+	 		spans[0].onclick = function(){
+	 			fn(leftp,rightp,lefts,rights);
+	 		};
+	 		spans[1].onclick = function(){
+	 			fn(rightp,leftp,rights,lefts);
+	 		};
+	 		function fn(obj1,obj2,num1,num2){//obj1是输出的标签，obj2是接受的标签，num1是输出的标签，num2是接受的标签
+	 			var len = obj1.innerHTML.length;
+	 			if(len <= 0){
+	 				alert('请输入内容');
+	 				return;
+	 			}
+	 			if(!onOff){
+	 				return;
+	 			}
+	 			onOff = false;
+	 			timer = setInterval(function(){
+	 				
+	 				//右边的的内容每次从左边获取一个字符拼接起来，所以要写在左边内容减少之前
+	 				obj2.innerHTML += obj1.innerHTML.substring(0,1);
+	 				//每次左边的内容减少一个字符
+	 				obj1.innerHTML = obj1.innerHTML.substring(1);
+	 				//左边的数字增加
+	 				num1.innerHTML = obj1.innerHTML.length +'/'+ len;
+	 				//右边的数字增加
+	 				num2.innerHTML = obj2.innerHTML.length +'/'+ len;
+	 				//滚动条变色
+	 				fn1();
+	 				if(obj1.innerHTML == ''){
+	 					onOff = true;
+	 					clearInterval(timer);
+	 				}
+	 			},30)
+	 		}
+	 		//滚动条
+	 		function fn1(){
+	 			
+ 				lis[num].className = '';//前一个被清除
+	 			num++;
+	 			num %= lis.length;//
+	 			//添加当前
+	 			lis[num].className = 'active';
+	 		
+	 		}
 		</script>
 	</body>
 </html>

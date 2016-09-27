@@ -97,7 +97,7 @@
 			var num = 1;
 			//生成左边数据内容
 			for(var i=0;i<aData.list.length;i++){
-				str += '<li><a href="招聘首页.html?s='+aData.list[i].lx+'#p=1">'+aData.list[i].text+'</a></li>';
+				str += '<li><a href="index.html?s='+aData.list[i].lx+'#p=1">'+aData.list[i].text+'</a></li>';
 			}
 			list.innerHTML = str;
 			//点击切换社会招聘或校园招聘类型
@@ -163,11 +163,11 @@
 				var newarr = data.text.slice(start,end);
 				var str = '';
 				for(var i=0;i<newarr.length;i++){
-					str += '<p class="zp"><span><a href="详细内容.html?s='+data.name+'#p='+(start+i)
+					str += '<p class="zp"><span><a href="details.html?s='+data.name+'#p='+(start+i)
 					+'">★ 职位需求：'+newarr[i].zw+'</a></span>'+'<span>需求人数：'+newarr[i].rs+
 					'名</span>'+'<span class="date">'
 	          	+aData.date(newarr[i].sj,1)+'</span></p><p class="yq">'+newarr[i].info[0].l.join('').substring(0,100)
-	          	+'...[<a href="详细内容.html?s='+data.name+'#p='+(start+i)+'">查看详情</a>]</p>';
+	          	+'...[<a href="details.html?s='+data.name+'#p='+(start+i)+'">查看详情</a>]</p>';
 				}
 				info.innerHTML = str;
 			}
