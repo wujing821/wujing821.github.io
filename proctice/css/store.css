@@ -1,0 +1,250 @@
+#Store_infor{
+	background: #ccc;
+	width: 100%;
+	height: 100%;
+	
+}
+#Store_infor .tab{
+	overflow: hidden;
+}
+#store_head{
+	height: 50px;
+	width: 100%;
+	margin-left: 10px;
+}
+#store_head span{
+	float: left;
+	height: 50px;
+	width: 80px;
+	background-color: #fff;
+	border-radius: 30%;
+	text-align: center;
+	color: #009fe9;
+	margin-right: 10px;
+	font: 14px/50px '微软雅黑';
+	-webkit-transition: color 0.5s linear;
+	-webkit-transition: background-color 0.25s linear;
+	cursor: pointer;
+}
+/* 移入选项时，颜色渐变 */
+#Store_infor .tab span:hover{
+	background-color: #019fe9;
+	color: #fff;
+	opacity: .5;
+}
+#store_tabs div{
+	height: 430px;
+	width: 100%;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 10px 10px  #d4d3d3;
+	background: #fff;
+	float: left;
+	display: none;
+}
+#store_tabs div strong img{
+	width: auto;
+	height: 40px;
+	margin: 30px 20px;
+}
+
+#store_tabs div strong{
+	display: block;
+}
+#store_info{
+	width: 580px;
+	height: 250px;
+	padding: 80px 5px 0;
+	margin: 0 63px;
+	position: absolute;
+	display: block;
+}
+#store_info li{
+	width: 135px;
+	height: 140px;
+	background: #fff;
+	padding: 10px 7px;
+	position: absolute;
+	/*设置外框阴影效果，可设置六个参数分别为：阴影类型，x轴位移，
+	y轴位移，阴影大小，阴影扩展，阴影颜色*/
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	/*旋转变形*/
+	// -webkit-transform: rotate(-2deg);
+	/*通过将元素的某个属性从一个属性值在指定时间内平滑过渡到
+	另一个属性值来实现动画功能*/
+	-webkit-transition: -webkit-transform 0.5s linear;
+
+}
+#store_info li img{
+	width: 100%;
+	height: 130px;
+}
+#store_info li:nth-of-type(1){
+	-webkit-transform: rotate(-15deg);
+	top: 45px;
+	left: 22px;
+}
+#store_info li:nth-of-type(2){
+	-webkit-transform: rotate(13deg);
+	left: 161px;
+}
+#store_info li:nth-of-type(3){
+	-webkit-transform: rotate(-13deg);
+	top: 51px;
+	right: 145px;
+}
+#store_info li:nth-of-type(4){
+	-webkit-transform: rotate(5deg);
+	right: 15px;
+}
+#store_info li:hover{
+	z-index: 115;
+	-webkit-transform: scale(2);
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+/* 加盟咨询 */
+#store_tabs div p{
+	width: 600px;
+	height: 260px;
+	margin: 0 auto;
+}
+#store_intro{
+	width: 600px;
+	height: 260px;
+	margin: 0 auto;
+}
+#store_tabs div p img{
+	width: 100%;
+}
+/* 店铺搜索 */
+#store_tabs #store_add{
+	width: 690px;
+	height: 130px;
+	margin: 16px auto;
+	display: block;
+}
+#store_tabs #store_add li{
+	float: left;
+	width: 43px;
+	height: 120px;
+	background: #fff;
+	position: relative;
+}
+#store_add li img:hover{
+	cursor: pointer;
+}
+#store_tabs #store_add li  span{
+	display: block;
+	border-left: 1px solid #000;
+	border-radius: 0;
+	position: absolute;
+	left: 50%;
+	width: 1px;
+	height: 90px;
+}
+#store_tabs #store_add li:nth-of-type(2n+1) img{
+	width: 45px;
+	height: 36px;
+	position: absolute;
+	top: 46px;
+	left: -5px;
+}
+#store_tabs #store_add li:nth-of-type(2n) img{
+	width: 45px;
+	height: 36px;
+	position: absolute;
+	top: 64px;
+	left: -5px;
+}
+#store_intro{
+	height: 268px;
+}
+#store_tabs .show{
+	display: block;
+}
+#store_intro img{
+	display: none;
+}
+#store_intro .show_img{
+	display: block;
+}
+#store_head .active{
+	background: #009fe9;
+	color: #fff;
+}
+/* 云朵样式 */
+#store_cloud div:nth-of-type(1){
+	transform:rotate(-329deg);
+	bottom: -87px;
+}
+#store_cloud div:nth-of-type(1) img:nth-of-type(2){
+	width: 50px;
+	height: 56px;
+	left: 29px;
+	top: 0px;
+	transform:rotate(-76deg);
+}
+
+#store_cloud div:nth-of-type(6) img:nth-of-type(2){
+	width: 63px;
+	height: 64px;
+	left: 26px;
+	top: 8px;
+	transform:rotate(-66deg);
+}
+#store_cloud div:nth-of-type(7){
+	right: 35px;
+	transform:rotate(12deg);
+}
+#store_cloud div:nth-of-type(7) img:nth-of-type(2){
+	width: 63px;
+	height: 64px;
+	top: 16px;
+	right: 116px;
+	transform:rotate(-58deg);
+}
+#store_cloud div:nth-of-type(3){
+	position: relative;
+	transform:rotate(-135deg);
+}
+#store_cloud div:nth-of-type(3) img:nth-of-type(2){
+	position: absolute;
+	width: 63px;
+	height: 64px;
+	top: 0px;
+	left: 22px;
+	transform:rotate(118deg);
+	z-index: -10;
+}
+#store_cloud div:nth-of-type(4) img:nth-of-type(2){
+	position: absolute;
+	width: 23px;
+	height: 34px;
+	top: 0px;
+	left: -30px;
+	transform:rotate(-6deg);
+	
+}
+#store_cloud div:nth-of-type(4) img:nth-of-type(3){
+	position: absolute;
+	width: 23px;
+	height: 34px;
+	top: 0px;
+	left: -54px;
+	transform:rotate(27deg);
+	
+}
+#store_cloud div:nth-of-type(4) img:nth-of-type(4){
+	position: absolute;
+	width: 23px;
+	height: 34px;
+	top: 0px;
+	left: 145px;
+	transform:rotate(-54deg);
+	
+}
+
+#store_add li img:hover{
+	
+	transform: translate(0px,20px);
+	-webkit-transition:-webkit-transform 0.15s linear;
+}
