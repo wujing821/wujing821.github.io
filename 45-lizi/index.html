@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				background: pink;
+			}
+			ul{
+				width:1000px;
+				height: 500px;
+				margin: 0 auto;
+				/*background: url(imgs/bg.png) no-repeat;*/
+			}
+			ul.polaroids a{
+				background: #fff;
+				/*display: inline;*/
+				float: left;
+				margin: 0 0 27px 30px;
+				/*width: auto;*/
+				padding: 10px 10px 15px;
+				text-align: center;
+				/*font-family: sans-serif;*/
+				text-decoration: none;
+				/*color: #333；*/
+				/*font-size: 18px;*/
+				/*设置外框阴影效果，可设置六个参数分别为：阴影类型，x轴位移，y轴位移，阴影大小，阴影扩展，阴影颜色*/
+				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+				/*旋转变形*/
+				-webkit-transform: rotate(-2deg);
+				/*通过将元素的某个属性从一个属性值在指定时间内平滑过渡到另一个属性值来实现动画功能*/
+				-webkit-transition: -webkit-transform 0.15s linear;
+			}
+			ul.polaroids img{
+				display: block;
+				height: 100px;
+				margin-bottom: 12px; 
+			}
+			/*对a标签内的文字值添加了此标签属性的值*/
+			ul.polaroids a:after{
+				content: attr(title);
+			}
+			/*even:偶数*/
+			ul.polaroids li:nth-child(even) a{
+				-webkit-transform: rotate(5deg);
+			}
+			ul.polaroids li:nth-child(2n) a{
+				position: relative;
+				top: -5px;
+				-webkit-transform: none;
+			}
+			ul.polaroids li:nth-child(3n) a{
+				position: relative;
+				right: 5px;
+				-webkit-transform: rotate(-10deg);
+			}
+			ul.polaroids li:nth-child(4n) a{
+				position: relative;
+				right: 5px;
+				top: 8px;
+			}
+			ul.polaroids li:nth-child(5n) a{
+				position: relative;
+				left: -5px;
+				top: 3px;
+			}
+			ul.polaroids li a:hover{
+				position: relative;
+				z-index: 5;
+				-webkit-transform: scale(1.25);
+				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<ul class="polaroids">
+			<li><a href="1" title="相识"><img src="imgs/1.jpg" alt="相识"></a></li>
+			<li><a href="2" title="凝视"><img src="imgs/2.jpg" alt="凝视"></a></li>
+			<li><a href="3" title="相识"><img src="imgs/3.jpg" alt="相识"></a></li>
+			<li><a href="4" title="相识"><img src="imgs/4.jpg" alt="相识"></a></li>
+			<li><a href="5" title="相识"><img src="imgs/5.jpg" alt="相识"></a></li>
+			<li><a href="6" title="相识"><img src="imgs/6.jpg" alt="相识"></a></li>
+			<li><a href="7" title="相识"><img src="imgs/7.jpg" alt="相识"></a></li>
+			<li><a href="8" title="相识"><img src="imgs/8.jpg" alt="相识"></a></li>
+		</ul>
+	</body>
+</html>
