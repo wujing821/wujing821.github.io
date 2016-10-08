@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin: 0;
+			}
+			#gcs{
+				background: black;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<canvas id='gcs' width="400" height="400"></canvas>
+		<input type="color" value="颜色">
+		<input type="button" value="画笔">
+		<input type="button" value="橡皮擦">
+		<input type="button" value="保存">
+		<script>
+			var canvas = document.getElementById('gcs');
+			var inps = document.getElementsByTagName('input');
+			var cantext = canvas.getContext('2d');
+			var color = '#fff';
+			var onOff;
+			//当鼠标按下时，开始绘画
+			canvas.onmousedown = function(ev){
+				if(onOff){
+					pen(ev);
+				}else{
+					ca(ev);
+				}
+				
+				
+			};
+
+			//按下改变颜色值
+			inps[0].onchange = function(){
+				color = this.value;
+			}
+			//按下画笔，可以绘画
+			inps[1].onclick = function(){
+				onOff = true;
+			}
+			//按下橡皮擦，可以擦除
+			inps[2].onclick = function(){
+				onOff = false;
+			}
+			//画笔
+			function pen(ev){
+				//开始绘画
+				cantext.beginPath();
+				//画笔颜色
+				cantext.strokeStyle = color;
+				//画笔宽度
+				cantext.lineWidth  = 3;
+				//开始绘画
+				cantext.moveTo(ev.clientX, ev.clientY);
+				//开始移动画笔
+				canvas.onmousemove = function(ev){
+					cantext.lineTo(ev.clientX,ev.clientY);
+					cantext.stroke();
+				}
+				//抬起画笔
+				canvas.onmouseup = function(){
+					cantext.closePath();
+					canvas.onmousemove = canvas.onmouseup = null;
+				}
+			}
+			//橡皮擦
+			function ca(){
+				canvas.onmousemove = function(ev){
+					cantext.clearRect(ev.clientX,ev.clientY,10,10);
+				}
+				//抬起画笔
+				canvas.onmouseup = function(){
+					canvas.onmousemove = canvas.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+</html>

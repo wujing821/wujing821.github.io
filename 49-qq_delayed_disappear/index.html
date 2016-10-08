@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#qq{
+				width: 200px;
+				height: 500px;
+				background: green;
+			}
+			#title{
+				width: 100px;
+				height: 200px;
+				background: pink;
+				position: absolute;
+				left: 230px;
+				top: 10px;
+				display: none;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="qq"></div>
+		<div id="title"></div>
+		<script>
+			var qq = document.getElementById('qq');
+			var title = document.getElementById('title');
+			var timer = null;
+			qq.onmouseover = show;
+			qq.onmouseout = hide;
+			title.onmouseover = show;
+			title.onmouseout = hide;
+			function show(){
+				clearInterval(timer);
+				title.style.display = 'block';
+			}
+			function hide(){
+				timer = setInterval(function(){
+					title.style.display = 'none';
+				},1000)
+			}
+		</script>
+	</body>
+</html>

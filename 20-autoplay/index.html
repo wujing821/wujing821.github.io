@@ -1,155 +1,189 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-	#box{
-		width: 500px;
-		height: 500px;
-		margin: 0 auto;
-		position: relative;
-	}
-	#box img{
-		width: 100%;
-		height: 100%;
-	}
-	a{
-		text-decoration: none;
-		width: 50px;
-		height: 50px;
-		position: absolute;
-		top:50%;
-		margin-top: -25px;
-		background-color: #ccc;
-		border-radius: 50%;
-		line-height: 50px;
-		text-align: center;
-		color:white;
-		font-size: 40px;
-	}
-	#prev{
-		left:20px;
-	}
-	#next{
-		right:20px;
-	}
-	#list{
-		padding: 0;
-		margin: 0;
-		position: absolute;
-		bottom: 20px;
-		left:50%;
-		margin-left: -75px;
-		width: 150px;
-	}
-	#list li{
-		list-style: none;
-		background-color: yellow;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		float: left;
-		margin: 0 5px;
-		cursor:pointer;
-		position: relative;
-	}
-	#list li.active{
-		background-color: #ccc;
-	}
-	#list li img{
-		display: none;
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		margin-left: -50px;
-	}
-	#list li div{
-		border: 10px solid transparent;
-		border-top-color:#ccc;
-		position: absolute;
-		top:-10px; 
-		display: none;
-	}
-	#list li.active div,#list li.active img{
-		display: block;
-	}
-</style>
-	</head>
-	<body>
-		<div id="box">
-			<img src="img/0.jpg" alt="" id="img">
-			<a href="javascript:;" id="prev"><</a>
-			<a href="javascript:;" id="next">></a>
-			<ul id ="list">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>		
-		</div>
-		<script>
-			function getId(id){
-				return document.getElementById(id);
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/0-reset.css"/>
+	<style>
+		.bg{
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background: url(images/0.jpg);
+			-webkit-filter: blur(10px);
+		}
+		#box{
+			width: 1024px;
+			height: 560px;
+			position: relative;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+		#box .img{
+			width: 100%;
+			height: 100%;
+		}
+		#box a{
+			text-decoration: none;
+			position: absolute;
+			font-size: 100px;
+			font-weight: bold;
+			background: rgba(0,0,0,.7);
+			color: #fff;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			top:50%;
+			margin-top: -50px;
+			border-radius: 100%;
+		}
+		.left{
+			left: 20px;
+		}
+		.right{
+			right: 20px;
+		}
+		#box ul{
+			margin:0;
+			padding: 0;
+			width:100%;
+			text-align: center;
+			margin-top: -50px;
+		}
+		#box ul li{
+			list-style: none;
+			width: 30px;
+			height: 30px;
+			border-radius:50%;
+			display: inline-block;
+			background: #fff;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+		#box ul li:hover{
+			background: #0f2427;
+			box-shadow: 0px 0px 10px #a7b3c2,0px 0px 14px #a7b3c2;
+		}
+		#box .active {
+			background: red;
+		}
+		#box a:hover{
+			animation: scale 1s ease-in-out infinite;
+		}
+		@-webkit-keyframes scale
+		{
+			0%{
+				transform:scale(1);
+				opacity:1;
 			}
-			var box = getId('box');
-			var img = getId('img');
-			var prev = getId('prev');
-			var next = getId('next');
-			var list = getId('list');
-			var lis = document.getElementsByTagName('li');
-			var arr = ['0.jpg','2.jpg','1.jpg','3.jpg'];
-			var num = 0;
-			var timer;
-			//点击切换
-			lis[0].style.background = 'red';
-			autoplay();
-			prev.onclick = function(){
-				num--;
-				if(num<0){
-					num = arr.length-1;
+			60%
+			{
+				transform:scale(1.2);
+				opacity:0.4;
+			}
+			100%
+			{
+				transform:scale(1);
+				opacity:1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bg"></div>
+	<div id='box'>
+		<img src="" alt="" class="img">
+		<a href="javascript:;" class="left"><</a>
+		<a href="javascript:;" class="right">></a>
+		<ul>
+			<!-- <li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li> -->
+		</ul>
+	</div>
+	<script type='text/javascript'>
+		//获取屏幕宽高
+		var winWid=window.innerWidth;
+		document.body.style.width=winWid+'px';
+		var winHei=window.innerHeight;
+		document.body.style.height=winHei+'px';
+		var box = document.querySelector('#box');
+		var oImg = box.querySelector('img');
+		var oUl = box.querySelector('ul');
+		var  oa = box.querySelectorAll('a');
+		var num = 0;
+		var str = '';
+		var timer = null;
+		var arr = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+			for(var i=0;i<arr.length;i++){
+				str += '<li></li>';
+			}
+			oUl.innerHTML = str;
+		var alis = oUl.querySelectorAll('li');
+		fnbig();
+		function fnbig(){
+			oImg.src ='images/'+ arr[num];
+			oImg.style.height='100%';
+			oImg.style.width='100%';
+			alis[num].className = 'active';
+		}
+		//点击左边按钮向上翻转图片
+		oa[0].onclick = function(){
+			num--;
+			if(num < 0){
+				num = arr.length-1;
+			}
+			for(var i=0;i<alis.length;i++){
+				alis[i].className = '';
+			}
+			fnbig();
+		}
+		//点击右边按钮向下翻转图片
+		oa[1].onclick = function(){
+			num++;
+			if(num > arr.length-1){
+				num = 0;
+			}
+			for(var i=0;i<alis.length;i++){
+				alis[i].className = '';
+			}
+			fnbig();
+		}
+		for(var i=0;i<alis.length;i++){
+			alis[i].index = i;
+			alis[i].onclick = function(){
+				for(var i=0;i<alis.length;i++){
+					alis[i].className = '';
 				}
-				img.src = 'img/'+arr[num];
-			};
-			
-			next.onclick = function(){
-				
+				this.className = 'active';
+				oImg.src ='images/'+ arr[this.index];
+				num = this.index;
+			}
+		}
+		play();
+		function play(){
+			timer = setInterval(fn,1000)
+			function fn(){
 				num++;
-				if(num>arr.length-1){
+				if(num > arr.length-1){
 					num = 0;
 				}
-				img.src = 'img/'+arr[num];
-				
-				autoplay();
-			};
-			//定时器
-			function autoplay(){
-				
-				timer = setInterval(function(){
-					num++;
-					if(num>arr.length-1){
-						num = 0;
-					}
-					img.src = 'img/'+arr[num];
-					for(var i=0;i<lis.length;i++){
-						lis[i].style.background = '';
-					}
-					lis[num].style.background = 'red';
-					
-				},1000);
+				for(var i=0;i<alis.length;i++){
+					alis[i].className = '';
+				}
+				fnbig();
 			}
-			
-			//移入取消定时器
-			box.onmouseover = function(){
-				clearTimeout(timer);
-			}
-			//移出恢复自动播放
-			box.onmouseout = function(){
-				autoplay();
-			}
-			
-		</script>
-	</body>
+		}
+		box.onmouseover = function(){
+			clearInterval(timer);
+		}
+		box.onmouseout = function(){
+			play();
+		}
+	</script>
+</body>
 </html>

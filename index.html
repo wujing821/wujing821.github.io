@@ -1,556 +1,92 @@
-<!doctype html>
-<html lang='en'>
-<head>
-	<meta charset='UTF-8'>
-	<title>Moomoo</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/public.css">
-	<link rel="stylesheet" type="text/css" href="css/brand.css">
-	<link rel="stylesheet" type="text/css" href="css/product.css">
-	<link rel="stylesheet" type="text/css" href="css/store.css">
-	<link rel="stylesheet" type="text/css" href="css/vip.css">
-</head>
-<body style="overflow-y:hidden;overflow-x:hidden">
-	<section>
-		<div id='home_page'>
-			<div id='content'>
-				<div id='box'>
-					<img src='img/content/1.jpg'>
-					<img src='img/content/2.jpg'>
-					<img src='img/content/4.png'>
-				</div>
-			</div>
-			<div id='tools'>
-				<span id='col'>
-					<img src='img/tools/1.png'>
-					<em>
-						<strong></strong>
-						<strong></strong>
-						<strong></strong>
-						<strong></strong>
-						<strong></strong>
-						<strong></strong>
-					</em>
-				</span>
-				<span id='painting_angin'>
-					<img src='img/tools/2.png'>
-					<i>重绘</i>
-				</span>
-				<span>
-					<img src='img/tools/3.png'>
-					<i>保存</i>
-				</span>
-				<span id='clear'>
-					<img src='img/tools/4.png'>
-					<i>橡皮</i>
-				</span>
-				<span id='painting'>
-					<img src='img/tools/5.png'>
-					<i>画笔</i>
-				</span>
-			</div>
-			<div id='change'>
-				<img src='img/4.png'/>
-			</div>
-			<canvas id='myCanvas' width='1280' height='600'>您的浏览器不支持canvas</canvas>
-		</div>
-		<div id='brand_intro'>
-			<div id='big_pic'>
-				<div id='pic'>
-					<img src="img/品牌介绍/1.png" alt="">
-					<span>
-						<img src="img/品牌介绍/5.png">
-					</span>
-					<span id='brand_show'>
-						<img src="img/品牌介绍/10.png">
-						<img src="img/品牌介绍/9.png">
-					</span>
-				</div>
-				<div id='change_lan'>
-					<img src="img/品牌介绍/6.png">
-					<img src="img/品牌介绍/7.png">
-				</div>
-				<div id='decorate'>
-					<img src="img/品牌介绍/3.png">
-					<img src="img/品牌介绍/4.png">
-				</div>
-			</div>
-			<div class='move_cloud' id="brand_cloud">
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/move/1.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/move/8.png" class="cloud_move">
-					<img src="img/move/2.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/move/5.png" class="cloud_move">
-					<img src="img/move/6.png" class="cloud_move">
-					
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/move/3.png" class="cloud_move">
-					<img src="img/move/7.png" class="cloud_move">
-					<img src="img/move/7.png" class="cloud_move">
-					<img src="img/move/7.png" class="cloud_move">
-				</div>
-			</div>
-		</div>
-		<div id='product_page'>
-			<div class="tab">
-				<div class="tab_title">
-					<div>
-						<span class="tactive">都市 Urber</span>
-						<img src="img/产品/1.png">
-					</div>
-					<div>
-						<span>休闲 Cosual</span>
-						<img src="img/产品/2.png">
-					</div>
-					<div>
-						<span>MTEE Kids</span>
-						<img src="img/产品/3.png">
-					</div>
-				</div>
-				<ul class="show">
-					<li>
-						<img src="img/product/1.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/4.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/5.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/6.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/7.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/8.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/9.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/10.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/11.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/12.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<img src="img/product/2.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/13.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/14.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/15.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/16.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/17.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/18.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/19.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/20.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/21.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					
-				</ul>
-				<ul>
-					<li>
-						<img src="img/product/3.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/22.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/23.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/24.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/25.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/26.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/27.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/28.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/29.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					<li>
-						<img src="img/product/30.jpg">
-						<strong>男童粗绞花立领毛衣</strong>
-						<em>￥239</em>
-					</li>
-					
-				</ul>
-			</div>
-			<div class='move_cloud' id="product_cloud">
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/产品/8.png" class="cloud_move">
-					<img src="img/产品/10.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/产品/7.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/产品/9.png"  class="cloud_move">
-				</div>
-			</div>
-		</div>
-		<div id='Store_infor'>
-			<div class='tab' id="store_tabs">
-				<p id="store_head">
-					<span class="active">店铺展现</span>
-					<span>店铺搜索</span>
-					<span>加盟咨询</span>
-				</p>
-				
-				<div class="show">
-					<strong>
-						<img src="img/店铺信息/1.jpg">
-					</strong>
-					<ul id="store_info">
-						<li><img src="img/店铺信息/2.jpg"></li>
-						<li><img src="img/店铺信息/3.jpg"></li>
-						<li><img src="img/店铺信息/4.jpg"></li>
-						<li><img src="img/店铺信息/5.jpg"></li>
-					</ul>
-				</div>
-				<div>
-					<ul id="store_add">
-						<li>
-							<span></span>
-							<img src="img/店铺信息/10.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/12.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/13.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/14.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/15.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/16.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/17.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/18.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/19.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/20.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/21.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/22.png">
-						</li>
-						<li>
-							<span></span>
-							<img src="img/店铺信息/23.png">
-						</li>
-					</ul>
-					<p id="store_intro">
-						<img src="img/店铺信息/11.jpg" class="show_img" >
-						<img src="img/店铺信息/24.jpg">
-						<img src="img/店铺信息/25.jpg">
-						<img src="img/店铺信息/26.jpg">
-						<img src="img/店铺信息/27.jpg">
-						<img src="img/店铺信息/28.jpg">
-						<img src="img/店铺信息/29.jpg">
-						<img src="img/店铺信息/30.jpg">
-						<img src="img/店铺信息/31.jpg">
-						<img src="img/店铺信息/32.jpg">
-						<img src="img/店铺信息/33.jpg">
-						<img src="img/店铺信息/34.jpg">
-						<img src="img/店铺信息/35.jpg">
-					</p>
-				</div>
-				<div>
-					<strong>
-						<img src="img/店铺信息/2.png">
-					</strong>
-					<p><img src="img/店铺信息/9.jpg"></p>
-				</div>
-			</div>
-			<div class='move_cloud' id="store_cloud">
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/店铺信息/4.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/店铺信息/7.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/move/7.png" class="cloud_move">
-					<img src="img/move/7.png" class="cloud_move">
-					<img src="img/move/7.png" class="cloud_move">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/店铺信息/3.png" class="cloud_move">
-					
-				</div>
-				<div>
-					<img src="img/品牌介绍/2.png">
-					<img src="img/店铺信息/5.png" class="cloud_move">
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				background: pink;
+			}
+			ul{
+				width:1000px;
+				height: 500px;
+				margin: 0 auto;
+				/*background: url(imgs/bg.png) no-repeat;*/
+			}
+			ul.polaroids a{
+				background: #fff;
+				/*display: inline;*/
+				float: left;
+				margin: 0 0 27px 30px;
+				/*width: auto;*/
+				padding: 10px 10px 15px;
+				text-align: center;
+				/*font-family: sans-serif;*/
+				text-decoration: none;
+				/*color: #333；*/
+				/*font-size: 18px;*/
+				/*设置外框阴影效果，可设置六个参数分别为：阴影类型，x轴位移，y轴位移，阴影大小，阴影扩展，阴影颜色*/
+				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+				/*旋转变形*/
+				-webkit-transform: rotate(-2deg);
+				/*通过将元素的某个属性从一个属性值在指定时间内平滑过渡到另一个属性值来实现动画功能*/
+				-webkit-transition: -webkit-transform 0.15s linear;
+			}
+			ul.polaroids img{
+				display: block;
+				height: 100px;
+				margin-bottom: 12px; 
+			}
+			/*对a标签内的文字值添加了此标签属性的值*/
+			ul.polaroids a:after{
+				content: attr(title);
+			}
+			/*even:偶数*/
+			ul.polaroids li:nth-child(even) a{
+				-webkit-transform: rotate(5deg);
+			}
+			ul.polaroids li:nth-child(2n) a{
+				position: relative;
+				top: -5px;
+				-webkit-transform: none;
+			}
+			ul.polaroids li:nth-child(3n) a{
+				position: relative;
+				right: 5px;
+				-webkit-transform: rotate(-10deg);
+			}
+			ul.polaroids li:nth-child(4n) a{
+				position: relative;
+				right: 5px;
+				top: 8px;
+			}
+			ul.polaroids li:nth-child(5n) a{
+				position: relative;
+				left: -5px;
+				top: 3px;
+			}
+			ul.polaroids li a:hover{
+				position: relative;
+				z-index: 5;
+				-webkit-transform: scale(1.25);
+				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
 
-				</div>
-			</div>
-		</div>
-		<div id="vip_page">
-			<div class="vcontent">
-				<h2></h2>
-				<p>
-					这个项目开发周期为15天左右，其中涉及到的css3和html5里的知识点，例如音频audio标签等和canvas
-					绘图较多。
-					例如，audio标签里的autoplay属性，如果设置为autoplay就会再页面加载音频后一旦就绪即开始自动播放。
-					js部分，运用到函数传参，定时器管理，开关管理及面向对象的拖拽原理等等。由于时间仓促，所以有很多小问题需要修复。
-				</p>
-				<p>制作者：吴京</p>
-				<p>联系方式：18810724186</p>
-			</div>
-		</div>
-	</section>
-	
-	<div id='nav'>
-		<div id='navhead'>
-			<div id='line'>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<i><img src="img/nav/19.png"></i>
-				<div id='move'>
-					<span></span>
-					<span></span>
-					<span></span>
-					<em><img src='img/nav/14.png'></em>
-				</div>
-				
-				<strong>
-					<img src='img/nav/7.png'>
-				</strong>
-
-			</div>
-			<div id='nav_pic'>
-				<img src='img/nav/1.png'>
-				<img src="img/move/4.png">
-			</div>
-		</div>
-		<ul id='list'>
-			<li id='main'>
-				<img src='img/nav/2.png'>
-				<span></span>
-				<span></span>
-			</li>
-			<li id='about'>
-				<img src='img/nav/3.png'>
-				<img src='img/nav/8.png'>
-				<span></span>
-				<span></span>
-			</li>
-			<li id='product'>
-				<img src='img/nav/4.png'>
-				<img src='img/nav/9.png'>
-				<span></span>
-				<span></span>
-			</li>
-			<li id='store'>
-				<img src='img/nav/5.png'>
-				<img src='img/nav/17.png'>
-				<span></span>
-				<span></span>
-
-			</li>
-			<li id='vip'>整站总结</li>
+	<body>
+		<ul class="polaroids">
+			<li><a href="1" title="相识"><img src="imgs/1.jpg" alt="相识"></a></li>
+			<li><a href="2" title="凝视"><img src="imgs/2.jpg" alt="凝视"></a></li>
+			<li><a href="3" title="相识"><img src="imgs/3.jpg" alt="相识"></a></li>
+			<li><a href="4" title="相识"><img src="imgs/4.jpg" alt="相识"></a></li>
+			<li><a href="5" title="相识"><img src="imgs/5.jpg" alt="相识"></a></li>
+			<li><a href="6" title="相识"><img src="imgs/6.jpg" alt="相识"></a></li>
+			<li><a href="7" title="相识"><img src="imgs/7.jpg" alt="相识"></a></li>
+			<li><a href="8" title="相识"><img src="imgs/8.jpg" alt="相识"></a></li>
 		</ul>
-	</div>
-	<footer>
-		<div class='left'>
-			<span>@2011 MooMoo</span>
-			<span><img src='img/nav/21.jpg'/></span>
-			<span><img src='img/nav/22.jpg'/></span>
-		</div>
-		<div class='middle'>沪ICP备05033127号-32</div>
-		<div class='right'>
-			<div class='r_left'>
-				<span>关注
-					<img src='img/footer/1.jpg'/>：
-				</span>
-				<img src='img/footer/1.png'/>
-				<img src='img/footer/2.png'/>
-			</div>
-			<div class='r_right' id='music'>
-				<span>SOUND ON</span>
-				<img src='img/footer/3.jpg'/>
-	
-			</div>
-	
-		</div>
-	</footer>
-	<audio id='audio' autoplay='autoplay'>
-		<source src='music/1.MP3' type='audio/mpeg' >
-	</audio>
-	
-	<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
-	<script type="text/javascript" src="js/tween.js"></script>
-	<script type="text/javascript" src="js/mTween.js"></script>
-	<script type="text/javascript" src='js/index.js'></script>
-	<script type="text/javascript" src='js/brand.js'></script>
-	<script type="text/javascript" src='js/product.js'></script>
-	<script type="text/javascript" src='js/store.js'></script>
-
-</body>
+	</body>
 </html>
