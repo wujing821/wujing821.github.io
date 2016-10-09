@@ -5,88 +5,301 @@
         <title></title>
 		<style>
 			body{
-				background: pink;
+				margin: 0;
+				padding: 0;
 			}
-			ul{
-				width:1000px;
-				height: 500px;
-				margin: 0 auto;
-				/*background: url(imgs/bg.png) no-repeat;*/
+			#container{
+				position: relative;
+
 			}
-			ul.polaroids a{
-				background: #fff;
-				/*display: inline;*/
+			.box{
+				padding: 5px;
 				float: left;
-				margin: 0 0 27px 30px;
-				/*width: auto;*/
-				padding: 10px 10px 15px;
+			}
+			.box_img{
+				padding: 5px;
+				border: 1px solid #ccc;
+				box-shadow: 0 0 5px #ccc;
+				border-radius: 5px;
+				padding: 5px 5px;
 				text-align: center;
-				/*font-family: sans-serif;*/
-				text-decoration: none;
-				/*color: #333；*/
-				/*font-size: 18px;*/
-				/*设置外框阴影效果，可设置六个参数分别为：阴影类型，x轴位移，y轴位移，阴影大小，阴影扩展，阴影颜色*/
-				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-				/*旋转变形*/
-				-webkit-transform: rotate(-2deg);
-				/*通过将元素的某个属性从一个属性值在指定时间内平滑过渡到另一个属性值来实现动画功能*/
-				-webkit-transition: -webkit-transform 0.15s linear;
 			}
-			ul.polaroids img{
+			.box_img img{
+				width: 150px;
+				height: auto;
 				display: block;
-				height: 100px;
-				margin-bottom: 12px; 
 			}
-			/*对a标签内的文字值添加了此标签属性的值*/
-			ul.polaroids a:after{
+			.title{
+				height: 14px;
+				font: 12px/14px '微软雅黑';
+				text-align: center;
+			}
+			.box_img a{
+				text-decoration: none;
+			}
+			.box_img a:after{
 				content: attr(title);
 			}
-			/*even:偶数*/
-			ul.polaroids li:nth-child(even) a{
-				-webkit-transform: rotate(5deg);
-			}
-			ul.polaroids li:nth-child(2n) a{
-				position: relative;
-				top: -5px;
-				-webkit-transform: none;
-			}
-			ul.polaroids li:nth-child(3n) a{
-				position: relative;
-				right: 5px;
-				-webkit-transform: rotate(-10deg);
-			}
-			ul.polaroids li:nth-child(4n) a{
-				position: relative;
-				right: 5px;
-				top: 8px;
-			}
-			ul.polaroids li:nth-child(5n) a{
-				position: relative;
-				left: -5px;
-				top: 3px;
-			}
-			ul.polaroids li a:hover{
-				position: relative;
-				z-index: 5;
-				-webkit-transform: scale(1.25);
-				-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
-			}
 		</style>
-		<script>
-			
-		</script>
+		
 	</head>
 
 	<body>
-		<ul class="polaroids">
-			<li><a href="1" title="相识"><img src="imgs/1.jpg" alt="相识"></a></li>
-			<li><a href="2" title="凝视"><img src="imgs/2.jpg" alt="凝视"></a></li>
-			<li><a href="3" title="相识"><img src="imgs/3.jpg" alt="相识"></a></li>
-			<li><a href="4" title="相识"><img src="imgs/4.jpg" alt="相识"></a></li>
-			<li><a href="5" title="相识"><img src="imgs/5.jpg" alt="相识"></a></li>
-			<li><a href="6" title="相识"><img src="imgs/6.jpg" alt="相识"></a></li>
-			<li><a href="7" title="相识"><img src="imgs/7.jpg" alt="相识"></a></li>
-			<li><a href="8" title="相识"><img src="imgs/8.jpg" alt="相识"></a></li>
-		</ul>
+	<base target="_blank">
+		<div class="title">demo</div>
+		<div id="container">
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/1-setDIV/" title="弹出层">
+						<img src="gif/1.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/2-phone/" 	title="模拟手机短信发送">
+						<img src="gif/2.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/3-v/" title="生成四个方向的V字">
+						<img src="gif/3.gif">
+					</a>	
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/4-Wipe/" title="擦图">
+						<img src="gif/4.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/5-thumbnail/second/" title="缩略图">
+						<img src="gif/5.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/6-pictureSwitching/" title="多组图片切换">
+						<img src="gif/6.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/7-QQmenu/" title="QQ分组">
+						<img src="gif/7.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/8-colorDiv/" title="根据颜色生成div">
+						<img src="gif/8.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/23-picture_clock/" title="图片时钟">
+						<img src="gif/23.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/26-sort/" title="排序">
+						<img src="gif/26.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/27-random/" title="图片随机翻动">
+						<img src="gif/27.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/24-text/" title="文字搬运工">
+						<img src="gif/24.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/13-jiagejisuan/" title="商品价格计算">
+						<img src="gif/13.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/14-IndexValueTab/" title="选项卡">
+						<img src="gif/14.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/15-xuanxiangkaqiantao/" title="选项卡嵌套">
+						<img src="gif/15.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/16-Generating_div/" title="生成100个div">
+						<img src="gif/16.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/17-Select/" title="全选多选">
+						<img src="gif/17.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/18-Scoring/" title="评分优化">
+						<img src="gif/18.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/19-autoplay_taobao/" title="淘宝广告">
+						<img src="gif/19.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/20-autoplay/" title="自动播放的轮播图">
+						<img src="gif/20.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/21-slide/" title="滑动的div">
+						<img src="gif/21.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/22-details/" title="带详情的轮播图">
+						<img src="gif/22.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/37-new_build/" title="新建文件夹">
+						<img src="gif/37.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/44-picture_slide/" title="鼠标控制图片滑动">
+						<img src="gif/44.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/41-move/" title="拖拽的div(可返回)">
+						<img src="gif/41.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/35-block_slide/" title="下落的div(可指定位置)">
+						<img src="gif/35.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/42-manyDIV/" title="一长串的div">
+						<img src="gif/42.gif">
+					</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="box_img">
+					<a href="https://wujing821.github.io/25-look/" title="查找替换">
+						<img src="gif/25.gif">
+					</a>
+				</div>
+			</div>
+					
+		</div>
+		<script>
+		//固定屏幕的宽度
+		//获取每行图片的个数
+		getElements('container','box');
+		function getElements(parent,content){
+			//获取container
+			var cparent = document.getElementById(parent);
+			//将parent下所有className是box的div全部取出
+			var ccontent = getchildelements(cparent,content);
+			//获取每张图片的大小
+			var imgWidth = ccontent[0].offsetWidth;
+			//获取每行可以放图片的张数,去除小数点
+			var num = Math.floor(document.documentElement.clientWidth/imgWidth);
+			//固定每行的宽度,图片不会随着屏幕大小改变而改变每行图片的个数
+			cparent.style.cssText = 'width: '+imgWidth*num+'px;margin: 0 auto';
+			//获取每行每张图片的高度
+			//定义一个空数组用来存放每张图片的高度
+			var boxHeightArr = [];
+			for(var i=0;i<ccontent.length;i++){
+				if(i<num){
+					//每行的图片
+					boxHeightArr[i]=ccontent[i].offsetHeight;
+					
+				}else{//下一行的图片
+					var minHeight = Math.min.apply(null,boxHeightArr);
+					var minlocation = getminheight(boxHeightArr,minHeight);
+					//高度最小图片的位置
+					ccontent[i].style.position = 'absolute';
+					ccontent[i].style.top = minHeight + 'px';
+					ccontent[i].style.left = ccontent[minlocation].offsetLeft + 'px';
+					boxHeightArr[minlocation] = boxHeightArr[minlocation] + ccontent[i].offsetHeight;
+				}
+			}
+			
+		}
+		//获取最小图片位置
+		function getminheight(boxHeightArr,minHeight){
+			for(var i in boxHeightArr){
+				if(boxHeightArr[i] == minHeight){
+					return i;
+				}
+			}
+		}
+		//获取className是box的div
+		function getchildelements(parent,content){
+			var contentArr = [];
+			var allcontent = parent.getElementsByTagName('*');
+			for(var i=0;i<allcontent.length;i++){
+				if(allcontent[i].className == content){
+					contentArr.push(allcontent[i]);
+				}
+			}
+			return contentArr;
+		}
+		</script>
 	</body>
 </html>
