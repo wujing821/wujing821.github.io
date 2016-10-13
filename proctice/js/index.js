@@ -41,13 +41,11 @@ var about = getId('about');
 var product = getId('product');
 var store = getId('store');
 
-imgmove(about);
-imgmove(product);
-imgmove(store);
+
 
 function imgmove(obj){
 	var img1 =  getTagName('img',obj)[0];
-	var img2 =  getTagName('img',obj)[1];
+	var img2 =  getTagName('img',obj)[2];
 	img1.onmouseover = function(){
 		mTween(img2,'top',-30,200,'linear',function(){
 			mTween(img2,'top',-25,100,'linear')
@@ -60,6 +58,30 @@ function imgmove(obj){
 	}
 }
 
+animation ('#about');
+animation ('#product');
+animation ('#store');
+function animation (par){
+	//nav移入图片转换，改变透明度
+	$(par).mouseenter(function(event) {
+		mTween($(par).children('img')[2],'top',-30,200,'linear',function(){
+			mTween($(par).children('img')[2],'top',-25,100,'linear')
+		})
+		$(par).children('img').eq(1).animate({
+			opacity: 1
+		},300);
+	})
+
+	//移出图片转换为原来的图片
+	$(par).mouseleave(function(event) {
+		setTimeout(function(){
+			mTween($(par).children('img')[2],'top',-1,200,'linear');
+		},1000)
+		$(par).children('img').eq(1).animate({
+			opacity: 0
+		},300);		
+	})
+}
 //可拖拽的nav导航
 var nav = document.getElementById('nav');
 var Drag = function(options){
@@ -116,45 +138,34 @@ music.onclick  = function(){
 }
 /*tools*/
 var tools = getId('tools');
-var t_spans = getTagName('span',tools);
+var t_spans = getTagName('a',tools);
 var pen_is = getTagName('i',tools);
+
 //获取画笔色板相关元素
 var col = getId('col');
-var pen_col = getTagName('img',col);
-var pen_em = getTagName('em',col);
+var pen_col = getTagName('img',col)[0];
+var pen_em = getTagName('em',col)[0];
+var pen_inp = getTagName('input',col)[0];
 var pen_timer;
 //移动到col时，显示颜色板
-pen_col[0].onmouseover = show;
-pen_col[0].onmouseout = hide;
-pen_em[0].onmouseover = show;
-pen_em[0].onmouseout = hide;
+pen_col.onmouseover = show;
+pen_col.onmouseout = hide;
+pen_em.onmouseover = show;
+pen_em.onmouseout = hide;
+
+
 //让色板显示时，先关掉关闭用的延时定时器，再显示
 function show(){
 	clearInterval(pen_timer);
-	pen_em[0].style.display = 'block';
+	pen_em.style.display = 'block';
 }
 //隐藏色板时开一个延时定时器
 function hide(){
 	pen_timer = setInterval(function(){
-		pen_em[0].style.display = 'none';
+		pen_em.style.display = 'none';
 	},500)
 }
-//当移入相应按钮时，让对应的详细介绍显示出来
-appear(t_spans[1],pen_is[0]);
-appear(t_spans[2],pen_is[1]);
-appear(t_spans[3],pen_is[2]);
-appear(t_spans[4],pen_is[3]);
 
-function appear(obj1,obj2){
-	obj1.onmouseover = function(){
-		obj2.style.display = 'block';
-	};
-	obj1.onmouseout = function(){
-		setTimeout(function(){
-			obj2.style.display = 'none';
-		},2000)
-	};
-}
 
 //绘图
 var painting = getId('painting');
@@ -162,26 +173,32 @@ var colors = getId('col');
 var clear = getId('clear');
 var canvas = getId('myCanvas');
 var context = canvas.getContext('2d');
-//画笔初始为黑色
+//画笔初始为白色
 var color = '#fff';
 var can_onOff;
-canvas.style.width = width + 'px';
-canvas.style.height = 600 + 'px';
+canvas.width = width;
+canvas.height = height;
 painting.onclick = function(){
 	//清除背景图自动播放
 	clearInterval(timer);
 	//当开关为true时，执行画笔操作
 	can_onOff = true;
+	$(canvas).css('cursor', 'url(img/cur/9.cur) 3 32, pointer');
 	//鼠标样式改变
 };
 clear.onclick = function(){
 	//当开关为false时，执行擦除操作
 	can_onOff = false;
+	//改变橡皮擦的鼠标样式
+	$(canvas).css('cursor', 'url(img/cur/5.cur) 3 32, pointer');
 }
 //当鼠标按下时
 canvas.onmousedown = function(ev){
+
 	if(can_onOff){
 		pen(ev);
+		//改变画笔样式
+		
 	}else{
 		ca();
 	}
@@ -195,9 +212,35 @@ var col_arr = ['red','yellow','blue','green','pink','white'];
 for(var i=0;i<pen_colors.length;i++){
 	pen_colors[i].index = i;
 	pen_colors[i].onclick = function(){
+		for(var i=0;i<pen_colors.length;i++){
+			pen_colors[i].className = '';
+		}
 		color = col_arr[this.index];
+		this.className = 'chose';
 	}
 }
+//点击色板时，显示多色板
+var pen_onOff = true;
+pen_col.onclick = function(){
+	if(pen_onOff){
+		pen_em.style.display = 'none';
+		pen_inp.style.display = 'block';
+		this.onmouseover = this.onmouseout = null;
+	}else{
+		pen_em.style.display = 'block';
+		pen_inp.style.display = 'none';
+		this.onmouseover = show;
+		this.onmouseout = hide;
+	}
+	pen_onOff = !pen_onOff;
+	
+};
+//更改色板颜色
+pen_inp.onchange = function(){
+
+	color = this.value;
+	
+};
 //绘图函数
 function pen(ev){
 	context.beginPath();
@@ -207,8 +250,7 @@ function pen(ev){
 	context.moveTo(ev.clientX,ev.clientY);
 	canvas.onmousemove = function(ev){
 		context.lineTo(ev.clientX,ev.clientY);
-		//改变画笔样式
-		$('#myCanvas').css('cursor', 'url(img/cur/9.cur) 3 32, pointer');
+		
 		context.stroke();
 
 	};
@@ -217,7 +259,7 @@ function pen(ev){
 	}
 }
 //阻止浏览器默认行为
-document.onmousemove = function(){
+document.onmousedown = function(){
 	return false;
 }
 
@@ -225,8 +267,7 @@ document.onmousemove = function(){
 function ca(){
 	canvas.onmousemove = function(ev){
 		context.clearRect(ev.clientX,ev.clientY,10,10);
-		//改变橡皮擦的鼠标样式
-		$('#myCanvas').css('cursor', 'url(img/cur/5.cur) 3 32, pointer');
+		
 	};
 	canvas.onmouseup = function(ev){
 		this.onmousemove = this.onmouseup = null;
@@ -285,7 +326,6 @@ var Store_infor = getId('Store_infor');
 var vip_page = getId('vip_page');
 var list = getId('list');
 var lis = getTagName('li',list);
-// console.log(lis)
 //设置body的宽高和屏幕宽高相等
 document.body.style.height = height + 'px';
 document.body.style.width = width + 'px';

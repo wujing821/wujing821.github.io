@@ -85,6 +85,7 @@
 }
 .tab li em{
 	text-indent: 2px;
+	padding-left: 5px;
 }
 /* 第二个选项 */
 .tab ul:nth-of-type(2) li{
@@ -149,3 +150,134 @@
 	left: -32px;
 	transform:rotate(-60deg);
 }
+/* 服装信息 */
+#details{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 200;
+	display: none;
+}
+.closeinfos{
+	width: 850px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 300;
+}
+.close_bg{
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: #666563;
+	opacity: .5;
+}
+.big_close{
+	position: absolute;
+	left: 20px;
+	top: 3px;
+	width: 400px;
+	height: 490px;
+	background: #fff;
+	border-radius: 20px;
+	border: 2px solid #b8b8b8;
+}
+.big_close img{
+	width: 100%;
+	height: 100%;
+}
+.first_pic{
+	position: absolute;
+	left: 435px;
+	top: 3px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+.second_pic{
+	position: absolute;
+	left: 435px;
+	top: 173px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+.third_pic{
+	position: absolute;
+	left: 435px;
+	top: 341px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 4px solid #b4bab6;
+}
+.close_in{
+	position: absolute;
+	right: 55px;
+	top: 3px;
+	width: 189px;
+	height: 490px;
+	background: #fff;
+	border-radius: 15px;
+	border: 2px solid #b8b8b8;
+}
+
+#cancle{
+	position: absolute;
+	right: 36px;
+	top: -15px;
+	width: 55px;
+	height: 40px;
+}
+.close_in>div{
+	width: 167px;
+	height: 100px;
+	padding: 40px 0px 10px 18px;
+}
+.close_in div span,.close_in div em,.close_in div strong{
+	display: block;
+	font-weight: bold;
+	margin: 5px 0px;
+}
+.close_in div em{
+	font-style: normal;
+	font-weight: bold;
+}
+.close_in div strong{
+	font-weight: normal;
+	font: 23px/30px '微软雅黑';
+	color: #ff9060;
+}
+.close_in div strong img{
+	width: 50px;
+	height: 25px;
+	margin-right: 5px;
+}
+.close_in p{
+	padding: 5px;
+	font: 12px/14px '宋体';
+}
+.close_in a{
+	display: block;
+	width: 150px;
+	height: 40px;
+	margin: 50px auto;
+}
+.close_in a img{
+	width: 100%;
+	height: 100%;
+
+}
+

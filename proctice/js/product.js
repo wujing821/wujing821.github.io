@@ -104,3 +104,50 @@ function fn(obj,h){
 		})
 	},Math.random()*2000+1000)
 }
+//点击li时，显示衣服详细信息
+var close_infos = getId('close_infos');
+var closeLis = getTagName('li',close_infos);
+var details = getId('details');
+var cancle = getId('cancle');
+//点击li时，显示对应信息
+for(let i=0;i<closeLis.length;i++){
+	closeLis[i].onclick = function(){
+		details.style.display = 'block';
+		clo_details(i);
+	}
+}
+//点击cancle时，图片介绍消失
+cancle.onclick = function(){
+	details.style.display = 'none';
+}
+//点击li时，显示对应的图片信息及链接
+function clo_details(i){
+	$('.big_close img')[0].src = data.details[i].img;
+	$('.first_pic').css({
+		background:'url('+data.details[i].img+')',
+		backgroundPosition:'center'
+	});
+	$('.second_pic').css({
+		background:'url('+data.details[i].img+')',
+		backgroundSize:'280%',
+		backgroundPosition:'50% -20px'
+	});
+	$('.third_pic').css({
+		background:'url('+data.details[i].img+')',
+		backgroundSize:'326%',
+		backgroundPosition:'-95px -160px'
+	});
+	$('.close_in span')[0].innerHTML = data.details[i].name;
+	$('.close_in em')[0].innerHTML = data.details[i].id;
+	$('.close_in strong')[0].innerHTML = data.details[i].price;
+	$('.close_in p')[0].innerHTML = data.details[i].info;
+	$('.close_in a')[0].href = data.details[i].link;
+
+}
+//初始化衣服数据
+var clothes = getTagName('strong',close_infos);
+var clothes_price = getTagName('em',close_infos);
+for(var i=0;i<clothes.length;i++){
+	clothes[i].innerHTML = data.details[i].name;
+	clothes_price[i].innerHTML = data.details[i].price;
+}
