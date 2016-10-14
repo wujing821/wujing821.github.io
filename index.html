@@ -10,6 +10,7 @@
 			}
 			#container{
 				position: relative;
+				margin: 0 auto;
 
 			}
 			.box{
@@ -248,7 +249,7 @@
 		</div>
 	<script type="text/javascript">
 	var container = document.getElementById('container');
-
+	
 		//封装获取class函数
 	function getClass(className,context){
 		var nodes = (context || document.body).getElementsByTagName('*');
@@ -269,7 +270,7 @@
 	var num = Math.floor(document.documentElement.clientWidth / imgWidth);
 	
 	//固定每行的宽度,屏幕不会随着放大缩小而影响图片的摆放
-	container.style.cssText = 'width:'+imgWidth*num+'px;margin: 0 auto';
+	container.style.cssText = 'width:'+imgWidth*num+'px';
 	//定义空数组imgArr用来存放图片
 	var imgArr = [];
 	for(var i=0;i<content.length;i++){
@@ -288,7 +289,7 @@
 			content[i].style.left = content[minlocation].offsetLeft + 'px';
 			//数组里最小图片的高度是最小图片的高度加上每张图片的高度
 			imgArr[minlocation] = imgArr[minlocation] + content[i].offsetHeight;
-
+	
 		}
 	}
 	//获取最小高度的位置
