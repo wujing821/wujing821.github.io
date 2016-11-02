@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input{
+				border: none;
+				border: 1px solid #7B6B63;
+			}
+			.content{
+				width: 300px;
+				margin: 40px auto;
+			}
+			p{
+				margin-left: 2em;
+				text-indent: -2em; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<input type="text"/>
+			<input type="button"  value="验证"/>
+			<p>
+				<span>
+					QQ验证要求：
+				</span><br><br>
+					1.输入数字<br>
+					2.不能输入空格<br>
+					3.不能输入小数<br>
+					4.第一位输入的不能是0<br>
+					5.输入字数在5-10位之间<br>
+			</p>
+		</div>
+		<script>
+			var inps = document.getElementsByTagName('input');
+			//声明一个变量  value储存第一个input的value值（即输入的内容）
+			
+			
+			inps[1].onclick = function(){
+				//必须写在点击事件里，写在点击事件外面获取的是页面一刷新获得的值
+				var value = inps[0].value;
+				//当在输入框内什么都不输入的时候，弹出提示“请输入qq号码”
+				if(value == ''){
+					alert('请输入QQ号码');
+					return;
+				}
+				//当输入的不是数字时提示输入数字
+				for(var i=0;i<value.length;i++){
+					if(isNaN(value[i])){
+						alert('请输入数字');
+						return;
+					}
+				}
+				//当输入框内包含空格时不能继续输入
+				for(var i=0;i<value.length;i++){
+					if(value[i] == ' '){
+						alert('不能输入空格');
+						return;
+					}
+				}
+				//不能输入小数
+				for(var i=0;i<value.length;i++){
+					if(value[i] == '.'){
+						alert('不能输入小数');
+						return;
+					}
+				}
+				//输入的第一位不能是0
+				if(value[0] == '0'){
+					alert('第一位输入的不能是0');
+					return;
+				}
+				//输入的长度是5到十位数
+			
+					if(value.length<5){
+						alert('输入字数不够五');
+						return;
+					}else if(value.length>10){
+						alert('请输入十位数以内')
+						return;
+					}
+				
+				
+			};
+		</script>
+	</body>
+</html>

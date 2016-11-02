@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 50px;
+				height: 50px;
+				background: pink;
+				position: absolute;
+				top: 0;
+				/*一定要写top值*/
+				transition: 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			var len = 10;
+			for(var i=0;i<len;i++){
+				(function(){
+					var div = document.createElement('div');
+					div.style.left = i*60+'px';
+					div.onclick = function(){
+						this.style.top = '500px';
+						fn1(this.nextElementSibling);
+						fn2(this.previousElementSibling);
+					}
+					document.body.appendChild(div);
+				})();
+			}
+			function fn1(node){
+				if(!node) return;
+				setTimeout(function(){
+					node.style.top = '500px';
+					fn1(node.nextElementSibling);
+				},200)
+				
+			}
+			function fn2(node){
+				if(!node) return;
+				setTimeout(function(){
+					node.style.top = '500px';
+					fn2(node.previousElementSibling);
+				},100)
+				
+			}
+		</script>
+	</body>
+</html>

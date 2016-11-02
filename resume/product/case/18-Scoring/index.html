@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+				font-size: 40px;
+			}
+			.hover{
+				color: green;
+			}
+			.hover1{
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<script>
+		//封装函数，获取a
+			function fn(tagName){
+				return document.getElementsByTagName(tagName);
+			}
+			var as = fn('a');
+			
+			var pro;
+			for(var i=0;i<as.length;i++){
+				as[i].index = i;
+				//当鼠标移入时，先清空所有，移入的位置之前的都会变色
+				as[i].onmouseover = function(){
+					for(var i=0;i<as.length;i++){
+						as[i].style.color = '';
+					}
+					for(var i=0;i<=this.index;i++){
+						if(this.index<=1){
+							as[i].style.color = 'green';
+						}else{
+							as[i].style.color = 'yellow';
+						}
+					}
+				};
+				//当鼠标移出时，清空所有的颜色，如果有点击，就把点击时记录的位置之前的的都变色
+				as[i].onmouseout = function(){
+					for(var i=0;i<as.length;i++){
+						as[i].style.color = '';
+					}
+					for(var i=0;i<=pro;i++){
+						if(pro<=1){
+							as[i].style.color = 'green';
+						}else{
+							as[i].style.color = 'yellow';
+						}
+					}
+				};
+		
+				//鼠标点击时，记录位置
+				as[i].onclick = function(){
+					pro = this.index;
+					
+				};
+				
+			}
+		</script>
+	</body>
+</html>

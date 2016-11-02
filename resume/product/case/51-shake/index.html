@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			img{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 100px;
+				left:200px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="imgs/0.jpg" id="img"/>
+		<script>
+			var arr = [];//20,-20,18,-18
+			var img = document.getElementById('img');
+			var pos = parseFloat(getComputedStyle(img)['left']);
+			var timer = null;
+			var num = 0;
+			
+			img.onclick = function(){
+				
+				for(var i=20;i>0;i-=2){
+					arr.push(i,-i);
+					
+				}
+				arr.push(0);
+				clearInterval(timer);
+				timer = setInterval(function(){
+					img.style.left = pos + arr[num]+'px';
+					num++;
+					if(num === arr.length){
+						clearInterval(timer);
+					}
+				},50)
+			}
+			
+		</script>
+	</body>
+</html>

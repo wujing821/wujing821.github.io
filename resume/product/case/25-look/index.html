@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 500px;
+				height: 500px;
+				background: #336699;
+				position: relative;
+			}
+			#text{
+				width: 350px;
+				height: 350px;
+				background: #fff;
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				
+			}
+			#button{
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				background: #E4DE31;
+				text-align: center;
+				width: 50px;
+				height: 30px;
+				font: 14px/30px "微软雅黑";
+			}
+			#open{
+				width: 50px;
+				height: 60px;
+				
+			}
+			.none{
+				display: none;
+			}
+			.block{
+				display: block;
+			}
+			a{
+				display: block;
+				text-decoration: none;
+				margin: 5px 5px;
+				color: #000000;
+			}
+			ul,p{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				
+				list-style: none;
+			}
+			#searchbox{
+				width: 350px;
+				height: 100px;
+				position: absolute;
+				bottom: 15px;
+				left: 20px;
+				background: #AAAAAA;
+				display: none;
+			}
+			#search{
+				border-bottom: 5px solid #EF3163;
+				height: 35px;
+				width: 320px;
+				margin: 0 auto;
+			}
+			span{
+				display: inline-block;
+				width: 40px;
+				height: 30px;
+				margin: 5px 0;
+				font: 16px/30px "微软雅黑";
+				text-align: center;
+				color: #EFEFEF;
+			}
+			.active1{
+				background: #EF3163;
+			}
+			
+			#searchbox>div{
+				display: none;
+				height: 30px;
+				margin: 10px 5px;
+			}
+			
+			input{
+				width: 120px;
+			}
+			.find{
+				width: 50px;
+			}
+			i{
+				background: #9CCE00;
+			}
+			.color{
+				background: #EFBD00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="text">
+				让我有个美满旅程；让我记着有多高兴；让我有勇气去喊停；没有结局也可即兴；难堪的不想；只想痛快事情；时间尚早；别张开眼睛；
+				让我有个美满旅程；让我记着有多高兴；让我有勇气去喊停；没有结局也可即兴；难堪的不想；只想痛快事情；时间尚早；别张开眼睛；长路漫漫是如何走过；宁愿让乐极忘形的我；离时代远远；没人间烟火；毫无代价唱最幸福的歌；愿我可；让我对这世界好奇；让我信自己的真理；让我有个永远假期；让我渴睡也可嬉戏；从今天开始；相识当作别离；时间就似活多一世纪；无论日夜是如何经过；宁愿在极乐当中的我；沉迷或放弃亦无可不可；毫无代价唱最幸福的；愿我可；唯求在某次尽情欢乐过；时间够了；时针偏偏出了错---《我的快乐年代》
+			</div>
+			<div id="button">展开
+				<div id="open" class="none">
+					<a href="javascript:;">查找</a>
+					<a href="javascript:;">替换</a>
+				</div>
+			</div>
+			<div id="searchbox">
+					<p id="search">
+						<span>查找</span>
+						<span>替换</span>
+					</p>
+					<div id="search1">
+						<input type="text" />
+						<input type="button" value="查找" class="find"/>
+					</div>
+					<div id="replace">
+						<input type="text" />
+						<input type="text" />
+						<input type="button" value="替换" class="find"/>
+					</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function getTagName(tagName){
+				return document.getElementsByTagName(tagName);
+			}
+			function getId(id){
+				return document.getElementById(id);
+			}
+			var button = getId('button');
+			var open = getId('open');
+			var onOff = true;
+			var as = getTagName('a');
+			var spans = getTagName('span');
+			var searchbox = getId('searchbox');
+			var search1 = getId('search1');
+			var replace = getId('replace');
+			var divs = searchbox.getElementsByTagName('div');
+			var inputs = search1.getElementsByTagName('input');
+			var input1s = replace.getElementsByTagName('input');
+			var text = getId('text');
+			var str = text.innerHTML;
+
+			//开关控制展开列表
+			button.onclick = function(){
+				if(onOff){
+					open.className = 'block';
+				}else{
+					open.className = 'none';
+				}
+				onOff = !onOff;
+			}
+			
+			//查找替换按钮切换对应的查找框和替换框
+			for(var i=0;i<as.length;i++){
+				as[i].cur = i;
+				//鼠标移入
+				as[i].onmouseover = function(){
+					for(var i=0;i<as.length;i++){
+						as[i].className = '';
+					}
+					this.className = 'color';
+				};
+				//鼠标移出
+				as[i].onmouseout = function(){
+					for(var i=0;i<as.length;i++){
+						as[i].className = '';
+					}
+					
+				};
+				//点击实现切换到对应的查找替换按钮
+				as[i].onclick = function(){
+					for(var i=0;i<as.length;i++){
+						spans[i].className = '';
+						searchbox.style.display = '';
+						divs[i].style.display = '';
+					}
+					spans[this.cur].className = 'active1';
+					searchbox.style.display = 'block';
+					divs[this.cur].style.display = 'block';
+				};
+			}
+			//查找，替换按钮的切换
+			for(var i=0;i<spans.length;i++){
+				spans[i].index = i;
+				spans[i].onclick = function(){
+					for(var i= 0;i<spans.length;i++){
+						spans[i].className = '';
+						divs[i].style.display = '';
+					}
+					this.className = 'active1';
+					divs[this.index].style.display = 'block';
+				};
+			}
+			//实现查找功能
+			inputs[1].onclick = function(){
+				//获取查找里的内容
+				var arr = inputs[0].value;
+				//声明变量arr储存除了查找的剩余字符串
+				var arr1 = str.split(arr);
+				//将剩余字符串和查找的字符串拼接在一起，组成文本框的内容
+				text.innerHTML = arr1.join('<i>'+arr+'</i>');
+				
+				var num = 0;
+				//如果输入内容为空，提示请输入内容
+				if(str.indexOf(arr,num) == ''){
+					num = str.indexOf(arr,num)+1;
+					alert('请输入要查找的内容');
+				}
+				//如果输入内容不是文本框的内容，提示内容不存在
+				if(str.indexOf(arr,num) == -1){
+					num = str.indexOf(arr,num)+1;
+					alert('您要查找的内容不存在');
+				}
+			};
+			//实现替换功能
+			input1s[2].onclick = function(){
+				//获取替换前的文本内容
+				var arr2 = input1s[0].value;
+				//获取要替换的文本内容
+				var arr3 = input1s[1].value;
+				//将除了要替换的文本的剩下的内容储存在变量arr4里
+				var arr4 = str.split(arr2);
+				
+				var num = 0;
+				//如果查找框是空的，提示输入内容
+				if(str.indexOf(arr2,num) == ''){
+					num = str.indexOf(arr2,num)+1;
+					alert('请输入内容');
+					return;
+				}
+				//如果查找框输入的内容不属于文本框的内容，提示内容不存在
+				if(str.indexOf(arr2,num) == -1){
+					num = str.indexOf(arr2,num)+1;
+					alert('您要删除或替换的内容不存在');
+					return;
+				}
+				//如果查找框有内容且替换框是空的，提示是否删除
+				if(str.indexOf(arr2,num) != ''&&str.indexOf(arr3,num) == ''){
+					//如果返回值是确认，将查找框的内容替换成空字符串
+					if(confirm('确认要删除'+arr2+'?')){
+						text.innerHTML = arr4.join('');
+						str = text.innerHTML;
+					}
+					//如果返回值是取消，将不做任何操作
+					return;
+				}
+				
+				//当查找框和替换框都有内容。提示是否要替换
+				if(str.indexOf(arr2,num) != ''&&str.indexOf(arr3,num) != ''){
+//					alert('是否要替换？');
+					if(confirm('是否要替换'+arr2+'?')){
+						//将剩余内容和要替换的内容拼接成text文本
+						text.innerHTML = arr4.join(arr3);
+						str = text.innerHTML;
+					}
+					//如果返回值是取消，将不做任何操作
+					return;
+					
+				}	
+				
+			};
+					
+				
+			
+		</script>
+	</body>
+</html>

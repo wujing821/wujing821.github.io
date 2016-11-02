@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="mTween.js"></script>
+		<script src="tween.js"></script>
+		<style>
+			ul{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				width: 250px;
+				height: 900px;
+				margin: 0 auto;
+			}
+			img{
+				vertical-align: top;
+				border: none;
+				width: 100px;
+				height: 100px;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+			}
+			li{
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 10px 10px;
+				overflow: hidden;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<div>
+					<img src="img/0.jpg" alt=""/>
+					<img src="img/1.jpg" alt=""/>
+					<img src="img/3.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/4.jpg" alt=""/>
+					<img src="img/5.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/6.jpg" alt=""/>
+					<img src="img/7.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/8.jpg" alt=""/>
+					<img src="img/9.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/10.jpg" alt=""/>
+					<img src="img/11.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/12.jpg" alt=""/>
+					<img src="img/13.jpg" alt=""/>
+					<img src="img/14.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/15.jpg" alt=""/>
+					<img src="img/16.jpg" alt=""/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/17.jpg" alt=""/>
+					<img src="img/18.jpg" alt=""/>
+				</div>
+			</li>
+		</ul>
+		<script>
+			var divs = document.getElementsByTagName('div');
+			var imgs = document.getElementsByTagName('img');
+			//获取一张图片的高度
+			var height = parseFloat(getComputedStyle(imgs[0]).height);
+			for(var i=0;i<divs.length;i++){
+				//获取每个div里img的张数
+				var len = divs[i].getElementsByTagName('img').length;
+				
+				divs[i].num = 0;//这个不能写在fn里，因为写在里面每次调用时都会从零开始
+				divs[i].n = 1;
+				//调用函数
+				fn(divs[i],len);
+				}
+			function fn(obj,len1){
+				//每次num+1，div向上移动一张图片的高度
+				obj.num +=  obj.n;
+				//当div移动到最后一张图片时，让num开始向下移动
+				if(obj.num == len1-1){
+					//当n是-1时，就是每次减一
+					obj.n = -1;
+				}
+				//当num移动到0时回到第一张图片
+				if(obj.num == 0){
+					//让num开始加一
+					obj.n = 1;
+				}
+				//开启定时器，每次运动之后再调用一次定时器
+				setTimeout(function(){
+					mTween(obj,'top',-height*obj.num,300,'linear',function(){
+						fn(obj,len1);//延时定时器每次随机时间之后都会再调用一次延时定时器
+					})
+				//让延时定时器的时间是随机的
+				},Math.random()*2000+1000)
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

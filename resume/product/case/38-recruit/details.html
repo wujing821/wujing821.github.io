@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="js/data.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+  	<div class="left">
+    	<h2>招贤纳士</h2>
+      <ul>
+      	<!--<li class="focus"><a href="javascript:;">社会招聘</a></li>
+      	<li><a href="javascript:;">校园招聘</a></li>-->
+      </ul>
+    </div>
+  	<div class="right">
+    	<div class="title">
+      	<img src="img/shzp.gif" />
+      </div>
+      <div class="info content">
+        <!-- <h2>测试工程师【社会招聘】</h2>
+        <div>
+          <span class="l">招聘公司：北京智信创通信息技术有限公司查看公司地理位置>></span>
+          <span>公司性质：股份制公司</span>
+          <span class="l">职位性质：全职</span>
+          <span>工作地点：上海</span>
+          <span class="l">工作经验：3年以上</span>
+          <span>学历要求：本科及以上</span>
+          <span class="l">招聘人数：2人</span>
+          <span>薪资待遇：面议</span>
+          <span class="l">发布日期：2013-7-30</span>
+          <span>招聘类型：社会招聘</span>
+        </div>
+        <div class="clear"></div>
+        <dl>
+          <dt>工作职责：</dt>
+          <dd>从事计算机软件的测试工作。</dd>
+        </dl>
+        <dl>
+          <dt>岗位要求：</dt>
+          <dd>1.计算机或相关专业本科以上学历；</dd>
+          <dd>2.从事软件测试工作3年及以上；</dd>
+          <dd>3.具备良好的沟通能力和快速学习能力；</dd>
+          <dd>4.精通测试策略和方法、测试用例设计；</dd>
+          <dd>5.熟悉DB2、AIX等平台的基本操作；</dd>
+          <dd>6.具备2年以上金融IT行业经验，特别是有金融行业相关业务的测试或者开发工作经验者优先。</dd>
+        </dl>
+        <p>有意者请投递简历至 liuyajuan@fulan.com.cn</p> -->
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <script type="text/javascript">
+  	var list = document.getElementsByTagName('ul')[0];
+  	var lis = list.getElementsByTagName('li');
+  	var search = window.location.search.substring(1).split('=')[1];
+  	var arr = ['sh','xy'];
+  	var hash = window.location.hash.substring(1).split('=')[1];
+  	var str = '';
+  	var img = document.getElementsByTagName('img')[0];
+  	var content = document.getElementsByClassName('content')[0];
+  	var data={};
+  	var datatext={};
+  	var as = list.getElementsByTagName('a');
+  	//生成左边列表
+  	for(var i=0;i<aData.list.length;i++){
+  		str += '<li><a href="index.html?s='+aData.list[i].lx+'">'+aData.list[i].text+'</a></li>'
+  	}
+  	list.innerHTML = str;
+  	
+  	//根据search信息，生成内容
+  	if(search){
+  		for(var i=0;i<aData.list.length;i++){
+  			if(search == aData.list[i].lx){
+  				lis[i].className = 'focus';
+  				as[0].href = as[0].href+'#p='+Math.ceil((Number(hash)+1)/2)+'';
+  				data = aData[arr[i]];
+  			}
+  		}
+		img.src = data.img;
+	  	
+	  	datatext = data.text[hash];
+	  	
+	  	//生成具体内容
+	  	
+	  	str = '<h2>'+datatext.zw+'</h2><div><span class="l">招聘公司：'+datatext.gs+
+	  	'地理位置>></span><span>公司性质：'+datatext.xz+'</span><span class="l">职位性质：'+
+	  	datatext.gz+'</span><span>工作地点：'+datatext.dd+'</span><span class="l">工作经验：'+
+	  	datatext.jy+'</span><span>学历要求：'+datatext.xl+'</span><span class="l">招聘人数：'+
+	  	datatext.rs+'</span> <span>薪资待遇：'+datatext.dy+'</span><span class="l">发布日期：'+
+	  	datatext.sj+'</span><span>招聘类型：'+datatext.lx+'</span></div><div class="clear"></div>';
+	  	//生成岗位要求
+	  	for(var i=0;i<datatext.info.length;i++){
+	  		str += '<dl><dt>'+datatext.info[i].t+'</dt>';
+	  		for(var j=0;j<datatext.info[i].l.length;j++){
+	  			str += '<dd>'+datatext.info[i].l[j]+'</dd>';
+	  		}
+	  		str += '</dl>';
+	  	}
+	  	//生成email
+	  	str += '<p>有意者请投递简历至'+aData.email+'</p>'
+	  	content.innerHTML = str;
+	  	}
+	
+  </script>
+	</body>
+</html>

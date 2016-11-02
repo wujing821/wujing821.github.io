@@ -1,0 +1,15 @@
+.intro_firstcon a{
+	color: #a6abb0;
+}
+.intro_firstcon a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+.intro_right .pic{
+	overflow: hidden;
+}
+.pic img{
+	height: 200px;
+	width: 200px;
+	//border-radius: 100%; 
+}

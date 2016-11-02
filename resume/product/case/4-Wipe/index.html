@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 50px;
+				height: 50px;
+				background: #ccc;
+				position: absolute;
+				
+			}
+			div img{
+				width: 500px;
+				height: 500px;
+			}
+			.block{
+				background: url(img/9.jpg) no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+	<script type="text/javascript">
+		var str = '';
+		var len = 100;
+		var divs = document.getElementsByTagName('div');
+		//生成100个div
+		for(var i=0;i<len;i++){
+			str += '<div style="left:'+(i%10*60+200)+'px;top:'+Math.floor(i/10)*60+'px;background-position:'+-i%10*50+'px'+' '+-Math.floor(i/10)*50+'px"></div>';	
+		}
+			document.body.innerHTML = str;
+		//当鼠标移入的时候替换背景图
+		for(var i=0;i<100;i++){
+			divs[i].onmouseover = function(){
+				this.className = 'block'
+			};
+		}
+	</script>
+	</body>
+</html>

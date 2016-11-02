@@ -1,0 +1,283 @@
+#product_page{
+	background: #ccc;
+	width: 100%;
+	height: 100%;
+}
+/* 服装展示区 */
+.tab{
+	width: 718px;
+	height: 500px;
+	margin: -250px -300px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	overflow: hidden;
+}
+.tab .tab_title{
+	height: 80px;
+	overflow: hidden;
+}
+.tab_title div{
+	float: left;
+	width: 100px;
+	height: 80px;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	text-align: center;
+	font: 14px/70px '微软雅黑';
+	position: relative;
+	bottom: -7px;
+	left: 0;
+}
+.tab .tab_title div:hover{
+	cursor: pointer;
+}
+.tab .tab_title div:nth-of-type(1){
+	background: black;
+}
+.tab .tab_title div:nth-of-type(2){
+	background: #00a1e9;
+}
+.tab .tab_title div:nth-of-type(3){
+	background: #83c11e;
+}
+.tab_title div img{
+	position: absolute;
+	right: 5px;
+	bottom: -35px;
+
+}
+.tab_title div:nth-of-type(3) img{
+	right: 25px;
+}
+.tab ul{
+	width: 100%;
+	height: 430px;
+	display: none;
+	position: relative;
+	z-index: 10;
+}
+.tab ul li{
+	width: 133px;
+	height: 195px;
+	float: left;
+	margin: -3px 5px 15px;
+	border-radius: 5px;
+}
+.tab ul:nth-of-type(1) li{
+	background: black;
+}
+.tab li img{
+	width: 100%;
+	height: 140px;
+	padding-top:8px; 
+}
+.tab li strong,.tab li em{
+	display: block;
+	font-style: normal;
+	color: #fff;
+	
+	font: 10px/22px '微软雅黑';
+}
+.tab li strong{
+	text-align: center;
+}
+.tab li em{
+	text-indent: 2px;
+	padding-left: 5px;
+}
+/* 第二个选项 */
+.tab ul:nth-of-type(2) li{
+	background:  #00a1e9;
+}
+/* 第三个选项 */
+.tab ul:nth-of-type(3) li{
+	background:  #83c11e;
+}
+.tab_title{
+	height: 70px;
+	margin-left: 5px;
+}
+
+.tab .show{
+	display: block;
+
+}
+.show>li:hover{
+	cursor: pointer;
+}
+/* 云朵样式设置 */
+#product_cloud div:nth-of-type(1){
+	bottom: -68px;
+	transform:rotate(0deg);
+}
+#product_cloud div:nth-of-type(1) img:nth-of-type(2){
+	top: 0;
+	left: 13px;
+	width: 70px;
+	height: 72px;
+	transform:rotate(-58deg);
+}
+#product_cloud div:nth-of-type(1) img:nth-of-type(3){
+	position: absolute;
+	top: 7px;
+	right: 3px;
+	transform: rotate(43deg);
+	width: 64px;
+	height: 50px;
+}
+#product_cloud div:nth-of-type(2){
+	bottom: 0;
+	left: 600px;
+}
+#product_cloud div:nth-of-type(6) img:nth-of-type(2){
+	width: 100px;
+	height: 70px;
+	top: 0;
+	left: -5px;
+	transform:rotate(-53deg);
+}
+#product_cloud div:nth-of-type(7){
+	bottom: -23px;
+	right: 17px;
+	transform:rotate(38deg);
+}
+#product_cloud div:nth-of-type(7) img:nth-of-type(2){
+	width: 96px;
+	height: 78px;
+	top: -15px;
+	left: -32px;
+	transform:rotate(-60deg);
+}
+/* 服装信息 */
+#details{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 200;
+	display: none;
+}
+.closeinfos{
+	width: 850px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 300;
+}
+.close_bg{
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: #666563;
+	opacity: .5;
+}
+.big_close{
+	position: absolute;
+	left: 20px;
+	top: 3px;
+	width: 400px;
+	height: 490px;
+	background: #fff;
+	border-radius: 20px;
+	border: 2px solid #b8b8b8;
+}
+.big_close img{
+	width: 100%;
+	height: 100%;
+}
+.first_pic{
+	position: absolute;
+	left: 435px;
+	top: 3px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+.second_pic{
+	position: absolute;
+	left: 435px;
+	top: 173px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+.third_pic{
+	position: absolute;
+	left: 435px;
+	top: 341px;
+	width: 152px;
+	height: 152px;
+	background: #fff;
+	border-radius: 5px;
+	border: 4px solid #b4bab6;
+}
+.close_in{
+	position: absolute;
+	right: 55px;
+	top: 3px;
+	width: 189px;
+	height: 490px;
+	background: #fff;
+	border-radius: 15px;
+	border: 2px solid #b8b8b8;
+}
+
+#cancle{
+	position: absolute;
+	right: 36px;
+	top: -15px;
+	width: 55px;
+	height: 40px;
+}
+.close_in>div{
+	width: 167px;
+	height: 100px;
+	padding: 40px 0px 10px 18px;
+}
+.close_in div span,.close_in div em,.close_in div strong{
+	display: block;
+	font-weight: bold;
+	margin: 5px 0px;
+}
+.close_in div em{
+	font-style: normal;
+	font-weight: bold;
+}
+.close_in div strong{
+	font-weight: normal;
+	font: 23px/30px '微软雅黑';
+	color: #ff9060;
+}
+.close_in div strong img{
+	width: 50px;
+	height: 25px;
+	margin-right: 5px;
+}
+.close_in p{
+	padding: 5px;
+	font: 12px/14px '宋体';
+}
+.close_in a{
+	display: block;
+	width: 150px;
+	height: 40px;
+	margin: 50px auto;
+}
+.close_in a img{
+	width: 100%;
+	height: 100%;
+
+}
+

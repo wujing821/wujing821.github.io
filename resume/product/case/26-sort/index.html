@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="mQuery.js"></script>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				height: 500px;
+				width: 900px;
+				margin: 0 auto;
+			}
+			img{
+				border: none;
+				vertical-align: top;
+				width: 200px;
+				height: 200px;
+			}
+			li{
+				float: left;
+				margin: 10px;
+				width: 200px;
+				height: 230px;
+			}
+			p{
+				margin: 0;
+				width: 100%;
+				text-align: center;
+				height: 30px;
+				font: 16px/30px "微软雅黑";
+			}
+			a{
+				text-decoration: none;
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				background: pink;
+				font: 14px/30px "微软雅黑";
+				margin-right: 10px;
+				color: #fff;
+				border-radius: 10px;
+			}
+			div{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<a href="javascript:;">从小到大</a>
+			<a href="javascript:;">打乱顺序</a>
+		</div>
+		<ul>
+			<li><img src="img/1.jpg" alt=""><p>1-铁塔</p></li>
+			<li><img src="img/2.jpg" alt=""><p>2-泡沫</p></li>
+			<li><img src="img/3.jpg" alt=""><p>3-婚礼</p></li>
+			<li><img src="img/4.jpg" alt=""><p>4-日出</p></li>
+			<li><img src="img/5.jpg" alt=""><p>5-唯美</p></li>
+			<li><img src="img/6.jpg" alt=""><p>6-旅行</p></li>
+			<li><img src="img/7.jpg" alt=""><p>7-风景</p></li>
+			<li><img src="img/8.jpg" alt=""><p>8-小清新</p></li>
+		</ul>
+		<script>
+			var lis = document.getElementsByTagName('li');
+			var as = document.getElementsByTagName('a');
+			var ul = document.getElementsByTagName('ul')[0];
+			//把li放进数组里
+			var arr = Array.from(lis);
+			//定义开关
+			var onOff = false;
+			//点击按钮排序
+			as[0].onclick = function(){
+				if(onOff){
+					//从小到大排序
+					arr.sort(function(a,b){
+					var text1 = a.getElementsByTagName('p')[0];
+					var text2 = b.getElementsByTagName('p')[0];
+					return text1.innerHTML.charAt()-text2.innerHTML.charAt();
+					})
+					fn();
+				
+				}else{//从大到小排序
+					arr.sort(function(a,b){
+					var text1 = a.getElementsByTagName('p')[0];
+					var text2 = b.getElementsByTagName('p')[0];
+					return text2.innerHTML.charAt()-text1.innerHTML.charAt();
+					})
+					fn();
+				}
+				//开关变换
+				if(onOff){
+					this.innerHTML = '从小到大';
+				}else{
+					this.innerHTML = '从大到小';
+				}
+				onOff = !onOff;
+			}
+			//随机排序
+			as[1].onclick = function(){
+				arr.sort(function(){
+					return Math.random()-0.5;
+				})
+				fn();
+			}
+			//封装函数，将排序后的li添加到ul里
+			function fn(){
+				var str = '';
+				for(var i=0;i<lis.length;i++){
+					str +=  '<li>'+arr[i].innerHTML+'</li>';
+				}
+				
+				ul.innerHTML = str;
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

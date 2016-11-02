@@ -1,0 +1,39 @@
+#vip_page{
+	// background: #cbcac8;
+	width: 100%;
+	height: 100%;
+	background-color: #454545;
+	margin: 1 em;
+	padding: 0;
+}
+.vcontent{
+	width: 500px;
+	height: 500px;
+	margin: 20px auto 0;
+	border-radius: 10px;
+	box-shadow: 0 0 12px 1px rgba(205,205,205,1);
+	border: 1px solid black;
+	padding: 10px;
+	text-shadow: black 1px 2px 2px;
+	color: white;
+	background-image: -moz-linear-gradient(bottom,black,rgba(0,47,94,0.2),white);
+	background-color: rgba(43,43,43,0.5);
+
+}
+.vcontent:hover{
+	box-shadow: 0 0 12px 5px rgba(205,205,205,1);
+}
+.vcontent h2{
+	font-size: 120%;
+	font-weight: bold;
+	// text-decoration: underline;
+}
+.vcontent h2:before{
+	content: '项目总结';
+}
+.vcontent p{
+	padding: 36px;
+	text-indent: 2em;
+	line-height: 1.8em;
+	font-size: 14px;
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	li{
+		list-style: none;
+		height: 30px;
+		width:300px;
+	}
+	
+	label{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li><label for="inp1"><input type="checkbox" id="inp1"></label></li>
+		<li><label for="inp2"><input type="checkbox" id="inp2"></label></li>
+		<li><label for="inp3"><input type="checkbox" id="inp3"></label></li>
+		<li><label for="inp4"><input type="checkbox" id="inp4"></label></li>
+		<li><label for="inp5"><input type="checkbox" id="inp5"></label></li>
+	</ul>
+
+	<label for="all"><input type="checkbox" name="" id="all">全选</label>
+	<script type="text/javascript">
+		function getTagName(tagName,context){
+			return (context || document).getElementsByTagName(tagName)
+		}
+		function getId(Id){
+			return document.getElementById(Id);
+		}
+	var list = getId('list');
+	var inputs = getTagName('input',list);
+	var all = getId('all');
+	var lis = getTagName('li');
+	var arr = ['yellow','pink'];
+	var prev = lis[0];
+	for(var i = 0;i<lis.length;i++){
+	
+		lis[i].style.background = arr[i%arr.length];
+		lis[i].index = i;
+		lis[i].onmouseover = function(){
+			if(inputs[this.index].checked){
+				return;
+			}
+			this.style.background = 'black';
+
+			
+		};
+		lis[i].onmouseout = function(){
+			if(inputs[this.index].checked){
+				return;
+			}
+			this.style.background = arr[this.index%arr.length];
+		};
+		inputs[i].cur = i;
+		inputs[i].onchange = function(){
+			if(this.checked){
+				lis[this.cur].style.background = 'green';
+			}else{
+				lis[this.cur].style.background = 'black';
+			}
+			all.checked = allchecked();
+		};
+
+	}
+	
+		all.onchange = function(){
+			for(var i=0;i<lis.length;i++){
+				inputs[i].checked = this.checked;
+					if(this.checked){
+						lis[i].style.background = 'green';
+					}else{
+						lis[i].style.background = arr[i%arr.length];
+					}
+			}
+			
+		}
+		function allchecked(){
+			for(var i=0;i<lis.length;i++){
+				if(!inputs[i].checked){
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

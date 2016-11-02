@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 500px;
+				height: 300px;
+				border: 1px solid #000000;
+				margin: 0 auto;
+				
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			
+			}
+			li{
+				border: 1px solid #000;
+				text-align: center;
+				margin: 5px 0;
+				width: 50px;
+				height: 30px;
+				font: 12px/30px "微软雅黑";
+				
+			}
+			.left{
+				float: left;
+				margin-left: 5px;
+			}
+			.right{
+				float: right;
+				margin-right: 5px;
+			}
+			img{
+				float: left;
+				width: 350px;
+				height: 280px;
+				padding: 5px 10px;
+			}
+			.active{
+				background: #000;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<ul class="left">
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+			</ul>
+			<ul class="right">
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+				<li>风景</li>
+			</ul>
+			<img src="" alt=""/>
+		</div>
+		<script>
+			var arr = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','4.jpg','5.jpg','3.jpg','2.jpg','1.jpg','7.jpg','6.jpg','5.jpg','3.jpg'];
+			function getTagName(tagName){
+				return document.getElementsByTagName(tagName);
+			}
+			var img = getTagName('img')[0];
+			var lis = getTagName('li');
+			var box = document.getElementById('box');
+			var num = 0;
+			var timer = null;
+			//设置初始值
+			img.src = 'img/'+arr[0];
+			lis[0].className = 'active'
+			//设置定时器
+			function autoplay(){
+				timer = setInterval(function(){
+				if(num < lis.length/2){
+					num++;	
+					if(num == lis.length/2){
+						num = lis.length-1;
+					}
+						
+				}else{
+					num--;
+					if(num == lis.length/2-1){
+						num = 0;
+					}
+				}
+					
+				fn(num);
+				},1000);
+				
+			}
+			autoplay();
+			//当鼠标移入时清除定时器
+			box.onmouseover = function(){
+				clearInterval(timer);
+				
+			};
+			//当鼠标移出时继续切换
+			box.onmouseout = function(){
+				autoplay();
+			};
+			//封装函数
+			function fn(n){
+				img.src = 'img/'+arr[n];
+				for(var i=0;i<lis.length;i++){
+					lis[i].className = '';
+				}
+				lis[n].className = 'active';
+			}
+			
+			//当鼠标移入时从当前的li开始切换
+			for(var i=0;i<lis.length;i++){
+				lis[i].index = i;
+				lis[i].onmouseover = function(){
+					fn(this.index);
+					num = this.index;
+					
+				}
+			}
+		</script>
+	</body>
+</html>

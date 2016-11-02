@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+				border: 2px solid #313939;
+			}
+			
+			span{
+				display: inline-block;
+				width: 50px;
+				height: 30px;
+				font: 12px/30px "微软雅黑";
+				text-align: center;
+				position: relative;
+			}
+			.active{
+				background: pink;
+			}
+			#content div{
+				text-align: center;
+				width: 500px;
+				height: 470px;
+				background: #940032;
+				display: none;
+			}
+			#content{
+				width: 500px;
+				height: 500px;
+				font: 20px/470px "微软雅黑";
+			}
+			#content .show{
+				display: block;
+			}
+			span strong{
+				color: red;
+				position: absolute;
+				width: 10px;
+				right: 0px;
+				bottom: 10px;
+				/*top: 0px;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<a href="javascript:;">tab1</a>
+		<a href="javascript:;">tab2</a>
+		<a href="javascript:;">tab3</a>
+		<a href="javascript:;">tab4</a>
+		<a href="javascript:;">tab5</a>
+		<div id="box">
+			<div id="tab">
+				<!--<span><b>选项1</b><strong>X</strong></span>
+				<span>选项2</span>
+				<span>选项3</span>
+				<span>选项4</span>
+				<span>选项5</span>-->
+			</div>
+			<div id="content">
+				<!--<div>内容1</div>
+				<div>内容2</div>
+				<div>内容3</div>
+				<div>内容4</div>
+				<div>内容5</div>-->
+			</div>
+		</div>
+		<script>
+			/*
+			1、添加选项卡
+			2、实现选项卡的功能
+			3、删除选项卡
+			*/
+			var as = document.getElementsByTagName('a');
+			var tab = document.getElementById('tab');
+			var content =  document.getElementById('content');
+			//如果在全局创建that，每次点击a时，就会把上次的that值覆盖掉
+			for(var i=0;i<as.length;i++){
+				as[i].index = i;
+				as[i].onclick = function(){
+					
+					//如果再一次创建相同的元素，就会进入这里，阻止创建
+					if(this.onOff){
+						return;
+					}
+					//添加选项卡
+					var span = document.createElement('span');
+					var div = document.createElement('div');
+					var b = document.createElement('b');
+					var strong = document.createElement('strong');
+					var that = this;//每次点击创建一个that，并且赋值this
+					b.innerHTML = '选项'+ Number(this.index+1);
+					strong.innerHTML = 'X';
+					div.innerHTML = '内容'+  Number(this.index+1);
+					//把创建的元素放入父级
+					span.appendChild(strong);
+					span.appendChild(b);
+					tab.appendChild(span);
+					content.appendChild(div);
+					//给添加的元素身上添加一个自定义属性，每次添加之后变成true
+					this.onOff = true;
+					//清除所有
+					fn();
+					
+					//添加当前
+					span.className = 'active';
+					div.className = 'show';
+					//清除所有
+					function fn(){
+						var spans = tab.getElementsByTagName('span');
+						var divs = content.getElementsByTagName('div');
+						for(var i=0;i<spans.length;i++){
+							spans[i].className = '';
+							divs[i].className = '';
+						}
+						
+					}
+					//实现选项卡功能
+					//因为如果这里写span的onclick事件，点击strong时相当于也触发了span的点击事件，因为span是strong的父级，所以也会走这里，把span里的classname清空
+					//但是文字和strong分开写，就不会冲突了，各自做各自的事情
+					
+					b.onclick = function(){
+						fn();
+						span.className = 'active';
+						div.className = 'show';
+					};
+					//删除选项卡
+					strong.onclick = function(){
+						console.log(that);
+						tab.removeChild(span);
+						content.removeChild(div);
+						fn();
+						//如果删除之后，tab下还有其他span，就给第一个span添加classname
+						if(tab.children.length>0){
+							tab.children[0].className = 'active';
+							content.children[0].className = 'show';
+						}
+						//子集作用域可以找父级作用域的that
+						that.onOff = false;
+					};
+					
+				};
+			
+			}
+		</script>
+	</body>
+</html>
