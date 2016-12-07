@@ -399,13 +399,14 @@ footer .r_right img{
 	height: 40px;
 }
 #tools a input{
-	display: none;
-	top: -17px;
+	/* display: none; */
+	top: 0px;
 	right: 2px;
 	position: absolute;
-	width: 35px;
-	height: 12px;
+	width: 39px;
+	height: 38px;
 	background: #ccc;
+	opacity: 0;
 }
 
 #tools a em img{
@@ -524,4 +525,28 @@ section>div{
 	height: 11px;
 	border: 2px solid red;
 
+}
+#home_page p{
+	position: absolute;
+	z-index: 100;
+	bottom: 110px;
+	right: 28px;
+	height: 20px;
+	padding: 3px;
+	background: #fff;
+	opacity: .8;
+	border-radius: 5px;
+	display: none;
+}
+#home_page p:not(:first-child):after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -19px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+	border-bottom: 10px solid transparent;
 }

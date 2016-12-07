@@ -148,8 +148,8 @@ var pen_em = getTagName('em',col)[0];
 var pen_inp = getTagName('input',col)[0];
 var pen_timer;
 //移动到col时，显示颜色板
-pen_col.onmouseover = show;
-pen_col.onmouseout = hide;
+pen_inp.onmouseover = show;
+pen_inp.onmouseout = hide;
 pen_em.onmouseover = show;
 pen_em.onmouseout = hide;
 
@@ -219,22 +219,7 @@ for(var i=0;i<pen_colors.length;i++){
 		this.className = 'chose';
 	}
 }
-//点击色板时，显示多色板
-var pen_onOff = true;
-pen_col.onclick = function(){
-	if(pen_onOff){
-		pen_em.style.display = 'none';
-		pen_inp.style.display = 'block';
-		this.onmouseover = this.onmouseout = null;
-	}else{
-		pen_em.style.display = 'block';
-		pen_inp.style.display = 'none';
-		this.onmouseover = show;
-		this.onmouseout = hide;
-	}
-	pen_onOff = !pen_onOff;
-	
-};
+
 //更改色板颜色
 pen_inp.onchange = function(){
 
@@ -277,7 +262,7 @@ function ca(){
 //清空画布
 var paint_agin = getId('painting_angin');
 paint_agin.onclick = function(){
-	context.clearRect(0,0,width,600);
+	context.clearRect(0,0,width,height);
 };
 //保存图画功能
 t_spans[2].onclick = function(){
@@ -341,6 +326,7 @@ vip_page.style.top = 4*height + 'px';
 for(var i=0;i<lis.length;i++){
 	lis[i].index = i;
 	lis[i].onclick = function(){
+		//云朵延迟滑动
 		mTween(cloud,'top',220,1000,'linear');
 		mTween(pCloud,'top',220,1000,'linear');
 		mTween(store_cloud,'top',220,1000,'linear');
@@ -349,6 +335,16 @@ for(var i=0;i<lis.length;i++){
 		mTween(pCloud,'top',220,1000,'linear');
 		mTween(store_cloud,'top',220,1000,'linear');
 	}
+}
+//淡入淡出效果
+p_autoplay();
+function p_autoplay(){
+	setInterval(function(){
+		$("#home_page p").fadeIn(1500,function () {
+			$("#home_page p").fadeOut(1500);
+		});
+	},2000)
+
 }
 
 

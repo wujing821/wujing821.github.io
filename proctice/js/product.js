@@ -141,7 +141,6 @@ function clo_details(i){
 	$('.close_in em')[0].innerHTML = data.details[i].id;
 	$('.close_in strong')[0].innerHTML = data.details[i].price;
 	$('.close_in p')[0].innerHTML = data.details[i].info;
-	$('.close_in a')[0].href = data.details[i].link;
 
 }
 //初始化衣服数据
