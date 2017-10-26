@@ -1,0 +1,290 @@
+@r:50rem;
+@backcolor:#f9f9f9;
+@border:1px solid rgba(234,234,234,0.4);
+body{
+  background-color:@backcolor ;
+}
+.header{
+  background: url("../../img/qingniao/result/paybanner.png") no-repeat 0 0;
+  width: 750/@r;
+  height: 276/@r;
+  background-size: contain;
+  padding: 40/@r;
+  background-color: white;
+  img{
+    width: 118/@r;
+    height: 118/@r;
+    border-radius: 59/@r;
+    border: 1px solid #ffffff;
+  }
+  span{
+    color: #ffffff;
+    font-size: 36/@r;
+    line-height: 118/@r;
+    height: 118/@r;
+    margin-left: 48/@r;
+  }
+  a{
+
+    color: #ffffff;
+    font-size: 22/@r;
+    display: flex;
+    align-items: center;
+    float: right;
+    height: 118/@r;
+    //width: 19/@r;
+    margin-right: 15/@r;
+    margin-top: 2/@r;
+    justify-content: center;
+    &::after{
+      margin-left: 6/@r;
+      //position: absolute;
+      display: inline-block;
+      content: '';
+      background: url("../../img/qingniao/result/phone.png") no-repeat 0 0;
+      width:62/@r;
+      height: 62/@r;
+      background-size: 62/@r 62/@r;
+
+    }
+  }
+}
+.container{
+  .content{
+    width: 710/@r;
+    margin: 0 auto;
+    margin-top: -73/@r;
+
+    .p_item{
+      &.no_height{
+        height: 90/@r;
+        padding: 12/@r 20/@r 2/@r 20/@r;
+      }
+      //margin:  20/@r 0;
+      &:first-child{
+        border-top-right-radius: 6/@r ;
+        border-top-left-radius: 6/@r ;
+      }
+     &:last-child{
+       border-bottom: none;
+     }
+      height: 90/@r;
+      box-sizing: border-box;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      padding: 0 20/@r;
+      justify-content:space-between;
+      border-bottom:@border;
+      .icon_fir{
+
+        background-position: 0 -67/@r;
+
+      }
+      .info{
+        display: flex;
+        align-items: center;
+        //justify-content: center;
+      }
+      .product_list{
+        width:450/@r ;
+        span{
+          border-radius: 2/@r;
+          padding: 5/@r 3/@r;
+          background-color:#ffe5d0;
+          line-height: 1;
+
+          color: #ee8734;
+          font-size: 22/@r;
+          margin-left: 10/@r;
+          float: right;
+          display: inline-block;
+          white-space:nowrap;
+
+        }
+        /* four items */
+        span:first-child:nth-last-child(4)+span {
+          margin-left: 100/@r;
+        }
+        span:first-child:nth-last-child(4), span:first-child:nth-last-child(4)~span{
+          margin-bottom: 8/@r;
+        }
+        /* four items */
+        span:first-child:nth-last-child(5) ~ span {
+          margin-bottom: 8/@r;
+        }
+      }
+      .paied{
+        color: #ced0d3;
+        font-size: 26/@r;
+      }
+
+      strong{
+        font-size: 26/@r;
+        color: #5d6470;
+
+      }
+      i{
+        color: #5d6470;
+        font-size: 28/@r;
+        line-height: 1;
+        //margin-right: 20/@r;
+        font-style: normal;
+      }
+      em{
+        line-height: 1;
+        color: #5d6470;
+        font-size: 26/@r;
+      }
+
+    }
+  }
+  .order_info{
+    width: 710/@r;
+    margin: 0 auto;
+    margin-top: 20/@r;
+    .one_info{
+      height: 86/@r;
+      box-sizing: border-box;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      padding: 0 20/@r;
+      border-bottom:@border;
+      span{
+        line-height: 1;
+        font-size: 24/@r;
+        color: #aaaaaa;
+      }
+    }
+  }
+  .tips{
+    font-size: 20/@r;
+    color: #c8c8c8;
+    padding-left: 40/@r;
+    line-height: 50/@r;
+    height: 50/@r;
+    background-color: @backcolor;
+  }
+  .token{
+    background-color: white;
+    &.active{
+      //padding-bottom: 30/@r;
+        ul{
+          li{
+            &:first-child{
+              color: #5d6470;
+              border-bottom: none;
+            }
+            &:last-child{
+              color: #ee8734;
+              border-bottom: 1px  solid #ee8734;
+            }
+          }
+        }
+      .no_token{
+        display: none;
+      }
+      .have_token{
+        display: block;
+      }
+    }
+    .no_token{
+      display: block;
+    }
+    .have_token{
+      display: none;
+      .button{
+        a{
+          margin-top: 33/@r;
+        }
+        p{
+          margin-top: 30/@r;
+          padding: 0 63/@r;
+          text-align: center;
+        }
+      }
+
+    }
+    ul{
+      display: table;
+      margin: 0 auto;
+      padding: 30/@r;
+      li{
+        font-size: 26/@r;
+        line-height: 1;
+        padding-bottom: 10/@r;
+        color: #5d6470;
+        display: inline-block;
+
+        &:first-child{
+          margin-right: 60/@r;
+          color: #ee8734;
+          border-bottom: 1px  solid #ee8734;
+        }
+
+
+      }
+    }
+    .button_group{
+      background-color: white;
+      padding-bottom: 30/@r;
+    }
+    .button{
+      background: url("../../img/qingniao/result/token.png") no-repeat 0 0;
+      width: 670/@r;
+      height: 200/@r;
+      background-size: contain;
+      margin: 0 auto;
+      display: table;
+      background-color: white;
+
+      p{
+        width: 100%;
+        margin-top: 40/@r;
+        font-size: 20/@r;
+        color: #FFFFFF;
+        text-align: center;
+      }
+      a{
+        background-color:rgba(255,153,0,0.36) ;
+        width: 260/@r;
+        padding:15/@r 0;
+        text-align: center;
+        line-height: 1;
+        font-size: 32/@r;
+        color: #ffffff;
+        border-radius: 2/@r;
+        border: 1px solid #ffffff;
+        display: block;
+        margin: 0 auto;
+        margin-top: 38/@r;
+      }
+    }
+    .bank_info{
+
+      .one_bank{
+        &:last-child{
+          border-bottom: none;
+        }
+        padding: 30/@r 40/@r;
+
+        border-bottom:  @border;
+        h2{
+          font-size: 26/@r;
+          line-height: 1;
+          color: #5d6470;
+          margin-bottom: 10/@r;
+        }
+        p{
+          line-height: 35/@r;
+          font-size: 26/@r;
+          color: #5d6470;
+          span{
+            color: #ced0d3;
+          }
+        }
+      }
+    }
+  }
+}

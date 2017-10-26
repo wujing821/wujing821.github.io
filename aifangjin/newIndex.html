@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>首页</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/newIndex.less">
+    <script src="js/less.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top clearfix">
+            <div class="logo"></div>
+            <div class="profile">
+                <a href="profile/profile.html">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="tip"></div>
+        <div class="nav">
+            <div class="service clearfix">
+                <div class="preceptPic"></div>
+                <div class="f_l">
+                    <p class="serviceTitle">最优贷款方案</p>
+                    <p class="serviceInfo">为您提供最优产品组合</p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="service clearfix">
+                <div class="servicePic"></div>
+                <div class="f_l">
+                    <p class="serviceTitle">1V1专属服务</p>
+                    <p class="serviceInfo">专业金融顾问1V1服务</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="products" id="productsLoanContent">
+            <div class="productsRow clearfix">
+                <a :href="'newProducts.html?id=' + item.id" class="productItem productsSkip" v-for="item in items">
+                    <img :src="item.homepage_icon_pic" class="productIcon">
+                    <strong  v-text="item.product_name_polish"></strong>
+                </a>
+                <a class="productItem" href="newProductsList.html">
+                    <span class="productIcon moreIcon"></span>
+                    <strong>全部产品</strong>
+                </a>
+                <!--<a class="productItem productsSkip">
+                    <span class="productIcon travelIcon"></span>
+                    <strong>旅游贷款</strong>
+                </a>
+                <a class="productItem productsSkip">
+                    <span class="productIcon marriedIcon"></span>
+                    <strong>结婚贷款</strong>
+                </a>
+                <a class="productItem productsSkip">
+                    <span class="productIcon schoolIcon"></span>
+                    <strong>留学贷款</strong>
+                </a>-->
+                <!--<a class="productItem productsSkip">
+                    <span class="productIcon carIcon"></span>
+                    <strong>购车贷款</strong>
+                </a>
+                <a class="productItem productsSkip">
+                    <span class="productIcon shortperiodIcon"></span>
+                    <strong>短期贷款</strong>
+                </a>
+                <a class="productItem productsSkip">
+                    <span class="productIcon companyIcon"></span>
+                    <strong>企业贷款</strong>
+                </a>
+                -->
+            </div>
+        </div>
+        <div class="advertisement" id="wrapper">
+            <div class="advertisementBox clearfix">
+                <div class="advertisementItem rate">
+                    <div class="advertisementTitle">利率低</div>
+                    <p>低至6%/年</p>
+                </div>
+                <div class="advertisementItem amount">
+                    <div class="advertisementTitle">额度高</div>
+                    <p>高至3000万</p>
+                </div>
+                <div class="advertisementItem loan">
+                    <div class="advertisementTitle">放款快</div>
+                    <p>最快2天放款</p>
+                </div>
+            </div>
+        </div>
+        <div class="tools">
+            <div class="toolsTitle">热门工具</div>
+            <ul>
+                <li>
+                    <a href="tool/entitled.html">
+                        <span><i class="toolIcon buyHouse"></i></span>
+                        <strong>购房资格测试</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="tool/taxes.html">
+                        <span><i class="toolIcon tex"></i></span>
+                        <strong>税费计算器</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="calculatorBtn">
+                        <span><i class="toolIcon houseloan"></i></span>
+                        <strong>房贷计算器</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="tool/index.html">
+                        <span><i class="toolIcon moretool"></i></span>
+                        <strong>全部工具</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="aboutUs">
+            <a href="aboutUs.html" class="footer_aboutUs">关于爱房金</a>
+        </div>
+        <p>
+            <span class="spanMr">一粒控股(北京)有限公司</span><span>京ICP备16060468号-1</span>
+        </p>
+        <div class="tel">
+            <a href="tel:400-008-6699">
+                <span>咨询电话</span><strong>400-008-6699</strong>
+            </a>
+        </div>
+    </footer>
+    <div class="apply" id="soonApply">
+        <a href="apply_fir.html"></a>
+    </div>
+
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script src="js/newIndex.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script>
+        $(function () {
+            Index.init();
+
+            var phone = getCookie('phone');
+            sessionStorage.phone = phone?phone:"";
+            /**
+             * 获得cookie
+             * */
+            function getCookie(name) {
+                var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+                if (arr = document.cookie.match(reg))
+                    return unescape(arr[2]);
+                else
+                    return null;
+            }
+
+            /**
+             * 删除cookie
+             * */
+            function delCookie(name) {
+                var exp = new Date();
+                exp.setTime(exp.getTime() - 1);
+                var cval = getCookie(name);
+                if (cval != null)
+                    document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+            }
+
+
+            //注册
+            /* $('#login').on('click', function () {
+             $(this).css('color', '#ea592e');
+             });*/
+            //关于我们 点击变色
+            $('document,body').on('touchstart', function () {
+            });
+
+            //快速申请通道
+            $('#application_channel_btn').on('click', function () {
+                $(this).css({
+                    'borderColor': '#de4c21',
+                    'color': '#de4c21'
+                });
+                sessionStorage.select = '';
+                window.location.href = "/apply";
+            });
+
+            if (phone) {
+                $('.profile').addClass('active');
+                $('.profile a').attr('href','/profile/profile');
+            } else {
+                $('.profile').removeClass('active');
+                $('.profile a').attr('href','/login_sec');
+            }
+            console.log(phone)
+            console.log(sessionStorage.phone)
+            /*$('#footer_aboutUs').on('touchstart',function(){
+             $(this).css('color','#ea592e');
+             })
+             $('#footer_aboutUs').on('touchend',function(){
+             $(this).css('color','#444');
+             })*/
+            /*$('#productsLoanContent').find('.productsSkip').on('click',function () {
+                var productsName = $(this).find('strong').text();
+                console.log(productsName);
+                localStorage.setItem("product_name_polish",productsName);
+                window.location.href='newProducts.html';
+            })*/
+        });
+        //点击房贷计算器时，存储localstorage,默认选中商贷计算器
+
+        $('#calculatorBtn').on('click',function(){
+            localStorage.removeItem('selectedNum');
+            localStorage.setItem('selectedNum',0);
+            window.location.href = 'tool/calculator.html';
+        });
+
+
+    </script>
+</body>
+</html>

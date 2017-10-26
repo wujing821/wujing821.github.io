@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <title>二手房税费计算器</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/taxes.less">
+    <script src="../js/less.js"></script>
+
+</head>
+<body>
+<header class="public_header com_header">
+    <a href="javascript:;" class="return"></a>
+    二手房税费计算器
+</header>
+<!--二手房计算开始-->
+<div class="select_container main_page" id="select" style="">
+    <div class="error_com">
+        <i></i><span>手机号错误</span>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon one"></span><span class="title">房屋性质</span>
+                </div>
+                <div class="c_select">
+                    <em class="cont" data-type="type"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="loan_wrapper">
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">房屋性质</p>
+                <ul class="dropdown-menu" >
+                    <li class="active" ><span><i>普通住宅</i></span></li>
+                    <li ><span><i>非普通住宅</i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon two"></span><span class="title">买房家庭首次购房</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont" data-type="firsthouse"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="loan_wrapper">
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">买房家庭首次购房</p>
+                <ul class="dropdown-menu" >
+                    <li class="active" ><span><i>是</i></span></li>
+                    <li ><span><i>否</i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon three"></span><span class="title">卖房家庭唯一住房</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont" data-type="solehouse"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="loan_wrapper">
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">卖房家庭唯一住房</p>
+                <ul class="dropdown-menu" >
+                    <li class="active" ><span><i>是</i></span></li>
+                    <li ><span><i>否</i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon four"></span><span class="title">房产证年限</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont" data-type="time"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="loan_wrapper">
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">房产证年限</p>
+                <ul class="dropdown-menu" >
+                    <li class="active" ><span><i>两年以内</i></span></li>
+                    <li ><span><i>两年至五年</i></span></li>
+                    <li ><span><i>五年以上</i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon five"></span><span class="title">建筑面积</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="tel" maxlength="9" class="cont" placeholder="0" data-type="area"><span>平米</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon six"></span><span class="title">房屋总价</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="tel" maxlength="5"  class="cont" placeholder="0" data-type="total"><span>万元</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon seven"></span><span class="title">房屋指导价</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont" data-type="guidancemoney">小于房屋总价</em><i class="right_icon"></i>
+                </div>
+
+
+            </div>
+            <div class="loan_wrapper">
+                <div class="loan_mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">房屋指导价<span class="select_cancel">取消</span></p>
+                    <div>
+                        <ul class="dropdown-menu" >
+                            <li class="active" ><span><i>小于房屋总价</i></span></li>
+                            <li class="special"><span><i>大于房屋总价</i> </span></li>
+                        </ul>
+                    </div>
+                    <div class="definition">
+                        <strong>房屋指导价</strong>
+                        <input type="tel" maxlength="9" placeholder="输入房屋指导价" class="loan_input">
+                        <strong>元</strong>
+                        <input type="button" class="combind_definition_btn"  value="确定">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon eight"></span><span class="title">房屋原价</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="tel" maxlength="5" class="cont original" placeholder="0" data-type="original"><span>万元</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon nine"></span><span class="title">房屋原契税率</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont originalrate" data-type="originalrate"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="loan_wrapper">
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">房屋原契税率</p>
+                <ul class="dropdown-menu" >
+                    <li class="active" ><span><i>1%</i></span></li>
+                    <li ><span><i>1.5%</i></span></li>
+                    <li ><span><i>3%</i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="select_group">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon ten"></span><span class="title">房屋原契税</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="number" class="cont ratemoney" disabled data-type="ratemoney" placeholder="0"><span>元</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="btn" id="loan-btn"><a href="javascript:;">计算</a></div>
+</div>
+<!--二手房计算结束-->
+<!--计算结果页开始-->
+<div class="result main_page" id="result" style="display: none">
+    <div class="item_group">
+        <div class="p_item active">
+            <div class="info">
+                <strong>合计</strong>
+            </div>
+            <div class="info">
+
+                <em class="" v-text="result.total"></em><span>元</span>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>契税</strong>
+            </div>
+            <div class="info">
+                <em v-text="result.deed"></em><span>元</span>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>个人所得税</strong>
+            </div>
+            <div class="info">
+                <em v-text="result.own"></em><span>元</span>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>增值税</strong>
+            </div>
+            <div class="info">
+                <em v-text="result.add"></em><span>元</span>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>增值附加税</strong>
+            </div>
+            <div class="info">
+                <em v-text="result.addition"></em><span>元</span>
+            </div>
+
+
+        </div>
+    </div>
+    <p class="hint">
+        *税贷利率仅供计算使用，实际交易利率由银行评估结果为准
+    </p>
+</div>
+<!--计算结果页结束-->
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/vue.min.js"></script>
+<script src="../js/formp.js"></script>
+<script src="../js/tool/taxes.js"></script>
+<script>
+    $(document).ready(function () {
+        $('document,body').on('touchstart', function () {
+        });
+        Taxes.init();
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+@r:50rem;
+@backcolor:#f9f9f9;
+@border:#eaeaea;
+
+/********新的头部开始************/
+//头部
+.new_header{
+  height: 300/@r;
+  width:100%;
+  background: url("../../img/form/apply_banner.png") no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  //margin-bottom: 40/@r;
+  padding-top: 283/@r;
+  .nav{
+
+    width: 710/@r;
+    height: 140/@r;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 36/@r;
+    border-radius: 4/@r;
+    display: flex;
+    position: relative;
+    box-shadow: 4/@r 4/@r 18/@r 0/@r rgba(109,109,109,0.2);
+    .service{
+      flex:1;
+      .preceptPic{
+        float: left;
+        width:58/@r;
+        height: 62/@r;
+        background: url("../../img/newIndex/precept.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin: 0 26/@r;
+      }
+      .servicePic{
+        float: left;
+        width:58/@r;
+        height: 62/@r;
+        background: url("../../img/newIndex/service.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin: 0 26/@r;
+      }
+      .serviceTitle{
+        font-size: 26/@r;
+        color: #444;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+      }
+      .serviceInfo{
+        font-size: 22/@r;
+        color: #b9b9b9;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+        margin-top: 18/@r;
+      }
+    }
+    .line{
+      height: 100/@r;
+      border: 1px solid #eaeaea;
+      //width: 1/@r;
+      position: absolute;
+      left: 50%;
+      top: 20/@r;
+      -webkit-transform: scaleX(0.5);
+    }
+  }
+}
+/********新的头部结束************/
+body{
+  background-color: @backcolor;
+  &.product_container{
+    background-color: white;
+    .container.product{
+
+      background-color: @backcolor;
+      .loan_container {
+        padding-top: 133/@r;
+        width: 100%;
+        height: 1206/@r;
+        background: url(../../img/form/applyback2.png) no-repeat 0 0;
+        background-size: contain;
+        justify-content: flex-start;
+        //padding-bottom: 300/@r;
+        .hengxi{
+          //border-bottom: 1px solid rgba(255,204,204,0.3);
+          border-bottom: 1px solid #aaaaaa;
+          width:690/@r ;
+          margin: 0  auto;
+          position: relative;
+          top:-20/@r;
+        }
+        .loan_form_group{
+          &:first-child{
+            margin-bottom: 223/@r;
+          }
+          label,span{
+            font-size: 32/@r;
+          }
+
+          .loan_input_group{
+
+            margin: 0 30/@r 0 30/@r;
+            > div{
+              background: white;
+              background-size: contain;
+              height: 200/@r;
+              width: 200/@r;
+              border-radius: 100/@r;
+              padding-top: 30/@r;
+              input{
+                box-sizing: border-box;
+                background-color: transparent;
+                border-bottom: 0.75px solid rega(204,204,204,0.3);
+                //border: 1px solid #444444;
+                color: #ea592e;
+                width: 160/@r;
+                //padding:20/@r;
+                //height: 0.76rem;
+                position: relative;
+                top: -20/@r;
+                padding-bottom: 5/@r;
+              }
+              strong{
+                margin-top: -10/@r;
+                color: #aaaaaa;
+              }
+            }
+          }
+
+        }
+      }
+      .tip_loan{
+        position: absolute;
+        bottom: 200/@r;
+        background-color: transparent !important;
+        p{
+          background-color: transparent !important;
+          color: #c8c8c8 !important;
+          margin-top: 0 !important;
+          line-height: 1 !important;
+          height: 22/@r !important;
+          &:first-child{
+            margin-bottom: 6/@r;
+          }
+        }
+
+      }
+      .apply_footer{
+        &.active{
+          bottom:120/@r;
+          .submit_c{
+
+          }
+          .tip_loan{
+            display: block;
+            position: relative;
+            top: 0;
+            padding-bottom: 0;
+          }
+        }
+        width: 100%;
+        position: absolute;
+        bottom:175/@r;
+        .tip_loan{
+          display: none;
+        }
+        .submit_c{
+
+          margin-top: 48/@r;
+          padding: 0 30/@r;
+          .submit_apply {
+            &:active{
+              background-color: #d84a1f;
+            }
+            &:visited{
+              background-color: #d84a1f;
+            }
+            height: 89/@r;
+            line-height: 89/@r;
+            font-size: 32/@r;
+            width: 100%;
+            background-color: #ea592e;
+            border: none;
+            border-radius: 45/@r;
+            color: #FFFFFF;
+            outline: none;
+
+          }
+
+        }
+      }
+
+      .m_form{
+        display: none;
+      }
+    }
+
+  }
+  &.apply_container{
+    background-color: white;
+    .container{
+      background-color: @backcolor;
+      .loan_container {
+        align-items:flex-start ;
+        padding-top: 20/@r;
+        //padding-bottom: 300/@r;
+        .hengxi{
+          border-bottom: 1px solid rgba(255,204,204,0.3);
+          width:690/@r ;
+          margin: 0  auto;
+          position: relative;
+          top:-20/@r;
+        }
+        .loan_form_group{
+
+          margin-left: 92/@r;
+          .loan_input_group{
+            margin: 0 50/@r 0 45/@r;
+            > div{
+              background: url("../../img/form/apply_input.png") no-repeat 0 10/@r;
+              background-size: contain;
+              height: 220/@r;
+              width: 220/@r;
+              input{
+                background-color: transparent;
+                border-bottom: 1px solid rgba(255,102,0,0.3);
+                //border: 1px solid #444444;
+                width: 160/@r;
+                padding:20/@r;
+                position: relative;
+                top: -40/@r;
+              }
+              strong{
+                margin-top: -20/@r;
+                color: #ffcc99;
+              }
+            }
+          }
+
+        }
+      }
+      .m_form{
+        display: none;
+      }
+    }
+
+  }
+  .container{
+    position: relative;
+    &.product{
+      .error_com{
+        top:530/@r
+      }
+      padding-top: 0;
+      .m_form{
+        margin-top: 0;
+        .get_code{
+          font-size: 22/@r;
+        }
+      }
+      .loan_container{
+        position: relative;
+        width: 750/@r;
+        height: 470/@r;
+        background: url("../../img/form/applyback.png") no-repeat 0 0;
+        background-size: contain;
+        .loan_form_group{
+          &:first-child{
+            margin-bottom: 90/@r;
+            margin-top: -30/@r;
+          }
+          .loan_input_group{
+            > div{
+              input{
+                background-color: transparent;
+                color: white;
+              }
+              strong{
+                color: #f3f3f3;
+                margin-top: 10/@r;
+              }
+            }
+          }
+          label{
+            color: white;
+          }
+          span{
+            color: white;
+          }
+        }
+
+      }
+      .tip_loan{
+        background-color:@backcolor ;
+        padding-bottom: 40/@r;
+        p{
+          padding: 0 30/@r;
+          &:first-child{
+            background-color: white;
+            height: 50/@r;
+            line-height: 50/@r;
+            font-size: 22/@r;
+            color: #aaaaaa;
+            span{
+              color: #ea592e;
+              font-size: 22/@r;
+              margin: 0 10/@r;
+            }
+          }
+          &:last-child{
+            font-size: 22/@r;
+            color: #c8c8c8;
+            margin-top: 20/@r;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    padding-top: 155/@r;
+    .loan_container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 38/@r 0;
+      background-color: white;
+
+      .loan_form_group{
+        &:first-child{
+          margin-bottom: 54/@r;
+        }
+        label{
+          font-size: 26/@r;
+          color: #444444;
+        }
+        span{
+          font-size: 26/@r;
+          color: #444444;
+        }
+        .loan_input_group{
+          display: inline-block;
+          >div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            strong{
+              font-size: 20/@r;
+              color: #c8c8c8;
+              line-height: 1;
+              margin-top: 10/@r;
+            }
+            input{
+              border-bottom: 1px solid @border;
+              width: 260/@r;
+              margin:0 30/@r;
+              padding-bottom: 14/@r;
+              font-size: 38/@r;
+              color: #d95d31;
+              text-align: center;
+            }
+          }
+
+
+        }
+
+
+      }
+    }
+    .loan_describe{
+      padding-left: 30/@r;
+      margin-top: 30/@r;
+      margin-bottom: 120/@r;
+      p{
+        color: #c8c8c8;
+        font-size: 22/@r;
+        line-height: 1;
+        margin-bottom: 6/@r;
+        a{
+          color: #ea592e;
+          font-size: 22/@r;
+        }
+      }
+    }
+    footer{
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      display: flex;
+      margin-top: 30/@r;
+      z-index: 1000;
+      a{
+        text-align: center;
+        line-height: 100/@r;
+        font-size: 30/@r;
+        display: inline-block;
+      }
+      .tel_apply{
+        width: 206/@r;
+        height: 100/@r;
+        background-color: #fde2da;
+        color: #ea592e;
+      }
+      .apply{
+        flex: 1;
+        color: #ffffff;
+        background-color: #ff6633;
+      }
+    }
+    .error_com{
+      display: none;
+      height: 90/@r;
+      min-width: 280/@r;
+      line-height: 90/@r;
+      background-color: rgba(234,89,46,0.64);
+      text-align: center;
+      padding: 0 30/@r;
+      border-radius: 45/@r;
+      //display: table;
+      position: absolute;
+      margin: 0 auto;
+      z-index: 10000;
+      left: 50%;
+      transform: translate(-50%,0);
+      top:430/@r;
+      span{
+        color: white;
+        font-size: 24/@r;
+      }
+    }
+    .m_form{
+      position: relative;
+
+    }
+
+  }
+}

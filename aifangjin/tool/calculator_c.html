@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>房贷计算器</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/calculator.less">
+    <!--<link rel="stylesheet/less" type="text/css" href="../css/form.less">-->
+    <script src="../js/less.js"></script>
+</head>
+
+<body>
+<header class="public_header">
+    <a href="javascript:;" class="return"></a>
+    <span class="productHeader">房贷计算器</span>
+</header>
+<div class="container" id="beforeCompute">
+    <ul class="tabs">
+        <li data-num='0'>
+            <a href="#business">商业贷款</a>
+        </li>
+        <li data-num='1'>
+            <a href="#accumulation">公积金贷款</a>
+        </li>
+        <li data-num='2'>
+            <a href="#combind">组合贷款</a>
+        </li>
+    </ul>
+    <div class="tab_container">
+        <!--商贷计算器-->
+        <div id="business" class="tab_content contBox" style="display: none;">
+            <form>
+                <div class="main">
+                    <div class="loan clearfix">
+                        <span class="loan_icon"></span><strong class="loan_amount"><span class="required">*</span>贷款金额</strong>
+                        <input type="tel" class="cont" id="loan-money" value="" placeholder="0" minlength="1" maxlength="5">万
+                    </div>
+                    <div class="loan loan_period clearfix" id="business-loan-period">
+                        <span class="loan_icon"></span><strong class="loan_amount">贷款期限</strong>
+                        <span class="cont" id="business-cont"><input type="text" disabled="disabled" class="loan-year" id="business-year" value="25"/>年</span><i class="loan_choose"></i>
+                    </div>
+                    <div class="loan loan_rate" id="business-loan-rate">
+                        <span class="loan_icon"></span><strong class="loan_amount">商贷利率</strong>
+                        <!--<span class="cont" id="loan-base-rate">最新基准利率 ( <em class="loanRateNum" id="loanRateNumber">4.9</em>% )</span><i class="loan_choose"></i>-->
+                        <input class="cont" disabled="disabled" id="loan-base-rate" value="最新基准利率(4.9%)" /><i class="loan_choose"></i>
+
+                    </div>
+                    <!--<div class="loan year_rate">
+                <span class="loan_icon"></span><strong class="loan_amount">年利率输入</strong>
+                <input class="cont" type="number" id="rate-percent" value="4.9">%
+            </div>-->
+                    <div class="btn" id="loan-btn">
+                        <a href="javascript:;">计算</a>
+                    </div>
+                </div>
+            </form>
+            <!--贷款期限弹出框-->
+            <div id="loan-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask"></div>
+                <div class="loan_cont" id="loan-cont">
+                    <p class="loan_cont_header">货款期限<span id="loan-cancel-btn">取消</span></p>
+                    <div>
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><span><i>5年</i></span></li>
+                            <li><span><i>10年</i></span></li>
+                            <li><span><i>15年</i></span></li>
+                            <li><span><i>20年</i></span></li>
+                            <li class="active"><span><i>25年</i></span></li>
+                            <li class="last_item"><span><i>30年</i></span></li>
+                        </ul>
+                    </div>
+                    <div id="definition" class="definitionBox">
+                        <strong>自定义</strong>
+                        <input type="tel" placeholder="输入自定义期限" class="loan_input" id="loan-input" maxlength="2">
+                        <strong>年</strong>
+                        <input type="button" class="combind_definition_btn" id="business-combind-definition-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+            <!--商贷利率弹出框-->
+            <div id="loan-rate-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask" id="loan-rate-mask"></div>
+                <div class="loan_cont" id="loan-rate-cont">
+                    <p class="loan_cont_header">商贷利率<span id="loan-rate-cancel-btn">取消</span></p>
+                    <ul class="dropdown-menu" id="rate-dropdownMenu">
+                        <li id="rate-base-discount-one"><span><i>最新基准利率1.3倍(<em class="newRate13"></em>%)</i></span></li>
+                        <li id="rate-base-discount-two"><span><i>最新基准利率1.2倍(<em class="newRate12"></em>%)</i></span></li>
+                        <li id="rate-base-discount-three"><span><i>最新基准利率1.1倍(<em class="newRate11"></em>%)</i></span></li>
+                        <li class="active" id="rate-base"><span><i>最新基准利率(<em class="newRate49">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-four"><span><i>最新基准利率9.5折(<em class="newRate95">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-five"><span><i>最新基准利率9折(<em class="newRate9">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-six"><span><i>最新基准利率8.8折(<em class="newRate88">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-seven"><span><i>最新基准利率8.5折(<em class="newRate85">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-eight"><span><i>最新基准利率8.2折(<em class="newRate82">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-nine"><span><i>最新基准利率8折(<em class="newRate8">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-ten"><span><i>最新基准利率7.5折(<em class="newRate75">4.9</em>%)</i></span></li>
+                        <li id="rate-base-discount-eleven" class="last_item"><span><i>最新基准利率7折(<em class="newRate7">4.9</em>%)</i></span></li>
+                    </ul>
+                    <div class="definitionBox">
+                        <strong>自定义</strong>
+                        <input type="number" placeholder="输入自定义利率" class="loan_input" id="loan-Rate-input" maxlength="2">
+                        <strong>利率</strong>
+                        <input type="button" class="combind_definition_btn" id="business-combind-definition-Rate-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--弹框提示-->
+        <div class="cover"></div>
+        <!--<div class="cover_white"></div>-->
+        <div class="alert applay_alert">
+            <div class="correct"></div>
+            <h1>提示</h1>
+            <p class="alertTip"></p>
+            <a href="javascript:;" class="alertSure">确定</a>
+        </div>
+        <!--公积金计算器-->
+        <div id="accumulation" class="tab_content" style="display: none; ">
+            <form>
+                <div class="main">
+                    <div class="loan clearfix">
+                        <span class="loan_icon"></span><strong class="loan_amount"><span class="required">*</span>贷款金额</strong>
+                        <input type="tel" class="cont" id="accumulation-amount" value="" placeholder="0" minlength="1" maxlength="5">万
+                    </div>
+                    <div class="loan loan_period clearfix" id="loan-period">
+                        <span class="loan_icon"></span><strong class="loan_amount">贷款期限</strong>
+                        <span class="cont" id="accumulation-cont"><input type="text" disabled="disabled" class="loan-year" id="accumulation-period" value="25"/>年</span><i class="loan_choose"></i>
+                    </div>
+                    <div class="loan loan_rate" id="accumulationRateBtn">
+                        <span class="loan_icon accumulation_loan_icon"></span><strong class="loan_amount">公积金利率</strong>
+                        <input class="cont" disabled="disabled" id="accumulation-loan-rate" value="公积金基准利率(3.25%)" /><i class="loan_choose"></i>
+                        <!--<span class="cont" id="accumulation-loan-rate">公积金基准利率(3.25%)</span><i class="loan_choose"></i>-->
+                    </div>
+                    <!--<div class="loan year_rate">
+                    <span class="loan_icon"></span><strong class="loan_amount">年利率输入</strong>
+                    <input class="cont" type="number" id="accumulation-year-rate" value="3.25">%
+
+                </div>-->
+                    <div class="btn">
+                        <a href="javascript:;" id="accumulation-btn">计算</a>
+                    </div>
+                </div>
+            </form>
+            <!--贷款期限弹出框-->
+            <div id="accumulation-loan-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">货款期限<span id="accumulation-loan-cancel-btn">取消</span></p>
+                    <div>
+                        <ul class="dropdown-menu" id="accumulation-dropdownMenu">
+                            <li><span><i>5年</i></span></li>
+                            <li><span><i>10年</i></span></li>
+                            <li><span><i>15年</i></span></li>
+                            <li><span><i>20年</i></span></li>
+                            <li class="active"><span><i>25年</i></span></li>
+                            <li class="last_item"><span><i>30年</i></span></li>
+                        </ul>
+                    </div>
+                    <div id="accumulation-definition" class="accumulationDefinitionBox">
+                        <strong>自定义</strong>
+                        <input type="tel" placeholder="输入自定义期限" class="loan_input" id="accumulation-loan-input" maxlength="2">
+                        <strong>年</strong>
+                        <input type="button" class="combind_definition_btn" id="accumulation-combind-definition-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+            <!--公积金利率弹出框-->
+            <div id="accumulation-loan-rate-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask" id="accumulation-loan-rate-mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">公积金利率<span id="accumulation-rate-cancel-btn">取消</span></p>
+                    <ul class="dropdown-menu" id="accumulation-rate-dropdownMenu">
+                        <li class="active" id="accumulation-rate-base"><span><i>公积金基准利率(<em class="acculaterNewRate1"></em>%)</i></span></li>
+                        <li id="accumulation-rate-base-discount"><span><i>公积金基准利率1.1倍(<em class="acculaterNewRate2"></em>%)</i></span></li>
+                        <li id="accumulation-rate-base-discount-second"><span><i>公积金基准利率1.2倍(<em class="acculaterNewRate3"></em>%)</i></span></li>
+                    </ul>
+                    <div class="definitionBox">
+                        <strong>自定义</strong>
+                        <input type="number" placeholder="输入自定义利率" class="loan_input" id="accumulation-Rate-input" maxlength="2">
+                        <strong>利率</strong>
+                        <input type="button" class="combind_definition_btn" id="accumulation-combind-definition-Rate-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--组合贷计算器-->
+        <div id="combind" class="tab_content" style="display: none; ">
+            <form>
+                <div class="main">
+                    <div class="loan loan_period clearfix" id="combind-loan-period">
+                        <span class="loan_icon"></span><strong class="loan_amount">贷款期限</strong>
+                        <span class="cont" id="combind-cont"><input disabled="disabled" type="tel" class="loan-year" id="combind-period" value="25"/>年</span><i class="loan_choose"></i>
+                    </div>
+                    <div class="loan clearfix">
+                        <span class="loan_icon"></span><strong class="loan_amount"><span class="required">*</span>公积金贷款金额</strong>
+                        <input type="tel" class="cont" id="combind-accumulation-amount" value="" placeholder="0" minlength="1" maxlength="5">万
+                    </div>
+
+                    <div class="loan loan_rate" id="combindAccumulationRateBtn">
+                        <span class="loan_icon accumulation_loan_icon"></span><strong class="loan_amount">公积金利率</strong>
+                        <input class="cont" disabled="disabled" id="combind-accumulation-loan-rate" value="公积金基准利率(3.25%)" /><i class="loan_choose"></i>
+                    </div>
+                    <!--<div class="loan year_rate">
+                <span class="loan_icon"></span><strong class="loan_amount">公积金贷款利率</strong>
+                <input class="cont" type="number" id="combind-accumulation-year-rate" value="3.25">%
+            </div>-->
+                    <div class="loan clearfix">
+                        <span class="loan_icon"></span><strong class="loan_amount"><span class="required">*</span>商业贷款金额</strong>
+                        <input type="tel" class="cont" id="combind-amount" value="" placeholder="0" minlength="1" maxlength="5">万
+                    </div>
+
+                    <div class="loan loan_rate" id="combindBusinessRateBtn">
+                        <span class="loan_icon accumulation_loan_icon"></span><strong class="loan_amount">商贷利率</strong>
+                        <!--<span class="cont" id="combind-loan-rate">最新基准利率</span><i class="loan_choose"></i>-->
+                        <input class="cont" disabled="disabled" id="combind-loan-rate" value="最新基准利率(4.9%)" /><i class="loan_choose"></i>
+                    </div>
+                    <!--<div class="loan year_rate">
+                <span class="loan_icon"></span><strong class="loan_amount">年利率输入</strong>
+                <input class="cont" type="number" id="combind-year-rate" value="4.9">%
+
+            </div>-->
+                    <div class="btn">
+                        <a href="javascript:;" id="combind-btn">计算</a>
+                    </div>
+                </div>
+            </form>
+            <!--贷款期限弹出框-->
+            <div id="combind-loan-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">货款期限<span id="combind-loan-cancel-btn">取消</span></p>
+                    <div>
+                        <ul class="dropdown-menu" id="combind-dropdownMenu">
+                            <li><span><i>5年</i></span></li>
+                            <li><span><i>10年</i></span></li>
+                            <li><span><i>15年</i></span></li>
+                            <li><span><i>20年</i></span></li>
+                            <li class="active"><span><i>25年</i></span></li>
+                            <li class="last_item"><span><i>30年</i></span></li>
+                        </ul>
+                    </div>
+                    <div id="combind-definition" class="combindDefinitionBox">
+                        <strong>自定义</strong>
+                        <input type="tel" placeholder="输入自定义期限" class="loan_input" id="combind-loan-input" maxlength="2">
+                        <strong>年</strong>
+                        <input type="button" class="combind_definition_btn" id="combind-definition-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+            <!--公积金利率弹出框-->
+            <div id="combind-accumulation-loan-rate-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask" id="combind-accumulation-loan-rate-mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">公积金利率<span id="combind-rate-cancel-btn">取消</span></p>
+                    <ul class="dropdown-menu" id="combind-accumulation-rate-dropdownMenu">
+                        <li class="active" id="combind-accumulation-rate-base"><span><i>公积金基准利率(<em class="combindNewRate1"></em>%)</i></span></li>
+                        <li id="combind-accumulation-rate-base-discount"><span><i>公积金基准利率1.1倍(<em class="combindNewRate2"></em>%)</i></span></li>
+                        <li id="combind-accumulation-rate-base-discount-second"><span><i>公积金基准利率1.2倍(<em class="combindNewRate3"></em>%)</i></span></li>
+                    </ul>
+                    <div class="definitionBox">
+                        <strong>自定义</strong>
+                        <input type="number" placeholder="输入自定义利率" class="loan_input" id="combind-accumulation-Rate-input" maxlength="2">
+                        <strong>利率</strong>
+                        <input type="button" class="combind_definition_btn" id="combind-accumulation-definition-Rate-btn" value="确定">
+                    </div>
+                </div>
+
+            </div>
+            <!--商贷利率弹出框-->
+            <div id="combind-loan-rate-wrapper" class="loan_wrapper hide">
+                <div class="loan_mask" id="combind-business-loan-rate-mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">商贷利率<span id="combind-loan-rate-cancel-btn">取消</span></p>
+                    <ul class="dropdown-menu" id="combind-business-rate-dropdownMenu">
+                        <li id="combind-rate-base-discount-one"><span><i>最新基准利率1.3倍(<em class="newRate13"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-two"><span><i>最新基准利率1.2倍(<em class="newRate12"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-three"><span><i>最新基准利率1.1倍(<em class="newRate11"></em>%)</i></span></li>
+                        <li class="active" id="combind-business-rate-base"><span><i>最新基准利率(<em class="newRate49"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-four"><span><i>最新基准利率9.5折(<em class="newRate95"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-five"><span><i>最新基准利率9折(<em class="newRate9"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-six"><span><i>最新基准利率8.8折(<em class="newRate88"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-seven"><span><i>最新基准利率8.5折(<em class="newRate85"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-eight"><span><i>最新基准利率8.2折(<em class="newRate82"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-nine"><span><i>最新基准利率8折(<em class="newRate8"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-ten"><span><i>最新基准利率7.5折(<em class="newRate75"></em>%)</i></span></li>
+                        <li id="combind-rate-base-discount-eleven"><span><i>最新基准利率7折(<em class="newRate7"></em>%)</i></span></li>
+                    </ul>
+                    <div class="definitionBox">
+                        <strong>自定义</strong>
+                        <input type="number" placeholder="输入自定义利率" class="loan_input" id="combind-loan-Rate-input" maxlength="2">
+                        <strong>利率</strong>
+                        <input type="button" class="combind_definition_btn" id="combind-definition-Rate-btn" value="确定">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/tool/businessCalculator.js"></script>
+    <script src="../js/tool/acculaterCalculator.js"></script>
+    <script src="../js/tool/combindCalculator.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+//        Calculator.init();
+        //On Click Event
+        $("ul.tabs li").click(function(){
+            //获取点击li的data属性
+            /*var num = this.dataset['num'];
+             if(window.history && history.pushState){
+             history.pushState(num,'任何浏览器都不支持','?t='+num);
+             }else{
+             console.log('不支持');
+             }*/
+            $("ul.tabs li").removeClass("active");
+            $(this).addClass("active");
+            $(".tab_content").hide();
+            var activeTab = $(this).find("a").attr("href");
+            $(activeTab).fadeIn();
+            return false;
+        });
+
+        //商贷计算器
+        BusinessCalculator.business();
+        //公积金计算器
+        AccumulationCalculator.accumulation();
+        //组合贷计算器
+        CombindCalculator.combind();
+        //回退功能
+        Public.init();
+        /*tab栏切换*/
+//        var num = window.location.search.split('=')[1];
+
+        var num = window.localStorage?localStorage.getItem('selectedNum'):Cookie.read('selectedNum');
+        console.log(num);
+        //默认选中组合贷款计算器
+        num = num || 2;
+        $("ul.tabs").find('li').eq(num).click();
+
+    })
+</script>
+</body>
+</html>

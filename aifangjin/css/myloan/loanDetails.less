@@ -1,0 +1,799 @@
+@r:50rem;
+@b:30rem;
+body{
+  background: #f5f5f5;
+  //overflow: hidden;
+}
+.main{
+  //多个产品
+
+  .loansList{
+    display: none;
+    width:100%;
+    height: 90/@r;
+    background-color: #f8f8f8;
+    //padding-top: 22/@r;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 0;
+    .loanItem{
+      display: inline-block;
+      width:128/@r;
+      height: 46/@r;
+      border: 1/@b solid #999;
+      text-align: center;
+      border-radius: 40/@r;
+      background-color: #fff;
+      margin-right: 40/@r;
+      margin-top: 22/@r;
+      line-height: 46/@r;
+    }
+    .loanItem:last-child{
+      margin-right: 0;
+    }
+    //点击按钮样式
+    .loanItem:link {
+      color: #666;
+      border-color: #999;
+    }
+    .loanItem:visited {
+      color: #666;
+      border-color: #999;
+    }
+    .loanItem:active {
+      color: #ea592f;
+      border-color: #ea592f;
+    }
+    .loanItem.active{
+      color: #ea592f;
+      border-color: #ea592f;
+    }
+  }
+  //出现四个元素的时候
+
+  .loanListMore{
+    width:100%;
+    height: 90/@r;
+    //background-color: pink;
+    background: -webkit-linear-gradient(left,#f2f2f2,#ececec);
+    .loanListCont{
+      position: relative;
+      width:710/@r;
+      height: 100%;
+      padding-left: 130/@r;
+      text-align: left;
+      overflow:scroll;
+      background: -webkit-linear-gradient(left,#f4f4f4,#fafafa,#eeeeee);
+      border-right: 1/@b solid #efefef;
+      .loanListBox{
+        //width:1000%;
+        overflow-x: auto;
+        height: 100%;
+        //background-color: -webkit-linear-gradient(left,#f2f2f2,#ececec);
+      }
+    }
+
+    /*.cover{
+      position: absolute;
+      right: 0;
+      top:0/@r;
+      width:50/@r;
+      height: 90/@r;
+      background-color: #f1f1f1;
+      z-index: 100;
+    }*/
+  }
+  .header{
+    position: relative;
+    font-size: 26/@r;
+    line-height: 1;
+    padding: 33/@r 0 27/@r 30/@r;
+    color: #888;
+    font-family: "Microsoft YaHei", serif;
+  }
+  .more{
+    background-color: #fff;
+    border-bottom: 1/@b solid #eaeaea;
+    //取消申请按钮暂时不需要
+    .cancelBtn{
+      position: absolute;
+      width:128/@r;
+      right: 30/@r;
+      top:21/@r;
+      padding: 12/@r 0 14/@r;
+      text-align: center;
+      font-size: 22/@r;
+      line-height: 1;
+      border-radius: 4/@r;
+      color: #666;
+      font-family: "Microsoft YaHei", sans-serif;
+      border: 1/@b solid #999;
+    }
+    //点击按钮样式
+    .cancelBtn:link {
+      color: #666;
+      border-color: #999;
+    }
+    .cancelBtn:visited {
+      color: #666;
+      border-color: #999;
+    }
+    .cancelBtn:active {
+      color: #ea592f;
+      border-color: #ea592f;
+    }
+  }
+  .container{
+    display: none;
+    .content{
+      background: #fff;
+      padding: 50/@r 30/@r;
+      li{
+        margin-bottom: 50/@r;
+        font-size: 26/@r;
+        color: #666;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+        .contentName{
+          float: left;
+          line-height: 1;
+          font-size: 26/@r;
+          color: #888;
+        }
+        .cont{
+          float: right;
+          font-size: 28/@r;
+          color: #ea592f;
+          font-family: "Microsoft YaHei", serif;
+          line-height: 1;
+          span{
+            font-size: 28/@r;
+          }
+        }
+      }
+      li:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .processInfo{
+      padding: 22/@r 30/@r 40/@r;
+      font-size: 22/@r;
+      color: #aaa;
+      line-height: 1;
+    }
+    .processState{
+      margin: 0 30/@r 30/@r;
+      width:690/@r;
+
+      line-height: 1;
+      .processStateTitle{
+        width:100%;
+        height: 90/@r;
+        text-align: center;
+        line-height: 90/@r;
+        font-size: 28/@r;
+        color: #fff;
+        font-family: "Microsoft YaHei", serif;
+        background: url("../../img/myloan/bg.png") no-repeat;
+        background-size: contain;
+      }
+      .processContent{
+        //padding: 54/@r 0 54/@r;
+        padding-top: 54/@r;
+        border-radius: 6/@r;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        display: none;
+        //height: 452/@r;
+        ul{
+          height: 100%;
+          display: table;
+          margin: 0 auto;
+          padding-bottom: 15/@r;
+          &.padd{
+            padding-bottom: 54/@r;
+          }
+          li{
+            &:last-child{
+              div{
+                i{
+                  em{
+                    display: none !important;
+                  }
+                }
+              }
+            }
+            margin-bottom: 72/@r;
+            line-height: 1;
+            position: relative;
+            //width:100%;
+            div{
+              //width:100%;
+              position: relative;
+              text-align: center;
+              line-height: 1;
+              .processTime{
+                line-height: 35/@r;
+                float: left;
+                font-size: 24/@r;
+                color: #aaa;
+                //font-family: "Microsoft YaHei", serif;
+                margin-right: 30/@r;
+              }
+              strong{
+                font-size: 28/@r;
+                color: #666;
+                font-family: "Microsoft YaHei", serif;
+                line-height: 35/@r;
+                float: left;
+                margin-left: 30/@r;
+                text-align: left;
+                &.money{
+                  //width: 440/@r;
+                  max-width:440/@r;
+                }
+              }
+              i{
+                position: relative;
+                width:34/@r;
+                float: left;
+                line-height: 1;
+                b{
+                  width:34/@r;
+                  height: 35/@r;
+                  line-height: 1;
+                  background: url("../../img/myloan/passed.png") no-repeat center bottom;
+                  background-size: contain;
+                  z-index: 10;
+                  position: absolute;
+                  left: 0;
+                  top:0;
+                }
+                //竖线
+                em{
+                  position: absolute;
+                  bottom: -71/@r;
+                  left: 5/@r;
+                  height: 80/@r;
+                  border: 1px solid #eaeaea;
+                  width:0;
+                  line-height: 1;
+                  z-index: 1;
+                }
+              }
+            }
+            div.state{
+              i{
+                width:18/@r;
+                height: 30/@r;
+                line-height: 1;
+                position: relative;
+                left: 8/@r;
+                top: 0/@r;
+                margin-right: 15/@r;
+                b{
+                  width:18/@r;
+                  height: 30/@r;
+                  background: url("../../img/myloan/drop.png") no-repeat center center;
+                  background-size: contain;
+                  line-height: 1;
+                  z-index: 10;
+                  position: absolute;
+                  left: 0/@r;
+                  top:0;
+                }
+                em{
+                  position: absolute;
+                  bottom: -81/@r;
+                  left: 7/@r;
+                  height: 87/@r;
+                  border: 1px solid #eaeaea;
+                  width:0;
+                  line-height: 1;
+                  z-index: 1;
+                };
+              }
+            }
+            div.passed{
+              i{
+                width:34/@r;
+                height: 35/@r;
+                line-height: 1;
+                float: left;
+                position: relative;
+                b{
+                  width:100%;
+                  height: 100%;
+                  background: url("../../img/myloan/passed.png") no-repeat center center;
+                  background-size: 34/@r 35/@r;
+                  line-height: 1;
+                  z-index: 10;
+                  position: absolute;
+                  left: 0;
+                  top:0;
+                }
+                em{
+                  position: absolute;
+                  bottom: -75/@r;
+                  left: 15/@r;
+                  height: 100/@r;
+                  border: 1px solid #eaeaea;
+                  width:0;
+                  line-height: 1;
+                  z-index: 1;
+                };
+              }
+            }
+            div.refused{
+              .reason{
+                  margin-top: 2/@r;
+              }
+              i{
+                width:34/@r;
+                height: 35/@r;
+                line-height: 1;
+                float: left;
+                position: relative;
+
+                b{
+                  width:100%;
+                  height: 100%;
+                  background: url("../../img/myloan/refused.png") no-repeat center center;
+                  background-size: 34/@r 35/@r;
+                  line-height: 1;
+                  z-index: 10;
+                  position: absolute;
+                  left: 0;
+                  top:0;
+                }
+              }
+              p{
+                font-weight: normal;
+                font-size: 22/@r;
+                color: #aaa;
+                font-family: "Microsoft YaHei", serif;
+                line-height: 1;
+                margin-top: 72/@r;
+                width:100%;
+                text-align: center;
+              }
+              a{
+                width:100%;
+                text-align: center;
+                height: 24/@r;
+                margin-top: 12/@r;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                .telIcon{
+                  display: inline-block;
+                  float: none;
+                  width:24/@r;
+                  height:24/@r;
+                  background: url("../../img/myloan/telephone.png") no-repeat center center;
+                  background-size: contain;
+                  margin-right: 10/@r;
+                }
+                em{
+                  font-size: 22/@r;
+                  color: #ea592f;
+                  font-family: "Microsoft YaHei", serif;
+                  line-height: 1;
+                  margin-top: 1/@r;
+                }
+              }
+            }
+            div.cancel{
+              i{
+                width:34/@r;
+                height: 35/@r;
+                line-height: 1;
+                float: left;
+                position: relative;
+
+                b{
+                  width:34/@r;
+                  height: 35/@r;
+                  background: url("../../img/myloan/refused.png") no-repeat center center;
+                  background-size: contain;
+                  line-height: 1;
+                  z-index: 10;
+                  position: absolute;
+                  left: 0;
+                  top:0;
+                }
+              }
+              p{
+                font-weight: normal;
+                font-size: 22/@r;
+                color: #aaa;
+                font-family: "Microsoft YaHei", serif;
+                line-height: 1;
+                margin-top: 72/@r;
+                width:100%;
+                text-align: center;
+              }
+              a{
+                width:100%;
+                text-align: center;
+                height: 24/@r;
+                margin-top: 12/@r;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                .telIcon{
+                  display: inline-block;
+                  float: none;
+                  width:24/@r;
+                  height:24/@r;
+                  background: url("../../img/myloan/telephone.png") no-repeat center center;
+                  background-size: contain;
+                  margin-right: 10/@r;
+                }
+                em{
+                  font-size: 22/@r;
+                  color: #ea592f;
+                  font-family: "Microsoft YaHei", serif;
+                  line-height: 1;
+                  margin-top: 1/@r;
+                }
+              }
+            }
+          }
+          li:last-child{
+            margin-bottom: 0/@r;
+          }
+        }
+      }
+    }
+  }
+  .container.show{
+    display: block;
+  }
+}
+/*********兼容性处理**********/
+@media screen and (max-width:370px){
+
+  .main{
+    .header{
+      font-size: 26/@r;
+      line-height: 1;
+      padding: 33/@r 0 27/@r 30/@r;
+      color: #888;
+      font-family: "Microsoft YaHei", serif;
+    }
+    .container{
+      .content{
+        background: #fff;
+        padding: 50/@r 30/@r;
+        li{
+          margin-bottom: 70/@r;
+          font-size: 26/@r;
+          color: #666;
+          font-family: "Microsoft YaHei", serif;
+          line-height: 1;
+          .contentName{
+            float: left;
+            line-height: 1;
+            font-size: 26/@r;
+          }
+          .cont{
+            float: right;
+            font-size: 28/@r;
+            color: #ea592f;
+            font-family: "Microsoft YaHei", serif;
+            line-height: 1;
+            span{
+              font-size: 28/@r;
+            }
+          }
+        }
+        li:last-child{
+          margin-bottom: 0;
+        }
+      }
+      .processInfo{
+        padding: 22/@r 30/@r 40/@r;
+        font-size: 22/@r;
+        color: #aaa;
+        line-height: 1;
+      }
+      .processState{
+        margin: 0 30/@r 30/@r;
+        width:690/@r;
+        //height: 615/@r;
+        /*background: url("../../img/myloan/bg1.png") no-repeat;
+        background-size: contain;*/
+        line-height: 1;
+        .processStateTitle{
+          width:100%;
+          height: 90/@r;
+          text-align: center;
+          line-height: 90/@r;
+          font-size: 28/@r;
+          color: #fff;
+          font-family: "Microsoft YaHei", serif;
+          background: url("../../img/myloan/bg.png") no-repeat;
+          background-size: contain;
+        }
+        .processContent{
+          padding: 54/@r 30/@r 0;
+          background-color: #fff;
+          display: none;
+          //height: 452/@r;
+          ul{
+            height: 100%;
+            display: table;
+            margin: 0 auto;
+            li{
+              margin-bottom: 72/@r;
+              line-height: 1;
+              position: relative;
+              //width:100%;
+              div{
+                //width:100%;
+                position: relative;
+                text-align: center;
+                line-height: 1;
+                .processTime{
+                  line-height: 35/@r;
+                  float: left;
+                  font-size: 24/@r;
+                  color: #aaa;
+                  //font-family: "Microsoft YaHei", serif;
+                  margin-right: 15/@r;
+                }
+                strong{
+                  font-size: 28/@r;
+                  color: #666;
+                  font-family: "Microsoft YaHei", serif;
+                  line-height: 35/@r;
+                  float: left;
+                  margin-left: 15/@r;
+                }
+                i{
+                  position: relative;
+                  width:34/@r;
+                  float: left;
+                  line-height: 1;
+                  b{
+                    width:34/@r;
+                    height: 35/@r;
+                    line-height: 1;
+                    background: url("../../img/myloan/passed.png") no-repeat center bottom;
+                    background-size: contain;
+                    z-index: 10;
+                    position: absolute;
+                    left: 1/@r;
+                    top:0;
+                  }
+                  //竖线
+                  em{
+                    position: absolute;
+                    bottom: -71/@r;
+                    left: 5/@r;
+                    height: 80/@r;
+                    border: 1px solid #eaeaea;
+                    width:0;
+                    line-height: 1;
+                    z-index: 1;
+                  }
+                }
+              }
+              div.state{
+                i{
+                  width:18/@r;
+                  height: 30/@r;
+                  line-height: 1;
+                  position: relative;
+                  left: 8/@r;
+                  top: 0/@r;
+                  margin-right: 15/@r;
+                  b{
+                    width:18/@r;
+                    height: 30/@r;
+                    background: url("../../img/myloan/drop.png") no-repeat center center;
+                    background-size: contain;
+                    line-height: 1;
+                    z-index: 10;
+                    position: absolute;
+                    left: 0/@r;
+                    top:0;
+                  }
+                  em{
+                    position: absolute;
+                    bottom: -81/@r;
+                    left: 7/@r;
+                    height: 87/@r;
+                    border: 1px solid #eaeaea;
+                    width:0;
+                    line-height: 1;
+                    z-index: 1;
+                  };
+                }
+              }
+              div.passed{
+                i{
+                  width:34/@r;
+                  height: 35/@r;
+                  line-height: 1;
+                  float: left;
+                  position: relative;
+                  b{
+                    width:34/@r;
+                    height: 35/@r;
+                    background: url("../../img/myloan/passed.png") no-repeat center center;
+                    background-size: contain;
+                    line-height: 1;
+                    z-index: 10;
+                    position: absolute;
+                    left: 0;
+                    top:0;
+                  }
+                  em{
+                    position: absolute;
+                    bottom: -91/@r;
+                    left: 15/@r;
+                    height: 100/@r;
+                    border: 1px solid #eaeaea;
+                    width:0;
+                    line-height: 1;
+                    z-index: 1;
+                  };
+                }
+              }
+              div.refused{
+                .reason{
+                  margin-top: 2/@r;
+                }
+                i{
+                  width:34/@r;
+                  height: 35/@r;
+                  line-height: 1;
+                  float: left;
+                  position: relative;
+
+                  b{
+                    width:34/@r;
+                    height: 35/@r;
+                    background: url("../../img/myloan/refused.png") no-repeat center center;
+                    background-size: contain;
+                    line-height: 1;
+                    z-index: 10;
+                    position: absolute;
+                    left: 0;
+                    top:0;
+                  }
+                }
+                p{
+                  font-weight: normal;
+                  font-size: 22/@r;
+                  color: #aaa;
+                  font-family: "Microsoft YaHei", serif;
+                  line-height: 1;
+                  margin-top: 72/@r;
+                  width:100%;
+                  text-align: center;
+                }
+                a{
+
+                  width:100%;
+                  text-align: center;
+                  height: 24/@r;
+                  margin-top: 12/@r;
+                  display: flex;
+                  align-items:center;
+                  justify-content: center;
+                  .telIcon{
+                    display: inline-block;
+                    float: none;
+                    width:24/@r;
+                    height:24/@r;
+                    background: url("../../img/myloan/telephone.png") no-repeat center center;
+                    background-size: contain;
+                    margin-right: 10/@r;
+                  }
+                  em{
+                    font-size: 22/@r;
+                    color: #ea592f;
+                    font-family: "Microsoft YaHei", serif;
+                    line-height: 1;
+                    margin-top: 2/@r;
+
+                  }
+                }
+              }
+              div.cancel{
+                i{
+                  width:34/@r;
+                  height: 35/@r;
+                  line-height: 1;
+                  float: left;
+                  position: relative;
+
+                  b{
+                    width:34/@r;
+                    height: 35/@r;
+                    background: url("../../img/myloan/refused.png") no-repeat center center;
+                    background-size: contain;
+                    line-height: 1;
+                    z-index: 10;
+                    position: absolute;
+                    left: 0;
+                    top:0;
+                  }
+                }
+                p{
+                  font-weight: normal;
+                  font-size: 22/@r;
+                  color: #aaa;
+                  font-family: "Microsoft YaHei", serif;
+                  line-height: 1;
+                  margin-top: 72/@r;
+                  width:100%;
+                  text-align: center;
+                }
+                a{
+                  width:100%;
+                  text-align: center;
+                  height: 24/@r;
+                  margin-top: 12/@r;
+                  display: flex;
+                  align-items:center;
+                  justify-content: center;
+                  .telIcon{
+                    display: inline-block;
+                    float: none;
+                    width:24/@r;
+                    height:24/@r;
+                    background: url("../../img/myloan/telephone.png") no-repeat center center;
+                    background-size: contain;
+                    margin-right: 10/@r;
+                  }
+                  em{
+                    font-size: 22/@r;
+                    color: #ea592f;
+                    font-family: "Microsoft YaHei", serif;
+                    line-height: 1;
+                    margin-top: 1/@r;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+
+  .main .container .processState .processContent ul li div strong.money{
+    //width: 440/@r;
+    max-width: 430/@r;
+  }
+
+}
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+
+  .main .container .processState .processContent ul li div strong.money{
+    //width: 440/@r;
+    max-width: 430/@r;
+  }
+}
+/*******兼容性处理*******/
+@media screen and (max-width:370px){
+ /* .main .container .processState .processContent ul li div strong.money{
+    width: 400/@r;
+  }*/
+}

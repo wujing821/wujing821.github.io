@@ -1,0 +1,270 @@
+@import "../base.css";
+@r:50rem;
+@border:#eaeaea;
+@in_height: 89/@r;
+@input-font: 32/@r;
+@com_red:#ea592e;
+body{
+  background-color:#f6f6f6;
+}
+//设置
+.set_container{
+  .p_item{
+    &:first-child{
+      margin-top: 30/@r;
+    }
+    margin:  20/@r 0;
+    height: 90/@r;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0 30/@r;
+    justify-content:space-between;
+    .icon_fir{
+
+      background-position: 0 -67/@r;
+
+    }
+    .info{
+      display: flex;
+      align-items: center;
+    }
+    span{
+      width: 32/@r;
+      height: 32/@r;
+      margin-right: 20/@r;
+      display: inline-block;
+      background: url(../images/img.png) no-repeat 0 0;
+      background-size: 32/@r 191/@r;
+    }
+    strong{
+      font-size: 28/@r;
+      color: #555555;
+
+    }
+    i{
+      color: #ea592e;
+      font-size: 24/@r;
+      margin-right: 20/@r;
+      font-style: normal;
+    }
+    em{
+      background: url(../../img/profile/right.png) 0 0 no-repeat;
+      width: 14/@r;
+      height: 26/@r;
+      background-size: contain;
+      display: inline-block;
+    }
+
+  }
+  .login_out{
+    margin-top: 30/@r;
+    text-align: center;
+    font-size: 28/@r;
+    color: #444444;
+    background-color: white;
+    line-height: 90/@r;
+    height: 90/@r;
+  }
+}
+//退出登录弹出层
+.loan_wrapper{
+  &.active{
+    display: block;
+  }
+  display: none;
+  width:100%;
+  height:100%;
+  position: relative;
+  .loan_mask{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.4);
+  }
+  .loan_cont{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+    height:310/@r;
+    background: #fafafa;
+    width:100%;
+    .loan_cont_header{
+      background-color: white;
+      height: 90/@r;
+      line-height: 90/@r;
+      border-bottom: 1px solid #eaeaea;
+      font-family: '微软雅黑', sans-serif;
+      font-size: 26/@r;
+      color: #999999;
+      text-align: center;
+    }
+    .common{
+      background-color: white;
+
+      text-align: center;
+      font-size: 28/@r;
+      height: 90/@r;
+      line-height: 90/@r;
+    }
+    .ok{
+      color: #ea592e;
+    }
+    .cancel{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: #444444;
+    }
+  }
+}
+//修改密码
+.pass_container{
+  background-color: white;
+  margin-top: 30/@r;
+  form{
+
+    ::-webkit-input-placeholder { /* WebKit browsers */
+      font-size:28/@r;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      font-size:28/@r;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      font-size:28/@r;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+      font-size:28/@r;
+    }
+    position: relative;
+  }
+
+  .error_com{
+    display: none;
+    padding: 0 30/@r;
+    //margin-top: 40/@r;
+    background-color: #ffe8e1;
+    text-align: center;
+    height:50/@r;
+    line-height: 50/@r;
+    i{
+      background: url("../../img/form/error.png") no-repeat 0 0;
+      width: 26/@r;
+      height: 26/@r;
+      background-size: contain;
+      display: inline-block;
+      position: relative;
+      top: 5/@r;
+      margin-right: 10/@r;
+    }
+    span{
+      line-height: 1;
+      color: @com_red;
+      display: inline-block;
+      font-size: 22/@r;
+    }
+  }
+  .success_bottom{
+    position: absolute;
+    bottom:-70/@r;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    background-color: rgba(0,0,0,0.4);
+    padding: 30/@r 0;
+    color: #cfcfcf;
+    font-size: 26/@r;
+    border-radius: 8/@r;
+    display: none;
+    text-align: center;
+    width: 400/@r;
+    //width: 400/@r;
+  }
+  .form_group{
+    position: relative;
+    padding: 0 30/@r;
+    &:first-child{
+      input{
+        border-bottom: 1px solid @border;
+      }
+    }
+    input{
+      width: 100%;
+      height: 90/@r;
+      font-size: 28/@r;
+      background-color: #ffffff;
+      padding-right: 90/@r;
+    }
+
+  }
+  .tip{
+    background-color:#f6f6f6 ;
+    display: flex;
+    align-items:center;
+    padding-top: 40/@r;
+    padding-left: 30/@r;
+    i{
+      background: url("../../img/profile/tip.png") 0 0 no-repeat;
+      width: 26/@r;
+      height: 26/@r;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 10/@r;
+    }
+    span{
+      color: #999999;
+    }
+  }
+  .submit_c{
+    position: relative;
+
+    padding: 0 30/@r;
+    padding-top: 148/@r;
+    background-color:#f6f6f6;
+
+    .submit {
+      &:active{
+        background-color: #d84a1f;
+      }
+      &:visited{
+        background-color: #d84a1f;
+      }
+      height: @in_height;
+      line-height: @in_height;
+      font-size: @input-font;
+      width: 100%;
+      background-color: #ea592e;
+      border: none;
+      border-radius: 45/@r;
+      color: #FFFFFF;
+      outline: none;
+
+    }
+    p{
+      color: @com_red;
+      text-align: center;
+      font-size: 24/@r;
+      margin-top: 40/@r;
+    }
+  }
+}
+/****设置密码**/
+.reason{
+  background-color:#f6f6f6 ;
+  font-size: 24/@r;
+  color: #444444;
+  margin: 40/@r 30/@r;
+  line-height: 1;
+}
+.paddingtop{
+  padding-top: 140/@r !important;
+}
+.margintop{
+  margin-top: 0 !important;
+}
+.borderno{
+  border: none !important;
+}

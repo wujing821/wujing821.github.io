@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>爱房金</title>
+    <link rel="stylesheet" href="/aifangjin/css/activity/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/activity/share.css">
+
+</head>
+<body data-page="page_share">
+<div class="share_container" style="display: block">
+    <img class="background" src="../img/activity/bg_share.png" alt="">
+    <!--<img class="qrcode" src="../img/activity/qrcode.png" alt="">-->
+    <strong class="number"></strong>
+    <div class="share_head">
+        <div class="border" style=" background: url(../img/activity/head.jpg) 0 0 no-repeat;background-size: 100%">
+            <div class="head">
+
+            </div>
+            <!--<img src="../img/activity/head.jpg" alt="">-->
+        </div>
+        <p>樱桃小丸子</p>
+    </div>
+    <p class="info">长按保存图片</p>
+</div>
+<!--<button style="font-size: 40px">下载</button>-->
+<script src="/aifangjin/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../js/html2canvas.js"></script>
+<script src="../js/activity/record.js"></script>
+<script>
+    $(document).ready( function(){
+        var imgUri;
+//        var number = 2;
+        var number = sessionStorage.total;
+        var canvas = document.createElement("canvas"),
+            w=$('body').width(),
+            h=$('body').height();
+        canvas.width = w * 2;
+        canvas.height = h * 2;
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+        var context = canvas.getContext("2d");
+//然后将画布缩放，将图像放大两倍画到画布上
+        context.scale(2,2);
+        if(number<101){
+            $('.background').attr('src','../img/activity/bg_share.png')
+            $('.number').text(number)
+        }else{
+            $('.background').attr('src','../img/activity/bg_share1.png')
+            $('.number').hide()
+        }
+       /* html2canvas(document.body, {
+            allowTaint: true,
+            taintTest: false,
+            canvas: canvas,
+            onrendered: function(canvas) {
+                canvas.id = "mycanvas";
+                //document.body.appendChild(canvas);
+                //生成base64图片数据
+                var dataUrl = canvas.toDataURL();
+                var newImg = document.createElement("img");
+                newImg.src =  dataUrl;
+                imgData = canvas.toDataURL();
+//                    $('#aaa').attr('src',dataUrl)
+                $('.share_container').hide();
+                document.body.appendChild(newImg);
+/!*                 imgUri = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); // 获取生成的图片的url 　
+                var saveLink = document.createElement( 'a');
+                saveLink.href =imgUri;
+                saveLink.download = "aifnagjin"+ (new Date()).getTime()+".png"; saveLink.click();*!/
+            }
+        });*/
+   /*     $('button').click(function () {
+            var saveLink = document.createElement( 'a');
+            saveLink.href =imgUri;
+            saveLink.download = "aifnagjin"+ (new Date()).getTime()+".png"; saveLink.click();
+        })*/
+    });
+</script>
+
+</body>
+</html>

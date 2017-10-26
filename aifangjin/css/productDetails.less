@@ -1,0 +1,230 @@
+@r:50rem;
+.productDetails_main{
+  .productDetails_info{
+    .productDetails_info_list{
+        margin: 0 30/@r;
+        li{
+          float: left;
+          width:50%;
+          height:132/@r;
+          display: -webkit-flex;
+          align-items: center;
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          strong{
+            font-size: 28/@r;
+            color: #444;
+            em{
+              font-size: 28/@r;
+              color: #444;
+            }
+          }
+          &:nth-of-type(2n){
+            border-right: none;
+          }
+          &:nth-last-of-type(1){
+            border-bottom: none;
+            border-right: none;
+          }
+          .productDetails_icon{
+              float: left;
+              width:72/@r;
+              height:60/@r;
+              background: url("../img/productDetails/sprite.png") no-repeat;
+              //background: url("../img/productDetails/1.png") no-repeat;
+              background-size: 700/@r 60/@r;
+              margin: 0 30/@r 0 20/@r;
+          }
+          .productDetails_item{
+              float: right;
+              font-size: 28/@r;
+              color: #444;
+              .productDetails_rate{
+                color: #ea592e;
+                margin: 0 2/@r;
+                font-size: 28/@r;
+                em{
+                  color: #ea592e;
+                }
+              }
+              .product_maxAmount{
+                font-size: 28/@r;
+                color: #ea592e;
+                strong{
+                  font-size: 28/@r;
+                  color: #ea592e;
+                }
+              }
+
+
+          }
+          .rate{
+            background-position: -16/@r 0;
+          }
+          .day{
+            background-position: -89/@r 0;
+          }
+          .loan{
+            background-position: -161/@r 0;
+
+          }
+          .year{
+            background-position: -233/@r 0;
+
+          }
+          .mortgage{
+            background-position: -306/@r 0;
+
+          }
+          .people{
+            background-position: -379/@r 0;
+
+          }
+          .methods{
+            background-position: -452/@r 0;
+
+          }
+          .area{
+            background-position: -523/@r 0;
+
+          }
+      }
+      //还款方式
+      .productDetails_repayment{
+        .productDetails_average_capital_plus_interest,.productDetails_average_capital{
+          display: block;
+          font-size: 28/@r;
+        }
+      }
+    }
+    &::before{
+      content: '';
+      display: block;
+      height:30/@r;
+      width:100%;
+      background: #f6f6f6;
+    }
+  }
+  //申请条件
+  .productDetails_requirement{
+    &::before{
+      content: '';
+      display: block;
+      background: #f6f6f6;
+      height:20/@r;
+    }
+    .productDetails_requirement_header{
+      height:80/@r;
+      line-height: 80/@r;
+      padding-left: 30/@r;
+      font-size: 28/@r;
+      color: #444;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .productDetails_requirement_wapper{
+      padding: 30/@r 30/@r 0;
+      .productDetails_requirement_list{
+
+        //height: 210/@r;
+        //overflow: hidden;
+        &.active{
+          li{
+            &:nth-child(n+4){
+              display: block;
+            }
+          }
+        }
+        li{
+          &:nth-child(n+4){
+            display: none;
+          }
+
+          color: #888;
+          font-size: 26/@r;
+          position: relative;
+          height: 100%;
+          width:100%;
+          //padding-left: 18/@r;
+          padding-bottom: 26/@r;
+          /*&::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0/@r;
+            width:14/@r;
+            height:24/@r;
+            background: url("../img/productDetails/item.png") no-repeat;
+            background-position: 0 10/@r ;
+            background-size: contain;
+            //border-radius: 100%;
+            //display: inline-block;
+          }*/
+        }
+      }
+      .productDetails_requirement_more{
+          //height: 54/@r;
+          line-height: 54/@r;
+          //display: none;
+          .productDetails_show_more{
+            display: block;
+            width:100%;
+            height:100%;
+            color: #ee8269;
+            font-size: 26/@r;
+            text-align: center;
+          }
+      }
+    }
+  }
+}
+//底部
+  .productDetails_footer_icon{
+    display: none;
+    margin: 4/@r 132/@r 30/@r 130/@r;
+    height: 32/@r;
+    position: relative;
+    i{
+      position: absolute;
+      height: 0;
+      border: 1px solid #f6f6f6;
+      -webkit-transform: scaleY(0.5);
+      top: 50%;
+      left: 0;
+      width: 100%;
+    }
+    span{
+      position: absolute;
+      width: 124/@r;
+      height: 32/@r;
+      top: 50%;
+      left: 50%;
+      margin-left: -52/@r;
+      margin-top: -16/@r;
+      background: #fff url("../img/productDetails/footerlogo.png") no-repeat center center;
+      background-size: 104/@r 32/@r;
+      z-index: 10;
+    }
+  }
+//立即申请
+.productDetails_apply{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90/@r;
+  text-align: center;
+  line-height: 90/@r;
+  font-size: 30/@r;
+  z-index: 100;
+  a{
+    display: block;
+    width:100%;
+    height:100%;
+    background: #ea592e;
+    color: #fff;
+  }
+}
+//底部间距
+.mb{
+  margin-bottom: 120/@r;
+}

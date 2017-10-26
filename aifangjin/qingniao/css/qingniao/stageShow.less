@@ -1,0 +1,219 @@
+@r:50rem;
+//头部
+.header{
+  width:750/@r;
+  height: 552/@r;
+  background: url("../../img/qingniao/stage/stagebg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 34/@r;
+  .title{
+    text-indent: -2000/@r;
+    width: 418/@r;
+    height: 109/@r;
+    background: url("../../img/qingniao/stage/title.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto 28/@r;
+  }
+  .info{
+    font-size: 22/@r;
+    color: #f9f9f9;
+    font-family: "Microsoft YaHei", serif;
+    padding: 0 50/@r;
+    margin-bottom: 42/@r;
+  }
+  .serviceList{
+    padding: 0 60/@r;
+    margin-bottom: 38/@r;
+    li{
+      float: left;
+      margin-right: 70/@r;
+      margin-bottom: 20/@r;
+      border-radius: 6/@r;
+      .serviceSum{
+        float: left;
+        width:70/@r;
+        //height: 60/@r;
+        background-color: #fdd9a1;
+        color: #ff5b09;
+        font-size: 26/@r;
+        font-family: "Microsoft YaHei", serif;
+        padding: 17/@r 0;
+        line-height: 1;
+        //line-height: 60/@r;
+        text-align: center;
+      }
+      .serviceInfo{
+        float: left;
+        //width:210/@r;
+        min-width: 210/@r;
+        //height: 60/@r;
+        background-color: #fff;
+        opacity: 0.9;
+        color: #ff5b09;
+        font-size: 20/@r;
+        font-family: "Microsoft YaHei", serif;
+        //line-height: 60/@r;
+        line-height: 1;
+        padding: 20/@r 0;
+        text-align: center;
+      }
+    }
+    li:nth-child(2n){
+      margin-right: 0;
+    }
+  }
+  .stepTitle{
+    position: relative;
+    width: 100%;
+    height: 28/@r;
+    font-size: 28/@r;
+    line-height: 1;
+    color: #fff;
+    font-family: "Microsoft YaHei", serif;
+    font-weight: bold;
+    padding-left: 60/@r;
+    .dropup{
+      position: absolute;
+      left: 30/@r;
+      top:3/@r;
+      width:20/@r;
+      height: 20/@r;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 10;
+    }
+  }
+}
+.main{
+  position: relative;
+}
+//主体部分
+.stepList{
+  margin-top: 30/@r;
+  li{
+    position: relative;
+    display: flex;
+    margin: 0/@r 70/@r 60/@r 105/@r;
+    //圆点
+    .dropstep{
+      position: absolute;
+      top:50%;
+      left: -73/@r;
+      margin-top: -7/@r;
+      width:14/@r;
+      height: 14/@r;
+      background-color: #ff5b09;
+      border-radius: 50%;
+    }
+
+    .stepPic{
+      float: left;
+      width: 110/@r;
+      height: 110/@r;
+      margin-right: 60/@r;
+    }
+    .stepCont{
+      float: left;
+      flex: 1;
+      padding-top: 10/@r;
+      h4{
+        font-size: 28/@r;
+        color: #5d6470;
+        font-family: "Microsoft YaHei", serif;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 20/@r;
+      }
+      p{
+        font-size: 22/@r;
+        color: #b1bacb;
+        font-family: "Microsoft YaHei", serif;
+        //line-height: 1;
+        line-height: 30/@r;
+      }
+    }
+    //图片
+    .chooseClass{
+      background: url("../../img/qingniao/stage/chooseclass.png") no-repeat;
+      background-size: contain;
+    }
+    .letter{
+      background: url("../../img/qingniao/stage/letter.png") no-repeat;
+      background-size: contain;
+    }
+    .nowStage{
+      background: url("../../img/qingniao/stage/stage.png") no-repeat;
+      background-size: contain;
+    }
+    .nowdoing{
+      background: url("../../img/qingniao/stage/nowdoding.png") no-repeat;
+      background-size: contain;
+    }
+    .successApply{
+      background: url("../../img/qingniao/stage/success.png") no-repeat;
+      background-size: contain;
+    }
+  }
+}
+//边线
+.sideBoundary{
+  position: absolute;
+  left: 30/@r;
+  top: -96/@r;
+  width:20/@r;
+  height: 860/@r;
+  //z-index: -10;
+  .dropdown{
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    margin-left: -8/@r;
+    width:14/@r;
+    height: 14/@r;
+    background-color: #eaeaea;
+    border-radius: 50%;
+  }
+  .dropline{
+    position: absolute;
+    left: 40%;
+    top:12/@r;
+    width:3/@r;
+    height: 826/@r;
+    //border-right: 3px dashed #ffa689;
+    background: url("../../img/qingniao/stage/line.png") no-repeat;
+    background-size: contain;
+  }
+
+}
+/*!* 兼容iphone4/4s5/5 *!
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2),(device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+  .header{
+    .serviceList{
+      margin-bottom: 0;
+      li{
+        margin-right: 20/@r;
+      }
+    }
+    .info{
+      margin-bottom: 20/@r;
+    }
+  }
+}
+
+//兼容iphone6
+@media(min-device-width:375px)and(max-device-width:667px)and(-webkit-min-device-pixel-ratio:2){
+  .header{
+    .serviceList{
+      margin-bottom: 23/@r;
+    }
+  }
+}
+!*iphone6plus*!
+@media(min-device-width:414px)and(max-device-width:736px)and(-webkit-min-device-pixel-ratio:3){
+  .header{
+    .serviceList{
+      margin-bottom: 38/@r;
+    }
+  }
+
+}*/

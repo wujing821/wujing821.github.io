@@ -1,0 +1,378 @@
+@r:50rem;
+html,body{
+  //height: 100%;
+}
+body{
+  //height: 100%;
+  background-color: #f9f9f9;
+}
+header{
+  .banner{
+    width:100%;
+    height: 280/@r;
+    background: url("../../img/qingniao/educationVoucher/banner.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.main{
+  //margin-top: 10/@r;
+  //position: relative;
+  padding-bottom: 100/@r;
+  //background-color: #f9f9f9;
+  background-color: transparent;
+  //z-index: 10;
+  .mainContent{
+    background-color: #fff;
+    border-radius: 8/@r;
+  }
+
+
+}
+.voucherList{
+  margin-top: -12/@r;
+  li.voucherItem:first-child{
+    box-shadow: none;
+  }
+  .voucherItem{
+    min-height: 216/@r;
+    width: 100%;
+    //height: auto;
+    padding: 34/@r 0 0 52/@r;
+    box-shadow: 0/@r -5/@r 18/@r rgba(195,195,195,0.2);
+    //box-shadow:5px 5px 5px #999 inset;
+    //border-bottom: 1px solid #333;
+    border-radius: 8/@r;
+    .voucherPic{
+      float: left;
+      width:38/@r;
+      height: 38/@r;
+      margin-right: 50/@r;
+      .checkIcon{
+        display: block;
+        width:100%;
+        height: 100%;
+        background: url("../../img/qingniao/educationVoucher/check.png") no-repeat;
+        background-size: contain;
+      }
+      .checkActiveIcon{
+        background: url("../../img/qingniao/educationVoucher/active.png") no-repeat;
+        background-size: contain;
+      }
+    }
+    .voucherContent{
+      float: left;
+      width: 486/@r;
+      .voucherTitle{
+        font-size: 28/@r;
+        color: #5d6470;
+        font-family: "Microsoft YaHei", serif;
+        position: relative;
+        padding-left: 66/@r;
+        margin-bottom: 26/@r;
+        line-height: 1;
+        em{
+          position: absolute;
+          left: 0;
+          top:-5/@r;
+          width:46/@r;
+          height: 36/@r;
+
+        }
+        .homeIcon{
+          background: url("../../img/qingniao/educationVoucher/home.png") no-repeat;
+          background-size: contain;
+        }
+        .learnIcon{
+          background: url("../../img/qingniao/educationVoucher/learn.png") no-repeat;
+          background-size: contain;
+        }
+        .peopleIcon{
+          background: url("../../img/qingniao/educationVoucher/people.png") no-repeat;
+          background-size: contain;
+        }
+        .steamIcon{
+          background: url("../../img/qingniao/educationVoucher/steam.png") no-repeat;
+          background-size: contain;
+        }
+        .changeIcon{
+          background: url("../../img/qingniao/educationVoucher/change.png") no-repeat;
+          background-size: contain;
+        }
+        .amountNumber{
+          position: absolute;
+          right:0;
+          top:0;
+          color: #fe8105;
+          font-size: 28/@r;
+          .amountNum{
+            color: #fe8105;
+            font-size: 28/@r;
+          }
+        }
+      }
+      .voucherInfo{
+        font-size: 22/@r;
+        color: #b1bacb;
+        font-family: "Microsoft YaHei", serif;
+        margin-bottom: 20/@r;
+        line-height: 30/@r;
+        //letter-spacing:1/@r;
+        //多行文本溢出
+        //text-align:justify;
+        //display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp:3;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+
+      }
+      //剩余文字展开
+      .voucherInfoShow{
+        display: block;
+        text-align:justify;
+      }
+      .choose{
+        height: 48/@r;
+        width: 486/@r;
+        margin-bottom: 40/@r;
+        .chooseBox{
+          height: 48/@r;
+          .chooseCont{
+            position: relative;
+            float: left;
+            width:391/@r;
+            height: 48/@r;
+            background-color: #f7f7f8;
+            font-size: 22/@r;
+            color: #646a76;
+            padding-left: 18/@r;
+            line-height: 48/@r;
+            &::before{
+              content: '';
+              position: absolute;
+              left: 0;
+              top:0;
+              width:2/@r;
+              height: 48/@r;
+              background: #fe8105;
+            }
+          }
+          .chooseBtn{
+            float: left;
+            width: 95/@r;
+            height: 48/@r;
+            line-height: 48/@r;
+            background-color: #fe8105;
+            color: #fff;
+            font-size: 22/@r;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .dropdownIcon{
+      float: right;
+      margin-right: 30/@r;
+      margin-top: 54/@r;
+      .dropdownIconPic{
+        display: block;
+        width:42/@r;
+        height: 42/@r;
+        background: url("../../img/qingniao/educationVoucher/dropDown1.png") no-repeat;
+        background-size: contain;
+      }
+      .upIcon{
+        background: url("../../img/qingniao/educationVoucher/dropUp1.png") no-repeat;
+        background-size: contain;
+      }
+    }
+    .dropdownChoose{
+      margin-top: 88/@r;
+    }
+  }
+  .voucherItemChoose{
+    min-height: 283/@r;
+  }
+}
+//底部
+.footer{
+  height: 88/@r;
+  line-height: 88/@r;
+  //margin-bottom: 100/@r;
+  padding-bottom: 100/@r;
+  background-color: #f9f9f9;
+
+  .tel{
+    display: block;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    .telInfo{
+      position: relative;
+      font-size: 20/@r;
+      color: #b1bacb;
+      font-family: "Microsoft YaHei", serif;
+      padding-left: 26/@r;
+      .telIcon{
+        position: absolute;
+        left:0;
+        top:0/@r;
+        width: 26/@r;
+        height: 26/@r;
+        background: url("../../img/qingniao/educationVoucher/tel.png") no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+//分期
+.stagesCont{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100/@r;
+  width:100%;
+  background-color: #fff;
+  z-index: 10;
+
+  //线
+  .line{
+    display: block;
+    width:100%;
+    border-top: 1px solid #eaeaea;
+    -webkit-transform: scaleY(0.5);
+  }
+  .checkAllBtn{
+    position: relative;
+    float: left;
+    vertical-align: middle;
+    margin:0/@r 150/@r 0 50/@r;
+    .voucherChooseIcon{
+      position: absolute;
+      top:50%;
+      left: 0;
+      width: 38/@r;
+      height: 38/@r;
+      background: url("../../img/qingniao/educationVoucher/check.png") no-repeat;
+      background-size: contain;
+      margin: -19/@r 10/@r 0 0/@r;
+    }
+    .voucherChooseActiveIcon{
+      background: url("../../img/qingniao/educationVoucher/active.png") no-repeat;
+      background-size: contain;
+    }
+    .checkText{
+      color: #5d6470;
+      font-size: 30/@r;
+      padding-left: 48/@r;
+      line-height: 100/@r;
+    }
+  }
+
+
+  .totalAmount{
+    float: left;
+    font-size: 30/@r;
+    color: #5d6470;
+    line-height: 100/@r;
+    .amountNumBox{
+      font-size: 30/@r;
+      color: #fe8105;
+      line-height: 100/@r;
+      .amountNum{
+        font-size: 30/@r;
+        color: #fe8105;
+        line-height: 100/@r;
+      }
+    }
+  }
+  .stagesBtn{
+    float: right;
+    width:206/@r;
+    height: 99/@r;
+    background-color: #fe8105;
+    //margin-top: 1/@r;
+    color: #fff;
+    font-size: 30/@r;
+    font-family: "Microsoft YaHei", serif;
+    line-height: 100/@r;
+    text-align: center;
+  }
+}
+
+//小弹窗
+.mask{
+  display: none;
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  opacity: .2;
+  z-index: 100;
+  height: 100%;
+  width:100%;
+}
+.chooseMenu{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  z-index: 101;
+  margin-top: -180/@r;
+  margin-left: -280/@r;
+  width:560/@r;
+  height: 360/@r;
+  background-color: #fff;
+  border-radius: 16/@r;
+  padding-top: 38/@r;
+  .chooseMenuTitle{
+    font-size: 28/@r;
+    color: #5d6470;
+    font-family: "Microsoft YaHei", serif;
+    text-align: center;
+    line-height: 1;
+  }
+  .chooseMenuContent{
+    .chooseMenuItem{
+      width:400/@r;
+      height: 48/@r;
+      margin: 30/@r auto;
+      border: 1px solid #eaeaea;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 24/@r;
+      color: #8d929b;
+      font-family: "Microsoft YaHei", serif;
+      line-height: 48/@r;
+      border-radius: 2/@r;
+
+    }
+    li.activeItem{
+      border: 1px solid #fe8105;
+      background-color: #fff1e4;
+
+    }
+  }
+  .cancel{
+    position: absolute;
+    right: 0/@r;
+    top: 0/@r;
+    padding: 10/@r 20/@r 30/@r 30/@r;
+    i{
+      display: block;
+      font-size: 34/@r;
+      color: #5d6470;
+      line-height: 1;
+    }
+  }
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

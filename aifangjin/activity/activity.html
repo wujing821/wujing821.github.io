@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>爱房金</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/activity/activity.less">
+    <script src="../js/less.js"></script>
+</head>
+<body>
+<div class="introduction" id="introduction">
+        <div class="ship"></div>
+        <div class="info"></div>
+        <span class="arrow"></span>
+        <div class="animateJump"><a href="future.html"></a></div>
+</div>
+<div class="clock hide">
+    <div class="dial_plate">
+        <div class="hour"></div>
+        <div class="minute"></div>
+    </div>
+</div>
+
+<div class="step1">
+    <div class="main">
+        <div class="boy">
+            <div class="talk"></div>
+        </div>
+        <div class="boss">
+            <div class="talk"></div>
+        </div>
+        <div class="animateJump"><a href="future.html"></a></div>
+    </div>
+</div>
+<div class="step2 hide">
+    <div class="main">
+        <div class="dreaming"></div>
+        <div class="dreamingCont">
+            <a href="#school" class="school"></a><a href="#travel" class="travel"></a><a href="#home" class='home'></a>
+            <span id="finger"></span>
+        </div>
+        <div class="animateJump"><a href="future.html"></a></div>
+    </div>
+</div>
+<div id="school" class="hide com_dream" data-money="20">
+    <div class="schoolBoy"></div>
+    <div class="talk"></div>
+    <div class="cloud">
+        <span class="cloud1"></span>
+        <span class="cloud2"></span>
+        <!--<span class="cloud3"></span>-->
+    </div>
+    <span class="arrow"></span>
+    <div class="animateJump"><a href="future.html"></a></div>
+</div>
+<div id="travel" class="hide com_dream" data-money="5">
+    <div class="car">
+        <div class="talk"></div>
+    </div>
+    <div class="travelCloud">
+        <span class="cloud1"></span><span class="cloud2"></span><span class="cloud3"></span>
+    </div>
+    <span class="arrow"></span>
+    <div class="animateJump"><a href="future.html"></a></div>
+</div>
+<div id="home" class="hide com_dream" data-money="30">
+    <div class="boy">
+        <div class="talk"></div>
+    </div>
+    <span class="arrow"></span>
+    <div class="animateJump"><a href="future.html"></a></div>
+</div>
+
+<div class="wakeUp hide">
+    <div class="heart">
+        <span class="heart1"></span>
+        <span class="heart2"></span>
+        <span class="heart3"></span>
+    </div>
+    <div class="animateJump"><a href="future.html"></a></div>
+    <div class="clock1 hide">
+        <div class="dial_plate">
+            <div class="hour1"></div>
+            <div class="minute1"></div>
+        </div>
+    </div>
+</div>
+<div class="wakeUp2">
+    <div class="heart">
+        <span class="heartleft"></span><span class="heartright"></span>
+    </div>
+    <div class="pc"></div>
+    <div class="animateJump"><a href="future.html"></a></div>
+    <div class="clock1 hide">
+        <div class="dial_plate">
+            <div class="hour1"></div>
+            <div class="minute1"></div>
+        </div>
+    </div>
+</div>
+<div class="inputBox">
+    <div class="inputWrapper">
+        <p><span>爱房金</span>，未来从现在开始</p>
+        <p>您的梦想需要<span class="total_money">30</span>万</p>
+        <input type="text" placeholder="输入您的月薪进行计算" class="month_money">
+        <a href="#" class="btn_true btn">多久实现</a>
+    </div>
+</div>
+<div id="result1">
+    <p class="congratulation"><strong>恭喜你</strong></p>
+    <p class="years">需要<span class="need_time">30</span>年可以实现梦想</p>
+    <div class="resultChoose"><a href="./wait.html">苦逼等待</a><a href="./future.html" class="waitTip">从现在开始<i></i></a></div>
+</div>
+<div id="result2">
+    <p class="congratulation"><i><em class="waitTime">1</em>年，土豪</i>，您还缺朋友吗？爱房金想和你做朋友.</p>
+    <div class="resultChoose"><a href="./wait.html">交个朋友</a><a href="./future.html" class="waitTip">从现在开始<i></i></a></div>
+</div>
+<!--<div class="animateJump"><a href="future.html"></a></div>-->
+<!--<audio id='audio' autoplay='autoplay'>
+    <source src='1.mp3' type='audio/mpeg' >
+</audio>-->
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/activity/record.js"></script>
+<script>
+   //图片预加载
+   var introduceImg = '../img/activity/introducebg.png';
+   var step1Img = "../img/activity/background.png";
+   var step2Img = "../img/activity/nightBackground.png";
+   var schoolImg = "../img/activity/schoolBg.png";
+   var travelImg = "../img/activity/travelbg.png";
+
+   loadImage(introduceImg,function(){});
+   loadImage(step1Img,function(){});
+   loadImage(step2Img,function(){});
+   loadImage(schoolImg,function(){});
+   loadImage(travelImg,function(){});
+
+   function loadImage(url, callback) {
+        var img = new Image(); //创建一个Image对象，实现图片的预下载
+        img.src = url;
+        if (img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数
+            callback.call(img);
+            return; // 直接返回，不用再处理onload事件
+        }
+        img.onload = function () { //图片下载完毕时异步调用callback函数。
+            callback.call(img);//将回调函数的this替换为Image对象
+        };
+    }
+(function($){
+    function up(node,fun) {
+        var isScrolling=null,startPos=null,endPos=null;
+
+
+        node.addEventListener('touchstart',function (event) {
+            var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+            startPos = {x:touch.pageX,y:touch.pageY,time:+new Date}; //取第一个touch的坐标值
+            isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
+        });
+        node.addEventListener('touchmove',function (event) {
+//当屏幕有多个touch或者页面被缩放过，就不执行move操作
+            if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+            var touch = event.targetTouches[0];
+            endPos = {x:touch.pageX - startPos.x,y:touch.pageY - startPos.y};
+            isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+            if(isScrolling === 0){
+                event.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+
+            }
+
+        });
+        node.addEventListener('touchend',function (event) {
+            var duration = +new Date - startPos.time; //滑动的持续时间
+            if(isScrolling === 0){ //当为水平滚动时
+
+                if(Number(duration) > 10){
+//判断是左移还是右移，当偏移量大于10时执行
+                    if(endPos){
+                        if(endPos.x > 10){
+                            console.log('左移动')
+                        }else if(endPos.x < -10){
+                            console.log('右移动')
+                        }
+                    }
+
+                }
+
+            }
+            if(isScrolling === 1){ //当上下滑屏时
+
+                if(Number(duration) > 10){
+//判断是上移还是下移，当偏移量大于10时执行
+                    if(endPos){
+                        if(endPos.y > 10){
+                            console.log('上移动');
+                        }else if(endPos.y < -10){
+                            console.log('下移动');
+                            fun(event);
+                        }
+                    }
+
+                }
+
+            }
+        })
+    }
+    $(document).ready(function(){
+        /*页面跳转*/
+         up(document.getElementById('introduction'),function (e) {
+             $('#introduction').fadeOut(200);
+//             $('#introduction').removeClass('show').addClass('hide');
+             $('.step1').fadeIn(10,function(){
+                 $('.clock').removeClass('hide').addClass('show');
+                 setTimeout(hourClock,3000);
+                 setTimeout(minuteClock,3000);
+                 setTimeout(function(){
+                     $('.step2').fadeIn(1000,function(){
+                         $('.step1').css('display','none');
+                     });
+                     setTimeout(function () {
+                         $('.dreaming').fadeIn(500);
+                         setTimeout(function(){
+                             $('.dreamingCont').fadeIn(800);
+                             var schoolTouch = $('.school');
+                             var travleTouch = $('.travel');
+                             var homeTouch = $('.home');
+                             //获取按钮位置
+                             var schoolX = schoolTouch.position().left;
+                             var schoolY = schoolTouch.position().top;
+                             var travleTouchX = travleTouch.position().left;
+                             var travleTouchY = travleTouch.position().top;
+                             var homeTouchX = homeTouch.position().left;
+                             var homeTouchY = homeTouch.position().top;
+                             var fingerIcon = $('#finger');
+                             var fingerX=0;
+                             var fingerY=0;
+                             /*console.log(schoolX,schoolY);
+                             console.log(travleTouchX,travleTouchY);
+                             console.log(homeTouchX,homeTouchY);*/
+                             //将按钮位置存进数组
+                             var arr = [
+                                 {x:schoolX,y:schoolY},
+                                 {x:travleTouchX,y:travleTouchY},
+                                 {x:homeTouchX,y:homeTouchY}
+                                 ];
+                             var i = 0;
+                             set();
+                             //循环执行
+                             setInterval(set,2000);
+                             function set(){
+                                 i %= 3;
+                                 fingerIcon.css('background-image','url(../img/activity/finger1.png)');
+                                 fingerX=arr[i].x;
+                                 fingerY=arr[i].y;
+                                 fingerIcon.animate({
+                                     left:fingerX+40,
+                                     top:fingerY+60
+                                 },1000,function(){
+                                     fingerIcon.animate({
+                                         left:fingerX+30,
+                                         top:fingerY+40
+                                     },500,function(){
+                                         fingerIcon.css('background-image','url(../img/activity/finger2.png)');
+                                         i++;
+                                     })
+                                 })
+                             }
+
+
+                         },1000)
+                     },1000);
+                 },7000);
+             });
+         });
+        function hourClock(){
+            var deg = 295;
+            var timer = setInterval(function(){
+                    deg = deg + 5;
+                    $('.hour').css({
+                        'transformOrigin': '5/@r 100%',
+                        'transform': 'rotate('+deg+'deg)'
+                    });
+                if(deg >= 422){
+                    deg = 435
+                }
+            },250);
+            if(deg >= 422){
+                clearInterval(timer);
+            }
+        }
+        function minuteClock(){
+            var d = 0;
+            var timer = setInterval(function(){
+                d = d + 5;
+                $('.minute').css({
+                    'transform': 'rotate('+d+'deg)'
+                });
+                if(d >= 360){
+                    d = 360
+                }
+            },98);
+            if(d >= 360){
+                clearInterval(timer);
+            }
+        }
+        //手指点击效果
+
+
+        /*setInterval(function(){
+            if($('#finger').hasClass('finger1')){
+                $('#finger').removeClass('finger1').addClass('finger2');
+            }else{
+                $('#finger').removeClass('finger2').addClass('finger1');
+            }
+        },1000)*/
+
+    //页面跳转 去留学
+    $('.school').on('click',function(){
+        $('#school').removeClass('hide').addClass('show');
+        $('.step2').css('display','none');
+        $('.clock').removeClass('show').addClass('hide');
+    });
+    choose(document.getElementById('school'));
+        //去旅游
+        $('.travel').on('click',function(){
+            $('#travel').removeClass('hide').addClass('show');
+            $('.step2').css('display','none');
+            $('.clock').removeClass('show').addClass('hide');
+        });
+        choose(document.getElementById('travel'));
+        //装修
+        $('.home').on('click',function(){
+            $('#home').removeClass('hide').addClass('show');
+            $('.step2').css('display','none');
+            $('.clock').removeClass('show').addClass('hide');
+
+        });
+        choose(document.getElementById('home'));
+        function choose(target){
+            up(target,function (e) {
+                Money = $(e.target).closest('.com_dream').data('money');
+//                console.log(Money)
+                $('.total_money').text(Money);
+                $('.month_money').val('');
+                $(e.target).closest('.com_dream').removeClass('show').addClass('hide');
+                $('.wakeUp').removeClass('hide').addClass('show');
+//                $('.wakeUp').fadeIn(100);
+                $('.clock').removeClass().addClass('show');
+                $('.clock1').removeClass('hide').addClass('show');
+                setTimeout(function () {
+                    $('.heart1').animate({opacity:1},300,function(){
+                        $('.heart2').animate({opacity:1},300,function () {
+                            $('.heart3').animate({opacity:1},300)
+                        })
+                    })
+                },1000);
+                setTimeout(function(){
+                    $('.wakeUp2').fadeIn(1200,function(){
+                        setTimeout(function(){
+                            $('.inputBox').fadeIn(800);
+                        },2500)
+                    });
+                },2800);
+            })
+
+        }
+        //正整数
+        function isPInt(str) {
+            var g = /^[1-9]*[1-9][0-9]*$/;
+            return g.test(str);
+        }
+        $('.btn_true').click(function () {
+            var moneyTotal = Money*10000;
+            var month = $('.month_money').val();
+            var time = 0;
+            if(isPInt(month)){
+                time=(moneyTotal/month/12).toFixed(2);
+                console.log(time);
+                $('.inputBox').hide();
+                if(time<1){
+                    $('.waitTime').text(time);
+                    $('#result2').show();
+                }else{
+                    $('.need_time').text(time);
+                    $('#result1').show();
+                }
+            }
+        })
+    });
+})(jQuery)
+</script>
+
+</body>
+</html>

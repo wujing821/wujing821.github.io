@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <title>热门工具</title>
+    <script src="../js/rem.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less"/>
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/index.less"/>
+    <script src="../js/less.js"></script>
+</head>
+<body>
+<header class="public_header com_header">
+    <a href="javascript:;" class="return"></a>
+    工具大全
+</header>
+<div class="tool_container">
+    <div class="row">
+        <a class="col" href="entitled.html">
+            <div>
+                <img src="../img/tool/index/1.png" alt="">
+                <p>购房资格测试    </p>
+            </div>
+        </a>
+        <a class="col" >
+            <div>
+                <img src="../img/tool/index/2.png" alt="">
+                <p>二手房交易税计算器</p>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a class="col" href="javascript:;" id="businessBtn">
+            <div>
+                <img src="../img/tool/index/3.png" alt="">
+                <p>房贷计算器</p>
+            </div>
+        </a>
+        <a class="col" href="javascript:;" id="accumulationBtn">
+            <div>
+                <img src="../img/tool/index/4.png" alt="">
+                <p>公积金贷款计算器</p>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a class="col" href="javascript:;" id="cumbindBtn">
+            <div>
+                <img src="../img/tool/index/5.png" alt="">
+                <p>组合贷计算器</p>
+            </div>
+        </a>
+        <a class="col" href="javascript:;">
+            <div>
+                <img src="../img/tool/index/7.png" alt="">
+                <p class="noClick">提前还款计算器<span class="expect">（敬请期待）</span></p>
+
+            </div>
+        </a>
+    </div>
+</div>
+<footer class="public_footer">
+    <div class="public_footer_wrapper">
+        <div class="about"><a href="../aboutUs.html" class="footer_aboutUs">关于我们</a>
+            <a href="" class="footer_aboutUs">热门工具</a></div>
+        <p class="footer_info">
+            <span class="footer_info_company">一粒控股(北京)有限公司</span><span>京ICP备16060468号-1</span>
+        </p>
+        <div class="footer_versions">
+            <span class="footer_tel">手机版</span>|<span class="footer_mac">电脑版</span><span class="footer_logo">爱房金</span>
+        </div>
+    </div>
+</footer>
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/public.js"></script>
+<script>
+    //点击时计算器时清除localstorage
+    var businessBtn = $('#businessBtn');
+    var accumulationBtn = $('#accumulationBtn');
+    var combindBtn = $('#cumbindBtn');
+    removeLocalstorage(businessBtn);
+    removeLocalstorage(accumulationBtn);
+    removeLocalstorage(combindBtn);
+    function removeLocalstorage(btn){
+        btn.on('click',function(){
+            localStorage.removeItem('selectedNum');
+        });
+    }
+/*    window.onload=function(){
+       if(parseInt($('body').css('height'))<$(document).height()){
+           $('.public_footer').css('position','absolute')
+       }
+    }*/
+    //点击计算器时添加localstorage，页面跳转
+    businessBtn.on('click',function(){
+        localStorage.setItem('selectedNum',0);
+        window.location.href = 'calculator.html';
+    });
+    accumulationBtn.on('click',function(){
+        localStorage.setItem('selectedNum',1);
+        window.location.href = 'calculator.html';
+    });
+    combindBtn.on('click',function(){
+        localStorage.setItem('selectedNum',2);
+        window.location.href = 'calculator.html';
+    });
+    Public.init();
+</script>
+</body>
+</html>

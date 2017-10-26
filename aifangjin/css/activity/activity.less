@@ -1,0 +1,1138 @@
+@r:50rem;
+html,body{
+  width:100%;
+  height: 100%;
+  position: relative;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+//跳转
+.animateJump{
+  position: absolute;
+  right:0/@r;
+  top:20/@r;
+  /*width:86/@r;
+  height: 62/@r;*/
+
+  //z-index:1000;
+  a{
+    display: block;
+    width:126/@r;
+    height: 102/@r;
+    padding: 20/@r;
+    background: url("../../img/activity/jump.png") no-repeat center center;
+    background-size: 86/@r 62/@r;
+  }
+}
+//点击箭头
+.arrow{
+  position: absolute;
+  bottom: 40/@r;
+  left: 50%;
+  margin-left: -22/@r;
+  width:45/@r;
+  height: 48/@r;
+  background: url("../../img/activity/arrows.png") no-repeat;
+  background-size: contain;
+  -webkit-animation: arrow 1s linear infinite alternate forwards;
+  /*-moz-animation: arrow 1s linear infinite alternate forwards;
+  -ms-animation: arrow 1s linear infinite alternate forwards;*/
+  animation: arrow 1s linear infinite alternate forwards;
+
+}
+.introduction{
+  //display: none;
+  position: relative;
+  width:100%;
+  height:100%;
+  background: url("../../img/activity/introducebg.png") no-repeat;
+  background-size: 100% 100%;
+  .info{
+    position: absolute;
+    bottom: 132/@r;
+    left: 50%;
+    width:280/@r;
+    height: 30/@r;
+    margin-left: -140/@r;
+    background: url("../../img/activity/img.png") no-repeat;
+    background-size: contain;
+    -webkit-animation: info 1s linear infinite alternate forwards;
+    animation: info 1s linear infinite alternate forwards;
+    transform: scale(0.8);
+  }
+
+  .ship{
+    width: 529/@r;
+    height: 532/@r;
+    position: absolute;
+    top:35/@r;
+    right:30/@r;
+    background: url("../../img/activity/ship.png") no-repeat;
+    background-size: contain;
+    transform: scale(0.2);
+    -webkit-animation: ship 3s ease-in forwards;
+    /*-moz-animation: ship 3s ease-in forwards;
+    -ms-animation: ship 3s ease-in forwards;*/
+    animation: ship 3s ease-in forwards;
+  }
+}
+//飞船
+@-webkit-keyframes ship {
+  0%{transform:translate3d(0,0,0) scale(0.2)}
+  10%{transform:translate3d(-10/@r,10/@r,0) scale(0.2)}
+  20%{transform:translate3d(-20/@r,30/@r,50/@r) scale(0.2)}
+  30%{transform:translate3d(30/@r,50/@r,100/@r) scale(0.2);}
+  55%{transform:translate3d(-60/@r,150/@r,150/@r) scale(0.4);}
+  65%{transform: translate3d(-70/@r,200/@r,200/@r) scale(0.5);}
+  80%{transform:translate3d(-70/@r,250/@r,250/@r) scale(0.7);}
+  90%{transform: translate3d(-80/@r,250/@r,300/@r) scale(0.8);}
+  100%{transform:translate3d(-90/@r,385/@r,350/@r) scale(1);}
+}
+@keyframes ship {
+  0%{transform:translate3d(0,0,0) scale(0.2)}
+  10%{transform:translate3d(-10/@r,10/@r,0) scale(0.2)}
+  20%{transform:translate3d(-20/@r,30/@r,50/@r) scale(0.2)}
+  30%{transform:translate3d(30/@r,50/@r,100/@r) scale(0.2);}
+  55%{transform:translate3d(-60/@r,150/@r,150/@r) scale(0.4);}
+  65%{transform: translate3d(-70/@r,200/@r,200/@r) scale(0.5);}
+  80%{transform:translate3d(-70/@r,250/@r,250/@r) scale(0.7);}
+  90%{transform: translate3d(-80/@r,250/@r,300/@r) scale(0.8);}
+  100%{transform:translate3d(-90/@r,385/@r,350/@r) scale(1);}
+}
+
+//信息
+@-webkit-keyframes info {
+  0%{transform: scale(0.8)}
+  50%{transform: scale(0.9)}
+  100%{transform: scale(1)}
+}
+@keyframes info {
+  0%{transform: scale(0.8)}
+  50%{transform: scale(0.9)}
+  100%{transform: scale(1)}
+}
+
+//箭头
+@-webkit-keyframes arrow {
+  0%{opacity: (0.4)}
+  50%{opacity: (0.7)}
+  100%{opacity: (1)}
+}
+@keyframes arrow {
+  0%{opacity: (0.4)}
+  50%{opacity: (0.7)}
+  100%{opacity: (1)}
+}
+
+//时钟
+.clock{
+  //display: none;
+  position: fixed;
+  width: 122/@r;
+  height:111/@r;
+  right: 50/@r;
+  top: 150/@r;
+  z-index: 2;
+  .dial_plate{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: url("../../img/activity/biaopanAssistor.png") no-repeat;
+    background-size: contain;
+    .hour{
+      position: absolute;
+      left: 62/@r;
+      top: 33/@r;
+      width:8/@r;
+      height: 23/@r;
+      background: url("../../img/activity/hourAssistor.png") no-repeat;
+      background-size: contain;
+      transform-origin: 5/@r 100%;
+      transform: rotate(295deg);
+    }
+    .minute{
+      position: absolute;
+      left: 62/@r;
+      top: 30/@r;
+      width:6/@r;
+      height: 26/@r;
+      background: url("../../img/activity/minuteAssistor.png") no-repeat;
+      background-size: contain;
+      transform-origin: 3/@r 100%;
+      transform: rotate(0);
+    }
+  }
+}
+.clock1{
+  //display: none;
+  position: absolute;
+  width: 122/@r;
+  height:111/@r;
+  right: 50/@r;
+  top: 150/@r;
+  z-index: 2;
+  .dial_plate{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: url("../../img/activity/biaopanAssistor.png") no-repeat;
+    background-size: contain;
+    .hour1{
+      position: absolute;
+      left: 62/@r;
+      top: 33/@r;
+      width:8/@r;
+      height: 23/@r;
+      background: url("../../img/activity/hourAssistor.png") no-repeat;
+      background-size: contain;
+      transform-origin: 5/@r 100%;
+      transform: rotate(140deg);
+      -webkit-animation: hourRotateLabel1 7s linear forwards;
+      /*-moz-animation: hourRotateLabel1 7s linear forwards;
+      -ms-animation: hourRotateLabel1 7s linear forwards;*/
+      animation: hourRotateLabel1 7s linear forwards;
+    }
+    .minute1{
+      position: absolute;
+      left: 62/@r;
+      top: 30/@r;
+      width:6/@r;
+      height: 26/@r;
+      background: url("../../img/activity/minuteAssistor.png") no-repeat;
+      background-size: contain;
+      transform-origin: 3/@r 100%;
+      transform: rotate(0);
+      -webkit-animation: rotateLabel2 5s linear forwards;
+      /*-moz-animation: rotateLabel2 5s linear forwards;
+      -ms-animation: rotateLabel2 5s linear forwards;*/
+      animation:rotateLabel2 5s linear forwards;
+    }
+  }
+
+}
+//时钟
+@-webkit-keyframes rotateLabel2 {
+  0%{
+    -webkit-transform-origin: 3/@r 100%;
+    -webkit-transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform-origin: 3/@r 100%;
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateLabel2{
+  0% {
+    transform-origin: 3/@r 100%;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: 3/@r 100%;
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes hourRotateLabel1 {
+  0% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(140deg);
+  }
+  100% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(205deg);
+  }
+}
+
+@keyframes hourRotateLabel1{
+  0% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(140deg);
+  }
+  100% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(205deg);
+  }
+}
+
+//boss
+.step1{
+  display: none;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  //z-index: -1;
+  width:100%;
+  height:100%;
+  .main{
+    width:100%;
+    height:100%;
+    background: url("../../img/activity/background.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    .boy{
+      width: 535/@r;
+      height:397/@r;
+      position: absolute;
+      right: 0/@r;
+      bottom: 200/@r;
+      background: url("../../img/activity/desk2.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: boy 5.5s ease 0.2s;
+      /*-moz-animation: boy 5.5s ease 0.2s;
+      -ms-animation: boy 5.5s ease 0.2s;*/
+      animation: boy 5.5s ease 0.2s;
+      .talk{
+        width:174/@r;
+        height: 135/@r;
+        position: absolute;
+        left: 120/@r;
+        top: -32%;
+        opacity: 0;
+        background: url("../../img/activity/work.png") no-repeat;
+        background-size: contain;
+        -webkit-animation: speak 3.8s ease 4s forwards;
+        /*-moz-animation: speak 3.8s ease 4s forwards;
+        -ms-animation: speak 3.8s ease 4s forwards;*/
+        animation: speak 3.8s ease 4s forwards;
+      }
+    }
+    .boss{
+      position: absolute;
+      left: -433/@r;
+      bottom: 130/@r;
+      width: 337/@r;
+      height:580/@r;
+      opacity: 1;
+      background: url("../../img/activity/bossAssistor.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: boss 3.8s ;
+      /*-moz-animation: boss 3.8s ;
+      -ms-animation: boss 3.8s ;*/
+      animation: boss 3.8s ;
+      .talk{
+        width:278/@r;
+        height: 214/@r;
+        position: absolute;
+        left: 80/@r;
+        top: -220/@r;
+        opacity: 0;
+        background: url("../../img/activity/bossTalk.png") no-repeat;
+        background-size: contain;
+        -webkit-animation: speak 3.5s linear 1s;
+        /*-moz-animation: speak 3s linear 1s;
+        -ms-animation: speak 3s linear 1s;*/
+        animation: speak 3.5s linear 1s;
+      }
+    }
+
+  }
+}
+@keyframes  boss{
+  0%{ left: -433/@r;opacity: 1}
+  30%{ left: 0/@r;opacity: 1}
+  50%{ left: 0/@r;opacity: 1}
+  80%{ left: 0/@r;opacity: 1}
+  100%{ left:0/@r;opacity: 0}
+}
+@-webkit-keyframes  boss{
+  0%{ left: -433/@r;opacity: 1}
+  30%{ left: 0/@r;opacity: 1}
+  50%{ left: 0/@r;opacity: 1}
+  80%{ left: 0/@r;opacity: 1}
+  100%{ left:0/@r;opacity: 0}
+}
+@-webkit-keyframes speak {
+  0%{ opacity: 0;}
+  30%{ opacity: 1;}
+  50%{ opacity: 1;}
+  80%{ opacity: 1;}
+  90%{opacity: 1;}
+  95%{opacity: 1}
+  100%{opacity: 1;}
+}
+@keyframes speak {
+  0%{ opacity: 0;}
+  30%{ opacity: 1;}
+  50%{ opacity: 1;}
+  80%{ opacity: 1;}
+  90%{opacity: 1;}
+  95%{opacity: 1}
+  100%{opacity: 1;}
+}
+@-webkit-keyframes boy {
+  0%{ right: 0/@r;}
+  30%{ right: -50/@r;}
+  50%{ right: -50/@r;}
+  80%{ right: 0/@r;}
+  100%{right: 0/@r;}
+}
+@keyframes boy {
+  0%{ right: 0/@r;}
+  30%{ right: -50/@r;}
+  50%{ right: -50/@r;}
+  80%{ right: 0/@r;}
+  100%{right: 0/@r;}
+}
+//时钟
+//分钟
+@-webkit-keyframes rotateLabel {
+  0%{
+    -webkit-transform-origin: 3/@r 100%;
+    -webkit-transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform-origin: 3/@r 100%;
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateLabel{
+  0% {
+    transform-origin: 3/@r 100%;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: 3/@r 100%;
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes hourRotateLabel {
+  0% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(295deg);
+  }
+  100% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(655deg);
+  }
+}
+
+@keyframes hourRotateLabel{
+  0% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(295deg);
+  }
+  100% {
+    transform-origin: 5/@r 100%;
+    transform: rotate(655deg);
+  }
+}
+//step2
+.step2{
+  //display: none;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  //z-index: 1;
+  width:100%;
+  height:100%;
+  .main{
+    width:100%;
+    height:100%;
+    background: url("../../img/activity/nightBackground.png") no-repeat;
+    background-size: 100% 100%;
+    .dreaming{
+      display: none;
+      position: absolute;
+      left: 240/@r;
+      top: 480/@r;
+      width: 201/@r;
+      height: 122/@r;
+      background: url("../../img/activity/dreamingAssistor.png") no-repeat;
+      background-size: contain;
+    }
+    .dreamingCont{
+      position: absolute;
+      left: 330/@r;
+      bottom: 460/@r;
+      width:320/@r;
+      height: 400/@r;
+      display: none;
+      .school{
+        position: absolute;
+        left: 0;
+        top:0;
+        width:175/@r;
+        height: 126/@r;
+        background: url("../../img/activity/schoolAssistor.png") no-repeat;
+        background-size: contain;
+        -webkit-animation: school 1s infinite;
+        /*-moz-animation: school 1s infinite;
+        -ms-animation: school 1s infinite;*/
+        animation: school 1s infinite;
+      }
+      .travel{
+        position: absolute;
+        left: 150/@r;
+        top:130/@r;
+        width:175/@r;
+        height: 126/@r;
+        background: url("../../img/activity/travelAssistor.png") no-repeat;
+        background-size: contain;
+        -webkit-animation: travel 1.5s infinite 1s;
+        /*-moz-animation: travel 1.5s infinite 1s;
+        -ms-animation: travel 1.5s infinite 1s;*/
+        animation: travel 1.5s infinite 1s;
+      }
+      .home{
+        position: absolute;
+        left: 10/@r;
+        top:270/@r;
+        width:189/@r;
+        height: 137/@r;
+        background: url("../../img/activity/homeAssistor.png") no-repeat;
+        background-size: contain;
+        -webkit-animation: home 1.2s ease-in infinite;
+        /*-moz-animation: home 1.2s ease-in infinite;
+        -ms-animation: home 1.2s ease-in infinite;*/
+        animation: home 1.2s ease-in infinite;
+      }
+      #finger{
+        position: absolute;
+        left: 55/@r;
+        top:285/@r;
+        background: url("../../img/activity/finger1.png") no-repeat;
+        background-size: contain;
+        width:62/@r;
+        height: 63/@r;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes school {
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(.9);}
+}
+@keyframes school {
+   0%,100%{transform:scale(1);}
+   50%{transform:scale(.9);}
+ }
+@-webkit-keyframes travel {
+  0%,100%{transform:scale(1);}
+  30%{transform:scale(.9);}
+  70%{transform:scale(.6);}
+}
+@keyframes travel {
+  0%,100%{transform:scale(1);}
+  30%{transform:scale(.9);}
+  70%{transform:scale(.6);}
+}
+@-webkit-keyframes home {
+  0%,100%{transform:scale(1);}
+  60%{transform:scale(.8);}
+  80%{transform:scale(.9);}
+}
+@keyframes home {
+  0%,100%{transform:scale(1);}
+  60%{transform:scale(.8);}
+  80%{transform:scale(.9);}
+}
+//school
+#school{
+  //display: none;
+  width:100%;
+  height: 100%;
+  background: url("../../img/activity/schoolBg.png") no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  position: relative;
+  .schoolBoy {
+    position: absolute;
+    bottom: 100/@r;
+    right: 24%;
+    width: 335/@r;
+    height: 582/@r;
+    background: url("../../img/activity/gif.gif") no-repeat;
+    background-size: contain;
+  }
+  .talk{
+    position: absolute;
+    right: 80/@r;
+    top: 28%;
+    width:282/@r;
+    height:238/@r;
+    opacity: 0;
+    background: url("../../img/activity/schooltalk.png") no-repeat;
+    background-size: contain;
+    -webkit-animation: schooltalk 0.5s ease 0.8s forwards;
+    /*-moz-animation: schooltalk 0.5s ease 0.8s forwards;
+    -ms-animation: schooltalk 0.5s ease 0.8s forwards;*/
+    animation: schooltalk 0.5s ease 0.8s forwards;
+  }
+  .cloud{
+    position: relative;
+    width:100%;
+    height:300/@r;
+    .cloud1{
+      position: absolute;
+      left: 20/@r;
+      top:120/@r;
+      width:219/@r;
+      height:141/@r;
+      background: url("../../img/activity/cloud1Assistor.png") no-repeat;
+      background-size: contain;
+      transform: translate(0/@r,0/@r);
+      -webkit-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+      /*-moz-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+      -ms-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;*/
+      animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+    }
+    .cloud2{
+      position: absolute;
+      left: 350/@r;
+      top:130/@r;
+      width:145/@r;
+      height:105/@r;
+      background: url("../../img/activity/cloud2Assistor.png") no-repeat;
+      background-size: contain;
+      transform: translate(30/@r,40/@r);
+      -webkit-animation: travelCloud2 3s linear infinite alternate forwards;
+      //-moz-animation: travelCloud2 3s linear infinite alternate forwards;
+      //-ms-animation: travelCloud2 3s linear infinite alternate forwards;
+      animation: travelCloud2 3s linear infinite alternate forwards;
+    }
+    .cloud3{
+      position: absolute;
+      right: 120/@r;
+      top:200/@r;
+      width:198/@r;
+      height:141/@r;
+      background: url("../../img/activity/cloud3Assistor.png") no-repeat;
+      background-size: contain;
+      transform: translate(30/@r,40/@r);
+      -webkit-animation: travelCloud3 5s linear infinite alternate forwards;
+      /*-moz-animation: travelCloud3 5s linear infinite alternate forwards;
+      -ms-animation: travelCloud3 5s linear infinite alternate forwards;*/
+      animation: travelCloud3 5s linear infinite alternate forwards;
+    }
+  }
+}
+@-webkit-keyframes schooltalk {
+  0%{opacity: 0}
+  100%{opacity: 1}
+}
+@keyframes schooltalk {
+  0%{opacity: 0}
+  100%{opacity: 1}
+}
+
+//travel
+#travel{
+  //display: none;
+  position: relative;
+  width:100%;
+  height:100%;
+  background: url("../../img/activity/travelbg.png") no-repeat;
+  background-size: 100% 100%;
+  .car{
+    position: absolute;
+    top: 24%;
+    right: -130/@r;
+    width:561/@r;
+    height:548/@r;
+    background: url("../../img/activity/car.png") no-repeat;
+    background-size: contain;
+    transform: rotate(0deg);
+    -webkit-animation: car 3s ease-in forwards;
+    /*-moz-animation: car 3s ease-in forwards;
+    -ms-animation: car 3s ease-in forwards;*/
+    animation: car 3s ease-in forwards;
+    .talk{
+      position: absolute;
+      top:-10/@r;
+      right: 30/@r;
+      width:227/@r;
+      height: 178/@r;
+      opacity: 0;
+      background: url("../../img/activity/travelTalkAssistor.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: travelTalk .5s linear 3s forwards;
+      /*-moz-animation: travelTalk .5s linear 3s forwards;
+      -ms-animation: travelTalk .5s linear 3s forwards;*/
+      animation: travelTalk .5s linear 3s forwards;
+    }
+  }
+  .travelCloud{
+    position: relative;
+    top:0;
+    left: 0;
+    .cloud1{
+      position: absolute;
+      top: 120/@r;
+      left: 30/@r;
+      width:233/@r;
+      height: 141/@r;
+      background: url("../../img/activity/cloudtravel1.png") no-repeat;
+      background-size: contain;
+      transform: translate(0/@r,0/@r);
+      -webkit-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+      /*-moz-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+      -ms-animation: travelCloud1 3s linear 1.3s infinite alternate forwards;*/
+      animation: travelCloud1 3s linear 1.3s infinite alternate forwards;
+
+    }
+    .cloud2{
+      position: absolute;
+      top: 110/@r;
+      left: 330/@r;
+      width:212/@r;
+      height: 142/@r;
+      background: url("../../img/activity/travelTalk2.png") no-repeat;
+      background-size: contain;
+      transform: translate(30/@r,40/@r);
+      -webkit-animation: travelCloud2 3s linear infinite alternate forwards;
+      /*-moz-animation:travelCloud2 3s linear infinite alternate forwards;
+      -ms-animation: travelCloud2 3s linear infinite alternate forwards;*/
+      animation: travelCloud2 3s linear infinite alternate forwards;
+
+    }
+    .cloud3{
+      position: absolute;
+      top: 310/@r;
+      right: 130/@r;
+      width:107/@r;
+      height: 75/@r;
+      background: url("../../img/activity/travelTalk3.png") no-repeat;
+      background-size: contain;
+      transform: translate(30/@r,40/@r);
+      -webkit-animation: travelCloud3 4s linear infinite alternate forwards;
+      /*-moz-animation:travelCloud3 4s linear infinite alternate forwards;
+      -ms-animation:travelCloud3 4s linear infinite alternate forwards;*/
+      animation: travelCloud3 4s linear infinite alternate forwards;
+    }
+  }
+}
+@-webkit-keyframes car {
+  0%{transform:translate3d(0,0,0) scale(.5)}
+  100%{transform:translate3d(-170/@r,280/@r,280/@r) scale(1);}
+}
+@keyframes car {
+  0%{transform:translate3d(0,0,0) scale(.5)}
+  100%{transform:translate3d(-170/@r,280/@r,280/@r) scale(1);}
+}
+@-webkit-keyframes travelTalk {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes travelTalk {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+//云朵
+@-webkit-keyframes travelCloud1{
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(15/@r,15/@r)}
+  20%{transform: translate(18/@r,18/@r)}
+  30%{transform: translate(20/@r,20/@r)}
+  60%{transform: translate(30/@r,30/@r)}
+  90%{transform: translate(40/@r,40/@r)}
+  100%{transform: translate(50/@r,50/@r)}
+}
+@keyframes travelCloud1 {
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(15/@r,15/@r)}
+  20%{transform: translate(18/@r,18/@r)}
+  30%{transform: translate(20/@r,20/@r)}
+  60%{transform: translate(30/@r,30/@r)}
+  90%{transform: translate(40/@r,40/@r)}
+  100%{transform: translate(50/@r,50/@r)}
+}
+@-webkit-keyframes travelCloud2{
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(5/@r,5/@r)}
+  20%{transform: translate(8/@r,8/@r)}
+  30%{transform: translate(10/@r,10/@r)}
+  60%{transform: translate(20/@r,20/@r)}
+  90%{transform: translate(30/@r,30/@r)}
+  100%{transform: translate(40/@r,40/@r)}
+}
+@keyframes travelCloud2{
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(5/@r,5/@r)}
+  20%{transform: translate(8/@r,8/@r)}
+  30%{transform: translate(10/@r,10/@r)}
+  60%{transform: translate(20/@r,20/@r)}
+  90%{transform: translate(30/@r,30/@r)}
+  100%{transform: translate(40/@r,40/@r)}
+}
+@-webkit-keyframes travelCloud3{
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(15/@r,15/@r)}
+  20%{transform: translate(16/@r,16/@r)}
+  30%{transform: translate(17/@r,17/@r)}
+  60%{transform: translate(18/@r,18/@r)}
+  90%{transform: translate(19/@r,19/@r)}
+  100%{transform: translate(20/@r,20/@r)}
+}
+@keyframes travelCloud3{
+  0%{transform: translate(0/@r,0/@r)}
+  10%{transform: translate(15/@r,15/@r)}
+  20%{transform: translate(16/@r,16/@r)}
+  30%{transform: translate(17/@r,17/@r)}
+  60%{transform: translate(18/@r,18/@r)}
+  90%{transform: translate(19/@r,19/@r)}
+  100%{transform: translate(20/@r,20/@r)}
+}
+//装修
+#home{
+  //display: none;
+  position: relative;
+  width:100%;
+  height:100%;
+  background: url("../../img/activity/homebg.png") no-repeat;
+  background-size: 100% 100%;
+  .boy{
+    position: absolute;
+    bottom: 24%;
+    left: 50%;
+    margin-left: -235/@r;
+    width:415/@r;
+    height:353/@r;
+    background: url("../../img/activity/homeboy.png") no-repeat;
+    background-size: contain;
+    -webkit-animation: homeboy .5s ease-out forwards ;
+    /*-moz-animation:homeboy .5s ease-out forwards ;
+    -ms-animation:homeboy .5s ease-out forwards ;*/
+    animation: homeboy .5s ease-out forwards ;
+    .talk{
+      position: absolute;
+      top:-150/@r;
+      right: 10/@r;
+      width:226/@r;
+      height: 184/@r;
+      opacity: 0;
+      background: url("../../img/activity/hometalk.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: travelTalk .5s linear .8s forwards;
+      /*-moz-animation:travelTalk .5s linear .8s forwards;
+      -ms-animation:travelTalk .5s linear .8s forwards;*/
+      animation: travelTalk .5s linear .8s forwards;
+    }
+  }
+
+}
+@-webkit-keyframes homeboy {
+  0%{transform: rotate(0deg)}
+  10%{transform: rotate(2deg)}
+  20%{transform: rotate(3deg)}
+  30%{transform: rotate(0deg)}
+  60%{transform: rotate(3deg)}
+  75%{transform: rotate(5deg)}
+  90%{transform: rotate(3deg)}
+  100%{transform: rotate(0deg)}
+}
+@keyframes homeboy {
+  0%{transform: rotate(0deg)}
+  10%{transform: rotate(2deg)}
+  20%{transform: rotate(3deg)}
+  30%{transform: rotate(0deg)}
+  60%{transform: rotate(3deg)}
+  75%{transform: rotate(5deg)}
+  90%{transform: rotate(3deg)}
+  100%{transform: rotate(0deg)}
+}
+@-webkit-keyframes homeTalk {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes homeTalk {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+//梦醒了
+.wakeUp{
+  //display: none;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 1;
+  background: url("../../img/activity/nightBackground.png") no-repeat;
+  background-size: 100% 100%;
+  width:100%;
+  height:100%;
+  .heart{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: -100/@r;
+    margin-top: -100/@r;
+    width:200/@r;
+    height:200/@r;
+    .heart1{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width:41/@r;
+      height: 39/@r;
+      opacity: 0;
+      background: url("../../img/activity/heart1.png") no-repeat;
+      background-size: contain;
+    }
+    .heart2{
+      position: absolute;
+      left: 25/@r;
+      bottom: 47/@r;
+      width:31/@r;
+      height: 31/@r;
+      opacity: 0;
+      background: url("../../img/activity/heart2.png") no-repeat;
+      background-size: contain;
+    }
+    .heart3{
+      position: absolute;
+      left: 8/@r;
+      bottom: 80/@r;
+      width:24/@r;
+      height: 23/@r;
+      opacity: 0;
+      background: url("../../img/activity/heart3.png") no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.wakeUp2{
+  //opacity: 0;
+  display: none;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  background: url("../../img/activity/wakeupbg2.png") no-repeat;
+  background-size: 100% 100%;
+  .heart{
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    width:120/@r;
+    height: 86/@r;
+    //animation: wakeupHeart 1s ease-in .5s infinite;
+    .heartleft{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width:58/@r;
+      height: 86/@r;
+      background: url("../../img/activity/heartleft.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: wakeupHeartLeft 1s linear .5s forwards;
+      /*-moz-animation:wakeupHeartLeft 1s linear .5s forwards;
+      -ms-animation:wakeupHeartLeft 1s linear .5s forwards;*/
+      animation: wakeupHeartLeft 1s linear .5s forwards;
+    }
+    .heartright{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width:58/@r;
+      height: 83/@r;
+      background: url("../../img/activity/heartright.png") no-repeat;
+      background-size: contain;
+      -webkit-animation: wakeupHeartRight 1s linear .5s forwards;
+      /*-moz-animation:wakeupHeartRight 1s linear .5s forwards;
+      -ms-animation:wakeupHeartRight 1s linear .5s forwards;*/
+      animation: wakeupHeartRight 1s linear .5s forwards;
+
+    }
+  }
+  .pc{
+    position: absolute;
+    left: 36%;
+    top: 49%;
+    width:154/@r;
+    height: 104/@r;
+    background: url("../../img/activity/pc.png") no-repeat;
+    background-size: contain;
+    -webkit-animation: pcRotate 3s linear 1.7s forwards;
+    /*-moz-animation:pcRotate 3s linear 1.7s forwards;
+    -ms-animation:pcRotate 3s linear 1.7s forwards;*/
+    animation: pcRotate 3s linear 1.7s forwards;
+  }
+}
+@-webkit-keyframes wakeupHeartLeft {
+  0%{transform: rotate(0)}
+  50%{transform: rotate(-10deg)}
+  100%{transform: rotate(-25deg)}
+}
+@keyframes wakeupHeartLeft {
+  0%{transform: rotate(0)}
+  50%{transform: rotate(-10deg)}
+  100%{transform: rotate(-25deg)}
+}
+@-webkit-keyframes wakeupHeartRight {
+  0%{transform: rotate(0)}
+  50%{transform: rotate(5deg)}
+  100%{transform: rotate(10deg)}
+}
+@keyframes wakeupHeartRight {
+  0%{transform: rotate(0)}
+  50%{transform: rotate(5deg)}
+  100%{transform: rotate(10deg)}
+}
+@-webkit-keyframes pcRotate {
+  0%{transform: rotateY(0)}
+  50%{transform: rotateY(45deg)}
+  100%{transform: rotateY(90deg)}
+}
+@keyframes pcRotate {
+  0%{transform: rotateY(0)}
+  50%{transform: rotateY(45deg)}
+  100%{transform: rotateY(90deg)}
+}
+//输入框
+.inputBox{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  z-index: 100;
+  margin-top: -300/@r;
+  margin-left: -333/@r;
+  width:667/@r;
+  height:596/@r;
+  background: url("../../img/activity/pcbg1.png") no-repeat;
+  background-size: contain;
+  .inputWrapper{
+    margin: 60/@r 50/@r;
+    text-align: center;
+    p{
+      font-size: 38/@r;
+      color: #000;
+      font-weight: bold;
+      font-family: "Microsoft YaHei", serif;
+      text-align: center;
+      span{
+        font-size: 38/@r;
+        color: #ed5910;
+        font-weight: bold;
+        font-family: "Microsoft YaHei", serif;
+      }
+      .total_money{
+        font-size: 38/@r;
+        color: #ed5910;
+        font-weight: bold;
+        font-family: "Microsoft YaHei", serif;
+      }
+    }
+    input{
+      margin: 20/@r 0;
+      padding: 0/@r 40/@r;
+      width:487/@r;
+      height: 87/@r;
+      background: url("../../img/activity/input1.png") no-repeat;
+      background-size: contain;
+      font-size: 30/@r;
+    }
+    .btn{
+      display: block;
+      width:316/@r;
+      height: 94/@r;
+      background: url("../../img/activity/btn1.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+      font-size: 38/@r;
+      color: #fff;
+      text-align: center;
+      line-height: 1;
+      padding-top: 24/@r;
+      font-family: "Microsoft YaHei", serif;
+    }
+  }
+}
+//结果1
+#result1,#result2{
+  z-index: 10;
+  display: none;
+  width:667/@r;
+  height: 569/@r;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-top: -285/@r;
+  margin-left: -333/@r;
+  padding: 90/@r 50/@r 0;
+  background: url("../../img/activity/pcbg2.png") no-repeat;
+  background-size: contain;
+  .congratulation{
+    text-align: center;
+    font-size: 38/@r;
+    strong{
+      font-size: 60/@r;
+      color: #ed5910;
+      font-family: "Microsoft YaHei", serif;
+    }
+  }
+  .years{
+    margin-top: 10/@r;
+    text-align: center;
+    font-size: 38/@r;
+    color: #000;
+    font-weight: bold;
+    span{
+      font-size: 48/@r;
+      color: #ed5910;
+    }
+  }
+  .resultChoose{
+    text-align: center;
+    margin-top: 40/@r;
+    a{
+      display: inline-block;
+      width: 239/@r;
+      height: 94/@r;
+      background: url("../../img/activity/btn2.png") no-repeat;
+      background-size: contain;
+      font-size: 38/@r;
+      color: #fff;
+      line-height:94/@r;
+      text-align: center;
+
+    }
+    .waitTip{
+      position: relative;
+      i{
+        position: absolute;
+        right:-18%;
+        bottom: -242%;
+        width:112/@r;
+        height: 221/@r;
+        background: url("../../img/activity/activityTip.png") no-repeat;
+        background-size: contain;
+      }
+    }
+    a:nth-of-type(1){
+      margin-right: 25/@r;
+    }
+  }
+}
+#result2{
+  background: url("../../img/activity/pcbg3.png") no-repeat;
+  background-size: contain;
+  padding-top:100/@r;
+  .congratulation{
+    padding-left: 20/@r;
+    text-align: inherit;
+    font-weight: bold;
+    i{
+      font-size: 36/@r;
+      color: #ed5910;
+      .waitTime{
+        font-size: 36/@r;
+        color: #ed5910;
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+@r:50rem;
+html,body{
+  height: 1207/@r;
+  overflow-y: hidden;
+  background: url("../../img/qingniao/card/bg2.png");
+  background-size: 100% 100%;
+  vertical-align: bottom;
+  /*border: 0;
+  display:block;
+  font-size: 0;*/
+
+}
+body>iframe { display: none; }
+//顶部
+.top{
+  .user{
+    float: left;
+    padding-left: 20/@r;
+    margin-top: 19/@r;
+    height: 66/@r;
+    .userImg{
+      float: left;
+      width:66/@r;
+      height: 66/@r;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      margin-right: 10/@r;
+      img{
+        width:100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    .userNumber{
+      font-size: 28/@r;
+      color: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+      height: 66/@r;
+      line-height: 66/@r;
+    }
+  }
+  .customerService{
+    float: right;
+    margin-top: 19/@r;
+    width: 142/@r;
+    height: 46/@r;
+    a{
+      display: block;
+      width:100%;
+      height: 100%;
+      background: url("../../img/qingniao/card/tel2.png") no-repeat;
+      background-size: contain;
+      .touchUs{
+        padding-left: 50/@r;
+        color: #fff;
+        font-size: 22/@r;
+        line-height: 46/@r;
+        font-family: "Microsoft YaHei", sans-serif;
+      }
+    }
+  }
+}
+//头部
+.cardHeader{
+  margin-top: 27/@r;
+  h1{
+    text-indent: -2000/@r;
+    width:400/@r;
+    height: 136/@r;
+    background: url("../../img/qingniao/card/title3.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+  }
+}
+//办理流程
+.guide{
+  width:610/@r;
+  height: 854/@r;
+  background: url("../../img/qingniao/card/background3.png") no-repeat;
+  background-size: contain;
+  margin: 43/@r auto 0;
+  .title{
+      font-size: 32/@r;
+      color: #fe8105;
+      font-family: "Microsoft YaHei", sans-serif;
+      font-weight: bold;
+      line-height: 88/@r;
+      text-align: center;
+  }
+  .tip{
+    font-size: 22/@r;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #888;
+    margin: 35/@r auto 0;
+    width:420/@r;
+    line-height: 30/@r;
+  }
+  .stepList{
+    width:430/@r;
+    margin: 35/@r auto 25/@r;
+    .stepItem{
+      margin-bottom: 18/@r;
+      display: flex;
+      //vertical-align: top;
+      line-height: 30/@r;
+      .orderNum{
+        width:30/@r;
+        height: 28/@r;
+        margin-right: 20/@r;
+        i{
+          display: block;
+          //width:28/@r;
+          //height: 28/@r;
+          //box-sizing: border-box;
+          padding: 5/@r 0 3/@r;
+          border-radius: 50%;
+          background-color: #eee;
+          font-size: 20/@r;
+          color: #888;
+          font-family: "Microsoft YaHei", sans-serif;
+          text-align: center;
+          //line-height: 28/@r;
+          line-height: 1;
+          vertical-align: bottom;
+          margin-top: 2/@r;
+        }
+      }
+      .stepInfo{
+        flex: 1;
+        //vertical-align: top;
+        .emphasis{
+          color: #444;
+          font-family: "Microsoft YaHei", sans-serif;
+          font-size: 22/@r;
+          line-height: 1;
+          vertical-align: bottom;
+        }
+        .info{
+          font-size: 22/@r;
+          color: #888;
+          font-family: "Microsoft YaHei", sans-serif;
+          line-height: 1;
+          vertical-align: bottom;
+        }
+        .key{
+          font-size: 22/@r;
+          color: #ee8734;
+          line-height: 1;
+          vertical-align: bottom;
+        }
+        .underline{
+          text-decoration: underline;
+        }
+      }
+    }
+    .stepItem:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .footerTip{
+    width:430/@r;
+    margin: 0 auto;
+    i{
+      color: #ee8734;
+      font-size: 20/@r;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    span{
+      color: #aaa;
+      font-size: 20/@r;
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 32/@r;
+    }
+  }
+}
+//底部
+.cardFooter{
+  margin: 20/@r 0 0;
+  padding-bottom: 20/@r;
+  font-size: 20/@r;
+  line-height: 1;
+  color: #f8a086;
+  font-family: "Microsoft YaHei", sans-serif;
+  text-align: center;
+}

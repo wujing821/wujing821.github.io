@@ -1,0 +1,886 @@
+@r: 50rem;
+@b: 30rem;
+html {
+    height: 100%;
+}
+body {
+    background: #f5f5f5;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    //display: flex;
+    //flex-flow: column;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+
+.bodycontainer {
+    min-height: 100%;
+    height: auto;
+    position: relative;
+}
+//header
+.public_header {
+    text-align: center;
+    position: relative;
+    height: 88/@r;
+    width: 100%;
+    .productHeader {
+        font-size: 34/@r;
+        font-family: '微软雅黑', sans-serif;
+        color: #444;
+    }
+    /* .dropdownMenuBtn{
+    position: absolute;
+    right: 0/@r;
+    top:50%;
+    margin-top:-33/@r;
+    width: 90/@r;
+    height:66/@r;
+    a{
+      display: block;
+      width:100%;
+      height: 100%;
+    }
+    .clickbf{
+      background: url("../img/myloan/dropdownMenu.png") no-repeat center center;
+      background-size: 30/@r 8/@r;
+    }
+    .clickaf{
+      background: url("../img/myloan/dropdownMenu2.png") no-repeat center center;
+      background-size: 30/@r 8/@r;
+    }
+    //下拉列表
+    .dropdownMenu{
+      position: absolute;
+      right:4/@r;
+      top:50/@r;
+      z-index: 11;
+      width:184/@r;
+      height: 214/@r;
+      background: url("../img/myloan/dropdownbg.png") no-repeat;
+      background-size: contain;
+      padding-top: 20/@r;
+
+      a{
+        display: block;
+        position: relative;
+        width:100%;
+        height: 88/@r;
+        line-height: 88/@r;
+        font-size:24/@r;
+        color: #555;
+        font-family: "Microsoft YaHei", serif;
+        padding-left: 60/@r;
+        text-align: left;
+        .menuIndex{
+          position: absolute;
+          left: 0/@r;
+          top:50%;
+          margin:-14/@r 15/@r 0 21/@r;
+          width:30/@r;
+          height: 27/@r;
+          background: url("../img/myloan/dropdownindex.png") no-repeat;
+          background-size: contain;
+        }
+        .menuPerson{
+          position: absolute;
+          left: 0/@r;
+          top:50%;
+          margin:-14/@r 15/@r 0 21/@r;
+          width:28/@r;
+          height: 27/@r;
+          background: url("../img/myloan/dropdownpeople.png") no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }*/
+}
+.noRecord {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*margin-left: -180/@r;
+  margin-top: -270/@r;*/
+    -webkit-transform: translate(-50%, -40%);
+    //背景图片
+    .noRecordPic {
+        height: 360/@r;
+        width: 360/@r;
+        //background:url("../../img/myloan/apply.png") no-repeat;
+        //background-size: 100% 100%;
+    }
+    //去申请按钮
+    .applyBtn {
+        display: none;
+        width: 280/@r;
+        //height: 80/@r;
+        border: 1px solid #ddd;
+        font-size: 32/@r;
+        color: #999;
+        border-radius: 40/@r;
+        text-align: center;
+        line-height: 1;
+        padding: 23/@r 0 20/@r;
+        background-color: #fff;
+        margin: 30/@r auto 0;
+    }
+    //点击按钮样式
+    .applyBtn:link {
+        color: #666;
+        border-color: #999;
+    }
+    .applyBtn:visited {
+        color: #666;
+        border-color: #999;
+    }
+    .applyBtn:active {
+        color: #ea592f;
+        border-color: #ea592f;
+    }
+}
+//表单
+.container {
+    //flex: 1;
+    display: flex;
+    flex-flow: column;
+    //height: 100%;
+    .tabs {
+        height: 90/@r;
+        border-top: 1px solid #eaeaea;
+        background: #fff;
+        margin-bottom: 20/@r;
+        display: -webkit-flex;
+        position: relative;
+        li {
+            flex: 1;
+            height: 90/@r;
+            line-height: 90/@r;
+            text-align: center;
+            a {
+                display: inline-block;
+                font-size: 30/@r;
+                color: #444;
+                width: 100%;
+                height: 100%;
+                line-height: 90/@r;
+                font-family: '微软雅黑', sans-serif;
+            }
+        }
+        li.active {
+            border-bottom: 2px solid #ea592e;
+            a {
+                color: #ea592f;
+            }
+        }
+    }
+    .tab_container {
+        width: 100%;
+        //flex: 1;
+        //height: 100%;
+        position: relative;
+        .tab_content {
+            min-height: 100%;
+            position: relative;
+            padding-bottom: 82/@r;
+            .product_list {
+                li {
+                    background-color: #fff;
+                    //height: 192/@r;
+                    margin-bottom: 20/@r;
+                    .linkStyle {
+                        display: -webkit-flex;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        border-top: 1/@b solid #eaeaea;
+                        border-bottom: 1/@b solid #eaeaea;
+                        .product_img {
+                            //width:80/@r;
+                            //height: 80/@r;
+                            //background-color: #f3f3f3;
+                            text-align: center;
+                            img {
+                                width: 80/@r;
+                                height: 80/@r;
+                                margin: 34/@r 74/@r 0;
+                            }
+                            span {
+                                display: block;
+                                //height: 38/@r;
+                                line-height: 1;
+                                text-align: center;
+                                margin-top: 22/@r;
+                                //background-color: #f3f3f3;
+                                font-size: 22/@r;
+                                color: #444;
+                                font-family: "Microsoft YaHei", serif;
+                            }
+                        }
+                        .product_info {
+                            position: relative;
+                            height: 132/@r;
+                            margin: 32/@r 0/@r;
+                            display: -webkit-flex;
+                            flex: 1;
+                            .product_info_border {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                height: 132/@r;
+                                width: 1px;
+                                border-left: 1px solid #eaeaea;
+                                -webkit-transform: scaleX(0.5);
+                            }
+                            .loanlist_money {
+                                padding: 8/@r 0;
+                                height: 100%;
+                                //float: left;
+                                margin-left: 48/@r;
+                                display: -webkit-flex;
+                                flex-direction: column;
+                                flex: 1;
+                                p {
+                                    font-size: 22/@r;
+                                    color: #aaa;
+                                    font-family: "Microsoft YaHei", serif;
+                                    line-height: 1;
+                                }
+                                div {
+                                    line-height: 1;
+                                    margin-top: 60/@r;
+                                    font-size: 22/@r;
+                                    color: #ea592f;
+                                    font-family: "Microsoft YaHei", serif;
+                                    span {
+                                        line-height: 1;
+                                        font-size: 34/@r;
+                                        color: #ea592f;
+                                        //font-family: "Microsoft YaHei", serif;
+                                    }
+                                }
+                            }
+                            .loanlist_period {
+                                padding: 8/@r 0;
+                                height: 100%;
+                                //float: left;
+                                //margin-left: 40/@r;
+                                display: -webkit-flex;
+                                flex-direction: column;
+                                flex: 1;
+                                p {
+                                    font-size: 22/@r;
+                                    color: #aaa;
+                                    font-family: "Microsoft YaHei", serif;
+                                    line-height: 1;
+                                }
+                                div {
+                                    margin-top: 60/@r;
+                                    font-size: 22/@r;
+                                    color: #ea592f;
+                                    font-family: "Microsoft YaHei", serif;
+                                    line-height: 1;
+                                    span {
+                                        font-size: 34/@r;
+                                        color: #ea592f;
+                                        //font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                    }
+                                }
+                            }
+                            .loanlist_time {
+                                padding: 8/@r 0;
+                                height: 100%;
+                                //float: left;
+                                //margin-left: 40/@r;
+                                display: -webkit-flex;
+                                flex-direction: column;
+                                flex: 1;
+                                p {
+                                    font-size: 22/@r;
+                                    color: #aaa;
+                                    font-family: "Microsoft YaHei", serif;
+                                    line-height: 1;
+                                }
+                                div {
+                                    margin-top: 72/@r;
+                                    font-size: 22/@r;
+                                    color: #444;
+                                    //font-family: "Microsoft YaHei", serif;
+                                    line-height: 1;
+                                }
+                            }
+                        }
+                        .loan_state {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 97/@r;
+                            height: 99/@r;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    //取消申请按钮
+                    .applyHandle {
+                        height: 90/@r;
+                        //width:100%;
+                        background-color: #fff;
+                        box-sizing: border-box;
+                        .applyHandleCont {
+                            margin-right: 10/@r;
+                            padding-top: 20/@r;
+                            .applyHandleBtn {
+                                float: right;
+                                width: 128/@r;
+                                //height: 52/@r;
+                                border-radius: 6/@r;
+                                font-size: 22/@r;
+                                border: 1/@b solid #999;
+                                text-align: center;
+                                line-height: 1;
+                                padding: 12/@r 0;
+                                margin-right: 20/@r;
+                                color: #666;
+                                position: relative;
+                            }
+                            //点击按钮样式
+                            .applyHandleBtn:link {
+                                color: #666;
+                                border-color: #999;
+                            }
+                            .applyHandleBtn:visited {
+                                color: #666;
+                                border-color: #999;
+                            }
+                            .applyHandleBtn:active {
+                                color: #ea592f;
+                                border-color: #ea592f;
+                            }
+                        }
+                    }
+                    //分隔线
+                    .productLine {
+                        width: 100%;
+                        height: 0;
+                        border-bottom: 1px solid #eaeaea;
+                        -webkit-transform: scaleY(0.5);
+                    }
+                    //产品头部
+                    .productTop {
+                        height: 60/@r;
+                        .productName {
+                            float: left;
+                            font-size: 22/@r;
+                            color: #999;
+                            font-family: "Microsoft YaHei", sans-serif;
+                            margin-left: 30/@r;
+                            height: 60/@r;
+                            line-height: 60/@r;
+                        }
+                        .productLabelBox{
+                            float: right;
+                            margin-right: 30/@r;
+                            .productLabel {
+                                float: left;
+                                //margin-right: 30/@r;
+                                font-size: 0;
+                                height: 60/@r;
+                                //line-height: 60/@r;
+                                padding-top: 15/@r;
+                                box-sizing: border-box;
+                                .condition {
+
+                                    display: inline-block;
+                                    font-size: 20/@r;
+                                    color: #999;
+                                    font-family: "Microsoft YaHei", sans-serif;
+                                    padding: 6/@r 10/@r 4/@r;
+                                    //height: 30/@r;
+                                    border-radius: 30/@r;
+                                    background-color: #f3f3f3;
+                                    text-align: center;
+                                    line-height: 1;
+                                    margin-left: 10/@r;
+                                }
+                                .condition.focus {
+                                    color: #238ce8;
+                                    background-color: #ddefff;
+                                }
+                                .condition.appreciate {
+                                    color: #ea592f;
+                                    background-color: #fff0e9;
+                                }
+                                //当有第四个元素的时候，第四个元素不显示，出现三个点图标
+                                /* .condition:first-child:nth-last-child(4)+span+span {
+                                     margin-right: 40/@r;
+                                     &::after {
+                                         content: '';
+                                         position: absolute;
+                                         right: -40/@r;
+                                         top: 0;
+                                         width: 30/@r;
+                                         height: 30/@r;
+                                         background: url("../../img/myloan/more.png") no-repeat;
+                                         background-size: contain;
+                                         margin-left: 10/@r;
+                                         !*width: 30/@r;
+                                         height: 30/@r;
+                                         font-size: 20/@r;
+                                         color: #999;
+                                         font-family: "Microsoft YaHei", sans-serif;
+                                         border-radius: 50%;
+                                         background-color: #f3f3f3;*!
+                                         //text-align: center;
+                                     }
+                                 }*/
+                                .condition:nth-of-type(3n)~span {
+                                    display: none;
+                                }
+                            }
+                            //点点点
+                            .dropMore{
+                                //display: none;
+                                float: right;
+                                width: 30/@r;
+                                height: 30/@r;
+                                background: url("../../img/myloan/more.png") no-repeat;
+                                background-size: contain;
+                                margin: 15/@r 0/@r 0 10/@r;
+                                box-sizing: border-box;
+                            }
+                        }
+
+                    }
+                    //产品主体
+                    .productCont {
+                        display: block;
+                        width: 100%;
+                        height: 140/@r;
+                        border-top: 1/@b solid #eaeaea;
+                        border-bottom: 1/@b solid #eaeaea;
+                        .productImg {
+                            float: left;
+                            margin: 30/@r 65/@r 30/@r 50/@r;
+                            width: 80/@r;
+                            height: 80/@r;
+                            img {
+                                width: 80/@r;
+                                height: 80/@r;
+                            }
+                        }
+                        .productInfo {
+                            float: left;
+                            .loanlistMoney {
+                                float: left;
+                                //margin-right: 96/@r;
+                                width: 180/@r;
+                            }
+                            .loanlistPeriod {
+                                float: left;
+                                width: 180/@r;
+                                //margin-right: 99/@r;
+                            }
+                            .loanlistTime {
+                                float: left;
+                            }
+                            .productTitle {
+                                font-size: 22/@r;
+                                line-height: 1;
+                                color: #aaa;
+                                font-family: "Microsoft YaHei", sans-serif;
+                                margin: 30/@r 0;
+                            }
+                            .productInfoNum {
+                                font-size: 22/@r;
+                                color: #ea592f;
+                                font-family: "Microsoft YaHei", sans-serif;
+                                .productInfoNumber {
+                                    font-size: 34/@r;
+                                    color: #ea592f;
+                                    font-family: "Microsoft YaHei", sans-serif;
+                                    line-height: 1;
+                                }
+                            }
+                            .productApplyTime {
+                                font-size: 22/@r;
+                                color: #444;
+                                font-family: "Microsoft YaHei", sans-serif;
+                                vertical-align: bottom;
+                                line-height: 1;
+                                padding-top: 12/@r;
+                            }
+                        }
+                    }
+                    //样式
+                    .applyStyle {
+                        border-top: none;
+                        border-bottom: none;
+                    }
+                    .completed {
+                        border-bottom: none;
+                    }
+                }
+                li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        //办理中底部拨打电话
+        .loan_footer {
+            position: absolute;
+            left: 0;
+            bottom: 30/@r;
+            width: 100%;
+            //height: 100/@r;
+            //background: url("../../img/index/tel.jpg") no-repeat;
+            display: none;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 0;
+                strong {
+                    text-align: center;
+                    font-size: 22/@r;
+                    color: #aaa;
+                    font-family: "Microsoft YaHei", serif;
+                    line-height: 1;
+                    padding: 30/@r 0;
+                    margin-right: 10/@r;
+                }
+                em {
+                    position: relative;
+                    display: inline-block;
+                    height: 24/@r;
+                    font-size: 22/@r;
+                    color: #333;
+                    font-family: "Microsoft YaHei", serif;
+                    line-height: 1;
+                    padding-left: 31/@r;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: -2/@r;
+                        width: 24/@r;
+                        height: 24/@r;
+                        background: url("../../img/myloan/telAssistor2.png") no-repeat;
+                        background-size: contain;
+                        margin-right: 5/@r;
+                    }
+                }
+            }
+        }
+    }
+}
+//确认撤销弹框
+.revocationBox {
+    //display: none;
+    .mask {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .3);
+        z-index: 100;
+    }
+}
+.revocationCont {
+    position: absolute; //      top:480/@r;
+    top: 50%;
+    left: 50%;
+    margin-left: -280/@r;
+    margin-top: -160/@r;
+    width: 560/@r;
+    height: 320/@r;
+    background-color: #fff;
+    border-radius: 20/@r;
+    padding-top: 80/@r;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 101;
+    .revocationTitle {
+        font-size: 32/@r;
+        color: #333;
+        font-family: "Microsoft YaHei", sans-serif;
+        font-weight: bold;
+        margin-bottom: 20/@r;
+        line-height: 1;
+    }
+    .revocationInfo {
+        font-size: 26/@r;
+        color: #777;
+        font-family: "Microsoft YaHei", sans-serif;
+        line-height: 1;
+        margin-bottom: 70/@r;
+    }
+    .revocationBtnBox {
+        height: 90/@r;
+        width: 100%;
+        border-top: 1/@b solid #ccc;
+        .revocationBtn {
+            float: left;
+            font-size: 28/@r;
+            color: #999;
+            font-family: "Microsoft YaHei", sans-serif;
+            width: 50%;
+            line-height: 90/@r;
+        }
+        //点击按钮样式
+        .revocationBtn:link {
+            color: #999;
+        }
+        .revocationBtn:visited {
+            color: #999;
+        }
+        .revocationBtn:active {
+            color: #ea592f;
+        }
+        .revocationLine {
+            border-right: 1/@r solid #ccc;
+        }
+    }
+}
+
+//取消按钮
+/*******兼容性处理*******/
+@media screen and (max-width:370px) {
+    //表单
+    .container {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        .tabs {
+            height: 90/@r;
+            border-top: 1px solid #eaeaea;
+            background: #fff;
+            margin-bottom: 10/@r;
+            display: -webkit-flex;
+            position: relative;
+            li {
+                flex: 1;
+                height: 90/@r;
+                line-height: 90/@r;
+                text-align: center;
+                a {
+                    display: inline-block;
+                    font-size: 30/@r;
+                    color: #444;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 90/@r;
+                    font-family: '微软雅黑', sans-serif;
+                }
+            }
+            li.active {
+                border-bottom: 2px solid #ea592e;
+                a {
+                    color: #ea592f;
+                }
+            }
+        }
+        .tab_container {
+            width: 100%;
+            flex: 1;
+            //height: 100%;
+            position: relative;
+            .noRecord {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                /*margin-left: -180/@r;
+        margin-top: -270/@r;*/
+                -webkit-transform: translate(-50%, -65%);
+                display: none;
+                //背景图片
+                .noRecordPic {
+                    height: 360/@r;
+                    width: 360/@r;
+                    //background:url("../../img/myloan/apply.png") no-repeat;
+                    background-size: 100% 100%;
+                }
+                //去申请按钮
+                .applyBtn {
+                    display: none;
+                    width: 280/@r;
+                    //height: 80/@r;
+                    border: 1px solid #ddd;
+                    font-size: 30/@r;
+                    color: #999;
+                    border-radius: 40/@r;
+                    text-align: center;
+                    line-height: 1;
+                    padding: 25/@r 0;
+                    background-color: #fff;
+                    margin: 30/@r auto 0;
+                }
+                //点击按钮样式
+                .applyBtn:link {
+                    color: #666;
+                    border-color: #999;
+                }
+                .applyBtn:visited {
+                    color: #666;
+                    border-color: #999;
+                }
+                .applyBtn:active {
+                    color: #ea592f;
+                    border-color: #ea592f;
+                }
+            }
+            .tab_content {
+                .product_list {
+                    li {
+                        background-color: #fff;
+                        //height: 192/@r;
+                        margin-bottom: 10/@r;
+                        .linkStyle {
+                            display: -webkit-flex;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            .product_img {
+                                /*width:80/@r;
+                height: 80/@r;*/
+                                //background-color: #f3f3f3;
+                                //margin: 32/@r 42/@r 0;
+                                text-align: center;
+                                img {
+                                    width: 80/@r;
+                                    height: 80/@r;
+                                    margin: 34/@r 74/@r 0;
+                                }
+                                span {
+                                    display: block;
+                                    //height: 38/@r;
+                                    line-height: 1;
+                                    text-align: center;
+                                    //background-color: #f3f3f3;
+                                    font-size: 22/@r;
+                                    color: #444;
+                                    font-family: "Microsoft YaHei", serif;
+                                }
+                            }
+                            .product_info {
+                                position: relative;
+                                height: 132/@r;
+                                margin: 32/@r 0/@r;
+                                flex: 1;
+                                display: -webkit-flex;
+                                .product_info_border {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    height: 132/@r;
+                                    width: 1px;
+                                    border-left: 1px solid #eaeaea;
+                                    -webkit-transform: scaleX(0.5);
+                                    color: #eaeaea;
+                                }
+                                .loanlist_money {
+                                    padding: 8/@r 0;
+                                    height: 100%;
+                                    //float: left;
+                                    margin-left: 48/@r;
+                                    display: -webkit-flex;
+                                    flex-direction: column;
+                                    p {
+                                        font-size: 22/@r;
+                                        color: #aaa;
+                                        font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                    }
+                                    div {
+                                        line-height: 1;
+                                        margin-top: 60/@r;
+                                        font-size: 22/@r;
+                                        color: #ea592f;
+                                        font-family: "Microsoft YaHei", serif;
+                                        span {
+                                            line-height: 1;
+                                            font-size: 34/@r;
+                                            color: #ea592f;
+                                            //font-family: "Microsoft YaHei", serif;
+                                        }
+                                    }
+                                }
+                                .loanlist_period {
+                                    padding: 8/@r 0;
+                                    height: 100%;
+                                    //float: left;
+                                    //margin-left: 40/@r;
+                                    flex: 1;
+                                    display: -webkit-flex;
+                                    flex-direction: column;
+                                    p {
+                                        font-size: 22/@r;
+                                        color: #aaa;
+                                        font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                    }
+                                    div {
+                                        margin-top: 60/@r;
+                                        font-size: 22/@r;
+                                        color: #ea592f;
+                                        font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                        span {
+                                            font-size: 34/@r;
+                                            color: #ea592f;
+                                            //font-family: "Microsoft YaHei", serif;
+                                            line-height: 1;
+                                        }
+                                    }
+                                }
+                                .loanlist_time {
+                                    padding: 8/@r 0;
+                                    height: 100%;
+                                    //float: left;
+                                    //margin-left: 40/@r;
+                                    flex: 1;
+                                    display: -webkit-flex;
+                                    flex-direction: column;
+                                    p {
+                                        font-size: 22/@r;
+                                        color: #aaa;
+                                        font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                    }
+                                    div {
+                                        margin-top: 72/@r;
+                                        font-size: 22/@r;
+                                        color: #444;
+                                        //font-family: "Microsoft YaHei", serif;
+                                        line-height: 1;
+                                    }
+                                }
+                            }
+                            .loan_state {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 97/@r;
+                                height: 99/@r;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

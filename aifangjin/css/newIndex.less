@@ -1,0 +1,417 @@
+@r:50rem;
+
+body{
+  background: #f9f9f9;
+}
+//头部
+header{
+  height: 500/@r;
+  width:100%;
+  background: url("../img/newIndex/header.png") no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  //margin-bottom: 40/@r;
+  .top{
+    height: 90/@r;
+    margin-left: 30/@r;
+
+    .logo{
+      float: left;
+      width: 62/@r;
+      height: 62/@r;
+      background: url("../img/newIndex/logo.png") no-repeat;
+      background-size: contain;
+      background-position: center center;
+      margin-top: 30/@r;
+
+    }
+    .profile{
+      float: right;
+      &.active{
+        span{
+          background: url("../img/newIndex/profile.png") no-repeat;
+          background-size: contain;
+          background-position: center center;
+        }
+      }
+      a{
+        display: block;
+        width: 122/@r;
+        height: 122/@r;
+        padding-top: 30/@r;
+        span{
+          display: block;
+          width: 62/@r;
+          height: 62/@r;
+          background: url("../img/newIndex/profileBefore.png") no-repeat;
+          background-size: contain;
+          background-position: center center;
+          margin: 0/@r auto;
+        }
+      }
+    }
+  }
+  .tip{
+    width: 414/@r;
+    height: 69/@r;
+    background: url("../img/newIndex/headerTitle.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin: 98/@r auto 142/@r;
+  }
+  .nav{
+    width: 710/@r;
+    height: 140/@r;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 36/@r;
+    border-radius: 4/@r;
+    display: flex;
+    position: relative;
+    box-shadow: 4/@r 4/@r 18/@r 0/@r rgba(109,109,109,0.2);
+    .service{
+      flex:1;
+      .preceptPic{
+        float: left;
+        width:58/@r;
+        height: 62/@r;
+        background: url("../img/newIndex/precept.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin: 0 26/@r;
+      }
+      .servicePic{
+        float: left;
+        width:58/@r;
+        height: 62/@r;
+        background: url("../img/newIndex/service.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin: 0 26/@r;
+      }
+      .serviceTitle{
+        font-size: 26/@r;
+        color: #444;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+      }
+      .serviceInfo{
+        font-size: 22/@r;
+        color: #b9b9b9;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+        margin-top: 18/@r;
+      }
+    }
+    .line{
+      height: 100/@r;
+      border: 1px solid #eaeaea;
+      //width: 1/@r;
+      position: absolute;
+      left: 50%;
+      top: 20/@r;
+      -webkit-transform: scaleX(0.5);
+    }
+  }
+}
+//主体
+.main{
+  .products{
+    //height: 382/@r;
+    padding: 80/@r 65/@r 36/@r;
+    background: #fff;
+    .productsRow{
+      //display: flex;
+      min-height: 100/@r;
+      .productItem{
+        margin-right: 76/@r;
+        float: left;
+        strong{
+          display: block;
+          font-size: 24/@r;
+          font-family: "Microsoft YaHei", serif;
+          color: #666;
+          line-height: 1;
+          text-align: center;
+        }
+        .productIcon{
+          display: block;
+          width: 54/@r;
+          height: 46/@r;
+          margin: 0 auto 28/@r;
+        }
+        //更多产品
+        .moreIcon{
+          background: url("../img/newIndex/productimg.png") no-repeat 0 -65/@r;
+          background-size: 54/@r 516/@r;
+        }
+        /*.schoolIcon{
+          background-position: 0 0;
+        }
+
+        .travelIcon{
+          background-position: 0 -136/@r;
+        }
+        .shortperiodIcon{
+          background-position: 0 -205/@r;
+        }
+        .companyIcon{
+          background-position: 0 -270/@r;
+        }
+        .carIcon{
+          background-position: 0 -336/@r;
+        }
+        .marriedIcon{
+          background-position: 0 -405/@r;
+        }
+        .DecorationIcon{
+          background-position: 0 -470/@r;
+        }*/
+      }
+      a.productItem:nth-of-type(4n){
+        margin-right: 0;
+      }
+      a.productItem:nth-of-type(4n)~a{
+        margin-top: 76/@r;
+      }
+      .mr{
+        margin-right: 0;
+      }
+    }
+  }
+  .advertisement{
+    padding: 30/@r 10/@r 30/@r 30/@r;
+    width:100%;
+    height: 226/@r;
+    overflow: hidden;
+    position: relative;
+    .advertisementBox{
+      width: 840/@r;
+      position: absolute;
+      left: 30/@r;
+      top: 30/@r;
+      //display: table;
+      .advertisementItem{
+        float: left;
+        width: 246/@r;
+        height: 166/@r;
+        margin-right: 20/@r;
+        .advertisementTitle{
+          margin: 40/@r 0/@r 28/@r 30/@r;
+          width:106/@r;
+          height: 40/@r;
+          border: 1px solid #fff;
+          color: #fff;
+          font-size: 26/@r;
+          text-align: center;
+          font-family: "Microsoft YaHei", serif;
+        }
+        p{
+          font-size: 22/@r;
+          margin-left: 30/@r;
+          line-height: 1;
+          color: #fff;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .rate{
+      background: url("../img/newIndex/rate.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .amount{
+      background: url("../img/newIndex/amount.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .loan{
+      background: url("../img/newIndex/loan.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .tools{
+    background: #fff;
+    height: 278/@r;
+    .toolsTitle{
+      font-size: 28/@r;
+      line-height: 100/@r;
+      height: 100/@r;
+      padding-left: 30/@r;
+      border-bottom: 1px solid #eaeaea;
+    }
+    ul{
+      display: flex;
+      padding: 35/@r 0 38/@r;
+      li{
+        flex:1;
+        a{
+          display: block;
+          width:100%;
+          height: 100%;
+          text-align: center;
+          strong{
+            display: block;
+            font-size: 22/@r;
+            color: #666;
+            font-family: "Microsoft YaHei", serif;
+            line-height: 1;
+          }
+          span{
+            display: block;
+            text-align: center;
+            margin-bottom: 31/@r;
+            .toolIcon{
+              display: inline-block;
+              width: 54/@r;
+              height: 48/@r;
+              background: url("../img/newIndex/tools.png") no-repeat center center;
+              background-size: 54/@r 272/@r;
+            }
+            .buyHouse{
+              background-position: 0 -73/@r;
+            }
+            .tex{
+              background-position: 0 0/@r;
+            }
+            .houseloan{
+              background-position: 0 -150/@r;
+            }
+            .moretool{
+              background-position: 0 -224/@r;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//底部
+footer{
+  height: 150/@r;
+  .aboutUs{
+    a{
+      display: block;
+      width:100%;
+      height: 100%;
+      font-size: 22/@r;
+      color: #999;
+      font-family: "Microsoft YaHei", serif;
+      line-height: 1;
+      padding: 30/@r 0 16/@r;
+      text-align: center;
+    }
+  }
+  //点击按钮样式
+  .footer_aboutUs:link{
+    color: #999;
+  }
+  .footer_aboutUs:visited{
+    color: #999;
+  }
+  .footer_aboutUs:active{
+    color: #d95d31;
+  }
+  p{
+    text-align: center;
+    span{
+      display: inline-block;
+      font-size: 22/@r;
+      font-family: "Microsoft YaHei", serif;
+      color: #999;
+      text-align: center;
+      line-height: 1;
+    }
+    .spanMr{
+      margin-right: 80/@r;
+    }
+  }
+  .tel{
+    a{
+      display: block;
+      width:100%;
+      height: 100%;
+      padding: 16/@r 0 30/@r;
+      font-size: 0;
+      text-align: center;
+      span{
+        display: inline-block;
+        margin-right: 30/@r;
+        font-size: 22/@r;
+        font-family: "Microsoft YaHei", serif;
+        color: #999;
+        line-height: 1;
+      }
+      strong{
+        display: inline-block;
+        font-size: 22/@r;
+        font-family: "Microsoft YaHei", serif;
+        color: #999;
+        line-height: 1;
+      }
+    }
+  }
+}
+//间距
+.mb{
+  margin-bottom: 72/@r;
+}
+.mr{
+  margin-right: 0;
+}
+/*//快速申请
+.apply{
+  position: absolute;
+  right: 0;
+  top: 800/@r;
+  width: 130/@r;
+  height: 142/@r;
+  background: url("../img/newIndex/applyfor.png") no-repeat;
+  background-size: 100% 100%;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}*/
+//快速申请
+.apply{
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  top: 868/@r;
+  width: 130/@r;
+  height: 142/@r;
+  background: url("../img/newIndex/applyfor.png") no-repeat;
+  background-size: 100% 100%;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+/* 兼容iphone4/4s5/5 */
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2),(device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+  //产品列表
+  .main {
+    .products {
+      .productsRow {
+        .productItem {
+          margin-right: 9%;
+        }
+      }
+    }
+  }
+  //导航区域
+  header{
+    .nav{
+      .service{
+        .preceptPic{
+          margin: 0 5/@r;
+        }
+        .servicePic{
+          margin: 0 5/@r;
+        }
+      }
+    }
+  }
+}

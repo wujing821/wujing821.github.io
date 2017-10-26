@@ -1,0 +1,120 @@
+@import "base.css";
+@import "public";
+
+@title: 120/@r;
+@in_height: 89/@r;
+@in_width_lar:600/@r;
+@in_width_mid:400/@r;
+@in_width_sma:638/@r;
+@input-font: 32/@r;
+@pa-lr: 50/@r;
+@group_height:90/@r;
+@com_red:#ea592e;
+@border:#eaeaea;
+body{
+  background-color: #fafafa;
+}
+.m_form{
+  margin-top: 30/@r;
+  background-color: white;
+}
+.form_group_select{
+  margin:  20/@r 0;
+
+  background-color: #FFFFFF;
+  padding: 0 30/@r;
+
+
+  .icon_fir{
+
+    background-position: 0 -67/@r;
+
+  }
+  .info{
+    display: flex;
+    align-items: center;
+  }
+  span{
+    width: 32/@r;
+    height: 32/@r;
+    margin-right: 20/@r;
+    display: inline-block;
+    background: url(../images/img.png) no-repeat 0 0;
+    background-size: 32/@r 191/@r;
+  }
+  strong{
+    font-size: 28/@r;
+    color: #555555;
+
+  }
+  i{
+    color: #ea592e;
+    font-size: 24/@r;
+    margin-right: 20/@r;
+    font-style: normal;
+  }
+  em{
+    background: url(../img/form/right.png) 0 0 no-repeat;
+    width: 14/@r;
+    height: 26/@r;
+    background-size: contain;
+    display: inline-block;
+  }
+  .icon_apply_com{
+    width: 30/@r;
+    height: 31/@r;
+    line-height: 30/@r;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-image: url("../img/form/applay.png") ;
+    background-size: 30/@r 300/@r;
+  }
+  .icon_type{
+    background: url("../img/myloan/typegray.png") 0 0  no-repeat;
+    width: 30/@r;
+    height: 28/@r;
+    background-size: contain;
+    &.active{
+      background: url("../img/myloan/type.png") 0 0  no-repeat;
+      background-size: contain;
+
+    }
+  }
+  .icon_down{
+    background-image: url(../img/form/right.png);
+  }
+   .select{
+     height: 90/@r;
+     width: 100%;
+     border-bottom: solid 1px #eaeaea;
+     align-items: center;
+     display: flex;
+     justify-content:space-between;
+   }
+  .icon_money{
+    background-position: 0 0;
+  }
+  .icon_time{
+    background-position: 0 -38/@r;
+  }
+  .icon_credit{
+    background-position: 0 -74/@r;
+  }
+  .icon_age{
+    background-position: 0 -115/@r;
+  }
+  .icon_identity{
+    background-position: 0 -155/@r;
+    height: 25/@r;
+  }
+  .icon_funds{
+    background-position: 0 -189/@r;
+  }
+  .icon_house{
+    background-position: 0 -224/@r;
+  }
+  .icon_car{
+    background-position: 0 -264/@r;
+  }
+}

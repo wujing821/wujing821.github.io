@@ -1,0 +1,160 @@
+@r:50rem;
+body{
+  overflow-x: hidden;
+}
+.wait_container{
+    background: url("../../img/activity/back_wait.png") 0 0 no-repeat;
+    width: 100%;
+    height: 2207/@r;
+   background-size: cover;
+  background-position: 50% 0;
+  display: table;
+  .airship{
+    width: 142/@r;
+    height: 143/@r;
+    position: absolute;
+    top:505/@r;
+    right: -100/@r;
+  }
+
+  .wait_recruit{
+    background: url("../../img/activity/btn_waitback.png") 0 0 no-repeat;
+    width: 675/@r;
+    height: 473/@r;
+    background-size: contain;
+    margin: 0 auto;
+    margin-top: 457/@r;
+    display: table;
+    position: relative;
+    h1{
+      text-align: center;
+      font-size:40/@r;
+      color: #fcf8b6;
+      margin-top: 38/@r;
+      margin-bottom: 20/@r;
+      line-height: 1;
+      position: relative;
+      //left: -550/@r;
+    }
+    h2{
+      text-align: center;
+      font-size: 28/@r;
+      color: #efdeff;
+      line-height: 1;
+      margin-bottom:20/@r;
+    }
+    p{
+      width: 573/@r;
+      color: #efdeff;
+      margin: 0 auto;
+    }
+    .waittop{
+      width:680/@r;
+      height: 218/@r;
+      position: absolute;
+      bottom: 5/@r;
+    }
+    a{
+      background: url("../../img/activity/btn_wait.png") 0 0 no-repeat;
+      width: 383/@r;
+      height: 86/@r;
+      line-height: 86/@r;
+      background-size: contain;
+      margin: 0 auto;
+      position: absolute;
+      display: block;
+      bottom: 45/@r;
+      text-align: center;
+      font-size: 34/@r;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      color: #FFFFFF;
+      &:active{
+        color: #c261e6;
+        //color: red;
+      }
+
+    }
+
+  }
+  .wait_rights{
+    position: relative;
+    .content{
+   /*   background: url("../../img/wechat/back_fir.png") 0 0 no-repeat;
+      width: 660/@r;
+      height: 240/@r;
+      background-size: contain;*/
+    }
+    img{
+      position: absolute;
+      width: 49/@r;
+      height: 47/@r;
+      left: 205/@r;
+      top:-34/@r;
+    }
+  }
+  .wait_rule{
+    margin-top: 30/@r !important;
+    margin-bottom: 20/@r;
+    .content{
+
+      /* background: url(".1./../img/wechat/back_sec.png") 0 0 no-repeat;
+       width: 660/@r;
+       //display: table;
+       height: 660/@r;
+       background-size: contain;*/
+    }
+  }
+  .wait_com{
+    display: table;
+    margin-top: 52/@r;
+    //height: 60/@r;
+    .title{
+      display: flex;
+      align-items: center;
+      margin: 0 45/@r;
+      //flex-direction: column;
+      .line{
+
+        flex: 1;
+        width: 172/@r;
+        height: 1px;
+        background-color: #7f32b8;
+
+
+      }
+      .con{
+        margin-left: 10/@r;
+        margin-right: 10/@r;
+        width: 300/@r;
+        height: 60/@r;
+        border-radius: 30/@r;
+        //background-color: #7f32b8;
+        border: solid 1px #7f32b8;
+        text-align: center;
+        line-height: 60/@r;
+        color: #fcf8b6;
+        font-size: 30/@r;
+        //line-height: 60/@r;
+      }
+    }
+    .content{
+      text-align: justify;
+      background-color:rgba(89,47,161,0.6) ;
+      box-shadow:0px 0px 30/@r rgba(128,80,196,0.75)  inset;
+      width: 660/@r;
+      margin: 0 auto;
+      border-radius: 15/@r;
+      margin: 0 auto;
+      padding: 30/@r 33/@r;
+      font-size: 26/@r;
+      color: #e1c4fb;
+      margin-top: 30/@r;
+      span{
+        font-size: 26/@r;
+        color: #fff376;
+      }
+    }
+  }
+
+}

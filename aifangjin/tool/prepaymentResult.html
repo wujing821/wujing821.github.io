@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <title>提前还款计算器</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/taxes.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/calculator.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/form.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/prepayment.less">
+    <script src="../js/less.js"></script>
+
+</head>
+<body>
+<header class="public_header com_header">
+    <a href="javascript:;" class="return"></a>
+    提前还款计算器
+</header>
+<!--计算结果页开始-->
+<div class="result main_page" id="result">
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>原还款额</strong>
+            </div>
+            <div class="info">
+
+                <em class="total">50000.36元</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>原最后还款期</strong>
+            </div>
+            <div class="info">
+                <em >2037年10月</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>已还款总额</strong>
+            </div>
+            <div class="info">
+                <em >85963.52元</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>已还利息额</strong>
+            </div>
+            <div class="info">
+                <em >85696.56元</em>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>该月一次还款额</strong>
+            </div>
+            <div class="info">
+                <em class="infoObvious">9658962.23元</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>下月起月还款额</strong>
+            </div>
+            <div class="info infoObvious">
+                <em class="infoObvious">0元</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>节省利息支出</strong>
+            </div>
+            <div class="info infoObvious">
+                <em class="infoObvious" >29658962.09元</em>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item_group">
+        <div class="p_item">
+            <div class="info">
+
+                <strong>新最后还款期</strong>
+            </div>
+            <div class="info infoObvious">
+                <em class="infoObvious" >2018年10月</em>
+            </div>
+
+
+        </div>
+    </div>
+    <p class="hint">
+        *税贷利率仅供计算使用，实际交易利率由银行评估结果为准
+    </p>
+</div>
+<!--计算结果页结束-->
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/vue.min.js"></script>
+<script src="../js/formp.js"></script>
+<!--<script src="../js/tool/taxes.js"></script>-->
+<script src="../js/tool/calculatorMethod.js"></script>
+<script src="../js/tool/prepayment.js"></script>
+<script>
+    $(document).ready(function () {
+//        Taxes.init();
+//        $('.select_group').alertBottom();
+
+
+
+
+
+    });
+
+</script>
+</body>
+</html>

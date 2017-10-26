@@ -1,0 +1,370 @@
+@import "../base.css";
+@r:50rem;
+@boder:#eaeaea;
+@fontcolor:#444444;
+body{
+  overflow-x: hidden;
+  background-color: #2d3132;
+  box-sizing:border-box;
+}
+.house_test{
+  background: url("../../img/tool/housetest.png") no-repeat 0 0;
+}
+.house_one{
+  background: url("../../img/tool/houseone.png") no-repeat 0 0;
+}
+.house_two{
+  height: 1564/@r !important;
+  background: url("../../img/tool/housetwo.jpg") no-repeat 0 0;
+}
+.house_no{
+  background: url("../../img/tool/houseno.png") no-repeat 0 0;
+}
+.padding30{
+  padding-top: 30/@r;
+}
+.padding50{
+  padding-top: 50/@r;
+}
+.width118{
+  width: 118/@r;
+}
+.margintop185{
+  margin-top: 225/@r !important;
+}
+.margintop288{
+  margin-top: 288/@r !important;
+}
+.main_page{
+  display: none;
+}
+.entitle_container{
+
+/************************购房测试***********************/
+  height: 1334/@r;
+  width:750/@r;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  vertical-align:bottom;display:block;
+  margin: 0 auto;
+  //单选框
+  .house_container{
+    background-color: white;
+    margin: 0 auto;
+    width: 690/@r;
+    position: relative;
+    z-index: 100;
+    border-radius: 6/@r;
+    //text-align: center;
+    h2{
+      color: @fontcolor;
+      font-size: 30/@r;
+      padding-left: 30/@r;
+      text-align: left;
+      font-weight: 700;
+    }
+    .house_back{
+      position: absolute;
+      top: -40/@r;
+      left: 20/@r;
+      z-index: 1;
+     img{
+       width: 650/@r;
+       height: 40/@r;
+     }
+    }
+    .house_bottom{
+      margin-top: 30/@r;
+      padding:30/@r;
+      border-top: 1px solid @boder;
+      margin-bottom: 0;
+      a{
+        width: 630/@r;
+        height: 90/@r;
+        line-height: 90/@r;
+        border-radius: 45/@r;
+        background-color: white;
+        border: solid 1px #ea592e;
+        display: block;
+        font-size: 30/@r;
+        text-align: center;
+        color: #ea592e;
+        &:active{
+          border: solid 1px #ff872a;
+          color: #ff872a;
+        }
+      }
+      p{
+         color: #999999;
+        text-align: center;
+        margin-top:20/@r;
+        font-size: 20/@r;
+      }
+    }
+    .list{
+      border-top:dotted  1px  #eaeaea;
+      margin: 0 auto;
+      margin-bottom: 40/@r;
+      padding-top: 20/@r;
+      width: 650/@r;
+      display: table;
+      h3{
+        font-size: 24/@r;
+        color: #444444;
+      }
+      p{
+
+        span{
+          font-size: 22/@r;
+          height: 36/@r;
+          line-height: 36/@r;
+          padding: 0 8/@r;
+          color: #999999;
+          background-color: #fff4ee;
+          margin-right: 20/@r;
+          float: left;
+          margin-top: 20/@r;
+          border-radius: 2/@r;
+        }
+      }
+    }
+
+  }
+  .check_group{
+    margin-top: 50/@r;
+    margin-bottom: 50/@r;
+    position: relative;
+    display: table;
+    //width: 100%;
+    padding: 0 30/@r;
+    .input_check{
+      //float: left;
+      position: relative;
+      //margin-right: 24/@r;
+      //margin-top: 3/@r;
+    }
+    .f{
+      float: none;
+    }
+    input{
+      background-color: transparent;
+      margin-top: 3/@r;
+    }
+    &.active{
+      .input_check{
+        .chose{
+          background-image: url("../../img/form/chose_ac.png");
+          width: 22/@r;
+          height: 22/@r;
+          background-size: contain;
+          //border: 1px solid red;
+        }
+        p{
+          //color: @fontcolor;
+        }
+      }
+
+
+
+    }
+    .chose{
+      background: url("../../img/form/chose.png") no-repeat 0 0;
+      width: 22/@r;
+      height: 22/@r;
+      background-size: contain;
+      float: left;
+      margin-right: 24/@r;
+      margin-top: 3/@r;
+    }
+    input{
+      position: absolute;
+      width: 22/@r;
+      height: 22/@r;
+      /*     border: 1px solid;
+           width: 50px;
+           height: 50px;*/
+ /*     &:checked + .chose{
+        background-image: url("../../img/form/chose_ac.png");
+        width: 22/@r;
+        height: 22/@r;
+        background-size: contain;
+        border: 1px solid red;
+      }
+      &:checked + .chose + p{
+        color: @fontcolor;
+      }*/
+    }
+
+    p{
+      color: #999999;
+      font-size: 30/@r;
+      float: left;
+      line-height: 1;
+      span{
+        color: #ea592e;
+      }
+
+      a{
+        color: #ea592e;
+      }
+    }
+    /*p.agree_r{
+      float: right;
+    }*/
+  }
+
+  /******************购房结果***********************/
+  //不能买房
+  .no_buy{
+    padding-left: 30/@r;
+    font-size: 40/@r;
+  }
+  .table_no{
+    text-align: center;
+    img{
+      width: 365/@r;
+      height: 306/@r;
+    }
+  }
+
+  //可以买房
+  .house_info{
+    display: table;
+  }
+  .line{
+    width: 100%;
+    text-align: center;
+
+  }
+  .line_dotted{
+    width: 650/@r;
+    height: 1px;
+    border-bottom: 1px dotted #eaeaea;
+    display: inline-block;
+    margin-top: 30/@r;
+    margin-bottom:28/@r ;
+ /*   background-color: red;
+    background: url("../../img/tool/dotted.png") 0 0 repeat;
+    background-size: 60/@r;
+
+    //border-bottom: 3px dotted red;
+   display: inline-block;*/
+
+  }
+  .house_left{
+    //float: left;
+    width: 164/@r;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    img{
+      width: 106/@r;
+      height: 92/@r;
+    }
+  }
+  .house_right{
+    position: relative;
+    width: 497/@r;
+    float: left;
+    .h_border{
+      position: absolute;
+      width: 38/@r;
+      height: 38/@r;
+
+    }
+    p{
+      font-size: 22/@r;
+      color: #cacaca;
+      margin-top: 14/@r;
+      line-height: 1;
+      text-align: left;
+    }
+  }
+  .table_fir {
+    table {
+      background-color: #fff4ee;
+      td{
+        border-right:1px solid #fee1ce;
+        border-bottom:1px solid #fee1ce;
+        span{
+          font-size: 28/@r;
+          color: #fb6d0d;
+        }
+      }
+      th{
+        border-right:1px solid #fee1ce;
+        border-bottom:1px solid #fee1ce;
+      }
+
+    }
+    .h_top{
+      border-top: 1px solid #ea592e;
+      border-left:1px solid #ea592e;
+    }
+    .h_bottom{
+      border-bottom: 1px solid #ea592e;
+      border-right:1px solid #ea592e;
+      right: 0;
+      bottom: 0/@r;
+    }
+  }
+  .table_sec{
+    table {
+      background-color: #f8fcff;
+      td{
+        border-right:1px solid #def1ff;
+        border-bottom:1px solid #def1ff;
+        span{
+          font-size: 28/@r;
+          color: #42abff;
+        }
+      }
+      th{
+        border-right:1px solid #def1ff;
+        border-bottom:1px solid #def1ff;
+      }
+    }
+
+    .h_top{
+      border-top: 1px solid #42abff;
+      border-left:1px solid #42abff;
+    }
+    .h_bottom{
+      border-bottom: 1px solid #42abff;
+      border-right:1px solid #42abff;
+      right: 0;
+      bottom: 0/@r;
+    }
+  }
+  table{
+    border-collapse:collapse;
+    border:0px solid #999;
+    height: 270/@r;
+    width: 497/@r;
+    td{
+      border-top:0;
+
+      border-left:0;
+      font-size: 28/@r;
+      color: @fontcolor;
+      vertical-align: middle;
+      text-align: center;
+
+    }
+    th{
+      font-size: 28/@r;
+      color: #999999;
+      font-weight: normal;
+    }
+  }
+
+  table tr.lastrow td{
+    border-bottom:0;
+
+  }
+  table tr .lastCol{
+    border-right:0;
+  }
+}

@@ -1,0 +1,150 @@
+@import "../base.css";
+@r:50rem;
+body{
+  background-color:#f6f6f6;
+}
+
+.p_header{
+  height:360/@r;
+  width: 750/@r;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../img/profile/profile_back.png") 0 0 no-repeat;
+  background-size: cover;
+ flex-direction: column;
+  img{
+    height: 140/@r;
+    width: 140/@r;
+    display: inline-block;
+  }
+  p{
+    font-size: 28/@r;
+    color: #fbded5;
+    margin-top: 45/@r;
+  }
+}
+.p_content{
+  .p_item{
+    margin:  20/@r 0;
+    height: 90/@r;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0 30/@r;
+    justify-content:space-between;
+    .icon_fir{
+      background-position: 0 -77/@r;
+      height: 34/@r;
+    }
+    .icon_sec{
+      background-position: 0 -158/@r;
+    }
+    .icon_thi{
+      background-position: 0 -192/@r;
+      height: 37/@r;
+    }
+    .icon_for{
+      background-position: 0 -115/@r;
+    }
+    .icon_fif{
+      background-position: 0 -34/@r;
+      height: 39/@r;
+    }
+   .info{
+     display: flex;
+     align-items: center;
+     div{
+       color: #777777;
+       font-size: 24/@r;
+       i{
+         color: #aaaaaa;
+         margin-right: 0;
+       }
+     }
+   }
+    .circle{
+      width: 14/@r;
+      height: 14/@r;
+      background-color: #ea592e;
+      border-radius: 7/@r;
+      margin-right:20/@r;
+    }
+    span{
+      width: 32/@r;
+      height: 32/@r;
+      margin-right: 20/@r;
+      display: inline-block;
+      background: url(../../img/profile/img.png) no-repeat 0 0;
+      background-size: 32/@r 229/@r;
+    }
+    strong{
+      font-size: 28/@r;
+      color: #555555;
+      margin-right: 30/@r;
+    }
+    i{
+      font-size: 24/@r;
+      margin-right: 20/@r;
+      font-style: normal;
+    }
+    //状态显示
+    #status{
+      p.statusCont{
+        i.apply{
+          font-size: 24/@r;
+          font-style: normal;
+          margin-right: 0;
+          &::after{
+            content: '，';
+            color: #ea592e;
+          }
+        }
+        i.apply:last-child{
+          &::after{
+            content: '';
+          }
+        }
+        i.apply:nth-of-type(3n)~i {
+          display: none;
+        }
+       /* //当有第四个元素的时候，第四个元素不显示，出现三个点图标
+        i.apply:first-child:nth-last-child(4)+i+i{
+          &::after {
+            content: '...';
+            color: #ea592e;
+          }
+        }*/
+
+        .alreadyApply{
+          color: #ea592e;
+        }
+        .noApply{
+          color: #aaa;
+        }
+      }
+      i.applyMore{
+        display: none;
+        color: #ea592e;
+        margin-right: 0;
+      }
+    }
+
+
+
+
+    a{
+      color: #aaaaaa;
+    }
+    em{
+      background: url(../../img/profile/right.png) 0 0 no-repeat;
+      width: 14/@r;
+      height: 26/@r;
+      background-size: contain;
+      display: inline-block;
+      margin-left: 20/@r;
+    }
+
+  }
+
+}

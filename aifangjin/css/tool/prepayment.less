@@ -1,0 +1,199 @@
+@r:50rem;
+html{
+  height: 100%;
+}
+body{
+  background-color: #fff;
+  height:100%;
+  -webkit-user-select:auto;
+}
+.select_container{
+  //height: 100%;
+}
+.select_group {
+  .out_select {
+    .c_select {
+      .left_icon {
+        float: left;
+        width: 39/@r;
+        height: 34/@r;
+        margin: 0/@r 30/@r 0/@r 0/@r;
+        background: url("../../img/tool/calculate.png") no-repeat;
+        background-size: 542/@r 32/@r;
+        #demo2{
+          padding: 0;
+          margin: 0;
+          border: none;
+        }
+      }
+      .repaymentIcon{
+        background-position: 0/@r 4/@r;
+      }
+      .loanAmountIcon{
+        background-position: -111/@r 2/@r;
+      }
+      .loanPeriodIcon{
+        background-position: -221/@r 2/@r;
+      }
+      .loanRateIcon{
+        background-position: -505/@r 1/@r;
+      }
+      .yearRateIcon{
+        background-position: -442/@r 0;
+      }
+      .firstTimeIcon{
+        background-position: -388/@r 3/@r;
+      }
+      .prepaymentIcon{
+        background-position: -276/@r 3/@r;
+      }
+      .prepaymentMethodIcon{
+        background-position: -164/@r 3/@r;
+      }
+      .partPrepaymentAmountIcon{
+        background-position: -332/@r 3/@r;
+      }
+      .processModeIcon{
+        background-position: -53/@r 3/@r;
+      }
+      #rate{
+        margin-right: 22/@r;
+      }
+    }
+  }
+}
+//计算结果页
+.item_group{
+  padding: 0 30/@r;
+  .p_item{
+    &.active{
+      em{
+        color: #ea592e;
+      }
+      span{
+        color: #ea592e;
+      }
+    }
+    height: 90/@r;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-bottom: 1px solid #EAEAEA;
+    .icon_fir{
+
+      background-position: 0 -67/@r;
+
+    }
+    .info{
+      display: flex;
+      align-items: center;
+    }
+
+    strong{
+      font-size: 26/@r;
+      color: #777777;
+
+    }
+    span{
+      font-size: 28/@r;
+      color: #555555;
+      line-height: 1;
+    }
+
+    em{
+
+      font-size: 28/@r;
+      color: #555555;
+    }
+    .infoObvious{
+      color: #ea592e;
+      font-size: 28/@r;
+    }
+
+  }
+}
+.mui-btn{
+    font-size: 24/@r;
+    font-family: "microsoft yahei";
+}
+.mui-line{
+    border-bottom: 1px solid #eaeaea;
+    -webkit-transform: scaleY(0.5);
+}
+/*浮动*/
+.mui-btn-right{
+    float: right;
+}
+.mui-btn-left{
+    float: left;
+}
+//选中时高亮
+.mui-pciker-list li.highlight {
+    color: #ea592e;
+    font-size: 30/@r;
+
+}
+.mui-pciker-list li{
+    font-size: 26/@r;
+    color: #444;
+    font-family: "microsoft yahei", sans-serif;
+    //background-color: #fff;
+}
+.mui-pciker-list li.visible{
+    font-size: 28/@r;
+}
+.mui-dtpicker{
+  height: 520/@r;
+}
+.mui-dtpicker-header{
+    position: relative;
+    height: 90/@r;
+}
+.mui-title-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #444;
+    font-size: 26/@r;
+    -webkit-transform: translate(-50%, -50%);
+}
+.mui-showText{
+  font-size: 28/@r;
+  color: #555;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.mui-dtpicker-body{
+  height: 440/@r;
+}
+.loan_wrapper{
+  .loan_cont{
+    .loan_cont_header{
+      margin-bottom: 0;
+    }
+    #definition{
+
+      strong{
+        line-height: 1;
+        color: #444;
+        font-weight: normal;
+        font-size: 26/@r;
+      }
+      .loan_input{
+        margin-top: 12/@r;
+        //line-height: 1;
+      }
+      input[type=button]{
+        padding: 0;
+        line-height: 1;
+      }
+    }
+    .dropdown-menu{
+      li{
+        span{
+          width:430/@r;
+        }
+      }
+    }
+  }
+}

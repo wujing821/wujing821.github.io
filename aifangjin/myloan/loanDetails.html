@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>贷款详情</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/myloan/myloan.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/myloan/loanDetails.less">
+    <script src="../js/less.js"></script>
+</head>
+<body>
+<header class="public_header">
+    <a href="javascript:;" class="return"></a>
+    <span class="productHeader"><i></i>我的贷款详情</span>
+    <div class="dropdownMenuBtn">
+        <a href="javascript:;" class="clickbf" id="menuBtn"></a>
+        <div class="dropdownMenu hide" id="dropdown-menu">
+            <a href="../index.html"><i class="menuIndex"></i>首页</a>
+            <a href="../profile/profile.html"><i class="menuPerson"></i>账户中心</a>
+        </div>
+    </div>
+</header>
+<div class="main" id="loan-content">
+
+    <div class="loansList">
+        <div class="loanListCont">
+            <div class="loanListBox">
+                <span class="loanItem" v-for="(item,index) in items"  @click="switchover(index)" :class="{active: index == qer}">贷款{{index+1}}</span>
+                <!--<span class="loanItem">贷款2</span>-->
+                <!--<span class="loanItem">贷款3</span>-->
+                <!--<span class="loanItem">贷款4</span>-->
+            </div>
+        </div>
+    </div>
+    <!--class为more代表多个值的状态-->
+    <div class="header">贷款详情<!--<i class="cancelBtn">取消申请</i>--></div>
+    <div class="contBox">
+        <!--<div class="container" v-for="item in items">
+            <ul class="content">
+                <li class="clearfix">
+                    <div class="contentName">贷款产品</div>
+                    <div class="cont"><span v-text="item.product_name_polish"></span></span>
+                        &lt;!&ndash;<div class="cont"><span v-text="item.supplier_name"></span>-<span v-text="item.product_name"></span>&ndash;&gt;
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款金额</div>
+                    <div class="cont"><span v-text="item.application_amount/10000"></span>万</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款期限</div>
+                    <div class="cont"><span v-text="item.loan_period"></span>个月</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款年利率</div>
+                    <div class="cont"><span v-text="item.expense_percentage"></span>%/年</div>
+                </li>
+            </ul>
+            <div class="processInfo">*仅供参考，以银行审批结果为准</div>
+            <div class="processState">
+                <div class="processStateTitle">办理流程</div>
+                <div class="processContent">
+                    <ul :class="padd">
+                        <li v-for="item in options">
+                            <div class="passed clearfix" v-if=" item.operation == 1 ">
+                            <span class="processTime"
+                                  v-text="item.time"></span><i><b></b><em></em></i><strong>申请贷款</strong>
+                            </div>
+                            <div class="passed clearfix" v-if=" item.operation == 4 ">
+                                <span class="processTime" v-text="item.time"></span><i><b></b><em></em></i><strong
+                                    class="money">机构面签，收取服务费{{item.sign_amount}}元整</strong>
+                            </div>
+                            <div class="passed clearfix" v-if=" item.operation == 7 ">
+                            <span class="processTime"
+                                  v-text="item.time"></span><i><b></b><em></em></i><strong>未放款</strong>
+                            </div>
+                            <div class="passed clearfix" v-if=" item.operation == 8 ">
+                            <span class="processTime"
+                                  v-text="item.time"></span><i><b></b><em></em></i><strong>已放款</strong>
+                            </div>
+                            <div class="refused clearfix" v-if=" item.operation == 6 ">
+                                <span class="processTime" v-text="item.time"></span>
+                                <i><b></b></i>
+                                <strong class="reason">审批拒绝<template v-if="item.remarks">(拒绝原因:{{item.remarks}})</template></strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                            <div class="refused clearfix" v-if=" item.operation == 5 ">
+                                <span class="processTime" v-text="item.time"></span>
+                                <i><b></b></i>
+                                <strong class="reason">申请取消 <template v-if="item.remarks">(取消原因:{{item.remarks}})</template>  </strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>
+                        &lt;!&ndash;  <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-23</span><i><b></b><em></em></i><strong>机构面签，收取服务费3000元整</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-24</span><i><b></b><em></em></i><strong>机构审批</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="refused clearfix">
+                                  <span class="processTime">2017-05-26</span>
+                                  <i><b></b></i>
+                                  <strong>审批拒绝(拒绝原因:评分不够)</strong>
+                                  <div class="clearfix"></div>
+                                  <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                  <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                              </div>
+                          </li>&ndash;&gt;
+                        &lt;!&ndash;<li>
+                            <div class="cancel clearfix">
+                                <span class="processTime">2017-05-26</span>
+                                <i><b></b></i>
+                                <strong>取消申请(取消原因:xxxx)</strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>&ndash;&gt;
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>-->
+        <!--模拟假数据-->
+        <div class="container" v-for="(item,index) in items" :class="{show: index == 0}">
+            <ul class="content">
+                <li class="clearfix">
+                    <div class="contentName">贷款产品</div>
+                    <div class="cont">
+                        <span v-if="item && item.product_name_polish" v-text="item.product_name_polish"></span>
+                        <span v-if="item &&item.product_name" v-text="item.product_name"></span>
+                        <!--<div class="cont"><span v-text="item.supplier_name"></span>-<span v-text="item.product_name"></span>-->
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款金额</div>
+                    <div class="cont"><span v-text="item.amountMoney/10000"></span>万</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款期限</div>
+                    <div class="cont"><span v-text="item.loan_period"></span>个月</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款利率</div>
+                    <div class="cont"><span  v-text="item.counter_fee"></span>%/年</div>
+                </li>
+            </ul>
+            <div class="processInfo">*仅供参考，以银行审批结果为准</div>
+            <div class="processState">
+                <div class="processStateTitle">办理流程</div>
+                <div class="processContent" style="display: block">
+                    <ul>
+                        <li>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-22</span><i><b></b><em></em></i><strong>申请贷款</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-22</span><i><b></b><em></em></i><strong
+                                    class="money">机构面签，收取服务费3000元整</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-23</span><i><b></b><em></em></i><strong>未放款</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-24</span><i><b></b><em></em></i><strong>已放款</strong>
+                            </div>
+                            <div class="refused clearfix">
+                                <span class="processTime">2017-05-24</span>
+                                <i><b></b></i>
+                                <strong class="reason">审批拒绝<template>(拒绝原因:评分不够)</template></strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>
+                        <!--  <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-23</span><i><b></b><em></em></i><strong>机构面签，收取服务费3000元整</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-24</span><i><b></b><em></em></i><strong>机构审批</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="refused clearfix">
+                                  <span class="processTime">2017-05-26</span>
+                                  <i><b></b></i>
+                                  <strong>审批拒绝(拒绝原因:评分不够)</strong>
+                                  <div class="clearfix"></div>
+                                  <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                  <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                              </div>
+                          </li>-->
+                        <!--<li>
+                            <div class="cancel clearfix">
+                                <span class="processTime">2017-05-26</span>
+                                <i><b></b></i>
+                                <strong>取消申请(取消原因:xxxx)</strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>-->
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="container">
+            <ul class="content">
+                <li class="clearfix">
+                    <div class="contentName">贷款产品2</div>
+                    <div class="cont">
+                        <span>装修贷款</span>
+                        &lt;!&ndash;<div class="cont"><span v-text="item.supplier_name"></span>-<span v-text="item.product_name"></span>&ndash;&gt;
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款金额</div>
+                    <div class="cont"><span>1000</span>万</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款期限</div>
+                    <div class="cont"><span>8</span>个月</div>
+                </li>
+                <li class="clearfix">
+                    <div class="contentName">贷款利率</div>
+                    <div class="cont"><span>9</span>%/年</div>
+                </li>
+            </ul>
+            <div class="processInfo">*仅供参考，以银行审批结果为准</div>
+            <div class="processState">
+                <div class="processStateTitle">办理流程</div>
+                <div class="processContent" style="display: block">
+                    <ul>
+                        <li>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-22</span><i><b></b><em></em></i><strong>申请贷款</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-22</span><i><b></b><em></em></i><strong
+                                    class="money">机构面签，收取服务费3000元整</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-23</span><i><b></b><em></em></i><strong>未放款</strong>
+                            </div>
+                            <div class="passed clearfix">
+                                <span class="processTime">2017-05-24</span><i><b></b><em></em></i><strong>已放款</strong>
+                            </div>
+                            <div class="refused clearfix">
+                                <span class="processTime">2017-05-24</span>
+                                <i><b></b></i>
+                                <strong class="reason">审批拒绝<template>(拒绝原因:评分不够)</template></strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>
+                        &lt;!&ndash;  <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-23</span><i><b></b><em></em></i><strong>机构面签，收取服务费3000元整</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="passed clearfix">
+                                  <span class="processTime">2017-05-24</span><i><b></b><em></em></i><strong>机构审批</strong>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="refused clearfix">
+                                  <span class="processTime">2017-05-26</span>
+                                  <i><b></b></i>
+                                  <strong>审批拒绝(拒绝原因:评分不够)</strong>
+                                  <div class="clearfix"></div>
+                                  <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                  <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                              </div>
+                          </li>&ndash;&gt;
+                        &lt;!&ndash;<li>
+                            <div class="cancel clearfix">
+                                <span class="processTime">2017-05-26</span>
+                                <i><b></b></i>
+                                <strong>取消申请(取消原因:xxxx)</strong>
+                                <div class="clearfix"></div>
+                                <p>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</p>
+                                <a href="tel:400-008-6699"><i class="telIcon"></i><em>400-008-6699</em></a>
+                            </div>
+                        </li>&ndash;&gt;
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+
+
+</div>
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/myloan/myloan.js"></script>
+<script src="../js/vue.min.js"></script>
+<script src="../js/spin.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //下拉按钮
+        Public.dropDown();
+       Myloan.loanDetails();
+
+        //回退功能
+        Public.init();
+
+
+    })
+</script>
+</body>
+</html>

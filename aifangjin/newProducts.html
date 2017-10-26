@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>产品详情</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/productList.less">
+    <link rel="stylesheet/less" type="text/css" href="css/newProducts.less">
+    <script src="js/less.js"></script>
+</head>
+<body>
+<div id="mainContentBox">
+    <header class="public_header">
+        <a href="javascript:;" class="return"></a>
+        <span class="productHeader" v-text="items.product_name_polish"></span><span class="productHeader">-爱房金</span>
+        <a href="newProductsList.html" class="moreProducts">更多产品</a>
+    </header>
+    <div class="main" id="mainContent">
+        <div>
+            <div class="mainTop">
+                <div class="mainInfo">
+                    <!--<img src="" alt="">-->
+                    <img :src="items.display_pic" alt="">
+                    <h2 v-text="items.product_name_polish"></h2>
+                    <p v-text="items.product_polish_desc"></p>
+                </div>
+                <div class="nav">
+                    <div class="service clearfix">
+                        <div class="preceptPic"></div>
+                        <div class="f_l">
+                            <p class="serviceTitle">最优贷款方案</p>
+                            <p class="serviceInfo">为您提供最优产品组合</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="service clearfix">
+                        <div class="servicePic"></div>
+                        <div class="f_l">
+                            <p class="serviceTitle">1V1专属服务</p>
+                            <p class="serviceInfo">专业金融顾问1V1服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="interval interval154"></div>
+            <div class="bigBox">
+                <div class="tapToIntro">
+                    <ul>
+                        <li>
+                            <div>
+                                <span class="tapToIntroNum" v-text="items.expense_percentage"></span><span class="tapToIntroNum">%</span><strong class="tapToIntroUnit">/年</strong>
+                            </div>
+                            <p class="tapToIntroInfo" v-text="items.expenseType"></p>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tapToIntroNum" v-text="items.most_quota"></span><strong class="tapToIntroUnit">万</strong>
+                            </div>
+                            <p class="tapToIntroInfo">最高额度</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tapToIntroNum" v-text="items.loanAmount"></span><strong class="tapToIntroUnit" v-text="items.loanTimeUnit"></strong>
+                            </div>
+                            <p class="tapToIntroInfo" v-text="items.timeRage"></p>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tapToIntroNum" v-text="items.fastest_loan"></span><strong class="tapToIntroUnit" v-text="items.lendingUnit"></strong>
+                            </div>
+                            <p class="tapToIntroInfo">最快放款</p>
+                        </li>
+                        <!-- <li>
+                             <div>
+                                 <span class="tapToIntroNum"></span><strong class="tapToIntroUnit">/年</strong>
+                             </div>
+                             <p class="tapToIntroInfo">最低费用</p>
+                         </li>
+                         <li>
+                             <div>
+                                 <span class="tapToIntroNum">100</span><strong class="tapToIntroUnit">万</strong>
+                             </div>
+                             <p class="tapToIntroInfo">最高额度</p>
+                         </li>
+                         <li>
+                             <div>
+                                 <span class="tapToIntroNum">10</span><strong class="tapToIntroUnit">年</strong>
+                             </div>
+                             <p class="tapToIntroInfo">最长年限</p>
+                         </li>
+                         <li>
+                             <div>
+                                 <span class="tapToIntroNum">2</span><strong class="tapToIntroUnit">天</strong>
+                             </div>
+                             <p class="tapToIntroInfo">最快放款</p>
+                         </li>-->
+                    </ul>
+                </div>
+                <div class="process">
+                    <h4>
+                        <span>申请流程</span>
+                    </h4>
+                    <div class="septalLine"></div>
+                    <ul>
+                        <li v-for="it in items.processArr">
+                            <div class="processIcon">
+                                <!--<img src="img/newProducts/apply.png" alt="">-->
+                                <img :src="[img + it.image +'.png']" alt="">
+                            </div>
+                            <p v-text="it.name"></p>
+                        </li>
+                        <!--<li>
+                            <div class="processIcon">
+                                &lt;!&ndash;<img src="img/newProducts/sign.png" alt="">&ndash;&gt;
+                                &lt;!&ndash;<img :src="[img + item.process_2 +'.png']" alt="">&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;<p v-text="item.name"></p>&ndash;&gt;
+                        </li>
+                        <li>
+                            <div class="processIcon">
+                                &lt;!&ndash;<img src="img/newProducts/approve.png" alt="">&ndash;&gt;
+                                &lt;!&ndash;<img :src="[img + item.process_3 +'.png']" alt="">&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;<p v-text="item.name"></p>&ndash;&gt;
+                        </li>
+                        <li >
+                            <div class="processIcon">
+                                &lt;!&ndash;<img src="img/newProducts/pledge.png" alt="">&ndash;&gt;
+                                &lt;!&ndash;<img :src="[img + item.process_4 +'.png']" alt="">&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;<p v-text="items.process_4"></p>&ndash;&gt;
+                        </li>
+                        <li>
+                            <div class="processIcon">
+                                &lt;!&ndash;<img src="img/newProducts/success.png" alt="">&ndash;&gt;
+                                &lt;!&ndash;<img :src="[img + item.process_5 +'.png']" alt="">&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;<p v-text="item.name"></p>&ndash;&gt;
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="interval interval30"></div>
+            <div class="conditionList">
+                <h4>申请条件</h4>
+                <div class="septalLine"></div>
+                <ul class="conditionCont">
+                    <li v-for="conditionItem in items.arrCondition" v-text="conditionItem"></li>
+                    <!--<li>信用良好</li>
+                    <li>近工作单位工作半年以上</li>-->
+                </ul>
+            </div>
+            <div class="interval interval30"></div>
+            <div class="conditionList">
+                <h4>所需材料</h4>
+                <div class="septalLine"></div>
+                <ul class="conditionCont">
+                    <li v-for="detailItem in items.arrFile" v-text="detailItem"></li>
+                    <!--<li>身份证</li>
+                    <li>公积金</li>
+                    <li>近半年流水</li>
+                    <li>其他征信证明</li>-->
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>信息仅供参考，具体情况根据机构审批为准</p>
+    </footer>
+    <div class="applyChannel">
+        <a href="tel:400-008-6699" class="consult">咨询</a>
+        <a href="apply_fir.html" class="applyNow">立即申请</a>
+    </div>
+</div>
+
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/public.js"></script>
+<script src="js/newProducts.js"></script>
+<script src="js/vue.min.js"></script>
+
+<script>
+    $(function(){
+
+        //更多产品变色
+        $('document,body').on('touchstart', function () {
+        });
+        NewProducts.init();
+        //回退功能
+        Public.init();
+    })
+</script>
+</body>
+</html>

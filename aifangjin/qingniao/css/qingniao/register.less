@@ -1,0 +1,109 @@
+@r: 50rem;
+@border:1px solid rgba(234,234,234,0.4);
+.container{
+  background: url("../../img/qingniao/index/back_register.png") 0 0;
+  width: 100%;
+  height: 1207/@r;
+  background-size: 100% 100%;
+  display: table;
+  .logo{
+    display: table;
+    margin: 0 auto;
+    margin-top: 125/@r;
+    img{
+      width: 147/@r;
+      height: 158/@r;
+    }
+
+  }
+  .content{
+    display: table;
+    margin: 0 auto;
+    margin-top: 80/@r;
+
+    form{
+      .form_group{
+        position: relative;
+        input{
+          width: 580/@r;
+          padding: 10/@r;
+          height: 100/@r;
+          color: #b1bacb;
+          padding-left: 20/@r;
+          background-color: #ffffff;
+          border-top-left-radius: 6/@r;
+          border-top-right-radius: 6/@r;
+          border-bottom:@border;
+          font-size: 26/@r;
+          outline:none;
+          &.smscaptcha{
+            border-bottom:none;
+            border-top-left-radius: 0/@r;
+            border-top-right-radius: 0/@r;
+            border-bottom-left-radius: 6/@r;
+            border-bottom-right-radius: 6/@r;
+          }
+        }
+        a{
+          font-size: 26/@r;
+          color: #fe8105;
+          position: absolute;
+          top: 50%;
+          transform: translate(0,-50%);
+          right: 20/@r;
+        }
+      }
+      .submit{
+        box-sizing: border-box;
+        width: 580/@r;
+        height: 90/@r;
+        padding: 30/@r;
+        color: #fe8105;
+        font-size: 32/@r;
+        line-height: 1;
+        margin: 0 auto;
+        margin-top: 70/@r;
+        background-color: white;
+        display: block;
+        //display: table;
+        border-radius: 6/@r;
+        text-align: center;
+      }
+      .agree_agreement{
+        font-size: 22/@r;
+        color: #ffcfaf;
+        text-align: center;
+        line-height: 1;
+        margin-top:50/@r ;
+        a{
+          line-height: 1;
+          font-size: 22/@r;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .error_com{
+    display: none;
+    height: 90/@r;
+    min-width: 280/@r;
+    line-height: 90/@r;
+    background-color: rgba(234,89,46,0.64);
+    text-align: center;
+    padding: 0 30/@r;
+    border-radius: 45/@r;
+    color: white;
+    font-size: 26/@r;
+    //display: table;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 10000;
+    left: 50%;
+    transform: translate(-50%,0);
+    top:420/@r;
+    span{
+      color: white;
+      font-size: 24/@r;
+    }
+  }
+}

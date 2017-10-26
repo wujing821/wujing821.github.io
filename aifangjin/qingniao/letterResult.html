@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>青鸟分期</title>
+    <script src="js/qingniao/rem.js"></script>
+    <link rel="stylesheet" href="css/qingniao/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/qingniao/public.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/qingniao/letterResult.less"/>
+    <script src="js/qingniao/less.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="title">
+        <a href="" class="qingniao"><img src="img/qingniao/index/qingniao.png" alt=""></a>
+        <div class="line"></div>
+        <a href="" class="logo"><img src="img/qingniao/index/logo.png" alt=""></a>
+        <a href="">青鸟分期说明</a>
+    </div>
+    <div class="circle">
+           <div class="input_group">
+               <label><em>￥</em><!--<strong>0</strong>--></label>
+               <input type="tel" placeholder="0" maxlength="6">
+               <i>（1-200000元）</i>
+           </div>
+        <div>
+            <p><span></span><strong>请填写真实授信额度</strong></p>
+        </div>
+    </div>
+    <div class="bottom">
+        <a href="">获取授信额度</a>
+    </div>
+</div>
+<div class="container">
+    <form action="">
+        <div class="select_group">
+            <div class="out_select">
+                <div class="one_select">
+                    <div class="c_select">
+                        <!--<span class="left_icon six"></span>--><span class="title">可分期金额：</span>
+
+                    </div>
+                    <div class="c_select">
+                        <input type="tel" disabled="" maxlength="5"  class="cont totalMoney" placeholder="￥0" data-type="total"><!--<span></span>-->
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="select_group">
+            <div class="out_select">
+                <div class="one_select">
+                    <div class="c_select">
+                      <!--  <span class="left_icon four"></span>--><span class="title">分期期数：</span>
+
+                    </div>
+                    <div class="c_select">
+                        <em class="cont monthtime"  data-type="time">12个月</em><i class="right_icon"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="loan_wrapper" >
+                <div class="loan_mask"></div>
+                <div class="loan_cont">
+                    <p class="loan_cont_header">分期期数</p>
+                    <ul class="dropdown-menu" >
+                        <li class="active" ><span><i>12个月</i></span></li>
+                        <li ><span><i>9个月</i></span></li>
+                        <li ><span><i>6个月</i></span></li>
+                        <li ><span><i>3个月</i></span></li>
+                        <li ><span><i>1个月</i></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="select_group">
+            <div class="out_select">
+                <div class="one_select">
+                    <div class="c_select">
+                        <!--<span class="left_icon six"></span>--><span class="title">预计月还款：</span>
+
+                    </div>
+                    <div class="c_select">
+                        <input type="tel" maxlength="5" disabled=""  class="cont monthMoney" placeholder="￥0" data-type="total"><!--<span></span>-->
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="reminder">
+           <p> <i></i><span>*青鸟券总费用为¥6000元，可分期金额0元，可立即分期</span></p>
+        </div>
+        <div class="bottom">
+            <a href="javascript:;" class="quicklyStages">立即分期</a>
+        </div>
+        <!--下面弹出框立即支付开始-->
+        <div class="loan_wrapper payModal" >
+            <div class="loan_mask"></div>
+            <div class="loan_cont">
+                <p class="loan_cont_header">青鸟分期服务费 <span>取消</span></p>
+                <div class="content">
+                    <div class="money"><span>立即支付</span><strong><i>￥</i><em>200</em></strong></div>
+                    <div class="btn"><a href="">立即支付</a></div>
+                    <div class="info">
+                        <p>点击立即支付即视为同意 <a href=".html">《爱房金协议》</a></p>
+                        <p>*爱房金承诺未成功借款可全额退还服务费</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--下面弹出框立即支付结束-->
+    </form>
+
+</div>
+<footer class="">
+    <!--<p>*以上为预计金额，以青鸟学堂实际费用为准。</p>-->
+    <a href="tel:400-008-6699"><span></span>电话咨询400-008-6699</a>
+</footer>
+<script src="js/qingniao/jquery-3.2.0.min.js"></script>
+<script src="js/qingniao/formp.js"></script>
+<script src="js/qingniao/letterResult.js"></script>
+<script src=""></script>
+<script>
+    $(document).ready(function () {
+        /*Safari浏览器加上点击的二态效果*/
+        var a = document.getElementsByTagName('button');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        LetterResult.init();
+    })
+
+
+</script>
+
+</body>
+</html>

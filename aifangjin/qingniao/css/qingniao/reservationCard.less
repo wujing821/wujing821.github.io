@@ -1,0 +1,336 @@
+@r:50rem;
+@b:30rem;
+body{
+  background: url("../../img/qingniao/card/bg.png") no-repeat;
+  background-size: 100% 100%;
+  overflow-x: hidden;
+}
+//头部
+header{
+  width:462/@r;
+  height: 242/@r;
+  background: url("../../img/qingniao/card/title.png") no-repeat;
+  background-size: contain;
+margin: 25/@r auto 75/@r;
+//margin: 0/@r auto 75/@r;
+  text-indent: -2000/@r;
+}
+//客户电话
+.tel{
+  position: relative;
+  width:350/@r;
+  height: 118/@r;
+  margin: 0 auto 20/@r;
+  .telPic{
+    //float: left;
+    position: absolute;
+    left: 0;
+    top:0;
+    width:118/@r;
+    height: 118/@r;
+    border-radius: 50%;
+    border: 2/@r solid #fff;
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+  }
+  .telNum{
+    position: absolute;
+    right: 0;
+    top:0;
+    width:252/@r;
+    height: 120/@r;
+    background: url("../../img/qingniao/card/telNumber.png") no-repeat;
+    background-size: contain;
+    font-size: 28/@r;
+    line-height: 118/@r;
+    //text-align: center;
+    padding-left: 64/@r;
+    color: #fff;
+    font-family: "Microsoft YaHei", serif;
+  }
+}
+//主要内容
+.mainCont{
+  margin-bottom: 40/@r;
+  position: relative;
+  width: 100%;
+  height: 380/@r;
+  .stage{
+    position: relative;
+    width:637/@r;
+    height: 240/@r;
+    border-radius: 20/@r;
+    background-color: #fff;
+    margin: 0 auto;
+    background: url("../../img/qingniao/card/lineNew.png") no-repeat;
+    background-size: contain;
+  }
+  .stageAmount{
+    height: 120/@r;
+    //display: flex;
+    //align-items: center;
+    .stageIcon{
+      float: left;
+      position: relative;
+      left: 0;
+      top:50%;
+      width:74/@r;
+      height: 76/@r;
+      margin: -37/@r 20/@r 0;
+    }
+    //分期金额图片
+    .stageIconMoney{
+      background: url("../../img/qingniao/card/stage.png") no-repeat;
+      background-size: contain;
+    }
+    //分期期数图片
+    .stageIconNum{
+      background: url("../../img/qingniao/card/stageNum.png") no-repeat;
+      background-size: contain;
+    }
+    .stageTitle{
+      float: left;
+      height: 120/@r;
+      line-height: 120/@r;
+      font-size: 26/@r;
+      color: #666;
+      font-family: "Microsoft YaHei", serif;
+    }
+    .stageMoney{
+      float: right;
+      height: 120/@r;
+      line-height: 120/@r;
+      //font-size: 28/@r;
+      color: #444;
+      font-family: "Microsoft YaHei", serif;
+      font-weight: bold;
+      margin-right: 20/@r;
+      vertical-align: middle;
+      i{
+        font-size: 28/@r;
+        color: #444;
+        font-family: "Microsoft YaHei", serif;
+        font-weight: bold;
+      }
+      span{
+        font-size: 30/@r;
+        color: #444;
+        font-family: "Microsoft YaHei", serif;
+        font-weight: bold;
+      }
+    }
+    //券
+    .tickets{
+      float: right;
+      height: 120/@r;
+      padding-right: 10/@r;
+      display: flex;
+      align-items: center;
+      .ticketsBox{
+        width:400/@r;
+        .ticketsItem{
+          border-radius: 2/@r;
+          padding: 5/@r 3/@r;
+          background-color:#fbe0ca;
+          line-height: 1;
+          color: #ee8734;
+          font-size: 22/@r;
+          margin-right: 10/@r;
+          float: right;
+          display: inline-block;
+          white-space:nowrap;
+        }
+        //当有3张券的时候，第二个元素左间距120
+        .ticketsItem:first-child:nth-last-child(3)+span {
+          margin-left: 120/@r;
+        }
+        //当有三个元素的时候，第一和第二个元素有间距
+        .ticketsItem:first-child:nth-last-child(3),
+        .ticketsItem:first-child:nth-last-child(3)+span
+        {
+          margin-bottom: 10/@r;
+        }
+        //当有4张券的时候，左间距100
+        .ticketsItem:first-child:nth-last-child(4)+span {
+          margin-left: 100/@r;
+        }
+        //当有4张券的时候，所有元素都有间距
+        .ticketsItem:first-child:nth-last-child(4), span:first-child:nth-last-child(4)+span{
+          margin-bottom: 10/@r;
+        }
+        //当有5个元素的时候，前面三个有间距
+        .ticketsItem:first-child:nth-last-child(5),
+        .ticketsItem:first-child:nth-last-child(5)+span,
+        .ticketsItem:first-child:nth-last-child(5)+span+span{
+          margin-bottom: 10/@r;
+        }
+      }
+    }
+  }
+  //线
+  .line{
+    width:620/@r;
+    height: 2/@r;
+    background: url("../../img/qingniao/card/line.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+  }
+  //圆
+  .circleLeft{
+    position: absolute;
+    left: -10/@r;
+    top:50%;
+    margin-top: -10/@r;
+    width:20/@r;
+    height: 20/@r;
+    background-color: #fc6449;
+    border-radius: 50%;
+  }
+  //圆
+  .circleRight{
+    position: absolute;
+    right: -10/@r;
+    top:50%;
+    margin-top: -10/@r;
+    width:20/@r;
+    height: 20/@r;
+    background-color: #fc6449;
+    border-radius: 50%;
+  }
+  .chooseClass{
+    width: 637/@r;
+    height: 120/@r;
+    margin: 20/@r auto;
+    background-color: #fff;
+    border-radius: 20/@r;
+  }
+  //上下两条竖线
+  .stage::before{
+      content: '';
+      position: absolute;
+      left: 195/@r;
+      top: -19/@r;
+      width: 0/@r;
+      height: 19/@r;
+      border-right: 3/@r solid #ca4517;
+      
+  }
+  .stage::after{
+      content: '';
+      position: absolute;
+      right: 205/@r;
+      top: -18/@r;
+      width: 0/@r;
+      height: 18/@r;
+      border-right: 3/@r solid #ca4517;
+      
+  }
+  .chooseClass::before{
+      content: '';
+      position: absolute;
+      left: 250/@r;
+      bottom: 120/@r;
+      width: 0/@r;
+      height: 20/@r;
+      border-right: 3/@r solid #ca4517;
+      
+  }
+  .chooseClass::after{
+      content: '';
+      position: absolute;
+      right: 260/@r;
+      bottom: 120/@r;
+      width: 0/@r;
+      height: 20/@r;
+      border-right: 3/@r solid #ca4517;
+      
+  }
+}
+//二维码
+.qrCode{
+  position: relative;
+  width:637/@r;
+  height: 256/@r;
+  background: url("../../img/qingniao/card/lineBox.png") no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  .qrCodeTitle{
+    position: absolute;
+    left: 50%;
+    top: 14/@r;
+    font-size: 24/@r;
+    margin-left: -108/@r;
+    color: #fff;
+    font-family: "Microsoft YaHei", serif;
+    font-weight: bold;
+    //transform: translate(-50% -50%);
+  }
+  .qrCodeCont{
+    position: absolute;
+    top:87/@r;
+    left: 50%;
+    width:617/@r;
+    height: 159/@r;
+    margin-left: -308/@r;
+    border-radius: 20/@r;
+    background-color: #f06243;
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+    .qrCodePic{
+//    float: left;
+      display:inline-block;
+      width: 120/@r;
+      height: 120/@r;
+      background-color: pink;
+      margin-right: 20/@r;
+      img{
+          width: 100%;
+          height: 100%;
+      }
+    }
+    .qrCodeInfo{
+//    float: right;
+      display:inline-block;
+      font-size: 24/@r;
+      color: #fff;
+      font-family: "Microsoft YaHei", serif;
+      line-height: 32/@r;
+    }
+  }
+}
+//底部
+.cardfooter{
+    width: 100%;
+    height: 56/@r;
+    text-align: center;
+    a{
+        display: block;
+        width: 100%;
+        height: 100%;
+//      padding: 18/@r 0;
+        vertical-align: middle;
+        .telIcon{
+            position: relative;
+            top: 2/@r;
+            display: inline-block;
+            width: 18/@r;
+            height: 18/@r;
+            background: url('../../img/qingniao/card/tel.png') no-repeat;
+            background-size: contain;
+            margin-right: 5/@r;
+        }
+        .telNum{
+            display: inline-block;
+            font-size: 20/@r;
+            font-family: "微软雅黑";
+            line-height: 1;
+            color: #fff;
+            opacity: .5;
+            padding: 18/@r 0;
+        }
+    }
+}

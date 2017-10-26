@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>首页</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/index.less">
+    <script src="js/less.js"></script>
+    <link rel="stylesheet" href="css/slider/customSlick.css">
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function(){
+            _vds.push(['setAccountId', '8dd0b9225f59a558']);
+            (function() {
+                var vds = document.createElement('script');
+                vds.type='text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+</head>
+<body>
+<header class="public_header">
+    <div class="logo">爱房金</div>
+    <a href="./register.html" id="login"></a>
+    <a href="profile/profile.html" id="loged"></a>
+    <!--<span class="user_name"></span>-->
+</header>
+<!--<img id="aaa" src="" alt="">-->
+<div class="main">
+    <div class="slider">
+        <div class="img">
+            <a href="javascript:;" target="_blank">
+                <img src="img/index/banner2.png"/>
+            </a>
+        </div>
+        <div class="img">
+            <a href="javascript:;" target="_blank">
+                <img src="img/index/banner.png"/>
+            </a>
+        </div>
+
+        <!--  <div class="img">
+              <a  href="javascript:;" target="_blank">
+                  <img src="http://slidesjs.com/img/example-slide-350-3.jpg"/>
+              </a>
+          </div>
+          <div class="img">
+              <a  href="javascript:;" target="_blank">
+                  <img src="http://slidesjs.com/img/example-slide-350-1.jpg"/>
+              </a>
+          </div>-->
+    </div>
+    <div class="loan_category" id="credit_loan">
+        <div class="loan_category_l">
+            <div class="credit_loan">
+                <a class="loan_info" id="4">
+                    <div class="loan_info_wrapper">
+                        <i></i>
+                        <strong>经营贷款</strong>
+                        <span>有营业执照即可申请</span>
+                    </div>
+                </a>
+            </div>
+            <div class="consume_loan">
+                <a class="loan_info" id="5">
+                    <div class="loan_info_wrapper">
+                        <i></i>
+                        <strong>消费贷款</strong>
+                        <span>最高可贷1000万</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="loan_category_r">
+            <div class="management_loan">
+                <a class="loan_info" id="6">
+                    <div class="loan_info_wrapper">
+                        <i></i>
+                        <strong>信用贷款</strong>
+                        <span>无抵押 无担保</span>
+                    </div>
+                </a>
+            </div>
+            <!--<div class="management_loan">
+                <a href="javascript:;" class="loan_info">
+                    <div class="loan_info_wrapper">
+                        <i></i>
+                        <strong>房抵贷</strong>
+                        <span>无抵押 无担保</span>
+                    </div>
+                </a>
+            </div>-->
+        </div>
+
+        </div>
+        <div class="application_channel">
+            <a id="application_channel_btn">快速申请通道</a>
+        </div>
+    </div>
+    <div class="telephoneHotline">
+        <a href="tel:400-008-6699"></a>
+    </div>
+    <footer class="public_footer">
+        <div class="public_footer_wrapper">
+            <div class="about"><a href="./aboutUs.html" class="footer_aboutUs">关于爱房金</a><a href="./tool/index.html" class="footer_aboutUs">热门工具</a></div>
+            <p class="footer_info">
+                <span class="footer_logo">爱房金</span><span class="footer_info_company">一粒控股(北京)有限公司</span>
+            </p>
+            <div class="footer_versions">
+                <!--<span class="footer_tel">手机版</span>|<span class="footer_mac">电脑版</span>--><span>京ICP备16060468号-1</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/slider/slick.js"></script>
+
+<script>
+    $(function () {
+        /**
+         * 获得cookie
+         * */
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        /**
+         * 删除cookie
+         * */
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null)
+                document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+
+        //点击产品模块跳转地址
+        $('#credit_loan').delegate('a', 'click', function () {
+            window.location.href = './productList.html?id=' + $(this).attr('id') + 'm';
+        });
+       /* $('.slider').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            autoplaySpeed: 1000,
+            autoplay: false,
+            arrows: false
+        });*/
+        //注册
+        $('#login').on('click', function () {
+            $(this).css('color', '#ea592e');
+        });
+        //关于我们 点击变色
+        $('document,body').on('touchstart', function () {
+        });
+        //快速申请通道
+        $('#application_channel_btn').on('click', function () {
+            $(this).css({
+                'borderColor': '#de4c21',
+                'color':'#de4c21'
+            });
+            window.location.href = "./apply_fir.html";
+
+        });
+        var phone = getCookie('phone');
+        if (phone) {
+             $('#loged').show();
+            /*     $('.user_name').show();
+             $('.public_header').find('a').hide();*/
+//                   $('.user_name').text(phone)
+            }else{
+            $('#loged').hide();
+        }
+            /*$('#footer_aboutUs').on('touchstart',function(){
+             $(this).css('color','#ea592e');
+             })
+             $('#footer_aboutUs').on('touchend',function(){
+             $(this).css('color','#444');
+             })*/
+        })
+
+
+</script>
+<!-- <script type='text/javascript'>
+     var _vds = _vds || [];
+     window._vds = _vds;
+     (function(){
+         _vds.push(['setAccountId', '9b92fc45347ceb30']);
+         (function() {
+             var vds = document.createElement('script');
+             vds.type='text/javascript';
+             vds.async = true;
+             vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+             var s = document.getElementsByTagName('script')[0];
+             s.parentNode.insertBefore(vds, s);
+         })();
+     })();
+ </script>-->
+</body>
+</html>

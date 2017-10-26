@@ -1,0 +1,132 @@
+@r:50rem;
+.header {
+  padding-top: 20/@r;
+  .title {
+    display: table;
+    width: 100%;
+    .line {
+      float: left;
+      width: 1px;
+      height: 17/@r;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin: 5/@r 20/@r 0 20/@r;
+    }
+    a {
+      float: left;
+      &:last-child {
+        float: right;
+        font-size: 20/@r;
+        line-height: 36/@r;
+        text-align: center;
+        //padding: 7/@r 0;
+        box-sizing: border-box;
+        color: #ffffff;
+        //width: 144/@r;
+        padding: 0 10/@r 0 13/@r;
+        height: 36/@r;
+        border-bottom: 1px dashed #ffffff;
+        border-left: 1px dashed #ffffff;
+        border-top: 1px dashed #ffffff;
+        border-bottom-left-radius: 18/@r;
+        border-top-left-radius: 18/@r;
+      }
+      &.qingniao {
+        margin-left: 20/@r;
+        img {
+          width: 129/@r;
+          height: 27/@r;
+        }
+      }
+      &.logo {
+        img {
+          width: 97/@r;
+          height: 27/@r;
+        }
+      }
+
+    }
+  }
+}
+footer {
+   margin-top: 20/@r;
+   line-height: 1.5;
+   p {
+     line-height: 1;
+     font-size: 20/@r;
+     text-align: center;
+     color: #b1bacb;
+
+   }
+   a{
+     margin-top: 10/@r;
+     line-height: 1;
+     font-size: 20/@r;
+     text-align: center;
+     color: #b1bacb;
+     width: 100%;
+     display: inline-block;
+     span{
+       background: url("../../img/qingniao/index/img.png") no-repeat 0 0;
+       background-size: 30/@r 186/@r;
+       width: 18/@r;
+       height: 19/@r;
+       display: inline-block;
+       margin-right: 5/@r;
+       position: relative;
+       top:3/@r;
+     }
+   }
+ }
+//底部拨打电话
+//底部
+.footer{
+  //height: 88/@r;
+  //line-height: 88/@r;
+  //margin-bottom: 100/@r;
+  //padding-bottom: 100/@r;
+  background-color: #f9f9f9;
+
+  .tel{
+    display: block;
+    //width:100%;
+    //height: 100%;
+    text-align: center;
+    padding: 20/@r 0;
+    .telInfo{
+      position: relative;
+      font-size: 20/@r;
+      color: #b1bacb;
+      font-family: "Microsoft YaHei", serif;
+      padding-left: 26/@r;
+      .telIcon{
+        position: absolute;
+        left:0;
+        top:0/@r;
+        width: 26/@r;
+        height: 26/@r;
+        background: url("../../img/qingniao/educationVoucher/tel.png") no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+//返回顶部
+#goTop{
+  position: fixed;
+  right: 54/@r;
+  bottom: 90/@r;
+  width: 78/@r;
+  height:78/@r;
+  background-size: 78/@r 78/@r;
+  background-repeat: no-repeat;
+  padding: 50/@r;
+  display: none;
+  &.clickbefore{
+    background: url("../../img/qingniao/public/return1.png") center center;
+    background-size: 78/@r 78/@r;
+    background-repeat: no-repeat;
+  }
+  &.clickafter{
+    background: url("../../img/qingniao/public/return.png");
+  }
+}

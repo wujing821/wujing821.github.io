@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>青鸟分期</title>
+    <script src="js/qingniao/rem.js"></script>
+    <link rel="stylesheet" href="css/qingniao/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/qingniao/public.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/qingniao/register.less"/>
+    <script src="js/qingniao/less.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img src="img/qingniao/index/logo_big.png" alt="">
+    </div>
+    <div class="content">
+        <div class="error_bottom error_com">
+            <span>手机号错误</span>
+        </div>
+        <form action="">
+            <div class="form_group">
+                <input type="text" class="tel" autocomplete="off" name="tel" placeholder="请输入手机号">
+            </div>
+            <div class="form_group">
+                <input class="smscaptcha" name="smscaptcha" type="text" placeholder="验证码">
+                <div><a href="javascript:;" class="get_code">获取验证码</a></div>
+            </div>
+            <div class="">
+                <a href="javascript:;" class="submit">注册</a>
+            </div>
+            <div class="agree_agreement">
+                <p class="">点击注册视为同意<a href="./serviceagree.html">《爱房金服务协议》</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="js/qingniao/jquery-3.2.0.min.js"></script>
+<script src="js/qingniao/register.js"></script>
+<script>
+    $(document).ready(function () {
+        /*Safari浏览器加上点击的二态效果*/
+        var a = document.getElementsByTagName('button');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        Register.init();
+    })
+
+
+</script>
+
+</body>
+</html>

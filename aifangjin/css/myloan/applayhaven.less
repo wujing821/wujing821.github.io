@@ -1,0 +1,107 @@
+@r:50rem;
+body{
+  background-color:#f5f5f5 ;
+}
+
+@media screen and (max-width:330px){
+
+  .tab_content .p_item .info:last-child{
+   padding-left: 20/@r !important;
+
+  }
+  .tab_content .p_item .info:first-child{
+    margin-right: 20/@r !important;
+  }
+  .tab_content .p_item{
+    padding-right: 20/@r !important;
+  }
+
+}
+.tabs{
+  background-color: white;
+}
+.tab_content {
+  background-color: #f5f5f5;
+  /************************一个条目************************/
+  .p_item{
+    margin:  10/@r 0;
+    //height: 90/@r;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 40/@r 40/@r 40/@r 30/@r;
+    justify-content:space-between;
+    //background-color: grey;
+    .icon_fir{
+
+      background-position: 0 -67/@r;
+
+    }
+    .info{
+      display: flex;
+      align-items: center;
+      &:first-child{flex: 1;margin-right: 48/@r}
+      &:last-child{padding-left: 40/@r;height:132/@r }
+      position: relative;
+      .info_border{
+        position: absolute;
+        left: 0;
+        top:0;
+        height:132/@r;
+        border-left: 1px solid #eaeaea;
+        -webkit-transform: scaleX(0.5);
+      }
+      .one{
+        display: flex;
+        flex: 1;
+        //align-items: center;
+        flex-direction: column;
+        //margin-right: 60/@r;
+       //flex: 1;
+        span{
+          //width: 100/@r;
+          line-height: 1;
+          display: table;
+          font-size: 22/@r;
+          color: #aaaaaa;
+        }
+        em{
+          font-size: 22/@r;
+          color: #444444;
+          display: inline-block;
+          margin-top: 60/@r;
+          line-height: 34/@r;
+        }
+        strong{
+          margin-top: 60/@r;
+          line-height: 1;
+          color: #ea592e;
+          font-size: 22/@r;
+          //width: 100/@r;
+          text-align: left;
+          i{
+            font-size: 34/@r;
+            font-style: normal;
+          }
+        }
+      }
+    }
+    a:last-child{
+      box-sizing: border-box;
+      border: 1px solid #ea592f;
+      color: #ea592f;
+      font-size: 26/@r;
+      width: 180/@r;
+      height: 70/@r;
+      line-height: 70/@r;
+      text-align: center;
+      border-radius: 35/@r;
+      &:active{
+        color: #de4c21;
+        border: 1px solid #de4c21;
+      }
+    }
+
+
+  }
+}

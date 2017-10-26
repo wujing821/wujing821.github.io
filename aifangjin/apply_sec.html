@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>立即申请</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="css/form.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/formp.less"/>
+    <script src="js/less.js"></script>
+</head>
+<body>
+<header class="public_header com_header">
+    <a href="javascript:;" class="return"></a>
+    立即申请
+</header>
+<div class="m_form">
+
+    <div class="form_container padd_bottom198">
+        <div class="error_tip"><span>注：</span><span class="info">密码错误</span></div>
+        <div class="error_bottom error_com">
+            <i></i><span>手机号错误</span>
+        </div>
+        <form class="form">
+            <div class="input_container padding0">
+                <div class="form_group form_group_select border_none padding30 amount_form" data-parameter="application_amount">
+                    <div class="form_border">
+                        <i class="icon_apply_com icon_money"></i
+                        ><strong>*</strong
+                    ><label>贷款金额</label>
+
+                        <span>万</span>
+                        <input type="text" name="application_amount" id="application_amount" class="padding0 m_input" value="" >
+                    </div>
+                </div>
+                <!--  <div class="form_group_select"  data-parameter="application_amount">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_money icon_apply_com"></i
+                            ><strong>*</strong><span>贷款金额</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">贷款金额</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>10000（含）以下</i></span></li>
+                                <li><span><i>1～5万（含）</i></span></li>
+                                <li><span><i>5～10万（含）</i></span></li>
+                                <li><span><i>10～30万（含）</i></span></li>
+                                <li><span><i>30～50万（含）</i></span></li>
+                                <li><span><i>50～100万（含）</i></span></li>
+                                <li><span><i>100万以上</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul heigt_scroll">
+                        <li class="active"><p><i></i>10000（含）以下</p></li>
+                        <li><p><i></i>1～5万（含）</p></li>
+                        <li><p><i></i>5～10万（含）</p></li>
+                        <li><p><i></i>10～30万（含）</p></li>
+                        <li><p><i></i>30～50万（含）</p></li>
+                        <li><p><i></i>50～100万（含）</p></li>
+                        <li><p><i></i>100万以上</p></li>
+                    </ul>
+                </div>-->
+                <div class="form_group_select" data-parameter="loan_period">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_apply_com icon_time"></i
+                            ><strong>*</strong><span>贷款期限</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">贷款期限</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>3个月</i></span></li>
+                                <li><span><i>6个月</i></span></li>
+                                <li><span><i>12个月</i></span></li>
+                                <li><span><i>2年</i></span></li>
+                                <li><span><i>3年</i></span></li>
+                                <li><span><i>5年</i></span></li>
+                                <li><span><i>10年</i></span></li>
+                                <li><span><i>15年</i></span></li>
+                                <li><span><i>20年</i></span></li>
+                                <li><span><i>25年</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul heigt_scroll">
+                        <li class="active"><p><i></i>3个月</p></li>
+                        <li><p><i></i>6个月</p></li>
+                        <li><p><i></i>12个月</p></li>
+                        <li><p><i></i>2 年</p></li>
+                        <li><p><i></i>3 年</p></li>
+                        <li><p><i></i>5 年</p></li>
+                        <li><p><i></i>10年</p></li>
+                        <li><p><i></i>15年</p></li>
+                        <li><p><i></i>20年</p></li>
+                        <li><p><i></i>25年</p></li>
+                    </ul>
+                </div>
+                <div class="form_group_select" data-parameter="credit">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_apply_com icon_credit"></i
+                            ><strong class="visibility">*</strong><span>您的信用情况</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">您的信用情况</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>无信用卡或贷款</i></span></li>
+                                <li><span><i>信用良好</i></span></li>
+                                <li><span><i>1年内逾期少于3次且少于90天</i></span></li>
+                                <li><span><i>1年内逾期超过3次或超过90天</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul">
+                        <li class="active"><p><i></i>无信用卡或贷款</p></li>
+                        <li><p><i></i>信用良好</p></li>
+                        <li><p><i></i>1年内逾期少于3次且少于90天</p></li>
+                        <li><p><i></i>1年内逾期超过3次或超过90天</p></li>
+                    </ul>
+                </div>
+                <div class="form_group form_group_select border_none padding30 age_form" data-parameter="age">
+                    <div class="form_border">
+                        <i class="icon_apply_com icon_age"></i
+                        ><strong class="visibility">*</strong
+                    ><label>年龄</label>
+
+                        <span>岁</span>
+                        <input type="text" name="age" id="age" class="padding0 m_input" value="" >
+                    </div>
+                </div>
+                <div class="form_group_select" data-parameter="profession">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_apply_com icon_identity"></i
+                            ><strong class="visibility">*</strong><span>职业身份</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">职业身份</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>上班族</i></span></li>
+                                <li><span><i>个体户</i></span></li>
+                                <li><span><i>企业主</i></span></li>
+                                <li><span><i>无固定职业</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <ul class="select_ul">
+                        <li class="active"><p><i></i>上班族</p></li>
+                        <li><p><i></i>个体户</p></li>
+                        <li><p><i></i>企业主</p></li>
+                        <li><p><i></i>无固定职业</p></li>
+                    </ul>
+                </div>
+                <div class="form_group_select" data-parameter="providentFund">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_apply_com icon_funds"></i
+                            ><strong class="visibility">*</strong><span>是否有本地公积金</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">是否有本地公积金</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>是</i></span></li>
+                                <li><span><i>否</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul">
+                        <li class="active"><p><i></i>是</p></li>
+                        <li><p><i></i>否</p></li>
+                    </ul>
+                </div>
+                <div class="form_group_select" data-parameter="house_type">
+                    <div class="select_con">
+                        <div class="select">
+                            <i class="icon_apply_com icon_house"></i
+                            ><strong class="visibility">*</strong><span>名下房产类型</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">名下房产类型</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>无房产</i></span></li>
+                                <li><span><i>商品住房</i></span></li>
+                                <li><span><i>商用两住房</i></span></li>
+                                <li><span><i>商铺</i></span></li>
+                                <li><span><i>办公楼</i></span></li>
+                                <li><span><i>厂房</i></span></li>
+                                <li><span><i>经适/限价房</i></span></li>
+                                <li><span><i>房改/危改房</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul heigt_scroll">
+                        <li class="active"><p><i></i>无房产</p></li>
+                        <li><p><i></i>商品住房</p></li>
+                        <li><p><i></i>商用两住房</p></li>
+                        <li><p><i></i>商铺</p></li>
+                        <li><p><i></i>办公楼</p></li>
+                        <li><p><i></i>厂房</p></li>
+                        <li><p><i></i>经适/限价房</p></li>
+                        <li><p><i></i>房改/危改房</p></li>
+                    </ul>
+                </div>
+                <div class="form_group_select" data-parameter="car">
+                    <div class="select_con">
+                        <div class="select border_none">
+                            <i class="icon_apply_com icon_car"></i
+                            ><strong class="visibility">*</strong><span>名下是否有车</span>
+                            <i class="icon_com icon_down f_r"></i>
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="loan_wrapper">
+                        <div class="loan_mask" ></div>
+                        <div class="loan_cont" >
+                            <p class="loan_cont_header">名下是否有车</p>
+                            <ul class="dropdown-menu" >
+                                <li class="active"><span><i>是</i></span></li>
+                                <li><span><i>否</i></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_ul">
+                        <li class="active"><p><i></i>是</p></li>
+                        <li><p><i></i>否</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--<div class="agree_agreement agree_l">
+                <div class="input_check">
+                    <input type="checkbox" checked>
+                    <div class="chose"></div>
+                </div>
+
+                <p>我已阅读并同意 <a href="./serviceagree.html">《爱房金服务协议》</a></p>
+
+                <div class="clear"></div>
+            </div>-->
+            <div class="clear"></div>
+            <div class="submit_c margintop60">
+                <button class="submit ">提交申请</button>
+                <p class="margintop30">提交申请即视为同意<a href="serviceagree.html" class="contact">《爱房金服务协议》</a></p>
+                <p class="contact">系统将同步为您创建爱房金账号</p>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="cover"></div>
+<div class="cover_white"></div>
+
+<!--<div class="cover_white"></div>-->
+<div class="alert applay_alert ">
+    <div class="correct"><img src="img/form/correct.png" alt=""></div>
+    <h1>恭喜您提交成功</h1>
+    <p>已为您自动创建账户，您可通过手机验
+        证码登录账户查询贷款进度！</p>
+    <a href="javascript:;">
+        确定
+    </a>
+    <!--<div class="a_footer">登录中 <img src="img/form/wait.png" alt=""></div>-->
+</div>
+<div class="hotTel">
+    <a href="tel:400-008-6699"></a>
+</div>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/formp.js"></script>
+<script src="js/form.js"></script>
+<script>
+    $(document).ready(function () {
+        /*Safari浏览器加上点击的二态效果*/
+        var a = document.getElementsByTagName('button');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        Form.select();
+
+    })
+
+</script>
+</body>
+</html>

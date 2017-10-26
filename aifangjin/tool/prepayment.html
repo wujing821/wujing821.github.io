@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <title>提前还款计算器</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/taxes.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/calculator.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/form.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/tool/prepayment.less">
+
+    <link rel="stylesheet" type="text/css" href="../css/tool/fjl.css">
+    <link rel="stylesheet" type="text/css" href="../css/tool/fjl.picker.css" />
+    <script src="../js/less.js"></script>
+    <style>
+        html,
+        body,
+        .mui-content {
+            /*height: 0px;*/
+            /*margin: 0px;*/
+            background-color: #fff;
+        }
+        h5.mui-content-padded {
+            /*margin-left: 3px;*/
+            /*margin-top: 20px !important;*/
+        }
+        h5.mui-content-padded:first-child {
+            /*margin-top: 12px !important;*/
+        }
+        .mui-btn {
+            /*font-size: 16px;*/
+            /*padding: 8px;
+            margin: 3px;*/
+        }
+        .ui-alert {
+            text-align: center;
+            /*padding: 20px 10px;*/
+            /*font-size: 16px;*/
+        }
+        /** {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }*/
+    </style>
+</head>
+<body>
+<header class="public_header com_header">
+    <a href="javascript:;" class="return"></a>
+    提前还款计算器
+</header>
+<!--提前还款计算开始-->
+<div class="select_container main_page" id="select">
+    <div class="select_group" id="payment-method">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon repaymentIcon"></span><span class="title">还款方式</span>
+                </div>
+                <div class="c_select">
+                    <em class="cont space" data-type="type" id="payment-method-cont">等额本息</em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="loan_wrapper" id="payment-method-wrapper">
+        <div class="loan_mask" id="payment-method-mask"></div>
+        <div class="loan_cont">
+            <p class="loan_cont_header">还款方式</p>
+            <ul class="dropdown-menu" id="payment-method-menu">
+                <li class="active" ><span><i>等额本息</i></span></li>
+                <li ><span><i>等额本金</i></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="select_group" id="loanMoney">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon loanAmountIcon"></span><span class="title">贷款金额</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="number" class="cont space" placeholder="0" data-type="area" minlength="1" maxlength="5"><span>万</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="select_group" id="loanPeriod">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon loanPeriodIcon"></span><span class="title">原贷款期限</span>
+
+                </div>
+                <div class="c_select">
+                    <!--<span class="cont" id="business-cont"><input type="text" class="loan-year" id="year" value="25"/>年</span><i class="loan_choose"></i>-->
+                    <span class="cont" id="business-cont"><input type="text" disabled="disabled" class="loan-year" id="year" value="25"/>年</span><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="loan-wrapper" class="loan_wrapper hide">
+        <div class="loan_mask"></div>
+        <div class="loan_cont">
+            <p class="loan_cont_header">货款期限<span id="loan-cancel-btn">取消</span></p>
+            <div>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                    <li><span><i>5年</i></span></li>
+                    <li><span><i>10年</i></span></li>
+                    <li><span><i>15年</i></span></li>
+                    <li><span><i>20年</i></span></li>
+                    <li class="active"><span><i>25年</i></span></li>
+                    <li class="last_item"><span><i>30年</i></span></li>
+                </ul>
+            </div>
+            <div id="definition" class="definite" style="text-align: inherit">
+                <strong>自定义</strong>
+                <input type="tel" placeholder="输入自定义期限" class="loan_input" id="loan-input" maxlength="2">
+                <strong>年</strong>
+                <input type="button" class="combind_definition_btn" id="definition-btn" value="确定">
+            </div>
+        </div>
+    </div>
+    <div class="select_group" id="loanRate">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon loanRateIcon"></span><span class="title">贷款利率</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont space" data-type="solehouse" id="rate">最新基准利率</em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="loan_wrapper" id="loanRateWrapper">
+        <div class="loan_mask" id="loanRateMask"></div>
+        <div class="loan_cont" id="loanRateCont">
+            <p class="loan_cont_header">基准利率</p>
+            <ul class="dropdown-menu" id="rateDropdownMenu">
+                <!--<li class="active" id="rateBase"><span><i>基准利率</i></span></li>
+                <li id="rateBaseDiscount"><span><i>基准利率85折</i></span></li>-->
+
+                <li id="rate-base-discount-one"><span><i>最新基准利率1.3倍</i></span></li>
+                <li id="rate-base-discount-two"><span><i>最新基准利率1.2倍</i></span></li>
+                <li id="rate-base-discount-three"><span><i>最新基准利率1.1倍</i></span></li>
+                <li class="active" id="rateBase"><span><i>最新基准利率</i></span></li>
+                <li id="rate-base-discount-four"><span><i>最新基准利率9.5折</i></span></li>
+                <li id="rate-base-discount-five"><span><i>最新基准利率9折</i></span></li>
+                <li id="rate-base-discount-six"><span><i>最新基准利率8.8折</i></span></li>
+                <li id="rate-base-discount-seven"><span><i>最新基准利率8.5折</i></span></li>
+                <li id="rate-base-discount-eight"><span><i>最新基准利率8.2折</i></span></li>
+                <li id="rate-base-discount-nine"><span><i>最新基准利率8折</i></span></li>
+                <li id="rate-base-discount-ten"><span><i>最新基准利率7.5折</i></span></li>
+                <li id="rate-base-discount-eleven"><span><i>最新基准利率7折</i></span></li>
+
+                <li id="accumulation-rate-base"><span><i>公积金基准利率</i></span></li>
+                <li id="accumulation-rate-base-discount"><span><i>公积金基准利率1.1倍</i></span></li>
+                <li id="accumulation-rate-base-discount-second"><span><i>公积金基准利率1.2倍</i></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="select_group" id="yearRate">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon yearRateIcon"></span><span class="title">年利率</span>
+
+                </div>
+                <div class="c_select">
+                    <input type="number" class="cont space" value="4.9" data-type="area" id="ratePercent"><span>%</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="select_group" id="firstRepaymentTime"  data-options='{"type":"date","beginYear":2000,"endYear":2086}' >
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon firstTimeIcon"></span><span class="title">第一次还款时间</span>
+
+
+                </div>
+                <div class="c_select">
+                    <span id='demo1' class="btn mui-showText mui-btn-block"></span>
+                    <em class="cont space" data-type="solehouse"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="select_group" id="prepaymentTime" data-options='{"type":"date","beginYear":2000,"endYear":2086}'>
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon prepaymentIcon"></span><span class="title">预计提前还款时间</span>
+
+                </div>
+                <div class="c_select">
+                    <span id='demo2'  class="btn mui-showText mui-btn-block"></span>
+                    <em class="cont space" data-type="solehouse"></em><i class="right_icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="select_group" id="prepayment-method">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon prepaymentMethodIcon"></span><span class="title">提前还款方式</span>
+                </div>
+                <div class="c_select">
+                    <em class="cont space" data-type="time" id="prepayment-method-cont"></em><i class="right_icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loan_wrapper" id="prepayment-method-wrapper">
+        <div class="loan_mask" id="Prepayment-method-mask"></div>
+        <div class="loan_cont">
+            <p class="loan_cont_header">提前还款方式</p>
+            <ul class="dropdown-menu" id="prepayment-method-menu">
+                <li class="active" id="allPay"><span><i>一次提前还清</i></span></li>
+                <li id="partPay"><span><i>部分提前还清</i></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="select_group" style="display: none" id="prepayment-amount">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon partPrepaymentAmountIcon"></span><span class="title">部分提前还款金额</span>
+                </div>
+                <div class="c_select">
+                    <input type="number" class="cont space processMethodStyle" placeholder="0" data-type="total" minlength="1" maxlength="5"><span>万</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="select_group" style="display: none" id="process-mode">
+        <div class="out_select">
+            <div class="one_select">
+                <div class="c_select">
+                    <span class="left_icon processModeIcon"></span><span class="title">处理方式</span>
+
+                </div>
+                <div class="c_select">
+                    <em class="cont space" data-type="originalrate" id="process-mode-cont"></em><i class="right_icon"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="loan_wrapper" id="process-mode-wrapper">
+        <div class="loan_mask" id="process-mode-mask"></div>
+        <div class="loan_cont">
+            <p class="loan_cont_header">处理方式</p>
+            <ul class="dropdown-menu" id="process-mode-menu">
+                <li class="active" ><span><i>缩短还款年限，月还款额基本不变</i></span></li>
+                <li ><span><i>减少月还款额，还款期不变</i></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn" id="loan-btn"><a href="javascript:;">计算</a></div>
+</div>
+
+<!--弹框提示-->
+<div class="cover"></div>
+<!--<div class="cover_white"></div>-->
+<div class="alert applay_alert">
+    <div class="correct"></div>
+    <h1>提示</h1>
+    <p class="alertTip"></p>
+    <a href="javascript:;" class="alertSure">确定</a>
+</div>
+<!--二手房计算结束-->
+
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/vue.min.js"></script>
+<script src="../js/formp.js"></script>
+<!--<script src="../js/tool/taxes.js"></script>-->
+<script src="../js/public.js"></script>
+<script src="../js/tool/calculatorMethod.js"></script>
+<script src="../js/tool/prepayment.js"></script>
+<script src="../js/tool/fjl.min.js"></script>
+<script src="../js/tool/fjl.picker.js"></script>
+<script>
+    (function(m) {
+//        Taxes.init();
+//        $('.select_group').alertBottom();
+        //回退功能
+        Public.init();
+        m.init();
+
+//        var btns = $('.btn');
+        var btn1 = $('#demo1');
+        var btn2 = $('#demo2');
+        var result = btn1[0];
+        var result2 = btn2[0];
+        var span1 = $('#firstRepaymentTime');
+        var span2 = $('#prepaymentTime');
+
+
+        dataSelect(span1,result,'第一次还款时间');
+        dataSelect(span2,result2,'预计提前还款时间');
+        function dataSelect(b,r,titletext) {
+//            t.innerHTML = text;
+            b.each(function(i, btn) {
+                btn.addEventListener('tap', function() {
+
+                    var optionsJson = this.getAttribute('data-options') || '{}';
+                    var options = JSON.parse(optionsJson);
+                    var id = this.getAttribute('id');
+                    /*
+                     * 首次显示时实例化组件
+                     * 示例为了简洁，将 options 放在了按钮的 dom 上
+                     * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                     */
+//                    var t = $('.mui-title-text')[0];
+//                  debugger
+                    var picker = new m.DtPicker(options);
+
+                    picker.show(titletext, function(rs) {
+                        /*
+                         * rs.value 拼合后的 value
+                         * rs.text 拼合后的 text
+                         * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                         * rs.m 月，用法同年
+                         * rs.d 日，用法同年
+                         * rs.h 时，用法同年
+                         * rs.i 分（minutes 的第二个字母），用法同年
+                         */
+                        r.innerText = rs.text;
+
+                        /*
+                         * 返回 false 可以阻止选择框的关闭
+                         * return false;
+                         */
+                        /*
+                         * 释放组件资源，释放后将将不能再操作组件
+                         * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                         * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                         * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                         */
+                        picker.dispose();
+                    });
+//                    console.log(t)
+
+                    /* console.log(text);
+                     t.innerText = text;*/
+                }, false);
+                btn.addEventListener('click',function(){
+                })
+            });
+        }
+    })(mui);
+
+</script>
+</body>
+</html>

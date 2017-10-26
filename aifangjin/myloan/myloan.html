@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--全屏模式，隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--定制iphone中safari顶端的状态条样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--禁止百度转码显示-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--关闭页面自动探测电话号码功能-->
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!--禁止识别电话号码和邮箱-->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--优先使用ie最新版和chrome-->
+    <meta http-equiv="X-UA-compatible" content="IE=edge chrome=1">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!--页面关键字-->
+    <meta content="" name="爱房金，贷款">
+    <!--页面描述-->
+    <meta content="" name="爱房金，贷款">
+    <title>产品列表</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="../css/myloan/myloan.less">
+    <!--<link rel="stylesheet/less" type="text/css" href="../css/myloan/applayhaven.less">-->
+    <script src="../js/less.js"></script>
+</head>
+<body>
+	<div class="bodycontainer">
+<header class="public_header">
+    <a href="javascript:;" class="return"></a>
+    <span class="productHeader"><i></i>我的贷款</span>
+    <div class="dropdownMenuBtn">
+        <span class="clickbf menuBtn" id="menuBtn"></span>
+        <div class="dropdownMenu hide" id="dropdown-menu">
+            <a href="../index.html"><i class="menuIndex"></i>首页</a>
+            <a href="../profile/profile.html"><i class="menuPerson"></i>账户中心</a>
+        </div>
+    </div>
+
+</header>
+<!--无贷款记录时-->
+<div class="noRecord">
+    <div class="noRecordPic"></div>
+    <div class="applyBtn">去申请</div>
+</div>
+<div class="container" id="beforeCompute">
+    <ul class="tabs">
+        <li data-type="apply"  data-num="0"><a href="javascript:;">已申请</a></li>
+        <li data-type="manage"  data-num="1"><a href="javascript:;">办理中</a></li>
+        <li data-type="complete"  data-num="2"><a href="javascript:;">已完成</a></li>
+    </ul>
+    <div class="tab_container">
+        <!--已申请-->
+        <!--<div id="apply" class="tab_content contBox " style="display: none;">
+
+            <div class="apply">
+                <div class="p_item"  v-for="item in items">
+                    <a :href="[url + item.id]" class="info"  @click="change(item.id)">
+                        <div class="one">
+                            <span class="">贷款金额</span>
+                            <strong><i>{{item.application_amount/10000}}</i>万</strong>
+                        </div>
+        <div class="heighter"></div>
+                        <div class="one">
+                            <span class="">贷款期限</span>
+                            <strong><i>{{item.num}}</i>{{item.str}}</strong>
+                        </div>
+                        <div class="one">
+                            <span class="">申请时间</span>
+                            <em v-text="item.applied_time"></em>
+                        </div>
+                    </a>
+                    <div class="info">
+                        <span class="info_border"></span>
+        <div class="heighter"></div>
+                        <a href="changeApply.html"  @click="change(item.id)" >修改申请</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div id="apply" class="tab_content contBox" style="display: none;">
+
+            <ul class="product_list apply" >
+                <li v-for="item in items">
+                    <a :href="[url + item.id]" class="clearfix linkStyle" @click="change(item.id,item.customer_id,item.bank_audit_results)">
+                        <div class="product_img">
+                            <img :src="[item.productPic]" alt="">
+                            <span class="productName" v-text="item.product_name_polish"></span>
+                        </div>
+                        <div class="product_info">
+                            <span class="product_info_border"></span>
+                            <div class="loanlist_money">
+                                <p>贷款金额</p>
+                                <div><span v-text="item.application_amount/10000"></span>万</div>
+                            </div>
+                            <div class="loanlist_period">
+                                <p>贷款期限</p>
+                                <div class="loan_period_year_time"><span class="loan_period_time" v-text="item.num"></span><i v-text="item.str"></i></div>
+                            </div>
+                            <div class="loanlist_time">
+                                <p>申请时间</p>
+                                <div v-text="item.create_time"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="productLine"></div>
+                    <div class="applyHandle">
+                        <div class="applyHandleCont clearfix">
+                            <a href="cancelMyloan.html" class="applyHandleBtn"  @click="storage(item.status,item.customer_id,item.id)">取消申请</a>
+                            <a href="changeApply.html" class="applyHandleBtn">修改申请</a>
+                        </div>
+                    </div>
+                </li>
+                <!--<li>
+                    <a class="clearfix linkStyle applyStyle">
+                        <div class="product_img">
+                            <img src="../img/myloan/企业贷款icon%20-%20Assistor.png" alt="">
+                            <span class="productName">购车贷款</span>
+                        </div>
+                        <div class="product_info">
+                            <span class="product_info_border"></span>
+                            <div class="loanlist_money">
+                                <p>贷款金额</p>
+                                <div><span>30</span>万</div>
+                            </div>
+                            <div class="loanlist_period">
+                                <p>贷款期限</p>
+                                <div class="loan_period_year_time"><span class="loan_period_time">3</span><i>年</i></div>
+                            </div>
+                            <div class="loanlist_time">
+                                <p>申请时间</p>
+                                <div>2017-05-25</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="productLine"></div>
+                    <div class="applyHandle">
+                        <div class="applyHandleCont clearfix">
+                            <a href="cancelMyloan.html" class="applyHandleBtn">取消申请</a><a href="changeApply.html" class="applyHandleBtn">修改申请</a>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+        <!--办理中-->
+        <div id="manage" class="tab_content contBox" style="display: none;">
+
+            <ul class="product_list manage" id="product-list">
+                <!--<li v-for="item in items" @click="change(item.id)">
+                    <a :href="[url + item.id]" class="clearfix linkStyle">
+                        <div class="product_img">
+                            <img :src="[item.productPic]" alt="">
+                            <span class="productName" v-text="item.product_name_polish"></span>
+        </div>
+                        <div class="product_info">
+                            <span class="product_info_border"></span>
+                            <div class="loanlist_money">
+                                <p>贷款金额</p>
+                                <div><span v-text="item.application_amount/10000"></span>万</div>
+                            </div>
+                            <div class="loanlist_period">
+                                <p>贷款期限</p>
+                                <div class="loan_period_year_time"><span class="loan_period_time" v-text="item.num"></span><i v-text="item.str"></i></div>
+                            </div>
+                            <div class="loanlist_time">
+                                <p>申请时间</p>
+                                <div v-text="item.create_time"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+                <li v-for="item in items">
+                    <div class="productTop">
+                        <div class="productName" v-text="item.product_name_polish"></div>
+                        <div class="productLabelBox">
+                            <div class="productLabel">
+                                <span class="condition" v-for="status in item.statusList" v-text="status" :class="{ focus: status == '待面签' || status == '待放款', appreciate: status == '审批拒绝' || status == '取消申请中'}"></span>
+                                <!--<span class="focus">待面签</span>
+                                <span>已取消</span>-->
+                            </div>
+                            <div class="dropMore" :class="{show:item.statusList.length>3,hide:item.statusList == null || item.statusList.length <= 3}"></div>
+                        </div>
+
+                    </div>
+                    <a :href="[url + item.id]" class="productCont" @click="change(item.id,item.customer_id,item.bank_audit_results)">
+                        <div class="productImg">
+                            <img :src="[item.productPic]" alt="">
+                        </div>
+                        <div class="productInfo">
+                            <div class="loanlistMoney">
+                                <p class="productTitle" v-text="item.product_name_polish"></p>
+                                <div class="productInfoNum"><span class="productInfoNumber" v-text="item.application_amount/10000"></span>万</div>
+                            </div>
+                            <div class="loanlistPeriod">
+                                <p class="productTitle">贷款期限</p>
+                                <div class="productInfoNum"><span class="productInfoNumber" v-text="item.num"></span><i v-text="item.str"></i></div>
+                            </div>
+                            <div class="loanlistTime">
+                                <p class="productTitle">申请时间</p>
+                                <div class="productApplyTime" v-text="item.create_time"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="applyHandle">
+                        <div class="applyHandleCont clearfix">
+                            <a href="cancelMyloan.html" class="applyHandleBtn abolish" v-if="item.status == '4' || item.status == '2' ||  (item.status == 7 && !item.hideCancel) " @click="storage(item.status,item.customer_id,item.id)">取消申请</a>
+                            <a href="changeApply.html" class="applyHandleBtn modification"  v-if="item.status == '2'">修改申请</a>
+                            <a href="javascript:;" class="applyHandleBtn revocation" v-if="item.status == '10'" @click="backout(item.id,item.customer_id)">撤销</a>
+                        </div>
+                    </div>
+                </li>
+                <!--<li>
+                    <div class="productTop">
+                        <div class="productName">装修贷款</div>
+                        <div class="productLabel">
+                            <span class="focus">待面签</span>
+                            <span>已取消</span>
+                            <span class="appreciate">审批拒绝</span>
+                            <span class="appreciate">审批</span>
+                        </div>
+                    </div>
+                    <a class="productCont">
+                        &lt;!&ndash;<div class='loan_state'><img src="" alt=""></div>&ndash;&gt;
+                        <div class="productImg">
+                            <img src="../img/myloan/企业贷款icon%20-%20Assistor.png" alt="">
+                        </div>
+                        <div class="productInfo">
+                            <div class="loanlistMoney">
+                                <p class="productTitle">贷款金额</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">10000</span>万</div>
+                            </div>
+                            <div class="loanlistPeriod">
+                                <p class="productTitle">贷款期限</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">36</span><i>个月</i></div>
+                            </div>
+                            <div class="loanlistTime">
+                                <p class="productTitle">申请时间</p>
+                                <div class="productApplyTime">2017-05-25</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="applyHandle">
+                        <div class="applyHandleCont clearfix">
+                            <a href="cancelMyloan.html" class="applyHandleBtn">取消申请</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="productTop">
+                        <div class="productName">装修贷款</div>
+                        <div class="productLabel">
+                            <span class="appreciate">取消申请中</span>
+                        </div>
+                    </div>
+                    <a class="productCont">
+                        &lt;!&ndash;<div class='loan_state'><img src="" alt=""></div>&ndash;&gt;
+                        <div class="productImg">
+                            <img src="../img/myloan/企业贷款icon%20-%20Assistor.png" alt="">
+                        </div>
+                        <div class="productInfo">
+                            <div class="loanlistMoney">
+                                <p class="productTitle">贷款金额</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">10000</span>万</div>
+                            </div>
+                            <div class="loanlistPeriod">
+                                <p class="productTitle">贷款期限</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">36</span><i>个月</i></div>
+                            </div>
+                            <div class="loanlistTime">
+                                <p class="productTitle">申请时间</p>
+                                <div class="productApplyTime">2017-05-25</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="applyHandle">
+                        <div class="applyHandleCont clearfix">
+                            <a href="cancelMyloan.html" class="applyHandleBtn">撤销</a>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+        <!--已完成-->
+        <div id="complete" class="tab_content contBox " style="display: none;">
+            <ul class="product_list complete" >
+                <!--<li v-for="item in items" @click="change(item.id)">
+                    <a :href="[url + item.id]" class="clearfix linkStyle">
+                        <div class='loan_state'>
+                            <img :src="[img + item.status +'.png']" alt="">
+                        </div>
+                        <div class="product_img">
+                            <img :src="[item.productPic]" alt="">
+                            <span class="productName" v-text="item.product_name_polish"></span>
+                        </div>
+                        <div class="product_info">
+                            <span class="product_info_border"></span>
+                            <div class="loanlist_money">
+                                <p>贷款金额</p>
+                                <div><span v-text="item.application_amount/10000"></span>万</div>
+                            </div>
+                            <div class="loanlist_period">
+                                <p>贷款期限</p>
+                                <div class="loan_period_year_time"><span class="loan_period_time" v-text="item.num"></span><i v-text="item.str"></i></div>
+                            </div>
+                            <div class="loanlist_time">
+                                <p v-text="item.state"></p>
+                                <div v-text="item.time"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+                <li v-for="item in items" @click="change(item.id,item.customer_id,item.bank_audit_results)">
+                    <div class="productTop">
+                        <div class="productName"  v-text="item.product_name_polish"></div>
+                        <div class="productLabelBox">
+                            <div class="productLabel">
+                                <span class="condition" v-for="status in item.statusList" v-text="status" :class="{ focus: status == '待面签' || status == '待放款', appreciate: status == '审批拒绝' || status == '取消申请中'}"></span>
+                                <!--<span class="focus">待面签</span>
+                                <span>已取消</span>-->
+                            </div>
+                            <div class="dropMore" :class="{show:item.statusList.length>3,hide:item.statusList == null || item.statusList.length <= 3}"></div>
+                        </div>
+                    </div>
+                    <a :href="[url + item.id]" class="productCont completed">
+                        <div class="productImg">
+                            <img :src="[item.productPic]" alt="">
+                        </div>
+                        <div class="productInfo">
+                            <div class="loanlistMoney">
+                                <p class="productTitle">贷款金额</p>
+                                <div class="productInfoNum"><span class="productInfoNumber" v-text="item.application_amount/10000"></span>万</div>
+                            </div>
+                            <div class="loanlistPeriod">
+                                <p class="productTitle">贷款期限</p>
+                                <div class="productInfoNum"><span class="productInfoNumber"  v-text="item.num"></span><i v-text="item.str"></i></div>
+                            </div>
+                            <div class="loanlistTime">
+                                <p class="productTitle" v-text="item.state"></p>
+                                <div class="productApplyTime" v-text="item.time"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                    <div class="productTop">
+                        <div class="productName">装修贷款</div>
+                        <div class="productLabel">
+                            <span>已取消</span>
+                        </div>
+                    </div>
+                    <a class="productCont completed">
+                        &lt;!&ndash;<div class='loan_state'><img src="" alt=""></div>&ndash;&gt;
+                        <div class="productImg">
+                            <img src="../img/myloan/企业贷款icon%20-%20Assistor.png" alt="">
+                        </div>
+                        <div class="productInfo">
+                            <div class="loanlistMoney">
+                                <p class="productTitle">贷款金额</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">10000</span>万</div>
+                            </div>
+                            <div class="loanlistPeriod">
+                                <p class="productTitle">贷款期限</p>
+                                <div class="productInfoNum"><span class="productInfoNumber">36</span><i>个月</i></div>
+                            </div>
+                            <div class="loanlistTime">
+                                <p class="productTitle">申请时间</p>
+                                <div class="productApplyTime">2017-05-25</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+        <!--底部-->
+        <div class="loan_footer">
+            <a href="tel:400-008-6699">
+                <!--<strong>爱房金承诺机构审批拒绝全额退还平台服务费，详情请咨询</strong>
+                <span>
+                    <em><i></i>400-008-6699</em>
+                </span>-->
+                <strong>更多详情请咨询</strong><em><i></i>400-008-6699</em>
+            </a>
+        </div>
+
+    </div>
+</div>
+        <!--确认撤销弹框蒙层-->
+        <div class="revocationBox hide" id="revocation-mask">
+            <div class="mask"></div>
+        </div>
+</div>
+    <!--确认撤销弹框-->
+    <div class="revocationCont hide" id="revocation-box">
+        <h3 class="revocationTitle">确认撤销</h3>
+        <p class="revocationInfo">该贷款申请回到取消之前的状态</p>
+        <div class="revocationBtnBox">
+            <span class="revocationBtn revocationLine revocationCancel">取消</span>
+            <span class="revocationBtn revocationSure">确定</span>
+        </div>
+    </div>
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/myloan/myloan.js"></script>
+<script src="../js/vue.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++)
+        {
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        Myloan.init();
+        //下拉列表
+        Public.dropDown();
+//       Public.init();
+        //点击修改申请按钮，颜色改变
+        $('document,body').on('touchstart', function () {
+        });
+        /*$(window).resize(function(){
+            var h_doc = $(document).height();
+            var h_foo = h_doc-25;
+            $('.loan_footer').offset({top:h_foo,left:0});
+        });*/
+        /*function changeColor(btn){
+            btn.on('touchstart', function () {
+                $(this).css({
+                    'color':'#ea592f',
+                    'borderColor':'#ea592f'
+                });
+            }).on('touchend', function () {
+                $(this).css({
+                    'color':'#999',
+                    'borderColor':'#ddd'
+                });
+            })
+        }
+        changeColor($('.applyBtn'));
+        changeColor($('.applyHandleBtn'));*/
+        //返回按钮
+        $('.return').on('click',function(){
+            $(this).css('background-image','img/productList/click.png');
+//            history.back(-1);
+            var local_storage = localStorage.getItem("localstorage");
+//            console.log(local_storage);
+            if(local_storage === '1'){
+                window.location.href = 'profile.html';
+//                localStorage.clear();
+            }else{
+                history.back(-1);
+            }
+
+        });
+        //tab栏切换
+        var num = localStorage.getItem('selectedNum');
+//        console.log(num);
+        //页面初始化
+        $("ul.tabs").find('li').eq(num).click();
+
+
+    })
+    </script>
+</body>
+</html>
