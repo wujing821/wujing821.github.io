@@ -1,0 +1,301 @@
+.adaptive{
+  width:1200px;
+  margin: 0 auto;
+}
+//头部
+.container{
+  background-color: #f9f9f9;
+  .main{
+    width: 1200px;
+    margin: 0 auto;
+    //background-color: pink;
+    .header{
+      position: relative;
+      padding-top: 50px;
+      h2{
+        font-size: 30px;
+        color: #333;
+        font-family: "Microsoft YaHei", serif;
+        text-align: center;
+        font-weight: normal;
+      }
+      .download{
+        position: absolute;
+        right: 0;
+        top:50%;
+        margin-top: -9px;
+        .downloadIcon{
+          display: inline-block;
+          width:26px;
+          height: 26px;
+          background: url("../images/index/service/downloadIcon.png") no-repeat;
+          background-size: contain;
+          margin-right: 10px;
+        }
+        .downloadTip{
+          font-size: 18px;
+          color: #ea592f;
+          font-family: "Microsoft YaHei", serif;
+          text-decoration: underline;
+        }
+      }
+    }
+    .content{
+      padding-bottom: 70px;
+      p{
+        //width:1200px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-family: "Microsoft YaHei", serif;
+        //两端对齐
+        text-align: justify;
+        //word-break:break-all;
+        .attention{
+          color: #666;
+          text-decoration: underline;
+          font-weight: bold;
+          vertical-align: top;
+        }
+      }
+      .list{
+        .item{
+          margin-top: 40px;
+          padding-bottom: 35px;
+          border-bottom: 1px solid #eaeaea;
+          .itemHeader{
+            margin-bottom: 25px;
+            .itemNumIcon{
+              display: inline-block;
+              margin-right: 10px;
+              width:34px;
+              height: 34px;
+              background-color: #f5896a;
+              font-size: 24px;
+              color: #fff;
+              font-family: Tahoma;
+              font-style: normal;
+              text-align: center;
+              line-height: 34px;
+            }
+            .itemTitle{
+              font-size: 24px;
+              color: #333;
+              font-family: "Microsoft YaHei", serif;
+            }
+          }
+          .itemInfo{
+            margin-bottom: 10px;
+            margin-left: 44px;
+
+
+          }
+          p.itemInfo:last-child{
+            margin-bottom: 0;
+          }
+          .detailedInformation{
+            margin-left: 86px;
+          }
+
+        }
+        li:last-child{
+          border-bottom: none;
+        }
+      }
+      .cancel{
+        display: block;
+        width:120px;
+        height: 44px;
+        border: 1px solid #d9623d;
+        font-size: 18px;
+        color: #ea592f;
+        font-family: "Microsoft YaHei", serif;
+        border-radius: 6px;
+        text-align: center;
+        line-height: 44px;
+        margin: 25px auto 0px;
+      }
+    }
+  }
+}
+//返回顶部
+#goTop{
+  position: fixed;
+  right: 54px;
+  bottom: 90px;
+  width: 78px;
+  height:78px;
+  background-size: 78px 78px;
+  background-repeat: no-repeat;
+  padding: 50px;
+  display: none;
+  &.clickbefore{
+    background: url("../images/index/public/return1.png") center center;
+    background-size: 78px 78px;
+    background-repeat: no-repeat;
+  }
+  &.clickafter{
+    background: url("../images/index/public/return.png");
+  }
+}
+//侧边栏开始
+/*
+.sidebar {
+  //display: none;
+  position: fixed;
+  //bottom: 140px;
+  right: 0;
+  width: 50px;
+  background: #fff;
+  z-index: 10;
+  ul {
+    li {
+      width: 50px;
+      height: 50px;
+      //border: 1px solid #eee;
+      border-bottom: none;
+      box-sizing: border-box;
+      position: relative;
+      a {
+        //display: block;
+        display:flex;
+        width:100%;
+        height:100%;
+        text-align:center;
+        line-height:50px;
+        align-items:center;
+        justify-content:center;
+        .toTopIcon {
+          display: inline-block;
+          width: 24px;
+          height: 15px;
+          background: url("../images/index/aside/backtotop.png") no-repeat;
+          background-size: contain;
+          //margin-top: 15px;
+        }
+        .profileIcon {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          background: url("../images/index/aside/personalCenter.png") no-repeat center center;
+          background-size: 24px 24px;
+        }
+        .taxIcon {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          background: url("../images/index/aside/calculator.png") no-repeat center center;
+          background-size: 24px 24px;
+        }
+      }
+      .wechatIcon {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: url("../images/index/aside/wechar.png") no-repeat center center;
+        background-size: 24px 24px;
+        border-bottom: 1px solid #eee;
+      }
+      .telIcon {
+        display: inline-block;
+        !*width:30px;
+        height:35px;*!
+        width: 100%;
+        height: 100%;
+        background: url("../images/index/aside/center.png") no-repeat center center;
+        background-size: 24px 24px;
+      }
+      .telIconBox {
+        display: none;
+        position: absolute;
+        left: -220px;
+        top: 0;
+        width: 220px;
+        height: 50px;
+        border: 1px solid #dadada;
+        text-align: center;
+        line-height: 50px;
+        color: #333;
+        font-size: 26px;
+        font-family: "Microsoft YaHei";
+        background-color: #fff;
+        font-weight: normal;
+        box-sizing: border-box;
+      }
+      .textTip {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #d9633f;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        .textTipTop {
+          display: block;
+          width: 100%;
+          height: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          color: #fff;
+          font-family: "Microsoft YaHei", serif;
+          font-style: normal;
+        }
+      }
+    }
+    li.weChatBox {
+      position: relative;
+      .wechatIconPic {
+        display: none;
+        position: absolute;
+        left: -115px;
+        top: -90px;
+        width: 110px;
+        height: 140px;
+        border: 1px solid #dadada;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #fff;
+        i {
+          display: block;
+          width: 90px;
+          height: 90px;
+          margin-bottom: 10px;
+          background: url("../images/index/aside/wecharpic.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        em {
+          display: block;
+          font-size: 14px;
+          color: #c92f11;
+          font-family: "microsoft yahei";
+          font-weight: normal;
+          font-style: normal;
+          text-align: center;
+        }
+      }
+      //小三角
+      .wechatIconPic:before,.wechatIconPic:after{
+        content:"";
+        display:block;
+        border-width:5px;
+        position:absolute;
+        right:-11px;
+        bottom:10px;
+        border-style:dashed solid solid dashed;
+        border-color:transparent transparent transparent #dadada;
+        font-size:0;
+        line-height:0;
+      }
+      .wechatIconPic:after {
+        right:-10px;
+        border-color:transparent transparent  transparent #FFF;
+      }
+
+    }
+    li.tipStyle {
+      border: 1px solid #eee;
+      //border-bottom: none;
+    }
+  }
+}*/

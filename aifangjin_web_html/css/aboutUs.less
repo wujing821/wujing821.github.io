@@ -1,0 +1,283 @@
+.adaptive{
+  width:1200px;
+  margin: 0 auto;
+  position: relative;
+}
+body{
+  background-color: #f9f9f9;
+}
+.main{
+
+  margin-bottom: 40px;
+}
+.headerContainer{
+    background-color: #fff;
+}
+//导航栏
+.navBox{
+//width:100%;
+  height: 320px;
+  position: relative;
+  padding-top: 20px;
+    z-index: 100;
+    background-color: #f9f9f9;
+  //banner
+  .banner{
+    width: 100%;
+    height: 320px;
+    img{
+      width:100%;
+      height: 100%;
+    }
+  }
+  //导航
+
+  .nav{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width:100%;
+
+    ul{
+      height: 100%;
+      width:100%;
+      background-color: rgba(255,255,255,0.26);
+      li{
+        float: left;
+        width:20%;
+        text-align: center;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+        a{
+          display: block;
+          color: rgba(255,255,255,0.56);
+          font-size: 14px;
+          line-height: 50px;
+          font-weight: bold;
+        }
+      }
+      li.active>a{
+        position: relative;
+        color: #fff;
+        font-weight: bold;
+        &::after{
+          content: '';
+          position: absolute;
+          bottom:3px;
+          left: 50%;
+          margin-left: -40px;
+          width:80px;
+          height: 2px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .navTop{
+    position: fixed;
+    top:0;
+    z-index: 1000;
+    background-color: #fe841a;
+    ul{
+      width: 1200px;
+      margin: 0 auto;
+      background-color: transparent;
+    }
+  }
+}
+//主体
+.content{
+//  overflow-y: scroll;
+    
+  .title{
+    position: relative;
+    //height: 38px;
+    width: 96px;
+    margin: 0 auto 40px;
+    h3{
+      position: relative;
+      font-size: 18px;
+      color: #444;
+      font-weight: bold;
+      text-align: center;
+      z-index: 10;
+    }
+    .titleLine{
+      position: absolute;
+      left: 0;
+      top: 13px;
+      height: 16px;
+      width:96px;
+      background-color: #fe841a;
+    }
+
+  }
+  //公司介绍
+  .companyInfo{
+    background-color: #fff;
+    padding: 40px 80px;
+    margin-bottom: 20px;
+  }
+  .companyInfoCont{
+    color: #888;
+    font-size: 14px;
+    line-height: 22px;
+    text-indent: 28px;
+
+  }
+  .companyInfoContTop{
+    margin-top: -4px;
+  }
+  .businessBox{
+    height: 288px;
+    li{
+      float: left;
+      position: relative;
+      width:216px;
+      height: 100%;
+      border: 1px solid #eaeaea;
+      box-sizing: border-box;
+      margin-right: 20px;
+      .businessIcon{
+        position: absolute;
+        top:0;
+        right: 0;
+        width:53px;
+        height: 53px;
+        background:url("../images/aboutUs/about.png") no-repeat;
+        background-size: 431px 53px;
+      }
+      .homeIcon{
+          background-position: -286px 0;
+      }
+      .amountIcon{
+        background-position: -378px 0;
+      }
+      .consultIcon{
+        background-position: -185px 0;
+      }
+      .lawIcon{
+        background-position: 0 0;
+      }
+      .knowledgeIcon{
+        background-position: -92px 0;
+      }
+
+      .businessTitle{
+        font-size: 16px;
+        color: #444;
+        margin: 38px 0 20px 10px;
+        font-weight: normal;
+      }
+      .businessInfoCont{
+        font-size: 12px;
+        color: #888;
+        line-height: 20px;
+        padding: 0 10px 0;
+      }
+    }
+    li:last-child{
+      margin-right: 0px;
+    }
+  }
+  .businessCont{
+    padding-left:20px;
+    padding-right: 20px;
+  }
+  .organization{
+    width:1048px;
+    margin: 0 auto 40px;
+    .organizationName{
+      font-size: 14px;
+      color: #444;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .organizationLine{
+      width:100%;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .organizationBox{
+      margin-top: 40px;
+      li{
+        float: left;
+        width:148px;
+        height: 46px;
+        margin-right: 32px;
+        //border: 1px solid #eaeaea;
+        //box-sizing: border-box;
+        img{
+          width:100%;
+          height: 100%;
+        }
+      }
+      li:nth-of-type(6n){
+        margin-right: 0;
+      }
+      li:nth-of-type(6n)~li{
+        margin-top: 30px;
+      }
+    }
+  }
+  .organization:last-child{
+    margin-bottom: 0;
+  }
+  //市场合作
+  .cooperation{
+    height: 100px;
+
+    li{
+      /*display: -webkit-flex;
+      align-items:center;
+      justify-content:center;*/
+      position: relative;
+      padding-top: 20px;
+      padding-left: 22px;
+      p{
+        position: relative;
+        z-index: 1;
+      }
+      .businessInfoContIcon{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width:44px;
+        height: 43px;
+        background: url("../images/aboutUs/bgIcon.png") no-repeat;
+        background-size: contain;
+        z-index: 0;
+      }
+    }
+  }
+  //地图
+  .map{
+    position: relative;
+    height: 377px;
+    width:1160px;
+    margin: 0 auto;
+    background: url("../images/aboutUs/map.png") no-repeat;
+    background-size: contain;
+    .address{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin-left: -214px;
+      margin-top: -80px;
+      width:340px;
+      //height: 185px;
+      background-color: rgba(254,132,26,0.82);
+      box-sizing: border-box;
+      padding:40px 5px 40px 14px;
+      p{
+        font-size: 14px;
+        color: #fff;
+        line-height: 20px;
+        font-weight:bold;
+      }
+    }
+  }
+}

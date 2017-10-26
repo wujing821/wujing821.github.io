@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/register.less">
+    <script src="js/less.js"></script>
+    <title>注册</title>
+</head>
+<body>
+<div class="top">
+    <div class="adaptive">
+        <div class="topContent clearfix">
+            <div class="tel f_l">
+                <i></i><span>客服电话 : </span><strong>400-006-6699</strong>
+            </div>
+            <div class="loginPart f_r clearfix">
+                <a href="javascript:;" class="switch" data-name="register">注册账号</a>
+                <a href="javascript:;" class="switch"  data-name="login">登录</a>
+                <a href="#">关于我们</a>
+                <!--<span class="weChat">
+							<i></i>
+						</span>
+                <div class="weChatPic">
+                    <img src="images/index/top/wechatPic.png" alt="">
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="adaptive">
+        <div class="headerContent clearfix">
+            <div class="logo f_l"><a href="index.html">爱房金</a></div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="form_container">
+        <div class="left">
+            <img src="images/form/aifangjin.png" alt="">
+        </div>
+        <div class="line_long"></div>
+        <div class="right">
+            <form action="">
+                <div class="title">
+                    <p>
+                        <span class="switch active" data-name="login">登录</span>
+                        <span class="switch" data-name="register">注册</span>
+                    </p>
+                </div>
+                <div class="register main_page" style="display: none">
+                    <div class="form_group">
+                        <input type="text" placeholder="请输入您的手机号">
+
+                    </div>
+                    <div class="form_group">
+                        <input type="password" placeholder="8-16位字母数字符号组合">
+                        <div class="icon">
+                            <div class="eyes"><i></i></div>
+                        </div>
+                    </div>
+                    <div class="form_group ">
+                        <input type="text" class="imgcaptcha" placeholder="请输入图形验证码">
+                        <div class="icon"><img src="images/form/code.jpg" alt=""></div>
+                    </div>
+                    <div class="form_group last_child">
+                        <input type="text" class="smscaptcha" placeholder="请输入收到的短信验证码">
+                        <div class="icon"><a class="get_code">获取验证码</a></div>
+                    </div>
+
+
+                    <div class="agree_agreement">
+
+                        <div class="input_check">
+                            <input type="checkbox" checked="">
+                            <div class="chose"></div>
+                        </div>
+                        <p><i>我已阅读并同意</i> <a href="javascript:;" id="serviceBtn">《爱房金注册协议》</a></p>
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="submit">
+                        <a href="javascript:;">注册</a>
+                    </div>
+                    <div class="account_number"><a href="javascript:;" class="switch" data-name="login">已有账号，直接登录</a></div>
+
+                </div>
+                <div class="login main_page" style="">
+                    <div class="form_group">
+                        <input type="text" placeholder="请输入您的手机号">
+                        <label class="error"><i></i><span>手机号格式错误</span></label>
+                    </div>
+                    <div class="form_group">
+                        <input type="password" placeholder="8-16位字母数字符号组合">
+                        <div class="icon">
+                            <div class="eyes"><i></i></div>
+                        </div>
+                        <label class="error"><i></i><span>密码错误</span></label>
+                    </div>
+                    <div class="forget"><a href="retrievePassword.html" >忘记密码</a></div>
+                    <div class="clear"></div>
+                    <div class="submit">
+                        <a href="javascript:;">注册</a>
+                    </div>
+
+                    <div class="pass_login">
+                        <a href="javascript:;" class="switch" data-name="login_sec">用手机验证码登录</a>
+                        <p class="or"><i></i><strong>或</strong><i></i></p>
+                        <p><span>若无账号，</span><a href="javascript:;" data-name="register"  class="switch" >立即注册</a></p>
+                    </div>
+                </div>
+                <div class="login_sec main_page" style="display: none">
+                    <div class="form_group">
+                        <input type="text" placeholder="请输入您的手机号">
+                    </div>
+                    <div class="form_group ">
+                        <input type="text" class="imgcaptcha" placeholder="请输入图形验证码">
+                        <div class="icon"><img src="images/form/code.jpg" alt=""></div>
+                    </div>
+                    <div class="form_group ">
+                        <input type="text" class="smscaptcha" placeholder="请输入收到的短信验证码">
+                        <div class="icon"><a class="get_code">获取验证码</a></div>
+                    </div>
+
+
+                    <div class="submit">
+                        <a href="javascript:;">注册</a>
+                    </div>
+                    <div class="pass_login">
+                        <a href="javascript:;" data-name="login" class="switch" >用密码登录</a>
+                        <p class="or"><i></i><strong>或</strong><i></i></p>
+                        <p><span>若无账号，</span><a href="javascript:;" class="switch"  data-name="register">立即注册</a></p>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="adaptive">
+        <p class="serviceTel"><span>客服热线</span>400 008 6699</p>
+        <p class="workTime">工作日 9:00-18:00</p>
+        <div class="quickMarkCodeBox">
+            <div class="quickMarkCodeBoxWechat clearfix">
+                <div class="quickMarkCode">
+                    <img src="images/index/footer/service.png"/>
+                    <p>关注爱房金服务号</p>
+                </div>
+                <div class="quickMarkCode">
+                    <img src="images/index/footer/microblog.png"/>
+                    <p>关注爱房金微博号</p>
+                </div>
+            </div>
+
+        </div>
+        <p class="companyInfo">
+            <span>一粒控股（北京）有限公司 京ICP备16060468号-1Copyright©2016</span>
+            <span>一粒控股（北京）有限公司保留所有权利</span>
+        </p>
+    </div>
+
+</div>
+<!--快速申请成功提示-->
+<div class="successTip">
+    <div class="mask" id="tipMask"></div>
+    <div class="tipCont">
+        <div class="tipPic"></div>
+        <p class="tipInfoTop">恭喜您注册成功，欢迎加入爱房金</p>
+        <div class="skip clearfix">
+            <div class="skipIcon">
+                <div class="spinner">
+                    <div class="spinner-container container1">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container2">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container3">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="skipInfo">正在跳转原页面···</p>
+        </div>
+        <!--<p class="tipInfoDown">您可通过手机号登录查询最新进度</p>-->
+        <!--<a href="javascript:;" class="tipSure" id="tip_sure">确定</a>-->
+        <!--<a href="javascript:;" class="tipCancel" id="tip_cancel"></a>-->
+    </div>
+</div>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/register.js"></script>
+<script src="js/public.js"></script>
+<script>
+    $(document).ready(function () {
+        Register.init();
+        Public.init();
+        Public.service($('#serviceBtn'));
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+.clear {
+  clear: both;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+  //border: none;
+}
+
+//兼容苹果系统input输入框出现小人的问题
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  //position: absolute;
+  //right: 0;
+}
+
+/*头部开始*/
+.top {
+  width: 100%;
+  height: 30px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ececec;
+  box-sizing: border-box;
+  .topContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    .tel {
+      font-size: 0;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      position: relative;
+      i {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -6px;
+        width: 14px;
+        height: 12px;
+        background: url("../images/index/top/tel.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      span {
+        margin-left: 19px;
+        font-size: 12px;
+        color: #666;
+        font-family: "Microsoft YaHei", sans-serif;
+      }
+      strong {
+        font-size: 12px;
+        color: #666;
+        font-family: "Microsoft YaHei", sans-serif;
+        font-weight: bold;
+      }
+    }
+    .loginPart {
+
+      font-size: 0;
+      position: relative;
+      .registerBefore {
+        float: left;
+      }
+      .registerAfter {
+        float: left;
+      }
+      a {
+        //display: inline-block;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        color: #666;
+        font-family: "Microsoft YaHei", sans-serif;
+        padding-left: 10px;
+        vertical-align: top;
+        span {
+          vertical-align: top;
+        }
+      }
+      a:hover {
+        cursor: pointer;
+        color: #ea592f;
+      }
+      /*.weChat {
+          //display: inline-block;
+          float: left;
+          width: 32px;
+          height: 30px;
+          i {
+              display: block;
+              width: 22px;
+              height: 22px;
+              background: url("../images/index/top/wechat.png") no-repeat;
+              background-size: 100% 100%;
+              margin: 4px 0 0 10px;
+          }
+          &:hover {
+              cursor: pointer;
+          }
+      }
+      .weChatPic {
+          display: none;
+          position: absolute;
+          right: -69px;
+          bottom: -93px;
+          width: 92px;
+          height: 92px;
+          z-index: 10;
+      }*/
+    }
+  }
+}
+
+/*头部结束*/
+/*导航开始*/
+.header {
+  width: 100%;
+  height: 80px;
+  .headerContent {
+    //      width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    .logo {
+      text-indent: -2000px;
+      width: 141px;
+      height: 49px;
+      background: url("../images/index/nav/logo.png") no-repeat;
+      margin: 15px;
+      margin-left: 0;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .nav {
+      height: 100%;
+      //margin-right: 29px;
+      position: relative;
+      right: -28px;
+      top: 0;
+      li {
+        float: left;
+        height: 100%;
+        position: relative;
+        a {
+          display: block;
+          /*width: 100%;
+          height: 100%;*/
+          font-size: 16px;
+          color: #666;
+          padding: 24px 29px 40px;
+          font-family: "Microsoft YaHei", sans-serif;
+        }
+      }
+      li.active {
+        a {
+          color: #ea592f;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 70%;
+          left: 0;
+          width: 60%;
+          margin: 0 20%;
+          //height:1px;
+          border-bottom: 2px solid #ed4615;
+        }
+      }
+    }
+  }
+}
+
+/*导航结束*/
+//底部开始
+.footer {
+  height: 312px;
+  width: 100%;
+  background: #1a181f;
+  padding-top: 54px;
+  .serviceTel {
+    span {
+      font-size: 26px;
+      color: #fff;
+      margin-right: 15px;
+      font-family: "Microsoft YaHei";
+      vertical-align: baseline;
+    }
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Microsoft YaHei", serif;
+    line-height: 1;
+  }
+  .workTime {
+    font-size: 16px;
+    color: #848484;
+    font-family: "microsoft yahei";
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1;
+  }
+  .quickMarkCodeBox {
+    //position: relative;
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 48px;
+    .quickMarkCodeBoxWechat {
+      //width: 376px;
+      display: table;
+      margin: 0 auto;
+      .quickMarkCode {
+        float: left;
+        margin: 0 35px;
+        p {
+          margin-top: 18px;
+          font-size: 14px;
+          font-family: "microsoft yahei";
+          color: #fff;
+          margin-bottom: 0;
+          line-height: 1;
+        }
+      }
+    }
+  }
+  .companyInfo {
+    text-align: center;
+    font-size: 0;
+    span {
+      font-size: 12px;
+      color: #fff;
+      opacity: 0.4;
+      font-family: "microsoft yahei";
+      margin: 0 6px;
+      line-height: 1;
+    }
+  }
+}
+
+//底部结束
+//侧边栏开始
+.sidebar {
+        //display: none;
+        position: fixed;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: #fff;
+        z-index: 2000;
+    ul {
+        li {
+            width: 50px;
+            height: 50px;
+            //border: 1px solid #eee;
+            border-bottom: none;
+            box-sizing: border-box;
+            position: relative;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 50px;
+                .toTopIcon {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background: url("../images/index/aside/backtotop.png") no-repeat center center;
+                    background-size: 24px 15px;
+                }
+                .profileIcon {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background: url("../images/index/aside/personalCenter.png") no-repeat center center;
+                    background-size: 24px 24px;
+                }
+                .taxIcon {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background: url("../images/index/aside/calculator.png") no-repeat center center;
+                    background-size: 24px 24px;
+                }
+                .blogIcon{
+                    display: inline-block;
+                    width:100%;
+                    height: 100%;
+                    background: url("../images/index/aside/weibicon.png") no-repeat center center;
+                    background-size: 24px 20px;
+                }
+            }
+            .wechatIcon {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                background: url("../images/index/aside/wechar.png") no-repeat center center;
+                background-size: 24px 24px;
+                border-bottom: 1px solid #eee;
+            }
+            .telIcon {
+                display: inline-block;
+                /*width:30px;
+                height:35px;*/
+                width: 100%;
+                height: 100%;
+                background: url("../images/index/aside/center.png") no-repeat center center;
+                background-size: 24px 24px;
+            }
+            .telIconBox {
+                display: none;
+                position: absolute;
+                left: -220px;
+                top: 0;
+                width: 220px;
+                height: 50px;
+                border: 1px solid #dadada;
+                text-align: center;
+                line-height: 50px;
+                color: #333;
+                font-size: 26px;
+                font-family: "Microsoft YaHei";
+                background-color: #fff;
+                font-weight: normal;
+                box-sizing: border-box;
+            }
+            .textTip {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #d9633f;
+                width: 100%;
+                text-align: center;
+                padding: 5px 0;
+                .textTipTop {
+                    display: block;
+                    width: 100%;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #fff;
+                    font-family: "Microsoft YaHei", serif;
+                    font-style: normal;
+                }
+            }
+        }
+        li.weChatBox {
+            position: relative;
+            .wechatIconPic {
+                display: none;
+                position: absolute;
+                left: -115px;
+                top: -90px;
+                width: 110px;
+                height: 140px;
+                border: 1px solid #dadada;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #fff;
+                i {
+                    display: block;
+                    width: 90px;
+                    height: 90px;
+                    margin-bottom: 10px;
+                    background: url("../images/index/aside/wecharpic.png") no-repeat;
+                    background-size: 100% 100%;
+                }
+                em {
+                    display: block;
+                    font-size: 14px;
+                    color: #c92f11;
+                    font-family: "microsoft yahei";
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: center;
+                }
+            }
+            //小三角
+            .wechatIconPic:before,.wechatIconPic:after{
+                content:"";
+                display:block;
+                border-width:5px;
+                position:absolute;
+                right:-11px;
+                bottom:10px;
+                border-style:dashed solid solid dashed;
+                border-color:transparent transparent transparent #dadada;
+                font-size:0;
+                line-height:0;
+            }
+            .wechatIconPic:after {
+                right:-10px;
+                border-color:transparent transparent  transparent #FFF;
+            }
+
+    }
+    li.tipStyle {
+      border: 1px solid #eee;
+      border-bottom: none;
+    }
+    li.microblog {
+      border: 1px solid #eee;
+      border-top: none;
+    }
+    li.microblog:hover {
+      border: none;
+    }
+    li#backToTop {
+      display: none;
+    }
+  }
+}
+
+//侧边栏结束
+
+//快速申请成功页面
+.successTip {
+  display: none;
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 1000;
+  }
+  .tipCont {
+    position: fixed;
+    top: 330px;
+    left: 50%;
+    margin-left: -190px;
+    width: 380px;
+    height: 213px;
+    background-color: #fff;
+    z-index: 1001;
+    .tipPic {
+      width: 38px;
+      height: 38px;
+      background: url("../images/index/banner/pass.png") no-repeat;
+      background-size: contain;
+      margin: 35px auto 20px;
+
+    }
+    .tipInfoTop {
+      text-align: center;
+      font-size: 14px;
+      color: #e8592d;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .tipInfoDown {
+      text-align: center;
+      font-size: 14px;
+      color: #686868;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+    .tipSure {
+      display: block;
+      width: 73px;
+      height: 30px;
+      border: 1px solid #ddd;
+      color: #333;
+      font-size: 14px;
+      line-height: 30px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 3px;
+    }
+    .tipCancel {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 14px;
+      height: 14px;
+      background: url("../images/index/banner/cancel.png") no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+/**个人中心侧边栏开始*/
+.profile_nav {
+  position: absolute;
+  border: solid 1px #dde1e4;
+  box-shadow: -4px 0px 10px -5px  rgba(0, 0, 0, .2);
+  width: 210px;
+  background-color: #ebedf3;
+  text-align: center;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-bottom:none ;
+  border-top:none ;
+  .scroll_fixed{
+    //min-height: 500px;
+    top:0;
+    bottom: auto;
+  }
+  .person_info {
+    padding-top: 20px;
+    img {
+      width: 108px;
+      height: 108px;
+    }
+    p {
+      font-size: 14px;
+      color: #444444;
+      margin-top: 20px;
+    }
+  }
+  .switch {
+    margin-top: 50px;
+    padding-bottom: 500px;
+    a {
+      position: relative;
+      width: 100%;
+      //display: block;
+      vertical-align: top;
+      text-align: left;
+      display: table;
+      &.active {
+        background-color: white;
+        border-top: 1px solid #dde1e4;
+        border-bottom: 1px solid #dde1e4;
+        width: 210px;
+        span{
+          font-weight: bold;
+        }
+      }
+
+      span {
+        height: 40px;
+        margin-left: 40px;
+        display: inline-block;
+        line-height: 40px;
+        font-size: 14px;
+        color: #333333;
+
+      }
+      span {
+        &:last-child {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          -moz-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+          -o-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          right: 40px;
+          display: inline-block;
+          background: url("../images/profile/right.png") no-repeat 0 0;
+          width: 8px;
+          height: 14px;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+/**个人中心侧边栏结束*/
+
+@media (min-width: 1440px) {
+
+  .adaptive {
+    width: 1200px;
+    //height: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .adaptive {
+    width: 1000px;
+    //height: 100%;
+    margin: 0 auto;
+    min-width: 1000px;
+  }
+}

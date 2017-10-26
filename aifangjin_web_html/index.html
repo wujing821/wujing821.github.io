@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+
+		<title>首页</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet/less" type="text/css" href="css/public.less">
+		<link rel="stylesheet/less" type="text/css" href="css/index.less">
+		<link rel="stylesheet" href="css/slider/customSlick.css">
+		<script src="js/less.js"></script>
+		<script src="js/userAgent/userAgent.js"></script>
+		<script>
+			//			browserRedirect() ;
+		</script>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="adaptive">
+				<div class="topContent clearfix">
+					<div class="tel f_l">
+						<i></i><span>客服电话 : </span><strong>400-006-6699</strong>
+					</div>
+					<div class="loginPart f_r clearfix">
+						<!--<div class="registerBefore">
+							<a href="#">注册账号</a>
+							<a href="#">登录</a>
+						</div>-->
+						<div class="registerAfter">
+							<a href="#">欢迎<span>150****1154</span>来到爱房金</a>
+							<a href="#">退出登录</a>
+						</div>
+						<a href="#">关于我们</a>
+						<!--头部提示是否设置密码登录开始-->
+						<div class="reminder_pass">
+							<p><span>您尚未设置登录密码，为保障账户安全，请</span><a href="" class="web_pass">设置你的登录密码</a><span class="close"></span></p>
+						</div>
+						<!--头部提示是否设置密码登录结束-->
+						<!--<span class="weChat">
+							<i></i>
+						</span>
+						<div class="weChatPic">
+							<img src="images/index/top/wechatPic.png" alt="">
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="adaptive">
+				<div class="headerContent clearfix">
+					<div class="logo f_l">爱房金</div>
+					<ul class="nav f_r">
+						<li class="active">
+							<a href="#">首页</a>
+						</li>
+						<!--<li>
+							<a href="#">我要贷款</a>
+						</li>-->
+						<li>
+							<a href="#">我的贷款</a>
+						</li>
+						<li>
+							<a href="#">个人中心</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="banner">
+			<div class="bannerPic" id="bannerSlideshow">
+				<div class="bannerImage">
+					<!--<img src="images/index/banner/banner.png" alt="">-->
+				</div>
+				<!--<div class="bannerImage">
+					<img src="images/index/banner/banner.png" alt="">
+				</div>-->
+			</div>
+
+			<div class="bannerCont">
+				<div class="adaptive">
+					<div class="applicationChannel">
+						<h3>我要借款</h3>
+						<form>
+                            <div class="beforeLogin" style="display: block">
+                                <div class="clearfix applyItem">
+                                    <label for="amountInput" class="applyIcon"><i class="amountIcon"></i></label><input type="text" placeholder="借款金额（万元）" onfocus="this.placeholder=''" onblur="this.placeholder='借款金额（万元）'"  class="applyCont amount" id="amountInput">
+                                    <span class="amountUnit">（万元）</span>
+                                    <!--<strong class="applyTip"></strong>-->
+                                </div>
+                                <div class="clearfix applyItem year">
+                                    <!--<label for="year" class="applyIcon"><i class="yearIcon"></i></label><input type="text" placeholder="借款年限" onfocus="this.placeholder=''" onblur="this.placeholder='借款年限（年）'" id="year" class="applyCont">-->
+                                    <div class="applyIcon"><i class="yearIcon"></i></div>
+                                    <div class="applyCont"  onselectstart="return false" >
+                                        <em class="loanPeriod">借款期限</em><b class="dropdownIcon"></b>
+                                        <ul class="dropdownMenu">
+                                            <li class="dropdownActive">3个月</li>
+                                            <li>6个月</li>
+                                            <li>12个月</li>
+                                            <li>2年</li>
+                                            <li>3年</li>
+                                            <li>5年</li>
+                                            <li>10年</li>
+                                            <li>15年</li>
+                                            <li>20年</li>
+                                            <li>25年</li>
+                                            <li>30年</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clearfix applyItem">
+                                    <label for="tel" class="applyIcon"><i class="telIcon"></i></label><input type="text" placeholder="请输入手机号码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号码'" id="tel" class="applyCont">
+                                    <span class="getCode" id="get_code">获取验证码</span>
+                                </div>
+                                <div class="clearfix applyItem">
+                                    <label for="code" class="applyIcon"><i class="codeIcon"></i></label><input type="text" placeholder="短信验证码" onfocus="this.placeholder=''" onblur="this.placeholder='短信验证码'" id="code" class="applyCont">
+                                </div>
+                            </div>
+                            <div class="loginAfter" style="display: none">
+                                <div class="clearfix applyItem">
+                                    <label for="amountInp" class="applyIcon"><i class="amountIcon"></i></label><input type="text" placeholder="借款金额（万元）" onfocus="this.placeholder=''" onblur="this.placeholder='借款金额（万元）'" class="applyCont amount" id="amountInp">
+                                    <span class="amountUnit">（万元）</span>
+                                </div>
+                                <div class="clearfix applyItem year" >
+                                    <!--<label for="year" class="applyIcon"><i class="yearIcon"></i></label><input type="text" placeholder="借款年限" onfocus="this.placeholder=''" onblur="this.placeholder='借款年限（年）'" id="year" class="applyCont">-->
+                                    <div class="applyIcon"><i class="yearIcon"></i></div>
+                                    <div class="applyCont"  onselectstart="return false" >
+                                        <em class="loanPeriod" id="loan-period">借款期限</em><b class="dropdownIcon"></b>
+                                        <ul class="dropdownMenu">
+                                            <li class="dropdownActive">3个月</li>
+                                            <li>6个月</li>
+                                            <li>12个月</li>
+                                            <li>2年</li>
+                                            <li>3年</li>
+                                            <li>5年</li>
+                                            <li>10年</li>
+                                            <li>15年</li>
+                                            <li>20年</li>
+                                            <li>25年</li>
+                                            <li>30年</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+							<div class="apply">
+                                <div class="warning">
+                                    <i class="warningIcon"></i><p>请输入借款金额</p>
+                                </div>
+								<a href="javascript:;">快速申请</a>
+							</div>
+							<div class="agreement">
+								<p>点击申请贷款即视为同意<a href="javascript:;" id="serviceBtn">《爱房金注册协议》</a></p>
+								<p>若为未注册用户，系统将同步为您创建爱房金账号</p>
+							</div>
+						</form>
+					</div>
+					<div class="bannerTip"><img src="images/index/banner/bannerTip.png"/></div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="service">
+
+			<div class="serviceTitle">
+				<div class="adaptive">
+					<ul>
+						<li>
+							<i class="serviceAmount"></i><span>贷款额度高</span>
+						</li>
+						<li>
+							<i class="serviceSoon"></i><span>放款速度快</span>
+						</li>
+						<li>
+							<i class="serviceRate"></i><span>还款利率低</span>
+						</li>
+						<li>
+							<i class="serviceTeam"></i><span>服务团队专业</span>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="serviceCont">
+				<div class="adaptive">
+					<ul>
+						<li>
+							<div class="serviceItem">
+								<div class="servicePlanIcon servicePlan"></div>
+								<div class="serviceInfo">
+									<h4>最优贷款方案</h4>
+									<p>为您提供最优产品组合</p>
+								</div>
+							</div>
+
+						</li>
+						<li>
+							<div class="serviceItem">
+								<div class="servicePlanIcon serviceOnly"></div>
+								<div class="serviceInfo">
+									<h4>1V1专属服务</h4>
+									<p>专业金融顾问1v1服务</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="serviceItem">
+								<div class="servicePlanIcon serviceInternet"></div>
+								<div class="serviceInfo">
+									<h4>互联网+</h4>
+									<p>贷款进度实时在线反馈</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="products featuredProducts">
+			<div class="adaptive">
+				<h3>
+                <strong class="productsHeader specialProductsHeader">特色产品推荐<span></span></strong>
+            </h3>
+				<p class="productsInfo productsInfoBox">
+					<span class="productDrop">极速<i class="productDropIcon"></i></span>
+					<span class="productDrop">灵活<i class="productDropIcon"></i></span>
+					<span>安全</span>
+				</p>
+				<div class="productsBigBox">
+					<ul id="productLoanCont">
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/decoration.png" />
+									<span class="productsMask">
+										<strong>装修贷</strong>
+										<i></i>
+									</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+
+						</li>
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/car.png" />
+									<span class="productsMask">
+									<strong>汽车贷</strong>
+									<i></i>
+								</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/school.png" />
+									<span class="productsMask">
+									<strong>留学贷</strong>
+									<i></i>
+								</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/company.png" />
+									<span class="productsMask">
+									<strong>企业贷</strong>
+									<i></i>
+								</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/travel.png" />
+									<span class="productsMask">
+									<strong>旅游贷</strong>
+									<i></i>
+								</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="productLoanItem">
+								<div class="productsLi">
+									<img src="images/index/products/marry.png" />
+									<span class="productsMask">
+									<strong>结婚贷</strong>
+									<i></i>
+								</span>
+								</div>
+								<div class="productsBox">
+									<h4>无抵押购车贷</h4>
+									<div class="line"></div>
+									<div class="productsContent">
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最低利率 : </span><strong class="productsNum">5.5</strong><span class="productsUnit">%</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最高额度 : </span><strong class="productsNum">100</strong><span class="productsUnit">万</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最长年限 : </span><strong class="productsNum">10</strong><span class="productsUnit">年</span>
+										</div>
+										<div class="productsContentItem">
+											<span class="productsIntroduce">最快放款 : </span><strong class="productsNum">2</strong><span class="productsUnit">天</span>
+										</div>
+									</div>
+									<p>录取通知可获手续费减免</p>
+									<div class="applyProducts">申请产品</div>
+									<!--<a href="#" class="applyProducts">申请产品</a>-->
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="moreProducts">
+					<a href="productlist.html">查看更多产品</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="process products">
+			<div class="processMask"></div>
+			<div class="processCont">
+				<div class="adaptive">
+					<h3>流程简单四步到账</h3>
+					<p class="productsInfo">
+						<span class="productDrop">简单<i class="productDropIcon"></i></span>
+						<span class="productDrop">易用<i class="productDropIcon"></i></span>
+						<span>高效</span>
+					</p>
+					<ul>
+						<li>
+							<span class="processApply"></span>
+							<i><em></em></i>
+							<strong>01.平台申请</strong>
+						</li>
+						<li>
+							<span class="processSign"></span>
+							<i><em></em></i>
+							<strong>02.机构面签</strong>
+						</li>
+						<li>
+							<span class="processApprove"></span>
+							<i><em></em></i>
+							<strong>03.机构审批</strong>
+						</li>
+						<li>
+							<span class="processSuccess"></span>
+							<i><em></em></i>
+							<strong>04.放款成功</strong>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="tool products">
+			<div class="adaptive">
+				<div class="toolCont">
+					<h3>实用小工具</h3>
+					<p class="productsInfo">
+						<span>贴心实用的贷款小帮手</span>
+					</p>
+					<div class="toolsBox">
+						<ul>
+							<li class="toolsTaxBefore" id="taxPic">
+								<a href="#">
+									<span></span>
+									<strong>税费计算器</strong>
+								</a>
+							</li>
+							<li class="homeBefore" id="homePic">
+								<a href="#">
+									<span></span>
+									<strong>房贷计算器</strong>
+								</a>
+							</li>
+							<li class="accumulationBefore" id="accumulatePic">
+								<a href="#">
+									<span></span>
+									<strong>公积金计算器</strong>
+								</a>
+							</li>
+							<li class="creditloanBefore" id="creditloanPic">
+								<a href="#">
+									<span></span>
+									<strong>信贷计算器</strong>
+								</a>
+							</li>
+							<li class="amountBefore" id="amountPic">
+								<a href="#">
+									<span></span>
+									<strong>贷款额度检测</strong>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="aboutUs process products">
+			<div class="processMask"></div>
+			<div class="processCont">
+				<div class="adaptive">
+					<h3><a href="#">关于爱房金</a></h3>
+					<p class="aboutUsInfo">
+						<span>隶属爱房金科技(北京)有限公司，公司前身为国内知名房产经纪公司的金融服务团队</span>
+					</p>
+					<div class="aboutUsTitle">
+						<span class="aboutUsBanks">合作银行</span>
+					</div>
+					<div class="aboutUsbanksList" id="banksCont">
+						<ul class="banksBox">
+							<li>
+								<img src="images/index/aboutUs/beijing.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/bohai.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/dahua.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/dongya.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/hengsheng.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/huaqi.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/huifeng.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/jianshe.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/jiaotong.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/minsheng.png" />
+							</li>
+						</ul>
+						<ul class="banksBox">
+							<li>
+								<img src="images/index/aboutUs/shanghaipudong.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/xingye.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhaoshang.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhongguogongshang.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhongguoguangda.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhongguonongye.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhongguo.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/zhongxin.png" />
+							</li>
+							<li>
+								<img src="images/index/aboutUs/nanjing.png" />
+							</li>
+						</ul>
+						<!--<a href="#" class="arrowsLeft"></a>
+					<a href="#" class="arrowsRight"></a>-->
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer">
+			<div class="adaptive">
+				<p class="serviceTel"><span>客服热线</span>400 008 6699</p>
+				<p class="workTime">工作日 9:00-18:00</p>
+				<div class="quickMarkCodeBox">
+					<div class="quickMarkCodeBoxWechat clearfix">
+						<div class="quickMarkCode">
+							<img src="images/index/footer/service.png" />
+							<p>关注爱房金服务号</p>
+						</div>
+						<div class="quickMarkCode">
+							<img src="images/index/footer/microblog.png" />
+							<p>关注爱房金微博号</p>
+						</div>
+					</div>
+
+				</div>
+				<p class="companyInfo">
+					<span>一粒控股（北京）有限公司 京ICP备16060468号-1Copyright©2016</span>
+					<span>一粒控股（北京）有限公司保留所有权利</span>
+				</p>
+			</div>
+
+		</div>
+		<div class="sidebar" id="slideContent">
+			<ul id="sidebarBox">
+
+				<li class="tipStyle">
+					<a href="#">
+						<i class="profileIcon"></i>
+						<span class="textTip">
+                            <em class="textTipTop">个人</em>
+                            <em class="textTipTop">中心</em>
+                        </span>
+					</a>
+				</li>
+				<li id="telCont" class="tipStyle">
+					<span class="telIcon"></span>
+					<strong class="telIconBox">400 008 6699</strong>
+					<span class="textTip">
+                        <em class="textTipTop">联系</em>
+                        <em class="textTipTop">客服</em>
+                    </span>
+				</li>
+				<li class="tipStyle">
+					<a href="#">
+						<i class="taxIcon"></i>
+						<span class="textTip">
+                            <em class="textTipTop">热门</em>
+                            <em class="textTipTop">工具</em>
+                        </span>
+					</a>
+				</li>
+				<li class="weChatBox tipStyle">
+					<span class="wechatIcon"></span>
+					<strong class="wechatIconPic">
+						<i></i><em>关注爱房金</em>
+					</strong>
+					<span class="textTip">
+                        <em class="textTipTop">微信</em>
+                        <em class="textTipTop">二维码</em>
+                    </span>
+				</li>
+				<li class="microblog">
+					<a href="http://weibo.com/p/1006065954849163/home?from=page_100606&mod=TAB&is_all=1#_rnd1502680176889" target="_blank">
+						<i class="blogIcon"></i>
+						<span class="textTip">
+                            <em class="textTipTop">关注</em>
+                            <em class="textTipTop">微博</em>
+                        </span>
+					</a>
+				</li>
+				<li id="backToTop" class="tipStyle">
+					<a href="javascript:;">
+						<i class="toTopIcon"></i>
+						<span class="textTip">
+                            <em class="textTipTop">回到</em>
+                            <em class="textTipTop">顶部</em>
+                        </span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--快速申请成功提示-->
+		<div class="successTip">
+			<div class="mask" id="tipMask"></div>
+			<div class="tipCont">
+				<div class="tipPic"></div>
+				<p class="tipInfoTop">恭喜您已成功申请贷款</p>
+				<p class="tipInfoDown">您可通过手机号登录查询最新进度</p>
+				<a href="javascript:;" class="tipSure" id="tip_sure">确定</a>
+				<a href="javascript:;" class="tipCancel" id="tip_cancel"></a>
+			</div>
+		</div>
+		<script src="js/jquery-3.2.0.min.js"></script>
+		<!--<script src="js/bootstrap/bootstrap.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/slider/slick.js"></script>
+
+		<script src="js/public.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+	<script>
+		$(document).ready(function() {
+			// Public.init();
+			Public.goTop();
+            Index.init();
+            Public.init();
+            Public.service($('#serviceBtn'));
+		})
+	</script>
+
+</html>

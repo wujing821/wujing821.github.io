@@ -1,0 +1,207 @@
+@back: #f9f9f9;
+@border_color: #eaeaea;
+@border_color1: #dde1e4;
+body {
+  background-color: @back;
+}
+
+.adaptive {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  background-color: #FFFFFF !important;
+}
+
+.header {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.adaptive {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  .profile_container {
+    //display: inline-block;
+    margin-left: 210px;
+    //height: 1050px;
+    vertical-align: top;
+    padding-left: 50px;
+    background-color: white;
+    padding-right: 50px;
+    width: 990px;
+    box-sizing: border-box;
+    box-shadow: 4px 0px 10px -5px  rgba(0, 0, 0, .2);
+    overflow-y: hidden;
+    position: relative;
+    min-height: 1050px;
+    .profile_item{
+      &:first-child{
+        padding-top: 0;
+        margin-top: 60px;
+      }
+      &.active{
+        .pass_no{
+          display: none;
+        }
+        .pass_have{
+          display: block;
+        }
+       &.login_item.active{
+
+         .pass_body{
+
+           width: 486px;
+           height: 60px;
+           border-radius: 6px;
+           display: block;
+           margin: 0 auto;
+           margin-top: 30px;
+           text-align: center;
+           box-sizing: border-box;
+           padding: 15px;
+           padding-left: 14px;
+           .close{
+             top:9px;
+             right: 9px;
+             width: 30px;
+           }
+           p{
+             width: 100%;
+             text-align: left;
+             font-size: 12px;
+             color: #444444;
+             line-height: 15px;
+           }
+         }
+       }
+      }
+      width: 890px;
+      .item_title{
+        //width: 900px;
+        box-sizing: border-box;
+        padding: 30px 20px 14px ;
+        border-bottom: 1px solid #eaeaea;
+        h3{
+          font-size: 14px;
+          color: #444444;
+          font-weight: normal;
+          margin-right: 40px;
+          display: inline-block;
+        }
+        p{
+          font-size: 14px;
+          color: #999999;
+          display: inline-block;
+        }
+        >div{
+          float: right;
+          p{
+            i{
+              display: inline-block;
+              background: url("../images/profile/hint.png") no-repeat center;
+              width: 18px;
+              height: 18px;
+              margin-right: 10px;
+            }
+            display: inline-block;
+            color:#ea592f ;
+            font-size: 12px;
+          }
+          a{
+            font-size: 12px;
+            color: #238ce8;
+            margin-left: 40px;
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+    .pass_no{
+
+      &.active{
+        .item_title{
+          >div{
+            display: none;
+          }
+        }
+        .pass_body{
+          display: block;
+          .form_group{
+            .eye{
+              left: 301px;
+            }
+          }
+        }
+      }
+    }
+    .pass_have{
+      display: none;
+      .item_title{
+        >div{
+          p{
+            i{
+              background: url(../images/profile/pitch.png) no-repeat center;
+            }
+          }
+        }
+      }
+      &.active{
+        .item_title{
+          >div{
+            display: none;
+          }
+        }
+        .pass_body{
+          display: block;
+          .form_group{
+            label{
+              min-width: 96px;
+            }
+            .submit{
+              margin-left: 110px;
+            }
+          }
+        }
+      }
+    }
+    .pass_body{
+      display: none;
+      padding-bottom: 30px;
+      //margin-top: 14px;
+      background-color: @back;
+      padding-top: 30px;
+      padding-left: 116px;
+      position: relative;
+      .submit{
+        margin-top: 30px;
+        margin-left: 99px;
+      }
+      .close{
+        cursor: pointer;
+        background: url(../images/profile/closeGray.png) no-repeat center;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top:14px;
+        right: 14px;
+      }
+      .form_group{
+        width: 700px;
+        &:last-child{
+          margin-bottom: 0px;
+        }
+      }
+
+    }
+
+
+  }
+}

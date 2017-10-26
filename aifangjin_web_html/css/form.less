@@ -1,0 +1,781 @@
+@back: #f9f9f9;
+@border_color: #eaeaea;
+@border_color1: #dde1e4;
+//自定义的下拉框开始
+.select_com {
+  position: relative;
+  ul {
+    display: none;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  }
+  &.active {
+    display: table;
+    p {
+      display: none;
+    }
+    ul {
+      display: block;
+      position: absolute;
+      border: 1px solid @border_color;
+      background-color: white;
+      li {
+        cursor: pointer;
+        width: 100px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        font-size: 12px;
+        color: #666666;
+        text-align: left;
+        height: 30px;
+        line-height: 30px;
+        &.active {
+          background-color: #fff2ee;
+          color: #d9623d;
+        }
+        &:hover{
+          background-color: #fff2ee;
+          color: #d9623d;
+        }
+      }
+    }
+  }
+  p {
+    cursor: pointer;
+    span {
+      background-color: white;
+      border: solid 1px @border_color;
+      height: 24px;
+      padding-top: 7px;
+      //line-height: 24px;
+      display: inline-block;
+      box-sizing: border-box;
+      border-right: none;
+      width: 80px;
+      text-align: left;
+      padding-left: 10px;
+    }
+    i {
+      display: inline-block;
+      box-sizing: border-box;
+      background: url("../images/profile/down.png") no-repeat center center;
+      width: 20px;
+      height: 24px;
+      border: solid 1px @border_color;
+      background-color: white;
+    }
+  }
+}
+//自定义下拉框结束
+//form表单开始
+.form_group{
+  margin-bottom: 14px;
+  position: relative;
+  label{
+    font-size: 12px;
+    color: #444444;
+    display: inline-block;
+  }
+  input{
+    font-size: 12px ;
+    height: 30px;
+    //line-height: 42px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 240px;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    border: solid 1px #cccccc;
+    margin: 0 10px;
+  }
+  .error{
+    font-size:12px ;
+    color:#ff6633;
+    display: inline-block;
+    i{
+      background: url("../images/form/error.png") no-repeat center;
+      width: 4px;
+      height: 12px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+  .submit{
+    width: 180px;
+    height: 36px;
+    background-color: #d9623d;
+    border-radius: 4px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    box-sizing: border-box;
+    //margin: 0 auto;
+  }
+  .eye{
+    background: url(../images/form/eyeclose.png) no-repeat center;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    position: absolute;
+    left: 313px;
+    cursor: pointer;
+    &.active{
+      background: url(../images/form/eye.png) no-repeat center;
+    }
+  }
+
+}
+//form表单结束
+/*************弹窗开始**********************************/
+.modal {
+  display: none;
+  &.no_login {
+    display: none;
+  }
+  &.login {
+    .modal_body {
+      margin-top: 60px;
+    }
+  }
+  //取消申请弹窗开始
+  &.cancel {
+    display: none;
+    .modal_alert {
+      .modal_body {
+        padding: 0 80px 40px;
+        h2 {
+          margin: 20px auto;
+          color: #d9623d;
+          font-size: 12px;
+          background-color: #faece7;
+          height: 30px;
+          line-height: 30px;
+          width: 344px;
+          text-align: center;
+          font-weight: normal;
+          span{
+            vertical-align: top;
+          }
+        }
+        .form_group {
+          font-size: 12px;
+          color: #444444;
+          position: relative;
+          .select_com {
+            display: inline-block;
+            margin-left: 7px;
+            &.active {
+              p {
+                display: block;
+              }
+              ul {
+                z-index: 1000;
+                li {
+                  width: 224px;
+
+                }
+              }
+            }
+            p {
+              span {
+                width: 196px;
+                height: 30px;
+              }
+              i {
+                width: 30px;
+                height: 30px;
+              }
+
+            }
+
+          }
+          textarea {
+            width: 344px;
+            height: 156px;
+            border: 1px solid #eaeaea;
+            margin-top: 20px;
+            box-sizing: border-box;
+            padding: 14px;
+            overflow: hidden;
+            resize: none;
+            font-size: 12px;
+            &:focus {
+              border: 1px solid #eaeaea;
+              outline: solid 0px #eaeaea;
+            }
+            &::-webkit-input-placeholder { /* WebKit browsers */
+              color: #999999;
+              font-size: 12px;
+            }
+            &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color: #999999;
+              font-size: 12px;
+            }
+            &::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color: #999999;
+              font-size: 12px;
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10+ */
+              color: #999999;
+              font-size: 12px;
+            }
+          }
+          .num {
+            font-size: 12px;
+            color: #444444;
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+          }
+
+        }
+
+      }
+    }
+
+  }
+  //取消申请弹窗结束
+  /*修改申请开始*/
+  &.change_apply {
+    .modal_body {
+      padding: 30px 80px 40px;
+      h2 {
+        font-size: 14px;
+        color: #444444;
+        margin-bottom: 30px;
+      }
+      .form_group {
+        position: relative;
+        margin-bottom: 20px;
+        label {
+          font-size: 12px;
+          color: #444444;
+          margin-right: 10px;
+        }
+        .init_money {
+          width: 110px;
+          height: 30px;
+          line-height: 30px;
+          text-align: left;
+          padding-left: 10px;
+          box-sizing: border-box;
+          font-size: 12px;
+          color: #999999;
+          background-color: #f9f9f9;
+          border: 1px solid #eaeaea;
+          display: inline-block;
+        }
+        input.change_money {
+          width: 170px;
+          height: 30px;
+          padding: 10px;
+          box-sizing: border-box;
+          border: 1px solid #eaeaea;
+          font-size: 12px;
+          &::-webkit-input-placeholder {
+            color: #999;
+            font-size: 12px;
+          }
+          &::-moz-placeholder {
+            color: #999;
+            font-size: 12px;
+
+          }
+          &:-ms-input-placeholder {
+            font-size: 12px;
+            color: #999;
+          }
+        }
+        .unit{
+          font-size: 12px;
+          color: #999999;
+          position: absolute;
+          right: 10px;
+          top:27%;
+          font-weight: normal;
+          display: none;
+        }
+        .right_icon {
+          background: url("../images/profile/arrow.png") no-repeat center;
+          width: 14px;
+          height: 30px;
+          display: inline-block;
+          margin: 0 10px;
+        }
+        .select_com {
+          display: inline-block;
+          &.active {
+            p {
+              display: inline-block;
+            }
+          }
+          &.default {
+            p {
+              height: 30px;
+              span {
+                width: 80px;
+                height: 30px;
+                background-color: #f9f9f9;
+                text-align: left;
+                font-size: 12px;
+                color: #999999;
+                padding-left: 10px;
+              }
+              i {
+                height: 30px;
+                width: 30px;
+                background-color: #f9f9f9;
+              }
+
+            }
+          }
+          &.time_deadline{
+            display: inline-block;
+            /* 设置滚动条的样式 */
+            ::-webkit-scrollbar{width: 8px;}/* 滚动槽 */
+            ::-webkit-scrollbar-track{
+              //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+              //border-radius: 10px;
+            }
+            /* 滚动条滑块 */
+            ::-webkit-scrollbar-thumb{
+              border-radius: 10px;
+              background: rgba(0,0,0,0.1);
+              //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            }
+            ::-webkit-scrollbar-thumb:window-inactive {
+              //background: rgba(255,0,0,0.4);
+            }
+            &.active {
+              p {
+                display: block;
+              }
+              ul {
+                z-index: 1000;
+                height: 140px;
+                overflow-y: scroll;
+                border: 1px solid #ddd;
+                border-top: none;
+                background-color: #fff;
+                li {
+                  width: 160px;
+                }
+              }
+            }
+            p {
+              span {
+                width: 140px;
+                height: 30px;
+                font-size: 12px;
+                text-align: left;
+                padding-left: 10px;
+                color: #999999;
+              }
+              i {
+                width: 30px;
+                height: 30px;
+                box-sizing: border-box;
+              }
+
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+  /*修改申请结束*/
+  /*状态弹窗开始*/
+  &.status {
+    display: none;
+    .modal_alert {
+      min-width: 580px;
+      .modal_body {
+        padding: 50px 80px;
+        h2 {
+          font-size: 14px;
+          color: #444444;
+          line-height: 1;
+          //margin-top: 50px;
+          margin-bottom: 20px;
+          padding-left: 22px;
+          font-weight: normal;
+          span {
+            margin-right: 17px;
+          }
+        }
+        .status_info {
+          min-width: 380px;
+          padding: 30px 20px;
+          //box-sizing: border-box;
+          background-color: #f9f9f9;
+          text-align: center;
+          .status_group {
+            display: inline-block;
+            .status_one {
+              display: none;
+
+              margin-right: 20px;
+              position: relative;
+              &.active{
+                >div{
+                  &:first-child{
+                    span{
+                      background: url("../images/profile/statusActive.png") no-repeat 0 0;
+                    }
+                  }
+                }
+              }
+              &.failure{
+                >div{
+                  &:first-child{
+                    span{
+                      background: url("../images/profile/failure.png") no-repeat 0 0;
+                    }
+
+                  }
+                  &:nth-child(2) span{
+                    color: #d9623e;
+                  }
+                  &:last-child{
+                    visibility:hidden;
+                  }
+                }
+              }
+              &.no_time{
+                >div{
+                  &:last-child{
+                    visibility:hidden;
+                    min-height: 14px;
+                  }
+                }
+
+              }
+              &.show{
+                display: inline-block;
+              }
+
+              > div {
+                &:first-child {
+                  margin-bottom: 24px;
+                  position: relative;
+                  .hx {
+                    width: 87px;
+                    height: 1px;
+                    background-color: #eaeaea;
+                    position: absolute;
+                    right: -56px;
+                    top: 50%;
+
+                  }
+                  span {
+
+                    display: inline-block;
+                    background: url("../images/profile/status.png") no-repeat 0 0;
+                    width: 21px;
+                    height: 20px;
+
+
+                  }
+                }
+                &:nth-child(2) {
+                  span {
+                    font-size: 14px;
+                    color: #444444;
+                    line-height: 1;
+                    &.red {
+                      color: #d9623d;
+                    }
+                  }
+                }
+                &:last-child {
+                  margin-top: 10px;
+                  strong {
+                    font-size: 12px;
+                    color: #999999;
+                    font-weight: normal;
+                  }
+                }
+              }
+
+            }
+            .show{
+              display: inline-block;
+              &:last-child{
+
+              }
+            }
+          }
+
+        }
+        .tips{
+          font-size: 12px;
+          color: #999999;
+          text-align: left;
+          width: 326px;
+          margin: 0 auto;
+          margin-top: 20px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+  /*状态弹窗结束*/
+  /*蒙层开始*/
+  .mask {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+  }
+  /*蒙层结束*/
+  .modal_alert {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: white;
+    min-width: 480px;
+    .title {
+      position: relative;
+      span {
+        height: 50px;
+        padding: 0 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: center;
+        cursor: pointer;
+        &:after {
+          background: url("../images/profile/close.png");
+          width: 14px;
+          height: 14px;
+          background-position: center;
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: '';
+        }
+
+      }
+    }
+    h1 {
+      height: 50px;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 16px;
+      background-color: #ff6633;
+      text-align: center;
+      font-weight: normal;
+    }
+    .modal_body {
+      h2,h1{
+        font-weight: normal;
+      }
+      .to_login {
+        text-align: center;
+        margin: 20px 0;
+        p {
+          color: #c8c8c8;
+          font-size: 14px;
+          display: inline-block;
+        }
+        a {
+          font-size: 14px;
+          color: #ea592f;
+        }
+      }
+      form {
+        display: table;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        .form_group {
+          margin-bottom: 15px;
+          position: relative;
+          display: table;
+          label {
+            width: 45px;
+            height: 36px;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 8px 0;
+            text-align: center;
+            border: solid 1px #cccccc;
+            background-color: #eaeaea !important;
+            &:after {
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 20px;
+            }
+            &.icon1:after {
+              background: url("../images/index/banner/amout.png") no-repeat 0 0;
+              background-size: contain;
+              background-position: center;
+            }
+            &.icon2:after {
+              background: url("../images/index/banner/tel.png") no-repeat 0 0;
+              background-size: contain;
+              background-position: center;
+            }
+
+            &.icon3:after {
+              background: url("../images/index/banner/code.png") no-repeat 0 0;
+              background-size: contain;
+              background-position: center;
+            }
+          }
+          input {
+            display: inline-block;
+            font-size: 16px;
+            //color: #c8c8c8;
+            padding: 10px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            width: 270px;
+            height: 36px;
+            border: solid 1px #cccccc;
+            border-left: none;
+          }
+          .error {
+            margin-top: 9px;
+            font-size: 12px;
+            color: #ff6633;
+            i {
+              background: url("../images/form/error.png") no-repeat 0 0;
+              width: 4px;
+              height: 11px;
+              display: inline-block;
+              margin-right: 5px;
+            }
+          }
+          .get_code {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            font-size: 12px;
+            color: #999;
+            font-family: "Microsoft YaHei", serif;
+            padding: 12px 0;
+            cursor: pointer;
+            &.active {
+              color: #ea592f;
+            }
+          }
+        }
+        .form_select {
+          .dropdownIcon {
+            position: absolute;
+            right: 10px;
+            top: 14px;
+            width: 12px;
+            height: 7px;
+            background: url("../images/index/banner/dropdown.png") no-repeat;
+            background-size: contain;
+          }
+          //借款期限，下拉列表
+          .dropdownMenu {
+            //display: none;
+            position: absolute;
+            top: 37px;
+            left: -1px;
+            z-index: 10;
+            width: 100%;
+            height: 217px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            border-top: none;
+            background-color: #fff;
+            li.dropdownActive {
+              background-color: #fff2ee;
+              color: #ea592f;
+            }
+            li {
+              height: 36px;
+              text-align: center;
+              line-height: 36px;
+              font-size: 14px;
+              color: #666;
+              font-family: "Microsoft YaHei", serif;
+            }
+          }
+        }
+        .product_money {
+          border: 1px solid #eaeaea;
+          margin-bottom: 12px;
+          p {
+
+            span {
+              height: 36px;
+              line-height: 36px;
+              width: 154px;
+              text-align: center;
+              display: inline-block;
+            }
+            &:first-child {
+              background-color: #f2f2f2;
+              font-size: 14px;
+              color: #666666;
+            }
+            &:last-child {
+              background-color: white;
+              font-size: 14px;
+              color: #ea592f;
+            }
+          }
+        }
+        .no_register {
+          font-size: 11.9px;
+          color: #999999;
+          margin-top: 6px;
+        }
+        .bottom {
+          margin-top: 36px;
+          text-align: center;
+          a {
+            display: inline-block;
+            width: 314px;
+            height: 42px;
+            border-radius: 4px;
+            background-color: #ea592f;
+            text-align: center;
+            line-height: 42px;
+            font-size: 18px;
+            color: #ffffff;
+          }
+        }
+      }
+      .button_group {
+        text-align: center;
+        margin-top: 40px;
+        a {
+          display: inline-block;
+          width: 100px;
+          height: 34px;
+          line-height: 34px;
+          text-align: center;
+          margin-right: 18px;
+          border: 1px solid #999999;
+          border-radius: 4px;
+          font-size: 14px;
+          color: #444444;
+          &:hover {
+            border: 1px solid #d9623d;
+            color: #d9623d;
+          }
+        }
+      }
+    }
+  }
+}
+/*************弹窗结束**********************************/

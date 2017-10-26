@@ -1,0 +1,1484 @@
+body {
+    position: relative;
+    min-width: 1024px;
+}
+/*banner开始*/
+.banner {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    //background: url("../images/index/banner/banner.png") no-repeat;
+    /*background-size: 100% 100%;
+    background-position: center center;*/
+    .bannerPic {
+        width: 100%;
+        height: 100%;
+        .bannerImage {
+            width: 100%;
+            height: 100%;
+            background: url("../images/index/banner/banner2.png") no-repeat center center;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .bannerCont {
+        //      width: 1200px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0; //      margin-left: -600px;
+        .bannerTip {
+            float: right;
+            margin-top: 190px;
+            margin-right: 80px;
+            width: 505px;
+            height: 69px;
+            background: url("../images/index/banner/bannerTip.png") no-repeat;
+        }
+        .applicationChannel {
+            float: right;
+            width: 383px;
+            height: 383px;
+            background-color: #fff;
+            margin-right: 56px;
+            margin-top: 49px;
+            h3 {
+                font-size: 18px;
+                font-weight: normal;
+                font-family: "Microsoft YaHei" , sans-serif;
+                color: #333;
+                line-height: 1;
+                padding: 30px 0 30px 30px;
+                margin: 0;
+            }
+            .applyItem {
+                position: relative;
+                //width: 316px;
+                height: 38px;
+                box-sizing: border-box;
+                margin: 0 30px 8px;
+                border: 1px solid #dedede;
+                .amountUnit{
+                    color: #999;
+                    display: none;
+                    position: absolute;
+                    right: 5px;
+                    top: 12px;
+                    font-size: 12px;
+                    font-family: "Microsoft YaHei", serif;
+                }
+                //firefox
+                .applyCont {
+                    position: relative;
+                    float: left;
+                    width: 269px;
+                    height: 36px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    text-align: center;
+                    -moz-line-height: 36px;
+                    .loanPeriod{
+                        font-style: normal;
+                        font-size: 16px;
+                        color: #999;
+                        font-family: "Microsoft YaHei";
+                    }
+                    .dropdownIcon{
+                        position: absolute;
+                        right: 10px;
+                        top: 14px;
+                        width: 12px;
+                        height: 7px;
+                        background: url("../images/index/banner/dropdown.png") no-repeat;
+                        background-size: contain;
+                    }
+                }
+                //IE
+                .applyCont {
+                    float: left;
+                    width: 269px;
+                    height: 36px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    text-align: center;
+                    -ms-line-height: 20px;
+                    .loanPeriod{
+                        font-style: normal;
+                        font-size: 14px;
+                        color: #999;
+                        font-family: "Microsoft YaHei";
+                    }
+                    .dropdownIcon{
+                        position: absolute;
+                        right: 10px;
+                        top: 14px;
+                        width: 12px;
+                        height: 7px;
+                        background: url("../images/index/banner/dropdown.png") no-repeat;
+                        background-size: contain;
+                    }
+                }
+                .applyCont {
+                    float: left;
+                    width: 269px;
+                    height: 36px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    text-align: center;
+                    -o-line-height: 20px;
+                    .loanPeriod{
+                        font-style: normal;
+                        font-size: 14px;
+                        color: #999;
+                        font-family: "Microsoft YaHei";
+                    }
+                    .dropdownIcon{
+                        position: absolute;
+                        right: 10px;
+                        top: 14px;
+                        width: 12px;
+                        height: 7px;
+                        background: url("../images/index/banner/dropdown.png") no-repeat;
+                        background-size: contain;
+                    }
+                }
+                .applyCont {
+                    float: left;
+                    width: 269px;
+                    height: 36px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 20px;
+                    .loanPeriod{
+                        font-style: normal;
+                        font-size: 14px;
+                        color: #999;
+                        font-family: "Microsoft YaHei";
+                    }
+                    .dropdownIcon{
+                        position: absolute;
+                        right: 10px;
+                        top: 14px;
+                        width: 12px;
+                        height: 7px;
+                        background: url("../images/index/banner/dropdown.png") no-repeat;
+                        background-size: contain;
+                    }
+                }
+                //chrome/safari
+                .applyCont {
+                    float: left;
+                    width: 269px;
+                    height: 36px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    text-align: left;
+                    -webkit-line-height: 34px;
+                }
+                .applyCont::-webkit-input-placeholder {
+                    color: #999;
+                    font-size: 14px;
+                    line-height: normal;
+                    font-family: "Microsoft YaHei" , sans-serif;
+                    text-align: left;
+                    height: 34px;
+                }
+                .applyCont::-moz-placeholder {
+                    color: #333;
+                    font-size: 14px;
+                    line-height: normal;
+                    font-family: "Microsoft YaHei" , sans-serif;
+                    text-align: left;
+                    height: 34px;
+                }
+                .applyCont:-ms-input-placeholder {
+                    color: #999;
+                    font-size: 14px;
+                    line-height: normal;
+                    font-family: "Microsoft YaHei" , sans-serif;
+                    text-align: left;
+                    height: 34px;
+                }
+                .applyIcon {
+                    float: left;
+                    width: 45px;
+                    height: 36px;
+                    //border: 1px solid #dedede;
+                    border-right: 1px solid #dedede;
+                    background-color: #f2f2f2;
+                    box-sizing: border-box;
+                    i {
+                        display: block;
+                        width: 19px;
+                        height: 19px;
+                        margin: 9px auto;
+                        background: url("../images/index/banner/form1.png") no-repeat;
+                    }
+                    .amountIcon {
+                        //background-position: 0 -68px;
+                        background: url("../images/index/banner/money.png") no-repeat;
+                        background-size: contain;
+                    }
+                    .yearIcon {
+                        width: 19px;
+                        background-position: 0 -134px;
+                    }
+                    .telIcon {
+                        width: 19px;
+                        background-position: 0 -197px;
+                    }
+                    .codeIcon {
+                        background-position: 0 0;
+                    }
+                    .amountIconAfter {
+                        //background-position: 0 -102px;
+                        background: url("../images/index/banner/money2.png") no-repeat;
+                        background-size: contain;
+                    }
+                    .yearIconAfter {
+                        background-position: 0 -165px;
+                    }
+                    .telIconAfter {
+                        background-position: 0 -230px;
+                    }
+                    .codeIconAfter {
+                        background-position: 0 -34px;
+                    }
+                }
+
+                .applyTip {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 9px;
+                    margin-left: -46px;
+                    width: 122px;
+                    height: 17px; //                  background: url("../images/index/banner/amountpic.png") no-repeat;
+                    background-size: 100% 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                //借款期限
+                .dropdownMenu{
+                    display: none;
+                    position: absolute;
+                    top:37px;
+                    left: -1px;
+                    z-index: 10;
+                    width:100%;
+                    height: 217px;
+                    overflow-y: scroll;
+                    border: 1px solid #ddd;
+                    border-top: none;
+                    background-color: #fff;
+                    li.dropdownActive{
+                        background-color: #fff2ee;
+                        color: #ea592f;
+                    }
+                    li{
+                        height: 36px;
+                        text-align: center;
+                        line-height: 36px;
+                        font-size: 14px;
+                        color: #666;
+                        font-family: "Microsoft YaHei", serif;
+                    }
+                }
+
+                /* 设置滚动条的样式 */
+                ::-webkit-scrollbar{width: 8px;}/* 滚动槽 */
+                ::-webkit-scrollbar-track{
+                    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                    //border-radius: 10px;
+                }
+                /* 滚动条滑块 */
+                ::-webkit-scrollbar-thumb{
+                    border-radius: 10px;
+                    background: rgba(0,0,0,0.1);
+                    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+                }
+                ::-webkit-scrollbar-thumb:window-inactive {
+                    //background: rgba(255,0,0,0.4);
+                }
+                /*//兼容火狐
+                ::-moz-scrollbar{width: 8px;}!* 滚动槽 *!
+                ::-moz-scrollbar-track{
+                }
+                !* 滚动条滑块 *!
+                ::-moz-scrollbar-thumb{
+                    border-radius: 10px;
+                    background: rgba(0,0,0,0.1);
+                }
+                //兼容火狐
+                ::-ms-scrollbar{width: 8px;}!* 滚动槽 *!
+                ::-ms-scrollbar-track{
+                }
+                !* 滚动条滑块 *!
+                ::-ms-scrollbar-thumb{
+                    border-radius: 10px;
+                    background: rgba(0,0,0,0.1);
+                }*/
+
+            }
+            .apply {
+                position: relative;
+                width: 316px;
+                height: 42px;
+                margin: 30px auto 15px;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #ea592f;
+                    border-radius: 6px;
+                    text-align: center;
+                    line-height: 42px;
+                    color: #fff;
+                    font-size: 18px;
+                    //font-weight: bold;
+                }
+                //错误提示
+                .warning{
+                    margin-top: 5px;
+                    position: absolute;
+                    left: 0;
+                    top:-30px;
+                    width:100%;
+                    height: auto;
+                    //margin: 0 auto;
+                    .warningIcon{
+                        position: absolute;
+                        width:4px;
+                        height: 11px;
+                        background: url("../images/index/banner/warning.png") no-repeat;
+                        background-size: contain;
+                    }
+                    p{
+                        padding-left: 9px;
+                        font-size: 12px;
+                        color: #ea592f;
+                    }
+                }
+            }
+            //选中样式
+            .active {
+                border: 1px solid #ea592f;
+            }
+            .agreement{
+                text-align: center;
+                p{
+                    font-size: 12px;
+                    color: #999;
+                    font-family: "Microsoft YaHei", serif;
+                    line-height: 14px;
+                    a{
+                        font-size: 12px;
+                        color: #ea592f;
+                        line-height: 14px;
+                        vertical-align: baseline;
+                    }
+                }
+            }
+            //登录之前不显示
+            .loginAfter{
+                display: none;
+                margin-top: 10px;
+                .applyItem{
+                    margin: 0 30px 30px;
+                }
+            }
+            .beforeLogin{
+                display: block;
+            }
+            //获取验证码
+            .getCodeItem{
+                float: left;
+                width: 269px;
+                height: 36px;
+                box-sizing: border-box;
+                padding: 5px 10px;
+                font-size: 14px;
+                text-align: left;
+                -webkit-line-height: 34px;
+            }
+            .getCodeItem::-webkit-input-placeholder {
+                color: #999;
+                font-size: 14px;
+                line-height: normal;
+                font-family: "Microsoft YaHei" , sans-serif;
+                text-align: center;
+                height: 34px;
+            }
+            .getCodeItem::-moz-placeholder {
+                color: #999;
+                font-size: 14px;
+                line-height: normal;
+                font-family: "Microsoft YaHei" , sans-serif;
+                text-align: center;
+                height: 34px;
+            }
+            .getCodeItem:-ms-input-placeholder {
+                color: #999;
+                font-size: 14px;
+                line-height: normal;
+                font-family: "Microsoft YaHei" , sans-serif;
+                text-align: center;
+                height: 34px;
+            }
+            .getCode {
+                //display: none;
+                position: absolute;
+                right: 10px;
+                top: 0px;
+                font-size: 12px;
+                //color: #ea592f;
+                color: #999;
+                font-family: "Microsoft YaHei", serif;
+                padding: 12px 0;
+                cursor: pointer;
+                //border: 1px solid #ea592f;
+            }
+            .getCodeActive{
+                color: #ea592f;
+            }
+            .year{
+                cursor: pointer;
+            }
+        }
+    }
+}
+/*banner结束*/
+/*service开始*/
+.service {
+    height: 210px;
+    background-color: #f9f9f9;
+    .serviceTitle {
+        //      width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        ul {
+            height: 50px;
+            display: -moz-box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            li {
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                float: left;
+                font-size: 16px;
+                font-family: "Microsoft YaHei" , sans-serif;
+                color: #666;
+                line-height: 1;
+                text-align: center;
+                vertical-align: top;
+                i {
+                    display: inline-block;
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                    background: url("../images/index/service/service.png") no-repeat;
+                }
+                .serviceAmount {
+                    background-position: 0 -143px;
+                }
+                .serviceSoon {
+                    background-position: 0 -49px;
+                }
+                .serviceRate {
+                    background-position: 0 -97px;
+                }
+                .serviceTeam {
+                    background-position: 0 0;
+                }
+                span {
+                    display: inline-block;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+    .serviceCont {
+        height: 160px;
+        background-color: #fff;
+        ul {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+
+            /*display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -o-box;
+            display: box;
+            display: -webkit-flex;
+            display: flex;*/
+            li {
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                padding-top: 30px; //              padding-left: 91px;
+                float: left;
+                text-align: center;
+                .serviceItem {
+                    display: inline-block;
+                    .servicePlanIcon {
+                        float: left;
+                        width: 88px;
+                        height: 98px;
+                        margin-right: 20px;
+                        background: url("../images/index/service/service.png") no-repeat;
+                    }
+                    .servicePlan {
+                        background-position: 0 -192px;
+                    }
+                    .serviceOnly {
+                        background-position: 0 -320px;
+                    }
+                    .serviceInternet {
+                        background-position: 0 -440px;
+                    }
+                    .serviceInfo {
+                        float: left; //                  display: inline-block;
+                        padding-top: 21px;
+                        h4 {
+                            font-size: 24px;
+                            color: #333;
+                            font-family: "Microsoft YaHei" , sans-serif;
+                            font-weight: bold;
+                        }
+                        p {
+                            font-size: 14px;
+                            color: #666;
+                            font-family: "Microsoft YaHei" , sans-serif;
+                            margin-top: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*service结束*/
+/*特色产品推荐开始*/
+.products {
+    //  height: 610px;
+    background-color: #fafafa;
+    padding-top: 60px;
+    position: relative;
+    h3 {
+        font-size: 30px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        .productsHeader {
+            position: relative;
+            font-size: 30px;
+            color: #333;
+            span {
+                position: absolute;
+                right: 0px;
+                top: 50%;
+                margin-top: -13px;
+                width: 25px;
+                height: 25px;
+                background: url("../images/index/products/hot.png") no-repeat;
+                background-size: contain;
+                //margin-left: 20px;
+            }
+        }
+        .specialProductsHeader{
+            display: block;
+            text-align: left;
+            width:212px;
+            margin: 0 auto;
+        }
+    }
+    .productsInfo {
+        font-size: 0;
+        text-align: center;
+        margin-bottom: 40px;
+
+        span {
+            //float: left;
+            display: inline-block;
+            position: relative;
+            height: 20px;
+            margin: 0 10px;
+            font-size: 14px;
+            color: #777;
+            font-family: "microsoft yahei";
+          .productDropIcon{
+            position: absolute;
+            right: -12px;
+            top: 35%;
+            width:0;
+            height: 0;
+            border: 1px solid #777;
+
+          }
+        }
+        /*.productDrop::after {
+            content: '';
+          width:0;
+          height: 0;
+          border: 1px solid #fff;
+            position: absolute;
+            right: -12px;
+            top: 0%;
+            //color: #777;
+        }*/
+    }
+    .productsInfoBox{
+        text-align: center;
+        margin-left: -28px;
+    }
+    .productsBigBox {
+              //height: 370px;
+        //      width: 1140px;
+        margin: 0 auto;
+        //padding: 0 20px;
+        //overflow: hidden;
+        position: relative;
+        ul {
+            //height: 370px;
+            width: 100%;
+            /*   position: absolute;
+            left: 0;
+            top:0;*/
+            li {
+                //float: left;
+                height: 100%;
+                padding-right: 20px;
+                //width:270px;
+                .productLoanItem {
+                    display: block; //                  width: 270px;
+                    height: 100%;
+                    position: relative;
+                    .productsLi {
+                        height: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .productsMask {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%; //                          height: 124px;
+                            height: 40%;
+                            background: #fff;
+                            opacity: 0.8;
+                            strong {
+                                display: block;
+                                font-size: 24px;
+                                color: #333;
+                                font-family: "microsoft yahei";
+                                margin: 37px 0 17px 30px;
+                            }
+                            i {
+                                display: block;
+                                width: 30px;
+                                height: 4px;
+                                background: url("../images/index/products/lineone.png") no-repeat;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+                    .productsBox {
+                        display: block;
+                        z-index: 10;
+                        position: absolute;
+                        left: 0;
+                        bottom: -101%;
+                        //width: 240px;
+                        //height: 333px;
+                        width: 100%;
+                        height: 100%;
+                        padding: 37px 0 0 30px;
+                        //background-color: #f95d30;
+                        //opacity: 0.9;
+                        background-color: rgba(249,93,48,0.9);
+                        color: #fff;
+                        box-sizing: border-box;
+                        //height: 100%;
+                        h4 {
+                            font-size: 24px;
+                            font-family: "Microsoft YaHei", serif;
+                            line-height: 1;
+                            margin: 0 0 17px;
+                            padding: 0;
+                        }
+                        .line {
+                            width: 141px;
+                            height: 4px;
+                            background: url("../images/index/products/line.png") no-repeat;
+                            margin-bottom: 20px;
+                        }
+                        .productsContent {
+                            margin-bottom: 33px;
+                            .productsContentItem {
+                                margin-top: 20px;
+                                line-height: 1;
+                                .productsIntroduce {
+                                    font-size: 14px;
+                                    font-family: "Microsoft YaHei", serif;
+                                }
+                                .productsNum {
+                                    font-size: 23px;
+                                    font-family: "Microsoft YaHei";
+                                    font-weight: bold;
+                                }
+                                .productsUnit {
+                                    font-size: 14px;
+                                    font-family: "Microsoft YaHei", serif;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        p {
+                            font-size: 12px;
+                            font-family: "Microsoft YaHei";
+                            line-height: 1;
+                        }
+                        .applyProducts {
+                            margin-top: 10px; //                          width: 220px;
+                            height: 36px;
+                            width: 220px;
+                            border-radius: 4px;
+                            background-color: #f6f3f2;
+                            color: #eb651a;
+                            font-size: 20px;
+                            text-align: center;
+                            line-height: 36px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            li:focus{
+                outline: none;
+            }
+        }
+        /*.productsArrowsL{
+            position: absolute;
+            top: 50%;
+            left: 290px;
+            width: 36px;
+            height: 36px;
+            margin-top: -18px;
+            background: url(../images/index/products/arrowLeft.png) no-repeat;
+        }
+        .productsArrowsR{
+            position: absolute;
+            top: 50%;
+            right: 290px;
+            width: 36px;
+            height: 36px;
+            margin-top: -18px;
+            background: url(../images/index/products/arrowRight.png) no-repeat;
+        }*/
+    }
+    #moreProducts {
+        width: 220px;
+        height: 38px;
+        background: #ea592f;
+        margin: 50px auto 60px;
+        border-radius: 4px;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            font-family: "microsoft yahei";
+            font-weight: bold;
+            color: #fff;
+            line-height: 38px;
+            text-align: center;
+        }
+    }
+}
+.featuredProducts{
+    height: 630px;
+}
+//特色产品推荐结束
+//办理流程开始
+.process {
+    position: relative;
+    height: 410px;
+    width: 100%;
+    background: #fff url("../images/index/process/processbg.png") no-repeat center center;
+    //background-size: 100% 100%;
+    padding-top: 70px;
+    .processMask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+    }
+    .processCont {
+        position: relative;
+        z-index: 10; //      width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        h3 {
+            color: #fff;
+        }
+        .productsInfo {
+            margin-bottom: 90px;
+            span {
+                color: #eee;
+              .productDropIcon{
+                border-color: #eee;
+              }
+            }
+
+        }
+        ul {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            li {
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                text-align: center;
+                margin: 0;
+                span {
+                    display: inline-block;
+                    height: 82px;
+                    margin-bottom: 36px;
+                }
+                .processApply {
+                    width: 100px;
+                    background: url("../images/index/process/apply.png") no-repeat;
+                }
+                .processSign {
+                    width: 87px;
+                    background: url("../images/index/process/sign.png") no-repeat;
+                }
+                .processApprove {
+                    width: 84px;
+                    background: url("../images/index/process/approve.png") no-repeat;
+                }
+                .processSuccess {
+                    width: 96px;
+                    background: url("../images/index/process/moneySuccess.png") no-repeat;
+                }
+                i {
+                    position: relative;
+                    display: block;
+                    height: 0;
+                    width: 100%;
+                    border-bottom: 1px solid #b8bdc2;
+                    em {
+                        position: absolute;
+                        top: -50%;
+                        left: 50%;
+                        margin-top: -6px;
+                        margin-left: -6px;
+                        width: 12px;
+                        height: 12px;
+                        background: url("../images/index/process/drop.png") no-repeat;
+                    }
+                }
+                strong {
+                    display: block;
+                    font-size: 20px;
+                    font-family: "microsoft yahei";
+                    font-weight: bold;
+                    color: #fff;
+                    text-align: center;
+                    margin-top: 36px;
+                }
+            }
+        }
+    }
+}
+//办理流程结束
+//实用小工具开始
+.tool {
+    height: 410px;
+    padding-top: 70px;
+    .toolCont {
+        //      width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        h3 {
+            font-size: 28px;
+        }
+        .productsInfo {
+            margin-bottom: 70px;
+        }
+        .toolsBox {
+            //          padding: 0 30px;
+            height: 177px;
+            width: 100%;
+            overflow: hidden;
+            ul {
+                height: 177px;
+                //width: 1205px;
+                width:1141px;
+                margin: 0 auto;
+                li {
+                    float: left;
+                    margin-right: 64px;
+                    width: 177px;
+                    height: 177px;
+                    box-sizing: border-box;
+                    border: 1px solid #eee;
+                    border-radius: 8px;
+                    background-color: #fff;
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        padding-top: 20px;
+                        text-decoration: none;
+                        span {
+                            display: block;
+                            width: 82px;
+                            height: 91px;
+                            margin: 0 auto 20px;
+                        }
+                        strong {
+                            display: block;
+                            text-align: center;
+                            font-size: 18px;
+                            font-family: "microsoft yahei";
+                            font-weight: normal;
+                        }
+                    }
+                }
+                li:last-child{
+                    margin-right: 0;
+                }
+                .toolsTaxBefore {
+                    span {
+                        background: url("../images/index/tools/tax.png") no-repeat;
+                    }
+                    strong {
+                        color: #595959;
+                    }
+                }
+                .toolsTaxAfter {
+                    //filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);
+                    //-ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);/*IE8*/
+                    background: #fe6917;
+                    /* 一些不支持背景渐变的浏览器 */
+                    background: -moz-linear-gradient(top, #ff8400, #fe6917);
+                    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff8400), to(#fe6917));
+                    background: -o-linear-gradient(top, #ff8400, #fe6917);
+                    border: none;
+                    span {
+                        background: url("../images/index/tools/tax2.png") no-repeat;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                }
+                .homeBefore {
+                    span {
+                        background: url("../images/index/tools/home.png") no-repeat;
+                    }
+                    strong {
+                        color: #595959;
+                    }
+                }
+                .homeAfter {
+                    background: #fe6917;
+                    /* 一些不支持背景渐变的浏览器 */
+                    background: -moz-linear-gradient(top, #ff8400, #fe6917);
+                    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff8400), to(#fe6917));
+                    background: -o-linear-gradient(top, #ff8400, #fe6917);
+                    border: none;
+                    span {
+                        background: url("../images/index/tools/home2.png") no-repeat;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                }
+                .accumulationBefore {
+                    span {
+                        background: url("../images/index/tools/accumulation.png") no-repeat;
+                    }
+                    strong {
+                        color: #595959;
+                    }
+                }
+                .accumulationAfter {
+                    background: #fe6917;
+                    /* 一些不支持背景渐变的浏览器 */
+                    background: -moz-linear-gradient(top, #ff8400, #fe6917);
+                    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff8400), to(#fe6917));
+                    background: -o-linear-gradient(top, #ff8400, #fe6917);
+                    border: none;
+                    span {
+                        background: url("../images/index/tools/accumulation2.png") no-repeat;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                }
+                .creditloanBefore {
+                    span {
+                        background: url("../images/index/tools/creditloan.png") no-repeat;
+                    }
+                    strong {
+                        color: #595959;
+                    }
+                }
+                .creditloanAfter {
+                    background: #fe6917;
+                    /* 一些不支持背景渐变的浏览器 */
+                    background: -moz-linear-gradient(top, #ff8400, #fe6917);
+                    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff8400), to(#fe6917));
+                    background: -o-linear-gradient(top, #ff8400, #fe6917);
+                    border: none;
+                    span {
+                        background: url("../images/index/tools/creditloan2.png") no-repeat;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                }
+                .amountBefore {
+                    span {
+                        background: url("../images/index/tools/amount.png") no-repeat;
+                    }
+                    strong {
+                        color: #595959;
+                    }
+                }
+                .amountAfter {
+                    background: #fe6917;
+                    /* 一些不支持背景渐变的浏览器 */
+                    background: -moz-linear-gradient(top, #ff8400, #fe6917);
+                    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff8400), to(#fe6917));
+                    background: -o-linear-gradient(top, #ff8400, #fe6917);
+                    border: none;
+                    span {
+                        background: url("../images/index/tools/amount2.png") no-repeat;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+//实用小工具结束
+//关于爱房金开始
+.aboutUs {
+    width: 100%;
+    height: 410px;
+    background: url("../images/index/aboutUs/aboutUsbg.png") no-repeat center center;
+    //background-size: 100% 100%;
+    .processMask {
+        background: #f6f3f2;
+        opacity: 0.8;
+    }
+    .processCont {
+        h3 {
+            a {
+                font-size: 30px;
+                font-family: "microsoft yahei";
+                color: #333;
+            }
+        }
+        .aboutUsInfo {
+            //margin-bottom: 60px;
+            text-align: center;
+            span {
+                color: #777;
+            }
+        }
+        .aboutUsTitle{
+            margin: 34px auto 32px;
+            text-align: center;
+
+            .aboutUsBanks{
+                font-size: 14px;
+                color: #999;
+                font-family: "Microsoft YaHei", serif;
+                vertical-align: bottom;
+                //margin: 0 10px;
+            }
+            .aboutUsBanks::before{
+                content: '';
+                display: inline-block;
+                width:97px;
+                height: 14px;
+                background: url("../images/index/aboutUs/zuo.png") no-repeat;
+                background-size: contain;
+                margin-right: 10px;
+            }
+            .aboutUsBanks::after{
+                content: '';
+                display: inline-block;
+                width:97px;
+                height: 14px;
+                background: url("../images/index/aboutUs/you.png") no-repeat;
+                background-size: contain;
+                margin-left: 10px;
+            }
+        }
+        .aboutUsbanksList {
+            height: 220px;
+            text-align: center;
+            padding: 0 10px;
+            .banksBox {
+                height: 220px;
+                width: 2360px;
+                margin-left: 15px;
+                display: block;
+                li {
+                    float: left;
+                    margin-right: 22px;
+                    margin-bottom: 30px;
+                    //width:170px;
+                    //height: 80px;
+                    /*width: 204px;
+                    min-width: 180px;
+                    height: 80px;
+                    min-height:70px;*/
+                    border: 1px solid #d7d7d7;
+                    flex: initial;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                //最后一个li不加伪元素
+                //              li:last-child {
+                //                  margin-right: 30px;
+                //              }
+                li:nth-child(5n) {
+                    margin-right: 0;
+                }
+                li:hover {
+                    border: 1px solid #f46e21;
+                }
+            }
+            .slick-prev {
+                background: url("../images/index/aboutUs/arrowLeft.png") no-repeat;
+            }
+            .slick-next {
+                background: url("../images/index/aboutUs/arrowRight.png") no-repeat;
+            }
+            /*.arrowsLeft {
+                position: absolute;
+                left: 0;
+                top: 54%;
+                margin-left: -54px;
+                width: 36px;
+                height: 36px;
+                background: url("../images/index/aboutUs/arrowLeft.png") no-repeat;
+            }
+            .arrowsRight {
+                position: absolute;
+                right: 0;
+                top: 54%;
+                margin-right: -54px;
+                width: 36px;
+                height: 36px;
+                background: url("../images/index/aboutUs/arrowRight.png") no-repeat;
+            }*/
+        }
+    }
+}
+//关于爱房金结束
+//底部开始
+.footer {
+    height: 312px;
+    width: 100%;
+    background: #1a181f;
+    padding-top: 54px;
+    .serviceTel {
+        span {
+            font-size: 26px;
+            color: #fff;
+            margin-right: 15px;
+            font-family: "Microsoft YaHei";
+            vertical-align: baseline;
+        }
+        font-size: 26px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: "Microsoft YaHei", serif;
+        line-height: 1;
+    }
+    .workTime {
+        font-size: 16px;
+        color: #848484;
+        font-family: "microsoft yahei";
+        text-align: center;
+        margin-bottom: 40px;
+        line-height: 1;
+    }
+    .quickMarkCodeBox {
+        //position: relative;
+        text-align: center;
+        font-size: 0;
+        margin-bottom: 48px;
+        .quickMarkCodeBoxWechat {
+            //width: 376px;
+            display: table;
+            margin: 0 auto;
+            .quickMarkCode {
+                float: left;
+                margin: 0 35px;
+                p {
+                    margin-top: 18px;
+                    font-size: 14px;
+                    font-family: "microsoft yahei";
+                    color: #fff;
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    .companyInfo {
+        text-align: center;
+        font-size: 0;
+        span {
+            font-size: 12px;
+            color: #fff;
+            opacity: 0.4;
+            font-family: "microsoft yahei";
+            margin: 0 6px;
+            line-height: 1;
+        }
+    }
+}
+//底部结束
+
+//媒体查询
+
+
+@media (min-width:1024px) and (max-width:1440px){
+
+    //
+    .banner{
+        .bannerCont{
+            .applicationChannel{
+                margin-right: 20px;
+            }
+            .bannerTip{
+                margin-right: 60px;
+            }
+        }
+    }
+    //
+    .tool .toolCont .toolsBox ul li{
+        margin-right: 20px;
+    }
+    //
+    .aboutUs{
+        .processCont{
+            .aboutUsbanksList{
+                .banksBox{
+                    li{
+                        margin-right: 20px;
+                        margin-bottom: 30px;
+                        width: 170px;
+                    }
+                }
+                li:nth-child(5n) {
+                    margin-right: 0;
+                }
+            }
+            .productsInfo{
+                margin-bottom: 80px;
+            }
+        }
+    }
+    //
+    .products{
+        .productsBigBox{
+            ul{
+                li{
+                    .productLoanItem{
+                        .productsBox{
+                            padding-top: 20px;
+                            h4{
+                                font-size: 20px;
+                                margin-bottom: 17px;
+                            }
+                            .line{
+                                margin-bottom: 10px;
+                            }
+                            .productsContent{
+                                .productsContentItem{
+                                    margin-top: 10px;
+                                }
+                            }
+                            .applyProducts{
+                                width: 180px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //特色产品推荐
+    .featuredProducts{
+        height: 580px;
+    }
+}
+
+//快速申请成功页面
+.successTip{
+    display: none;
+    .mask{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        background-color: #000;
+        opacity: 0.3;
+        z-index: 1000;
+    }
+    .tipCont{
+        position: absolute;
+        top:330px;
+        left: 50%;
+        margin-left: -190px;
+        width: 380px;
+        height: 213px;
+        background-color: #fff;
+        z-index: 1001;
+        .tipPic{
+            width: 38px;
+            height: 38px;
+            background: url("../images/index/banner/pass.png") no-repeat;
+            background-size: contain;
+            margin: 35px auto 20px;
+
+        }
+        .tipInfoTop{
+            text-align: center;
+            font-size: 14px;
+            color: #e8592d;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .tipInfoDown{
+            text-align: center;
+            font-size: 14px;
+            color: #686868;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+        .tipSure{
+            display: block;
+            width: 73px;
+            height: 30px;
+            border: 1px solid #ddd;
+            color: #333;
+            font-size: 14px;
+            line-height: 30px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 3px;
+        }
+        .tipCancel{
+            position: absolute;
+            top:12px;
+            right: 12px;
+            width:14px;
+            height: 14px;
+            background: url("../images/index/banner/cancel.png") no-repeat;
+            background-size: contain;
+        }
+    }
+}
+/**头部提示设置登录密码开始*/
+.reminder_pass{
+    position: absolute;
+    background: url("../images/index/top/reminder_pass.png") no-repeat 0 0;
+    width: 372px;
+    height: 33px;
+    line-height: 33px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    top:20px;
+    right: 175px;
+    //text-align: center;
+    p{
+        height: 12px !important;
+        margin-top: 11px;
+    }
+    span{
+        font-size: 12px;
+        color: #999999;
+        vertical-align: top;
+        display: inline-block;
+        height: 12px !important;
+        line-height: 1 !important;
+    }
+    .web_pass{
+        font-size: 12px !important;
+        height: 12px !important;
+        line-height: 1 !important;
+        color: #666666 !important;
+        display: inline-block;
+        float: none !important;
+        padding-left: 0 !important;
+        vertical-align: top !important;
+        border-bottom: 1px solid #666666;
+        z-index: 10000;
+        position: relative;
+        &:hover{
+            color: #ea592e !important;
+            border-bottom: 1px solid #ea592e  !important;
+        }
+    }
+    .close{
+        display: inline-block;
+        background: url("../images/index/top/close.png") no-repeat center;
+        height: 16px !important;
+        width: 16px;
+        margin-left: 10px;
+        position: relative;
+        top: -1px;
+        z-index: 10000;
+        cursor: pointer;
+    }
+}
+/**头部提示设置登录密码结束*/

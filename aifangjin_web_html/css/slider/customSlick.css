@@ -1,0 +1,72 @@
+@import "slick.css";
+@import "slick-theme.css";
+
+#productLoanCont{
+	padding-left: 2px;
+}
+#productLoanCont img {
+    width: 100%;
+}
+/*#productLoanCont li{
+    width:270px;
+    height: 370px;
+    padding-right:30px;
+}*/
+.slick-dots{
+    display: none;
+}
+.slick-prev{
+    left: -60px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    background: url(../../images/index/products/arrowLeft.png) no-repeat;
+ }
+.slick-prev:before{
+    content: '';
+}
+.slick-next{
+    right: -40px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    background: url(../../images/index/products/arrowRight.png) no-repeat;
+}
+.slick-next:before{
+    content: '';
+}
+.slick-slide:focus { 
+	outline:none;
+	border: none;
+}
+/*
+.slick-dots li button:before {
+    content: '.';
+
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+
+.slick-dots {
+    bottom: 0.3rem
+}
+
+.slick-dots li {
+    !*background: url(../../img/circle.png);*!
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #dfdfdf;
+}
+
+.slick-dots li.slick-active {
+    background-color: white;
+}
+
+.slick-dots li button {
+    display: none
+}*/

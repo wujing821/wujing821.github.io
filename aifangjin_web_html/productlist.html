@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>全部产品列表</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/productlist.less">
+    <link rel="stylesheet" href="css/slider/customSlick.css">
+    <script src="js/less.js"></script>
+</head>
+<body>
+    <div class="top">
+    <div class="adaptive">
+        <div class="topContent clearfix">
+            <div class="tel f_l">
+                <i></i><span>客服电话 : </span><strong>400-006-6699</strong>
+            </div>
+            <div class="loginPart f_r clearfix">
+                <div class="registerBefore">
+                    <a href="#">注册账号</a>
+                    <a href="#">登录</a>
+                </div>
+                <!--<div class="registerAfter">
+                    <a href="#">欢迎<span>150****1154</span>来到爱房金</a>
+                    <a href="#">退出登录</a>
+                </div>-->
+                <a href="#">关于我们</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="header">
+        <div class="adaptive">
+            <div class="headerContent clearfix">
+                <div class="logo f_l"><a href="index.html">爱房金</a></div>
+                <ul class="nav f_r">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">我的贷款</a>
+                    </li>
+                    <li>
+                        <a href="#">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="bannerCont">
+            <div class="adaptive">
+                <div class="breadcrumbNav">
+                    <a href="/">首页</a><i>＞</i><span>更多产品</span>
+                </div>
+                <!--<div class="banner">
+                    <div class="bannerPic" id="bannerSlideshow">
+                        <div class="bannerImage">
+                            <img src="images/index/productlist/productlist.png" alt="">
+                        </div>
+                        &lt;!&ndash;<div class="bannerImage">
+                            <img src="images/index/banner/banner.png" alt="">
+                        </div>&ndash;&gt;
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+        <div class="list" id="productsList">
+            <div class="adaptive">
+                <ul class="listCont clearfix">
+                    <li class="listItem"  v-for="item in items">
+                        <div class="details" @click="details(item.id)">
+                            <div class="listItemInfo" >
+                                <h4 class="productName" v-text="item.product_name_polish"></h4>
+                                <p class="productInfo" v-text="item.product_polish_desc"></p>
+                            </div>
+                        </div>
+                        <div class="productPic">
+                            <img :src="item.icon_pic" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span v-if="item.product_advantage_1" v-text="item.product_advantage_1"></span>
+                            <span v-if="item.product_advantage_2" v-text="item.product_advantage_2"></span>
+                            <span v-if="item.product_advantage_3" v-text="item.product_advantage_3"></span>
+                        </div>
+                        <div class="apply applyBtn" @click="apply(item.product_name_polish)">立即申请</div>
+                    </li>
+                    <!--<li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">旅游贷款</h4>
+                            <p class="productInfo">看看世界 现在出发</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/travel.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>放款快</span>
+                            <span>利率低</span>
+                            <span>说走就走</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>
+                    <li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">结婚贷款</h4>
+                            <p class="productInfo">爱 就要十全十美</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/marry.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>放款快</span>
+                            <span>手续简单</span>
+                            <span>可覆盖多场景</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>
+                    <li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">留学贷款</h4>
+                            <p class="productInfo">出国进修 发现新自己</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/school.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>见通知书极速放款</span>
+                            <span>万元日息低至0.9元</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>
+                    <li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">购车贷款</h4>
+                            <p class="productInfo">选爱车 尽享速度激情</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/short.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>零首付买车</span>
+                            <span>无需抵押</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>
+                    <li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">短期贷款</h4>
+                            <p class="productInfo">应急周转 资金流动快</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/short.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>资金灵活</span>
+                            <span>额度高</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>
+                    <li class="listItem">
+                        <div class="listItemInfo">
+                            <h4 class="productName">企业贷款</h4>
+                            <p class="productInfo">抓商机 挣大钱</p>
+                        </div>
+                        <div class="productPic">
+                            <img src="images/index/productlist/company.png" alt="">
+                        </div>
+                        <div class="productSuperiority">
+                            <span>额度最高1500万</span>
+                            <span>资金不等贷资金不等贷</span>
+                            <span>资金不等贷资金不等贷</span>
+                        </div>
+                        <a href="#" class="apply">立即申请</a>
+                    </li>-->
+                    <li class="listItem">
+                        <h4 class="productName">我想贷款</h4>
+                        <!--已登录-->
+                        <!--<div class="applyAfter">
+                            <p class="productInfo">试试告诉我 您的需求</p>
+                            <div class="applyChannel">
+                                <div class="applyItem">
+                                    <input type="text" placeholder="借款金额（万元）" onfocus="this.placeholder=''" onblur="this.placeholder='借款金额（万元）'"  class="amount" id="amountInput">
+                                    <span class="amountUnit">（万元）</span>
+                                </div>
+                                <div class="applyItem year" >
+                                    <div class="applyCont"  onselectstart="return false" >
+                                        <em class="loanPeriod" id="loan-period">借款期限</em><b class="dropdownIcon"></b>
+                                        <ul class="dropdownMenu">
+                                            <li class="dropdownActive">3个月</li>
+                                            <li>6个月</li>
+                                            <li>12个月</li>
+                                            <li>2年</li>
+                                            <li>3年</li>
+                                            <li>5年</li>
+                                            <li>10年</li>
+                                            <li>15年</li>
+                                            <li>20年</li>
+                                            <li>25年</li>
+                                            <li>30年</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="warning">
+                                    <i class="warningIcon"></i><p>请输入借款金额</p>
+                                </div>
+                            </div>
+                            <div class="apply" id="applyBtn">快速申请</div>
+                        </div>-->
+                        <!--未登录-->
+                        <div class="applyBefore">
+                            <p class="productInfo">没有找到合适的产品</p>
+                            <div class="productPic">
+                                <img src="images/index/productlist/cpicon.png" alt="">
+                            </div>
+                            <div class="productSuperiority">
+                                <span>试试告诉我 您的需求</span>
+                            </div>
+                            <a href="/" class="apply">快速申请</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="adaptive">
+            <p class="serviceTel"><span>客服热线</span>400 008 6699</p>
+            <p class="workTime">工作日 9:00-18:00</p>
+            <div class="quickMarkCodeBox">
+                <div class="quickMarkCodeBoxWechat clearfix">
+                    <div class="quickMarkCode">
+                        <img src="images/index/footer/service.png" />
+                        <p>关注爱房金服务号</p>
+                    </div>
+                    <div class="quickMarkCode">
+                        <img src="images/index/footer/microblog.png" />
+                        <p>关注爱房金微博号</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="companyInfo">
+                <span>一粒控股（北京）有限公司 京ICP备16060468号-1Copyright©2016</span>
+                <span>一粒控股（北京）有限公司保留所有权利</span>
+            </p>
+        </div>
+
+    </div>
+    <!--侧边栏-->
+    <div class="sidebar" id="slideContent">
+        <ul id="sidebarBox">
+            <li id="backToTop" class="tipStyle">
+                <a href="javascript:;">
+                    <i class="toTopIcon"></i>
+                    <span class="textTip">
+                            <em class="textTipTop">回到</em>
+                            <em class="textTipTop">顶部</em>
+                        </span>
+                </a>
+            </li>
+            <li class="tipStyle">
+                <a href="#">
+                    <i class="profileIcon"></i>
+                    <span class="textTip">
+                            <em class="textTipTop">个人</em>
+                            <em class="textTipTop">中心</em>
+                        </span>
+                </a>
+            </li>
+            <li id="telCont" class="tipStyle">
+                <span class="telIcon"></span>
+                <strong class="telIconBox">400 008 6699</strong>
+                <span class="textTip">
+                        <em class="textTipTop">联系</em>
+                        <em class="textTipTop">客服</em>
+                    </span>
+            </li>
+            <li class="weChatBox tipStyle">
+                <span class="wechatIcon"></span>
+                <strong class="wechatIconPic">
+                    <i></i><em>关注爱房金</em>
+                </strong>
+                <span class="textTip">
+                        <em class="textTipTop">微信</em>
+                        <em class="textTipTop">二维码</em>
+                    </span>
+            </li>
+            <li class="microblog">
+                <a href="http://weibo.com/p/1006065954849163/home?from=page_100606&mod=TAB&is_all=1#_rnd1502680176889" target="_blank">
+                    <i class="blogIcon"></i>
+                    <span class="textTip">
+                            <em class="textTipTop">关注</em>
+                            <em class="textTipTop">微博</em>
+                        </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--快速申请成功提示-->
+    <div class="successTip" id="successTip">
+        <div class="mask" id="tipMask"></div>
+        <div class="tipCont">
+            <div class="tipPic"></div>
+            <p class="tipInfoTop">恭喜您已成功申请贷款</p>
+            <p class="tipInfoDown">您可通过手机号登录查询最新进度</p>
+            <a href="javascript:;" class="tipSure" id="tip_sure">确定</a>
+            <a href="javascript:;" class="tipCancel" id="tip_cancel"></a>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/slider/slick.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/productlist.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            Public.goTop();
+            Public.init();
+            Public.sidebar();
+            Productlist.init();
+            Productlist.soonApply();
+
+        //banner轮播图方法
+         /*$('#bannerSlideshow').slick({
+         dots: false,
+         infinite: false,
+         speed: 300,
+         autoplaySpeed: 1000,
+         autoplay: true,
+         arrows: false
+         });*/
+        })
+    </script>
+</body>
+</html>

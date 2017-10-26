@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+
+    <title>爱房金</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet/less" type="text/css" href="css/public.less">
+    <link rel="stylesheet/less" type="text/css" href="css/loan.less">
+    <link rel="stylesheet/less" type="text/css" href="css/form.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+<div class="top">
+    <div class="adaptive">
+        <div class="topContent clearfix">
+            <div class="tel f_l">
+                <i></i><span>客服电话 : </span><strong>400-006-6699</strong>
+            </div>
+            <div class="loginPart f_r clearfix">
+                <div class="registerBefore">
+                    <a href="#">注册账号</a>
+                    <a href="#">登录</a>
+                </div>
+                <!--<div class="registerAfter">
+                    <a href="#">欢迎<span>150****1154</span>来到爱房金</a>
+                    <a href="#">退出登录</a>
+                </div>-->
+                <a href="#">关于我们</a>
+                <!--<span class="weChat">
+                    <i></i>
+                </span>
+                <div class="weChatPic">
+                    <img src="images/index/top/wechatPic.png" alt="">
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="adaptive">
+        <div class="headerContent clearfix">
+            <div class="logo f_l">爱房金</div>
+            <ul class="nav f_r">
+                <li class="">
+                    <a href="#">首页</a>
+                </li>
+
+                <!-- <li>
+                     <a href="#">我的贷款</a>
+                 </li>-->
+                <li class="active">
+                    <a href="#">个人中心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="profile_nav">
+        <div class="scroll_fixed">
+            <div class="person_info">
+                <img src="images/profile/person.png" alt="">
+                <p>150****7112</p>
+            </div>
+            <div class="switch">
+                <a href=""><span>账号管理</span><span></span></a>
+                <a class="active" href=""><span>我的贷款</span><span></span></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="loan_container">
+        <div class="title">
+            <h2>贷款记录</h2>
+        </div>
+        <div class="table_list">
+            <div class="table_title">
+                <ul>
+                    <li class="active"><p>所有贷款记录</p></li>
+                    <li><p>办理中</p></li>
+                    <li><p>已放款</p></li>
+                    <li><p>已结束</p></li>
+                </ul>
+            </div>
+            <table border="none">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>贷款编号</th>
+                    <th>申请类型</th>
+                    <th class="sort"><strong>申请日期</strong> <span></span></th>
+                    <th class="sort_asc"><strong>金额</strong><span></span></th>
+                    <th class="sort_desc"><strong>期限</strong><span></span></th>
+                    <th>
+                        <div class="select_com ">
+                            <p><span>全部进度</span><i></i></p>
+                            <ul>
+                                <li class="active">全部进度</li>
+                                <li>已申请</li>
+                                <li>审核失败</li>
+                                <li>待面签</li>
+                                <li>待审批</li>
+                                <li>待放款</li>
+                                <li>已放款</li>
+                                <li>审批拒绝</li>
+                                <li>已解约</li>
+                                <li>取消申请中</li>
+                                <li>已取消</li>
+                            </ul>
+                        </div>
+
+                    </th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="green loan_status">待面签</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="red loan_status">已放款</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="green loan_status">待面签</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="red loan_status">已放款</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="green loan_status">待面签</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="red loan_status">已放款</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <a href="javascript:;" class="list_change">修改申请</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">取消申请</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>MS11111709030001-005</td>
+                    <td>装修贷款</td>
+                    <td>2017.8.4 18:46</td>
+                    <td>20万</td>
+                    <td>20个月</td>
+                    <td><em class="gray loan_status">已取消</em></td>
+                    <td>
+                        <a href="javascript:;" class="list_cancel">撤销</a>
+                        <!--<a href="javascript:;" class="list_change">修改申请</a>-->
+                        <!--<a href="">修改申请</a>-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--没有数据开始-->
+        <div class="no_data" style="">
+            <img src="images/profile/noData.png" alt="">
+            <p><span>您暂时还没有申请过贷款哦，快去申请吧 !</span><a href="">立即申请</a></p>
+        </div>
+        <!--没有数据结束-->
+    </div>
+</div>
+<div class="clear"></div>
+<div class="modal status">
+    <div class="mask"></div>
+    <div class="modal_alert">
+        <div class="title">
+            <h1>已申请</h1>
+            <span class="close"></span>
+        </div>
+
+        <div class="modal_body">
+            <h2><span>结婚贷款</span><span>JHD20170804PC</span><span>20万</span></h2>
+            <div class="status_info">
+                <div class="status_group">
+                    <div class="status_one active show">
+                        <div><span class=""></span>
+                            <div class="hx"></div>
+                        </div>
+                        <div><span>申请贷款</span></div>
+                        <div><strong>2017.8.1 15:21</strong></div>
+
+                    </div>
+
+                    <div class="status_one no_time show">
+                        <div><span class=""></span>
+                            <div class="hx"></div>
+                        </div>
+                        <div><span>申请贷款</span></div>
+                        <div><strong></strong></div>
+                    </div>
+                    <div class="status_one failure ">
+                        <div><span class=""></span>
+                            <div class="hx"></div>
+                        </div>
+                        <div><span>审核失败</span></div>
+                        <div><strong>2017.8.1 15:21</strong></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <p class="tips">抱歉您的申请没有通过平台审核，感谢您对爱房金的选择与
+                信任，您可以尝试其他类型产品，详情可联系客服400热线</p>
+        </div>
+
+    </div>
+</div>
+<div class="modal cancel">
+    <div class="mask"></div>
+    <div class="modal_alert">
+        <div class="title">
+            <h1>取消申请</h1>
+            <span class="close"></span>
+        </div>
+
+        <div class="modal_body">
+            <h2>提示：您确定要取消该笔<span>结婚贷</span>申请吗？取消后，将不能恢复</h2>
+            <div class="form_group">
+                <label>请填写您的取消原因</label>
+                <div class="select_com ">
+                    <p><span></span><i></i></p>
+                    <ul>
+                        <li class="active">填写错误，重新填写</li>
+                        <li>不想申请了</li>
+                        <li>申请其他产品</li>
+                        <li>其他原因</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_group">
+                <textarea class="cancel_reason" placeholder="补充说明" maxlength="100"></textarea>
+                <p class="num">100</p>
+            </div>
+            <div class="button_group">
+                <a href="javascript:;" class="loan_cancel_ok">确认取消</a>
+                <a href="javascript:;" class="loan_cancel modal_cancel">我再想想</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal change_apply">
+    <div class="mask"></div>
+    <div class="modal_alert">
+        <div class="title">
+            <h1>修改申请</h1>
+            <span class="close"></span>
+        </div>
+
+        <div class="modal_body">
+            <h2>您正在修改该笔<span class="chang_apply_name">结婚贷贷款：</span></h2>
+            <div class="form_group">
+                <label>金额</label>
+                <p class="init_money">20万元</p>
+                <span class="right_icon"></span>
+                <input type="text" class="change_money" placeholder="请输入贷款金额">
+                 <strong class="unit">万</strong>
+            </div>
+            <div class="form_group">
+                <label>期限</label>
+                <div class="select_com default">
+                    <p><span>3个月</span><i></i></p>
+                </div>
+                <span class="right_icon"></span>
+                <div class="select_com time_deadline">
+                    <p><span>请输入申请期限</span><i></i></p>
+                    <ul>
+                        <li class="active">3个月</li>
+                        <li>6个月</li>
+                        <li>12个月</li>
+                        <li>2年</li>
+                        <li>3年</li>
+                        <li>5年</li>
+                        <li>10年</li>
+                        <li>15年</li>
+                        <li>20年</li>
+                        <li>25年</li>
+                        <li>30年</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="button_group">
+                <a href="javascript:;" class="apply_change_ok">确认修改</a>
+                <a href="javascript:;" class="apply_change_cancel modal_cancel">取消</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="sidebar" id="slideContent">
+    <ul id="sidebarBox">
+
+        <li class="tipStyle">
+            <a href="#">
+                <i class="profileIcon"></i>
+                <span class="textTip" style="display: none;">
+                            <em class="textTipTop">个人</em>
+                            <em class="textTipTop">中心</em>
+                        </span>
+            </a>
+        </li>
+        <li id="telCont" class="tipStyle">
+            <span class="telIcon"></span>
+            <strong class="telIconBox" style="display: none;">400 008 6699</strong>
+            <span class="textTip" style="display: none;">
+                        <em class="textTipTop">联系</em>
+                        <em class="textTipTop">客服</em>
+                    </span>
+        </li>
+        <li class="tipStyle">
+            <a href="#">
+                <i class="taxIcon"></i>
+                <span class="textTip" style="display: none;">
+                            <em class="textTipTop">热门</em>
+                            <em class="textTipTop">工具</em>
+                        </span>
+            </a>
+        </li>
+        <li class="weChatBox tipStyle">
+            <span class="wechatIcon"
+                  style="border-top: none; border-right: none; border-bottom: 1px solid rgb(238, 238, 238); border-left: none; border-image: initial;"></span>
+            <strong class="wechatIconPic" style="display: none;">
+                <i></i><em>关注爱房金</em>
+            </strong>
+            <span class="textTip" style="display: none;">
+                        <em class="textTipTop">微信</em>
+                        <em class="textTipTop">二维码</em>
+                    </span>
+        </li>
+        <li class="microblog">
+            <a href="http://weibo.com/p/1006065954849163/home?from=page_100606&amp;mod=TAB&amp;is_all=1#_rnd1502680176889"
+               target="_blank">
+                <i class="blogIcon"></i>
+                <span class="textTip">
+                            <em class="textTipTop">关注</em>
+                            <em class="textTipTop">微博</em>
+                        </span>
+            </a>
+        </li>
+        <li id="backToTop" class="tipStyle">
+            <a href="javascript:;">
+                <i class="toTopIcon"></i>
+                <span class="textTip">
+                            <em class="textTipTop">回到</em>
+                            <em class="textTipTop">顶部</em>
+                        </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="footer">
+    <div class="adaptive">
+        <p class="serviceTel"><span>客服热线</span>400 008 6699</p>
+        <p class="workTime">工作日 9:00-18:00</p>
+        <div class="quickMarkCodeBox">
+            <div class="quickMarkCodeBoxWechat clearfix">
+                <div class="quickMarkCode">
+                    <img src="images/index/footer/service.png"/>
+                    <p>关注爱房金服务号</p>
+                </div>
+                <div class="quickMarkCode">
+                    <img src="images/index/footer/microblog.png"/>
+                    <p>关注爱房金微博号</p>
+                </div>
+            </div>
+
+        </div>
+        <p class="companyInfo">
+            <span>一粒控股（北京）有限公司 京ICP备16060468号-1Copyright©2016</span>
+            <span>一粒控股（北京）有限公司保留所有权利</span>
+        </p>
+    </div>
+
+</div>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/public.js"></script>
+<script src="js/form.js"></script>
+<script src="js/selectCom.js"></script>
+<script src="js/loan.js"></script>
+<script>
+    $(document).ready(function () {
+        Public.init();
+        Public.goTop();
+        Public.sidebar();
+        Public.leftNavFixed();
+        Loan.init();
+    })
+</script>
+</body>
+</html>

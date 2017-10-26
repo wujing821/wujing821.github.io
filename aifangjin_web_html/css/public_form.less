@@ -1,0 +1,70 @@
+.agree_agreement{
+  //margin: 0 auto;
+  //margin-top: 40px;
+  position: relative;
+  //padding-left: 30px;
+  display: table;
+  //width: 100%;
+  //padding: 0 30/@r;
+  .input_check{
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    //margin-top: 2px;
+  }
+  .f{
+    float: none;
+  }
+  input{
+    background-color: transparent;
+  }
+  .chose{
+    background: url("../images/form/chose.png") no-repeat 0 0;
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+
+  }
+  input{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    /*     border: 1px solid;
+         width: 50px;
+         height: 50px;*/
+    &:checked + .chose{
+      background-image: url("../images/form/chose_ac.png");
+      width: 14px;
+      height: 14px;
+      background-size: contain;
+    }
+  }
+
+  p{
+    color: #999999;
+    font-size: 12px;
+    float: left;
+
+    span{
+      line-height: 1;
+      color: #ea592e;
+    }
+    i{
+      font-style: normal;
+      color: #999999;
+      font-size: 12px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: top;
+    }
+    a{
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: top;
+      color: #ea592e;
+    }
+  }
+  /*p.agree_r{
+    float: right;
+  }*/
+}
