@@ -1,0 +1,48 @@
+<h1 class="page-header">{{title}}</h1>
+<!--，当有错误的时候，也就是当message里有值的时候，就把message显示出来-->
+<h2 ng-if='message'>{{message}}</h2>
+<div class="list-group">
+	<a ng-repeat='item in subjects' href="#" class="list-group-item">
+		<span class="badge">{{item.rating.average}}</span>
+		<div class="media">
+			<div class="media-left">
+				<img class="media-object" ng-src="{{item.images.small}}" alt="{{item.title}}">
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">{{item.title}}</h4>
+				<p>类型：<span>{{item.genres.join('、')}}</span>&nbsp;&nbsp;&nbsp;&nbsp;上映年份：<span>{{item.year}}</span></p>
+				<p>导演：
+					<!--为了可以在导演后面加上、，我们需要判断是否是最后一个，最后一个不用加、-->
+					<!--三种方法都可以-->
+					<!--<span ng-repeat='d in item.directors'>{{d.name}}<span ng-if='!$last'>、</span></span>-->
+					<!--用括号改变优先级-->
+					<!--<span ng-repeat='d in item.directors'>{{d.name + ($last? '':'、')}}</span>-->
+					<span ng-repeat='d in item.directors'>{{d.name}}{{$last?'':'、'}}</span>
+					
+				</p>
+				<p>主演：
+					<span ng-repeat='c in item.casts'>{{c.name}}{{$last?'':'、'}}</span>
+				</p>
+				
+			</div>
+		</div>
+	</a>
+</div>
+<div ng-show='!loading'>
+	<p>总共有：{{totalCount}}条记录，第{{currentPage}}/{{totalPages}}页</p>
+	<!--上一页，下一页-->
+	<nav aria-label="...">
+	  <ul class="pager">
+	    <li class="previous" ng-class='{disabled:currentPage <= 1}'><a ng-click='goPage(currentPage - 1)'><span aria-hidden="true">&larr;</span> Older</a></li>
+	    <li class="next" ng-class='{disabled:currentPage >= totalPages}'><a ng-click='goPage(currentPage + 1)'>Newer <span aria-hidden="true">&rarr;</span></a></li>
+	  </ul>
+	</nav>
+</div>
+
+<!--加载动画,loading为true显示，false不显示-->
+<div class="mask" ng-show='loading'>
+	<div class="spinner">
+		<div class="dot1"></div>
+		<div class="dot2"></div>
+	</div>
+</div>
